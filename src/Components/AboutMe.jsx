@@ -79,9 +79,9 @@ export default function Highlights() {
           }}
         >
           <Typography component="h2" variant="h4">
-            About
+            About Me
           </Typography>
-          <img src={MyImage} width={400} alt="portrait"/>
+          <img src={MyImage} width={300} alt="portrait"/>
           <Typography variant="h6" sx={{ color: 'black' }}>
           <p><strong>Visualizing the Future, Building it in Code: </strong>
             As a designer-turned-frontend engineer, I bridge the gap between imagination and reality.</p>

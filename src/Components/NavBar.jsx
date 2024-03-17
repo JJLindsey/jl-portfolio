@@ -5,6 +5,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import { IconButton } from '@mui/material';
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import EmailIcon from '@mui/icons-material/Email';
 
 const pages = [
   { label: 'Home', link: '/' },
@@ -22,8 +25,8 @@ function NavBar() {
   return (
     <AppBar position="static" sx={{ backgroundColor: "#FFF" }}>
       <Container maxWidth="xl">
-        <Box>
-          <Tabs value={value} onChange={handleChange} aria-label="navigation tabs">
+        <Box display="flex">
+          <Tabs value={value} onChange={handleChange} aria-label="navigation tabs" style={{paddingRight: "32px"}}>
             {pages.map((page, index) => (
               <Tab
                 key={index}
@@ -34,6 +37,12 @@ function NavBar() {
               />
             ))}
           </Tabs>
+          <IconButton variant="contained" color="primary">
+            <LinkedInIcon size="large"/>
+          </IconButton>
+            <IconButton variant="contained" color="primary">
+          <EmailIcon />
+          </IconButton>
         </Box>
       </Container>
     </AppBar>
