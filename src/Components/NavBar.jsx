@@ -12,7 +12,7 @@ import EmailIcon from '@mui/icons-material/Email';
 const pages = [
   { label: 'Home', link: '/' },
   { label: 'About', link: '/about' },
-  { label: 'Portfolio', link: '/portfolio' },
+  { label: 'Work', link: '/portfolio' },
 ];
 
 function NavBar() {
@@ -23,7 +23,7 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#FFF" }}>
+    <AppBar position="sticky" sx={{ backgroundColor: "#FFF" }}>
       <Container maxWidth="xl">
         <Box display="flex">
           <Tabs value={value} onChange={handleChange} aria-label="navigation tabs" style={{paddingRight: "32px"}}>
@@ -38,10 +38,10 @@ function NavBar() {
             ))}
           </Tabs>
           <IconButton variant="contained" color="primary">
-            <LinkedInIcon size="large"/>
+            <LinkedInIcon sx={{fontSize: "38px"}}/>
           </IconButton>
             <IconButton variant="contained" color="primary">
-          <EmailIcon />
+          <EmailIcon sx={{fontSize: "36px"}}/>
           </IconButton>
         </Box>
       </Container>

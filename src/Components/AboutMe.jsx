@@ -16,15 +16,15 @@ import GroupsIcon from '@mui/icons-material/Groups';
 const items = [
   {
     icon: <SettingsSuggestRoundedIcon />,
-    title: 'Adaptable performance',
+    title: 'Strategic Thinker',
     description:
       'I go beyond the immediate task, fostering understanding of an organization\'s broader objectives and ensuring my work aligns with them.',
   },
   {
     icon: <ConstructionRoundedIcon />,
-    title: 'Built to last',
+    title: 'Perfomance Building',
     description:
-      'Experience unmatched durability that goes above and beyond with lasting investment.',
+      'Crafting high-performing Frontend components for complex forms, tables, and datagrids to streamline data management and elevate user interactions.',
   },
   {
     icon: <DesignServicesIcon />,
@@ -54,6 +54,7 @@ const items = [
 
 export default function Highlights() {
   return (
+    <>
     <Box
       id="about"
       sx={{
@@ -65,7 +66,7 @@ export default function Highlights() {
     >
       <Container
         sx={{
-          position: 'relative',
+          //position: 'relative',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -82,7 +83,7 @@ export default function Highlights() {
             About Me
           </Typography>
           <img src={MyImage} width={300} alt="portrait"/>
-          <Typography variant="h6" sx={{ color: 'black' }}>
+          <Typography variant="h6" sx={{color: 'grey.800' }}>
           <p><strong>Visualizing the Future, Building it in Code: </strong>
             As a designer-turned-frontend engineer, I bridge the gap between imagination and reality.</p>
             <p><strong>Fueled by Curiosity, Driven by Impact: </strong>
@@ -112,7 +113,7 @@ export default function Highlights() {
                   <Typography fontWeight="medium" gutterBottom>
                     {item.title}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: 'grey.400' }}>
+                  <Typography variant="body2" sx={{ color: 'grey.700' }}>
                     {item.description}
                   </Typography>
                 </div>
@@ -122,5 +123,6 @@ export default function Highlights() {
         </Grid>
       </Container>
     </Box>
+    </>
   );
 }

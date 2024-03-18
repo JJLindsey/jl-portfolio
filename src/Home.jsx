@@ -83,7 +83,7 @@ export default function Home() {
                         <img src={Boot} width={50} alt='icon' />
                     </CardContent>
                 </Card>
-                <Stack
+                {/* <Stack
                     direction={{ xs: 'column', sm: 'row' }}
                     alignSelf="center"
                     spacing={1}
@@ -91,12 +91,12 @@ export default function Home() {
                     sx={{ pt: 2, width: { xs: '100%', sm: 'auto' } }}
                 >
                     <IconButton variant="contained" color="primary">
-                    <LinkedInIcon size="large"/>
+                    <LinkedInIcon sx={{fontSize: "50px"}} />
                     </IconButton>
                     <IconButton variant="contained" color="primary">
                     <EmailIcon />
                     </IconButton>
-                </Stack>
+                </Stack> */}
             </Grid>
         </Container>
       </Box>
