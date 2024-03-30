@@ -54,9 +54,11 @@ const projects = [
       "I appreciate the attention to detail in the design of this product. The small touches make a big difference, and it's evident that the creators focused on delivering a premium experience.",
     },
   {
-    avatar: <Avatar alt="Travis Howard" src="/static/images/avatar/5.jpg" />,
-    name: 'John Smith',
-    project: 'Product Designer',
+    avatar: <Avatar alt="js logo" src={jslogo} />,
+    name: 'Password Strength',
+    project: 'blurry load, image gets clearer as password gets stronger',
+    image: 'passwordPage.png',
+    url: 'https://jjlindsey.github.io/password-str/',
     testimonial:
       "I've tried other similar products, but this one stands out for its innovative features. It's clear that the makers put a lot of thought into creating a solution that truly addresses user needs.",
   },
