@@ -8,17 +8,22 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/system';
-import { CardMedia, Icon } from '@mui/material';
+import { CardMedia, Icon, ButtonBase, Button } from '@mui/material';
+//import { styled } from '@mui/material/styles'
+
 import reactlogo from '../assets/logo192.png'
 import jslogo from '../assets/icons8-javascript-48.png'
 import clogo from '../assets/icons8-c-sharp-logo-48.png'
+import vuelogo from '../assets/icons8-vue-js-48.png'
+
 
 const projects = [
   {
     avatar: <img src={reactlogo} alt="react logo" height={48}/>,
     name: 'Three Sixty Sessions',
     image: '360Home.png',
-    project: 'music producer site',
+    project: 'music producers site',
+    url: 'https://threesixtysessions.com/',
     testimonial:
       "One of the standout features of this product is the exceptional customer support. In my experience, the team behind this product has been quick to respond and incredibly helpful. It's reassuring to know that they stand firmly behind their product.",
   },
@@ -26,7 +31,7 @@ const projects = [
     avatar: <img src={clogo} alt="c# logo" height={48}/>,
     name: 'C# Memory Game',
     image: 'MemoryGame.png',
-    project: 'memory game app',
+    project: 'simple memory game app with timer',
     testimonial:
       "I absolutely love how versatile this product is! Whether I'm tackling work projects or indulging in my favorite hobbies, it seamlessly adapts to my changing needs. Its intuitive design has truly enhanced my daily routine, making tasks more efficient and enjoyable.",
   },
@@ -34,17 +39,20 @@ const projects = [
     avatar: <img src={jslogo} alt="react logo" height={48}/>,
     name: 'Current Films app',
     image: 'MovieApp.png',
-    project: 'movie app',
+    project: 'serch current films & get ratings from TMDB api',
+    url: "https://jjlindsey.github.io/movie-appJS/",
     testimonial:
       'The level of simplicity and user-friendliness in this product has significantly simplified my life. I appreciate the creators for delivering a solution that not only meets but exceeds user expectations.',
+    width: '40%'
   },
   {
-    avatar: <Avatar alt="Remy Sharp" src="/static/images/avatar/4.jpg" />,
-    name: 'Julia Stewart',
-    project: 'Senior Engineer',
+    avatar: <Avatar alt="vue logo" src={vuelogo} />,
+    name: 'Calculator',
+    project: 'vue.js calculator',
+    image: 'vue-calculator.png',
     testimonial:
       "I appreciate the attention to detail in the design of this product. The small touches make a big difference, and it's evident that the creators focused on delivering a premium experience.",
-  },
+    },
   {
     avatar: <Avatar alt="Travis Howard" src="/static/images/avatar/5.jpg" />,
     name: 'John Smith',
@@ -61,25 +69,13 @@ const projects = [
   },
 ];
 
-// const whiteLogos = [
-//   "/public/images/icons8-c-sharp-logo-48.png",
-//   "/public/images/material-ui-1.svg",
-//   "/public/images/icons8-javascript-48.png",
-//   "/public/logo192.png"
-// ];
-
-// const darkLogos = [
-//     "images/icons8-c-sharp-logo-48.png",
-//     "images/material-ui-1.svg",
-//     "images/icons8-javascript-48.png",
-//     "logo192.png"
-// ];
-
-const logoStyle = {
-  width: '48px',
-  height: '48px',
-  opacity: 0.5,
-};
+// function ProjectButton({ project }) {
+//   return (
+//     <Button variant="outlined" sx={{ color: "#000" }} href={project.url} target="_blank">
+//       {project.name}
+//     </Button>
+//   )
+// }
 
 export default function Portfolio() {
   const theme = useTheme();
@@ -104,13 +100,11 @@ export default function Portfolio() {
           textAlign: { sm: 'left', md: 'center' },
         }}
       >
-        <Typography component="h2" variant="h4" color="text.primary">
+        <Typography variant="h3" color="text.primary">
           Projects
         </Typography>
-        <Typography variant="body1" color="text.secondary">
-          See what our customers love about our products. Discover how we excel in
-          efficiency, durability, and satisfaction. Join us for quality, innovation,
-          and reliable support.
+        <Typography variant="h4" color="text.secondary">
+          Here is a peek at some of my work...
         </Typography>
       </Box>
       <Grid container spacing={2}>
@@ -122,7 +116,11 @@ export default function Portfolio() {
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 flexGrow: 1,
-                p: 1
+                p: 1,
+                height: 300,
+                //backgroundSize: 'cover',
+                //backgroundImage: `url(/${projects.image})`,
+                //opacity: 0.7,
               }}
             >
               <CardMedia
@@ -130,9 +128,12 @@ export default function Portfolio() {
                 sx={{height: 140, color: 'black'}}
               />
               <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  {projects.testimonial}
+                <Typography variant="body2" color="#FFF">
+                  {/* {projects.testimonial} */}
                 </Typography>
+                <Button variant="outlined" sx={{color: "#000"}}
+                    href={projects.url} target="_blank"
+                  >{projects.name}</Button>
               </CardContent>
               <Box
                 sx={{
@@ -147,11 +148,6 @@ export default function Portfolio() {
                   title={projects.name}
                   subheader={projects.project}
                 />
-                {/* <img
-                  src={logos[index]}
-                  alt={`Logo ${index + 1}`}
-                  style={logoStyle}
-                /> */}
               </Box>
             </Card>
           </Grid>

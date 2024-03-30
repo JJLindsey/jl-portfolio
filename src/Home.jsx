@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Container, Stack, Typography, IconButton, Grid, Card, CardContent } from '@mui/material'
+import { Box, Container, Stack, Typography, IconButton, Grid, Card, CardContent, Button } from '@mui/material'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import EmailIcon from '@mui/icons-material/Email';
 import { alpha } from '@mui/material'
@@ -11,6 +11,8 @@ import JS from './assets/icons8-javascript-48.png'
 import C from './assets/icons8-c-sharp-logo-48.png'
 import MUI from './assets/material-ui-1.svg'
 import Boot from './assets/icons8-bootstrap-48.png'
+//import heroImage from './assets/jjying.jpg'
+import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
 
 export default function Home() {
   return (
@@ -27,6 +29,12 @@ export default function Home() {
             backgroundRepeat: 'no-repeat',
         })}
       >
+         <span style={{display: "flex", flexDirection: "column", alignItems: "flex-end", alignContent: "flex-end", marginRight: "100px", paddingTop: "16px"}}>
+                  <Button size="large" variant='outlined' endIcon={<DownloadForOfflineIcon />} >RESUME</Button>
+                  {/* <a href="#" className="btn btn-light">
+                   Download
+                  </a> */}
+              </span>
         <Container
         sx={{
           display: 'flex',
@@ -68,7 +76,7 @@ export default function Home() {
                     <img src={CloseTag} style={{ color: '#000', paddingTop: '15px', paddingLeft: '10px' }} height={50} alt='icon'/>
                     </Typography>
                     <Typography variant="h6" textAlign="center" color="text.secondary" style={{paddingTop: "32px"}}>
-                    Frontend engineer with a design soul, passionate about crafting functional, beautiful and intuitive user experiences. <br />
+                    Curiosity brought me to programming and it keeps me passionate about learning. Frontend engineer with a design soul, passionate about crafting functional, beautiful and intuitive user experiences. <br />
                     I wield modern JavaScript libraries, HTML, CSS, and additional backend skills to bring ideas to life. Highly collaborative and a strategic thinker, always seeking groundbreaking projects.
                 </Typography>
                 </Typography>
