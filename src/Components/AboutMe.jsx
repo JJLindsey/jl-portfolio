@@ -15,42 +15,54 @@ import GroupsIcon from '@mui/icons-material/Groups';
 
 const items = [
   {
-    icon: <SettingsSuggestRoundedIcon sx={{ fontSize: '2.5rem', color: '#ffc107'}}/>,
+    icon: <SettingsSuggestRoundedIcon sx={{ fontSize: '2.5rem', color: '#ffda00'}}/>,
     title: 'Strategic Thinker',
     description:
       'I go beyond the immediate task, fostering understanding of an organization\'s broader objectives and ensuring my work aligns with them.',
   },
   {
-    icon: <ConstructionRoundedIcon sx={{ fontSize: '2.5rem', color: '#FF5F1F'}}/>,
+    icon: <ConstructionRoundedIcon sx={{ fontSize: '2.5rem', color: '#d71920'}}/>,
     title: 'Perfomance Building',
     description:
       'Crafting high-performing Frontend components for complex forms, tables, and datagrids to streamline data management and elevate user interactions.',
   },
   {
-    icon: <DesignServicesIcon sx={{ fontSize: '2.5rem', color: '#cd1c18'}}/>,
+    icon: <DesignServicesIcon sx={{ fontSize: '2.5rem', color: '#006aff'}}/>,
     title: 'User Experience',
     description:
       'I translate my visual instincts into intuitive and efficient user experiences, crafting interfaces that are both beautiful and functional.',
   },
   {
-    icon: <AutoFixHighRoundedIcon sx={{ fontSize: '2.5rem', color: '#a53182'}}/>,
+    icon: <AutoFixHighRoundedIcon sx={{ fontSize: '2.5rem', color: '#d71920'}}/>,
     title: 'Critical Thinking & Curiosity',
     description:
       'My critical thinking and insatiable curiosity fuel my desire to learn new skills and tackle challenging projects, constantly pushing the boundaries of what is possible.',
   },
   {
-    icon: <GroupsIcon sx={{ fontSize: '2.5rem', color: '#823385'}}/>,
+    icon: <GroupsIcon sx={{ fontSize: '2.5rem', color: '#006aff'}}/>,
     title: 'Collaborative',
     description:
       ' I thrive in collaborative environments to ensure project success. ',
   },
   {
-    icon: <QueryStatsRoundedIcon sx={{ fontSize: '2.5rem', color: '#363276'}}/>,
+    icon: <QueryStatsRoundedIcon sx={{ fontSize: '2.5rem', color: '#ffda00'}}/>,
     title: 'Empowering Interactions',
     description:
       'I design user interfaces with intuitive navigation, clear information, and captivating visuals. The result? UIs that empower users and deliver a seamless experience.'
   },
-];
+]
+
+const FrameRectangle = ({ color, ...props }) => (
+  <Box
+    sx={{
+      position: 'absolute',
+      width: '100px',
+      height: '100px',
+      border: `50px solid ${color}`,
+      ...props.sx
+    }}
+  />
+)
 
 export default function About() {
   return (
@@ -78,8 +90,14 @@ export default function About() {
             textAlign: { sm: 'left', md: 'left' },
           }}
         >
-          <img src={MyImage} width={300} alt="portrait"/>
-          <Typography variant="h6" sx={{color: 'grey.800' }}>
+           <Box sx={{ position: 'relative', width: 'fit-content', margin: '0 auto' }}>
+            <FrameRectangle color="#d71920" sx={{ top: -42, left: -45 }} />
+            <FrameRectangle color="#006aff" sx={{ top: 150, left: -45 }} />
+            <FrameRectangle color="#ffda00" sx={{ top: 200, left: 150 }} />
+            <img src={MyImage} width={300} alt="portrait" style={{ position: 'relative', zIndex: 1 }} />
+          </Box>
+          {/* <img src={MyImage} width={300} alt="portrait"/> */}
+          <Typography variant="h6" sx={{color: 'grey.800', mt: 6}}>
           <p><strong>Visualizing the Future, Building it in Code: </strong>
             As a designer-turned-frontend engineer, I bridge the gap between imagination and reality.</p>
             <p><strong>Fueled by Curiosity, Driven by Impact: </strong>
