@@ -1,6 +1,8 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css';
+import { ThemeProvider } from '@emotion/react';
+import theme from './theme/theme';
 import Home from './Home';
 import About from './Components/AboutMe';
 import Portfolio from './Components/PortfolioCard';
@@ -20,6 +22,7 @@ import NavBar from './Components/NavBar';
 // }
 function App() {
   return (
+    <ThemeProvider theme={theme}>
     <div className="App">
       {/* <NavBar />
       <Home /> 
@@ -35,6 +38,7 @@ function App() {
       </Routes>
     </BrowserRouter>   
     </div>
+    </ThemeProvider>
   )
 }
 

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Container from '@mui/material/Container';
@@ -12,6 +12,28 @@ import SettingsSuggestRoundedIcon from '@mui/icons-material/SettingsSuggestRound
 import MyImage from '../assets/cartoonJennWeb.png'
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import GroupsIcon from '@mui/icons-material/Groups';
+import { keyframes } from '@emotion/react';
+import styled from '@emotion/styled/macro';
+
+const shimmerAnimation = keyframes`
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+`;
+
+const ShimmerOverlay = styled('div')(({thems}) => ({
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  background: 'linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)',
+  zIndex: 9999,
+  animation: `${shimmerAnimation} 2s ease-out forwards`,
+}))
 
 const items = [
   {
@@ -65,8 +87,18 @@ const FrameRectangle = ({ color, ...props }) => (
 )
 
 export default function About() {
+  const [showShimmer, setShowShimmer] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowShimmer(false)
+    }, 1500)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <>
+    {showShimmer && <ShimmerOverlay />}
     <Box
       id="about"
       sx={{
@@ -121,7 +153,17 @@ export default function About() {
                   background: 'transparent',
                   backgroundColor: 'white',
                   transition: 'box-shadow 0.3s ease-in-out', 
-                  "&:hover":{ boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.4)' }  
+                  "&:hover":{ boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.4)' },
+                  // '&::before': {
+                  //   content: '""',
+                  //   position: 'absolute',
+                  //   top: 0,
+                  //   right: 0,
+                  //   bottom: 0,
+                  //   left: 0,
+                  //   background: 'linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)',
+                  //   animation: `${shimmerAnimation} 3s linear`,
+                  // },
                 }}
               >
                 <Box>{item.icon}</Box>

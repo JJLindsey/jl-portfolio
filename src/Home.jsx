@@ -5,14 +5,8 @@ import EmailIcon from '@mui/icons-material/Email';
 import { alpha } from '@mui/material'
 import CodeIcon from '@mui/icons-material/Code';
 import CloseTag from './assets/icons8-code-50.png'
-import Brain from './assets/brain.png'
 import bauhaus from './assets/bauhausBack2.png'
-import reactIcon from './assets/logo192.png'
-import JS from './assets/icons8-javascript-48.png'
-import C from './assets/icons8-c-sharp-logo-48.png'
-import MUI from './assets/material-ui-1.svg'
-import Boot from './assets/icons8-bootstrap-48.png'
-//import heroImage from './assets/jjying.jpg'
+
 
 
 export default function Home() {

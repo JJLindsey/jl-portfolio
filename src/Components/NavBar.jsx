@@ -54,7 +54,7 @@ function NavBar() {
               <IconButton variant="contained" color="primary" component="a" href="mailto:jlindsey010@gmail.com">
                 <EmailIcon sx={{fontSize: "36px"}}/>
               </IconButton>
-              <Button size="large" variant='outlined' endIcon={<DownloadForOfflineIcon />} >RESUME</Button>
+              <Button  color="primary" size="large" variant='outlined' endIcon={<DownloadForOfflineIcon />} >RESUME</Button>
                       {/* <a href="#" className="btn btn-light">
                       Download
                       </a> */}
