@@ -8,8 +8,9 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/system';
-import { CardMedia, Icon, ButtonBase, Button } from '@mui/material'
-import {styled, keyframes} from '@mui/material/styles'
+import { CardMedia, Button, Hidden } from '@mui/material'
+import {styled} from '@mui/material/styles'
+import {motion} from 'framer-motion'
 
 import reactlogo from '../assets/logo192.png'
 import jslogo from '../assets/icons8-javascript-48.png'
@@ -53,21 +54,12 @@ import vuelogo from '../assets/icons8-vue-js-48.png'
 //   max-width: none;
 //   padding: 0 20px;
 // }
-const polaroidKeyframes = keyframes`
-  0% {
-    transform: scale(0.8) rotate(-10deg);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1) rotate(0deg);
-    opacity: 1;
-  }
-`
+
 const StyledCard = styled(Card)(({ theme }) => ({
   th: 200,
   height: 300,
   background: 'rgba(255, 255, 255, 0.2)',
-  backdropFilter: 'blur(10px)',
+  backdropFilter: 'blur(9px)',
   border: '1px solid rgba(255, 255, 255, 0.3)',
   boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
   borderRadius: theme.spacing(2),
@@ -81,6 +73,52 @@ const StyledCard = styled(Card)(({ theme }) => ({
   },
 }))
 
+const AnimatedTypography = ({ text, ...props }) => {
+  const typeContainer = {
+    hidden: { opacity: 0 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      transition: { staggerChildren: 0.03, delayChildren: 0.04 * i },
+    }),
+  }
+
+  const child = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      x: -10,
+      y: 5,
+      transition: {
+        type: "spring",
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+  }
+  return (
+    <motion.div style={{overflow: "hidden", display: "flex", justifyContent: "center", fontSize: "2em"}}
+      variants={typeContainer}
+      initial="hidden"
+      animate="visible"
+    >
+      {text.split("").map((letter, index) => (
+        <motion.span variants={child} key={index}>
+          {letter === " " ? "\u00A0" : letter}
+        </motion.span>
+      ))}
+    </motion.div>
+  )
+}
+
 const projects = [
   {
     avatar: <img src={reactlogo} alt="react logo" height={48}/>,
@@ -89,7 +127,7 @@ const projects = [
     project: 'live - music producers site',
     url: 'https://threesixtysessions.com/',
     testimonial:
-      "One of the standout features of this product is the exceptional customer support. In my experience, the team behind this product has been quick to respond and incredibly helpful. It's reassuring to know that they stand firmly behind their product.",
+      "Music Producer needed a website to advertise his services and showcase his work",
   },
   {
     avatar: <img src={clogo} alt="c# logo" height={48}/>,
@@ -97,16 +135,16 @@ const projects = [
     image: 'MemoryGame.png',
     project: 'simple memory game app with timer',
     testimonial:
-      "I absolutely love how versatile this product is! Whether I'm tackling work projects or indulging in my favorite hobbies, it seamlessly adapts to my changing needs. Its intuitive design has truly enhanced my daily routine, making tasks more efficient and enjoyable.",
+      " ",
   },
   {
     avatar: <img src={jslogo} alt="react logo" height={48}/>,
     name: 'Current Films app',
     image: 'MovieApp.png',
-    project: 'search films & ratings from TMDB API',
+    project: 'search films from TMDB API',
     url: "https://jjlindsey.github.io/movie-appJS/",
     testimonial:
-      'The level of simplicity and user-friendliness in this product has significantly simplified my life. I appreciate the creators for delivering a solution that not only meets but exceeds user expectations.',
+      "",
     width: '40%'
   },
   {
@@ -115,23 +153,24 @@ const projects = [
     project: 'vue.js calculator',
     image: 'vue-calculator.png',
     testimonial:
-      "I appreciate the attention to detail in the design of this product. The small touches make a big difference, and it's evident that the creators focused on delivering a premium experience.",
+      "",
     },
   {
     avatar: <Avatar alt="js logo" src={jslogo} />,
     name: 'Password Strength',
-    project: 'blurry load, image clears as password gets stronger',
+    project: 'image clears as password gets stronger',
     image: 'passwordPage.png',
     url: 'https://jjlindsey.github.io/password-str/',
     testimonial:
-      "I've tried other similar products, but this one stands out for its innovative features. It's clear that the makers put a lot of thought into creating a solution that truly addresses user needs.",
+      "",
   },
   {
-    avatar: <Avatar alt="Cindy Baker" src="/static/images/avatar/6.jpg" />,
+    avatar: <Avatar alt="c# logo" src={clogo}/>,
     name: 'In Progress',
-    project: 'E-Commerce',
+    project: 'Color Picker',
+    image: 'placeholder.png',
     testimonial:
-      "The quality of this product exceeded my expectations. It's durable, well-designed, and built to last. Definitely worth the investment!",
+      "",
   },
 ];
 
@@ -167,20 +206,16 @@ export default function Portfolio() {
           textAlign: { sm: 'left', md: 'center' },
         }}
       >
-        <Typography variant="h3" color="text.primary">
+        <Typography variant="h3" color="primary">
           Projects
         </Typography>
-        <Typography variant="h4" color="text.secondary">
-          Here is a peek at some of my work...
-        </Typography>
+        <AnimatedTypography variant="h3" text="Here is a look at some of my work" sx={{ fontWeight: 'bold', letterSpacing: 1 }}/>
       </Box>
-      <Grid container spacing={2}>
+      <Grid container spacing={3}>
         {projects.map((projects, index) => (
           <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
             <StyledCard
               raised={true}
-              // onMouseEnter={() => setHovered(true)}
-              // onMouseLeave={() => setHovered(false)}
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -202,7 +237,7 @@ export default function Portfolio() {
                 <Typography variant="body2" color="#FFF">
                   {/* {projects.testimonial} */}
                 </Typography>
-                <Button variant="outlined" sx={{color: "#000"}}
+                <Button variant="contained" color="primary"
                     href={projects.url} target="_blank"
                   >{projects.name}</Button>
               </CardContent>

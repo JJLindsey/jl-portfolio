@@ -122,7 +122,7 @@ export default function About() {
             textAlign: { sm: 'left', md: 'left' },
           }}
         >
-           <Box sx={{ position: 'relative', width: 'fit-content', margin: '0 auto' }}>
+          <Box sx={{ position: 'relative', width: 'fit-content', margin: '0 auto' }}>
             <FrameRectangle color="#d71920" sx={{ top: -42, left: -45 }} />
             <FrameRectangle color="#006aff" sx={{ top: 150, left: -45 }} />
             <FrameRectangle color="#ffda00" sx={{ top: 200, left: 150 }} />

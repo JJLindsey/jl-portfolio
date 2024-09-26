@@ -6,40 +6,50 @@ import Toolbar from '@mui/material/Toolbar'
 // import Tab from '@mui/material/Tab';
 // import Box from '@mui/material/Box';
 // import Container from '@mui/material/Container';
-import { IconButton, Typography, Button, Box } from '@mui/material';
+import { IconButton, Typography, Button, Box, styled } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import EmailIcon from '@mui/icons-material/Email';
 import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
 
-const pages = [
-  { label: 'Home', link: '#home' },
-  { label: 'About', link: '#about' },
-  { label: 'Work', link: '#portfolio' },
-];
+// const pages = [
+//   { label: 'Home', link: '#home' },
+//   { label: 'About', link: '#about' },
+//   { label: 'Work', link: '#portfolio' },
+// ];
+const StyledButton = styled(Button)(({theme}) => ({
+  transition: theme.transitions.create('all', {
+    duration: theme.transitions.duration.standard,
+  }),
+  '&:hover': {
+    transform: 'scale(1.15)',
+    boxShadow: '0px 2px 4px rgba(255, 218, 0, 0.4)',
+    borderRadius: '8px'
+  }
+}))
 
 function NavBar() {
-  const [value, setValue] = React.useState(0);
+  // const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  // const handleChange = (event, newValue) => {
+  //   setValue(newValue);
+  // };
 
   return (
     <AppBar position="sticky" sx={{ backgroundColor: "#FFF" }}>
       <Toolbar>
           <Typography variant='h5' color='#000'>Jennifer Lindsey</Typography>
-            <Button color="primary" component={Link} to="/">
+            <StyledButton color="primary" component={Link} to="/">
                     Home
-            </Button>
-            <Button color="primary" component={Link} to="/about">
+            </StyledButton>
+            <StyledButton color="primary" component={Link} to="/about">
                 About
-            </Button>
-            <Button color="primary" component={Link} to="/projects">
+            </StyledButton>
+            <StyledButton color="primary" component={Link} to="/projects">
                 Projects
-            </Button>
-            <Button color="primary" component={Link} to="/contact">
+            </StyledButton>
+            <StyledButton color="primary" component={Link} to="/contact">
                 Contact
-            </Button>
+            </StyledButton>
             <Box sx={{ flexGrow: 1 }}/>
               <IconButton
                 variant="contained"
@@ -54,7 +64,7 @@ function NavBar() {
               <IconButton variant="contained" color="primary" component="a" href="mailto:jlindsey010@gmail.com">
                 <EmailIcon sx={{fontSize: "36px"}}/>
               </IconButton>
-              <Button  color="primary" size="large" variant='outlined' endIcon={<DownloadForOfflineIcon />} >RESUME</Button>
+              <StyledButton  color="primary" size="large" variant='outlined' endIcon={<DownloadForOfflineIcon />} >RESUME</StyledButton>
                       {/* <a href="#" className="btn btn-light">
                       Download
                       </a> */}

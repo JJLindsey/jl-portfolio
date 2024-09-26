@@ -34,10 +34,10 @@ export default function Home() {
             pt: { xs: 14, sm: 20 },
             pb: { xs: 8, sm: 12 },
             pr: {xs: 2, sm: 10},
-            paddingTop: '100px'
+            //paddingTop: '100px'
             }}
             >
-            <Grid spacing={1} useFlexGap sx={{ width: { xs: '100%', sm: '70%' }, display: 'flex', flexDirection: 'column', paddingTop: '200px' }}>
+            <Grid spacing={1} useFlexGap sx={{ width: { xs: '100%', sm: '70%' }, display: 'flex', flexDirection: 'column', paddingTop: '200px', paddingLeft: '270px' }}>
                 <Grid item>
                     <Typography variant='h2'  fontFamily="Noto Sans" fontWeight="600">JENNIFER LINDSEY</Typography>
                 </Grid>
@@ -53,12 +53,12 @@ export default function Home() {
                         top: '250px',
                         color: 'transparent',
                         display: 'flex',
-                        //alignContent: 'center',
+                        alignItems: 'center',
                         backgroundImage: 'linear-gradient(to right, #002d66, #363276, #5d3481, #823385, #a53182, #c53379, #df3d6b, #f25058, #fd6a43, #ff8727)',
                     }}
                     >
                         <CodeIcon sx={{fontSize: '50px', color: '#000', paddingTop: '15px'}}/>
-                            not just code,
+                            not just code
                         <img src={CloseTag} style={{ color: '#000', paddingTop: '15px', paddingLeft: '10px' }} height={50} alt='icon'/>
                     </Typography>
                     </Grid>
