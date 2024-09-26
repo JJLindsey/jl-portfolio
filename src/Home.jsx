@@ -1,15 +1,45 @@
-import React from 'react'
-import { Container, Typography,Grid, Card, CardContent, Button, Box } from '@mui/material'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import EmailIcon from '@mui/icons-material/Email';
-import { alpha } from '@mui/material'
+import React, {useEffect, useState} from 'react'
+import { Container, Typography,Grid, Box } from '@mui/material'
 import CodeIcon from '@mui/icons-material/Code';
 import CloseTag from './assets/icons8-code-50.png'
 import bauhaus from './assets/bauhausBack2.png'
 
+import { keyframes } from '@emotion/react';
+import styled from '@emotion/styled/macro';
 
+const shimmerAnimation = keyframes`
+ 0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+`
+
+const ShimmerTypography = styled('div')(({ showShimmer}) => ({
+    backgroundImage: showShimmer
+    ? 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%), linear-gradient(to right, #002d66, #363276, #5d3481, #823385, #a53182, #c53379, #df3d6b, #f25058, #fd6a43, #ff8727)'
+    : 'linear-gradient(to right, #002d66, #363276, #5d3481, #823385, #a53182, #c53379, #df3d6b, #f25058, #fd6a43, #ff8727)',
+  backgroundSize: '200% 100%',
+  backgroundClip: 'text',
+  WebkitBackgroundClip: 'text',
+  fontSize: '50px',
+  color: 'transparent',
+  animation: showShimmer ? `${shimmerAnimation} 4s linear infinite` : 'none',
+  display: 'flex',
+  alignItems: 'center',
+}))
 
 export default function Home() {
+    const [showShimmer, setShowShimmer] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowShimmer(false)
+    }, 10000)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
    
       <Box
@@ -25,7 +55,6 @@ export default function Home() {
             objectFit: { xs: 'scale-down', sm: 'cover' }
         })}
       >
-   
         <Container
             sx={{
             display: 'flex',
@@ -37,52 +66,22 @@ export default function Home() {
             //paddingTop: '100px'
             }}
             >
-            <Grid spacing={1} useFlexGap sx={{ width: { xs: '100%', sm: '70%' }, display: 'flex', flexDirection: 'column', paddingTop: '200px', paddingLeft: '270px' }}>
+            <Grid spacing={1} useFlexGap sx={{ width: { xs: '100%', sm: '80%' }, display: 'flex', flexDirection: 'column', paddingTop: '200px', paddingLeft: '270px' }}>
                 <Grid item>
-                    <Typography variant='h2'  fontFamily="Noto Sans" fontWeight="600">JENNIFER LINDSEY</Typography>
+                    <Typography variant='h3'  fontFamily="Noto Sans" fontWeight="600" >JENNIFER LINDSEY</Typography>
                 </Grid>
                 <Grid item>
-                    <Typography
+                    <ShimmerTypography
+                    showShimmer={showShimmer}
                     component="span"
-                    variant="h3"
-                    sx={{
-                        // color: (theme) =>
-                        // theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
-                        backgroundClip: 'text',
-                        WebkitBackgroundClip: 'text', /* Safari support */
-                        top: '250px',
-                        color: 'transparent',
-                        display: 'flex',
-                        alignItems: 'center',
-                        backgroundImage: 'linear-gradient(to right, #002d66, #363276, #5d3481, #823385, #a53182, #c53379, #df3d6b, #f25058, #fd6a43, #ff8727)',
-                    }}
+                    variant="h2"
                     >
-                        <CodeIcon sx={{fontSize: '50px', color: '#000', paddingTop: '15px'}}/>
-                            not just code
-                        <img src={CloseTag} style={{ color: '#000', paddingTop: '15px', paddingLeft: '10px' }} height={50} alt='icon'/>
-                    </Typography>
-                    </Grid>
+                    <CodeIcon sx={{fontSize: '50px', color: '#000', paddingTop: '15px'}}/>
+                            not just code but craft
+                        <img src={CloseTag} style={{ color: '#000', paddingTop: '5px', paddingLeft: '10px' }} height={50} alt='icon'/>
+                    </ShimmerTypography>
+                </Grid>
                     <Grid item>
-                        <Typography variant="h3"  sx={{
-                        backgroundClip: 'text',
-                        WebkitBackgroundClip: 'text', /* Safari support */
-                        top: '250px',
-                        color: 'transparent',
-                        display: 'flex',
-                        //alignContent: 'center',
-                        backgroundImage: 'linear-gradient(to right, #c53379, #df3d6b, #f25058, #fd6a43, #ff8727)',
-                    }}>but craft</Typography>
-                    </Grid>
-                    <Grid item>
-                    {/* <Card elevation={0} style={{paddingTop: "32px"}}> */}
-                    {/* <img src={Brain} height={300} alt="brain"/> */}
-                    {/* <CardContent style={{display: "flex", alignItems: "center", alignContent: "center", justifyContent: "center"}}>
-                        <img src={Brain} height={300} alt="brain"/>
-                    </CardContent> */}
-                    
-                {/* </Card> */}
-               
-               
                     <Typography variant="h6" textAlign="left" color="#000" style={{paddingTop: "32px", zIndex: 2}}>
                     Frontend engineer with a design soul, passionate about crafting functional, beautiful and intuitive user experiences. Curiosity brought me to programming and it keeps me passionate about learning.  <br />
                 </Typography>

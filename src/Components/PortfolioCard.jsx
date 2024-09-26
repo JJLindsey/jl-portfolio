@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
@@ -7,8 +7,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { useTheme } from '@mui/system';
-import { CardMedia, Button, Hidden } from '@mui/material'
+import { CardMedia, Button } from '@mui/material'
 import {styled} from '@mui/material/styles'
 import {motion} from 'framer-motion'
 
@@ -174,18 +173,8 @@ const projects = [
   },
 ];
 
-// function ProjectButton({ project }) {
-//   return (
-//     <Button variant="outlined" sx={{ color: "#000" }} href={project.url} target="_blank">
-//       {project.name}
-//     </Button>
-//   )
-// }
 
 export default function Portfolio() {
-  const theme = useTheme()
-  //const [hovered, setHovered] = useState(false)
-  //const logos = theme.palette.mode === 'light' ? darkLogos : whiteLogos;
 
   return (
     <Container

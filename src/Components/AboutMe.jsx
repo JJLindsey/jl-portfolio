@@ -24,7 +24,7 @@ const shimmerAnimation = keyframes`
   }
 `;
 
-const ShimmerOverlay = styled('div')(({thems}) => ({
+const ShimmerOverlay = styled('div')(({theme}) => ({
   position: 'fixed',
   top: 0,
   left: 0,
