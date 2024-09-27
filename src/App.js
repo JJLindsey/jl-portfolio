@@ -24,7 +24,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
-      <Router>
+      <Router basename='jl-portfolio'>
       <NavBar/>
       <Routes>
         <Route path="/home" element={<Home />} />
