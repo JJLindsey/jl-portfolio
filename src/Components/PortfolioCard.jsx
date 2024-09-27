@@ -126,9 +126,9 @@ const projects = [
       "",
   },
   {
-    avatar: <Avatar alt="c# logo" src={clogo}/>,
+    avatar: <Avatar alt="react logo" src={reactlogo}/>,
     name: 'In Progress',
-    project: 'Color Picker',
+    project: 'UXUI Design',
     image: 'placeholder.png',
     testimonial:
       "",
