@@ -2,20 +2,11 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar'
-// import Tabs from '@mui/material/Tabs';
-// import Tab from '@mui/material/Tab';
-// import Box from '@mui/material/Box';
-// import Container from '@mui/material/Container';
 import { IconButton, Typography, Button, Box, styled } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import EmailIcon from '@mui/icons-material/Email';
 import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
 
-// const pages = [
-//   { label: 'Home', link: '#home' },
-//   { label: 'About', link: '#about' },
-//   { label: 'Work', link: '#portfolio' },
-// ];
 const StyledButton = styled(Button)(({theme}) => ({
   transition: theme.transitions.create('all', {
     duration: theme.transitions.duration.standard,
@@ -28,11 +19,6 @@ const StyledButton = styled(Button)(({theme}) => ({
 }))
 
 function NavBar() {
-  // const [value, setValue] = React.useState(0);
-
-  // const handleChange = (event, newValue) => {
-  //   setValue(newValue);
-  // };
 
   return (
     <AppBar position="sticky" sx={{ backgroundColor: "#FFF" }}>

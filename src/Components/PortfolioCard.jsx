@@ -16,44 +16,6 @@ import jslogo from '../assets/icons8-javascript-48.png'
 import clogo from '../assets/icons8-c-sharp-logo-48.png'
 import vuelogo from '../assets/icons8-vue-js-48.png'
 
-//Nuemorphism code for cards
-// body {
-//   line-height: 1.7;
-// }
-
-// .material-icons {
-//   font-size: 4rem !important;
-// }
-
-// .cards {
-//   background: #e6e6e6;
-// }
-
-// .cards .row {
-//   width: 100%;
-//   max-width: 1280px;
-//   padding-top: 30px;
-//   margin-bottom: 0;
-// }
-
-// .cards .row .col:not(:last-child) {
-// padding-right: 20px;
-// }
-// .cards .card {
-// background: transparent;
-//       box-shadow: 6px 6px 14px 0 rgba(0, 0, 0, 0.2),
-//     -8px -8px 18px 0 rgba(255, 255, 255, 0.55);
-//   border-radius: 40px;
-//   padding: 4px 30px 20px;
-//   min-height: 380px;
-// }
-
-// .cards.container {
-//   width: 100%;
-//   max-width: none;
-//   padding: 0 20px;
-// }
-
 const StyledCard = styled(Card)(({ theme }) => ({
   th: 200,
   height: 300,
@@ -122,7 +84,7 @@ const projects = [
   {
     avatar: <img src={reactlogo} alt="react logo" height={48}/>,
     name: 'Three Sixty Sessions',
-    image: '/360Home.png',
+    image: '360Home.png',
     project: 'live - music producers site',
     url: 'https://threesixtysessions.com/',
     testimonial:
@@ -147,7 +109,7 @@ const projects = [
     width: '40%'
   },
   {
-    avatar: <Avatar alt="vue logo" src={vuelogo} />,
+    avatar: <Avatar alt="vue logo" src={vuelogo} height={48}/>,
     name: 'Calculator',
     project: 'vue.js calculator',
     image: 'vue-calculator.png',
@@ -212,16 +174,13 @@ export default function Portfolio() {
                 flexGrow: 1,
                 p: 1,
                 height: 375,
-                //backgroundImage: `url(/${project.image})`,
-                //opacity: 0.7,
               }}
             >
               <CardMedia
-                //className="polaroid-image"
                 component="img"
                 src={project.image}
                 alt={`Image for ${project.name}`}
-                sx={{height: 250, color: 'black'}}
+                sx={{height: 230, color: 'black'}}
               />
               <CardContent>
                 <Typography variant="body2" color="#FFF">
@@ -236,7 +195,6 @@ export default function Portfolio() {
                   display: 'flex',
                   flexDirection: 'row',
                   justifyContent: 'space-between',
-                  // pr: 2,
                 }}
               >
                 <CardHeader
@@ -250,7 +208,7 @@ export default function Portfolio() {
                 }
                 subheader={
                     <Typography variant="body2" align="left">
-                        {projects.project}
+                        {project.project}
                     </Typography>
                 }
                 />

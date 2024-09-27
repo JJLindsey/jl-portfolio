@@ -95,7 +95,6 @@ export default function Home() {
             <path d="M 0 150 C 215 50 250 200 500 100 L 500 200 L 0 200" fill="#ffff00" opacity="0.5"></path>
             </svg> */}
         </Container>
-        
       </Box>
     <Footer />
     </>
