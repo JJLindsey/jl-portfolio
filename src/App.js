@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css';
 import { ThemeProvider } from '@emotion/react';
 import theme from './theme/theme';
@@ -24,7 +24,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
-      <BrowserRouter>
+      <Router>
       <NavBar/>
       <Routes>
         <Route path="/home" element={<Home />} />
@@ -32,7 +32,7 @@ function App() {
         <Route path="/projects" element={<Portfolio />} />
         {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
-    </BrowserRouter>   
+    </Router>   
     </div>
     </ThemeProvider>
   )
