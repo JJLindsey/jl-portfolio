@@ -1,5 +1,5 @@
 
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Router, Routes, Route } from 'react-router-dom'
 import './App.css';
 import { ThemeProvider } from '@emotion/react';
 import theme from './theme/theme';
@@ -24,15 +24,15 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
-      <Router basename='jl-portfolio'>
+      <BrowserRouter basename='/jl-portfolio'>
       <NavBar/>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Portfolio />} />
         {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
-    </Router>   
+    </BrowserRouter>   
     </div>
     </ThemeProvider>
   )
