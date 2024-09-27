@@ -6,6 +6,7 @@ import bauhaus from './assets/bauhausBack2.png'
 
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled/macro';
+import {motion, AnimatePresence} from 'framer-motion'
 import Footer from './Components/Footer';
 
 const shimmerAnimation = keyframes`
@@ -33,11 +34,20 @@ const ShimmerTypography = styled('div')(({ showShimmer}) => ({
 
 export default function Home() {
     const [showShimmer, setShowShimmer] = useState(true)
+    const [word, setWord] = useState('code')
+      
+    useEffect(() => {
+        const interval = setInterval(() => {
+        setWord((prev) => (prev === 'code' ? 'craft' : 'code'));
+        }, 3000) // Change word every 2 seconds
+    
+        return () => clearInterval(interval);
+    }, [])
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowShimmer(false)
-    }, 10000)
+    }, 5000)
     return () => clearTimeout(timer)
   }, [])
 
@@ -48,7 +58,8 @@ export default function Home() {
          
         sx={(theme) => ({
             width: '100%',
-            height: '100vh',
+            //height: '100vh',
+            height: 'calc(100vh - 70px)',
             backgroundImage: `url(${bauhaus})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
@@ -78,7 +89,32 @@ export default function Home() {
                     variant="h2"
                     >
                     <CodeIcon sx={{fontSize: '50px', color: '#000', paddingTop: '15px'}}/>
-                            not just code but craft
+                            not just{' '}
+                        <AnimatePresence mode="wait">
+                            <motion.span
+                            key={word}
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: -20, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            style={{ marginLeft: '7px', marginRight: '7px', color: "#006aff", fontWeight: 'bold' }}
+                            >
+                            {word}
+                            </motion.span>
+                        </AnimatePresence>
+                        {' '}but{' '}
+                        <AnimatePresence mode="wait">
+                            <motion.span
+                            key={word === 'code' ? 'craft' : 'code'}
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: -20, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                            style={{ marginLeft: '7px', color: "#006aff", fontWeight: 'bold' }}
+                            >
+                            {word === 'code' ? 'craft' : 'code'}
+                            </motion.span>
+                        </AnimatePresence>   
                         <img src={CloseTag} style={{ color: '#000', paddingTop: '5px', paddingLeft: '10px' }} height={50} alt='icon'/>
                     </ShimmerTypography>
                 </Grid>
@@ -96,7 +132,24 @@ export default function Home() {
             </svg> */}
         </Container>
       </Box>
-    <Footer />
+      <Box
+        sx={{
+          width: '100%',
+          height: '50px', // Footer height
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          backgroundColor:'#ffda00',
+          color: 'grey',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          paddingBottom: '8px'
+          //zIndex: 1000,
+        }}
+      >
+        <Footer />
+      </Box>
     </>
   )
 }
