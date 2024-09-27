@@ -122,7 +122,7 @@ const projects = [
   {
     avatar: <img src={reactlogo} alt="react logo" height={48}/>,
     name: 'Three Sixty Sessions',
-    image: '360Home.png',
+    image: '/360Home.png',
     project: 'live - music producers site',
     url: 'https://threesixtysessions.com/',
     testimonial:
@@ -201,7 +201,7 @@ export default function Portfolio() {
         <AnimatedTypography variant="h3" text="Here is a look at some of my work" sx={{ fontWeight: 'bold', letterSpacing: 1 }}/>
       </Box>
       <Grid container spacing={3}>
-        {projects.map((projects, index) => (
+        {projects.map((project, index) => (
           <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
             <StyledCard
               raised={true}
@@ -212,14 +212,15 @@ export default function Portfolio() {
                 flexGrow: 1,
                 p: 1,
                 height: 375,
-                
-                //backgroundImage: `url(/${projects.image})`,
+                //backgroundImage: `url(/${project.image})`,
                 //opacity: 0.7,
               }}
             >
               <CardMedia
-                className="polaroid-image"
-                image={projects.image}
+                //className="polaroid-image"
+                component="img"
+                src={project.image}
+                alt={`Image for ${project.name}`}
                 sx={{height: 250, color: 'black'}}
               />
               <CardContent>
@@ -227,8 +228,8 @@ export default function Portfolio() {
                   {/* {projects.testimonial} */}
                 </Typography>
                 <Button variant="contained" color="primary"
-                    href={projects.url} target="_blank"
-                  >{projects.name}</Button>
+                    href={project.url} target="_blank"
+                  >{project.name}</Button>
               </CardContent>
               <Box
                 sx={{
@@ -239,12 +240,12 @@ export default function Portfolio() {
                 }}
               >
                 <CardHeader
-                  avatar={projects.avatar}
+                  avatar={project.avatar}
                   // title={projects.name}
                   // subheader={projects.project}
                   title={
                     <Typography variant="h6" align="left">
-                        {projects.name}
+                        {project.name}
                     </Typography>
                 }
                 subheader={

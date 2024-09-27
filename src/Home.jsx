@@ -6,6 +6,7 @@ import bauhaus from './assets/bauhausBack2.png'
 
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled/macro';
+import Footer from './Components/Footer';
 
 const shimmerAnimation = keyframes`
  0% {
@@ -41,7 +42,7 @@ export default function Home() {
   }, [])
 
   return (
-   
+   <>
       <Box
         id="hero"
          
@@ -82,10 +83,10 @@ export default function Home() {
                     </ShimmerTypography>
                 </Grid>
                     <Grid item>
-                    <Typography variant="h6" textAlign="left" color="#000" style={{paddingTop: "32px", zIndex: 2}}>
-                    Frontend engineer with a design soul, passionate about crafting functional, beautiful and intuitive user experiences. Curiosity brought me to programming and it keeps me passionate about learning.  <br />
+                    <Typography variant="h5" textAlign="left" color="#000" style={{paddingTop: "32px", zIndex: 2}}>
+                    Frontend engineer with a design soul, passionate about crafting functional, beautiful and intuitive user experiences.  <br />
                 </Typography>
-                <Typography variant="h6" textAlign="left" color="black" style={{paddingTop: "32px", zIndex: 2}}>I wield modern JavaScript libraries, HTML, CSS, and additional backend skills to bring ideas to life. Highly collaborative and a strategic thinker, always seeking groundbreaking projects.</Typography>
+                <Typography variant="h6" textAlign="left" color="black" style={{paddingTop: "32px", zIndex: 2}}> Curiosity brought me to programming and it keeps me passionate about learning. A highly collaborative and a strategic thinker, always seeking groundbreaking projects.</Typography>
                 </Grid>
                 </Grid>
             {/* <svg viewBox="0 0 500 200" style={{ width: '100%', position: 'fixed', bottom: 0, left: '0', zIndex: 0 }}>
@@ -94,7 +95,9 @@ export default function Home() {
             <path d="M 0 150 C 215 50 250 200 500 100 L 500 200 L 0 200" fill="#ffff00" opacity="0.5"></path>
             </svg> */}
         </Container>
+        
       </Box>
-  
+    <Footer />
+    </>
   )
 }
