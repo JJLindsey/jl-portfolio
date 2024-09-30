@@ -54,15 +54,15 @@ function NavBar() {
                   <MenuIcon />
                 </IconButton>
                 <Menu
-                  anchorOrigin={{vertical: 'top', horizontal: 'right'}}
+                  anchorOrigin={{vertical: 'top', horizontal: 'left'}}
                   keepMounted
-                  transformOrigin={{vertical: 'top', horizontal: 'right'}}
+                  transformOrigin={{vertical: 'top', horizontal: 'left'}}
                   open={Boolean(anchorElNav)}
                   onClose={handleCloseNavMenu}
                 >
                   {pages.map((page) => (
                     <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign='center' component={Link} to={`/${page.toLowerCase()}`} >{page}</Typography>
+                    <Typography textAlign='center' component={Link} to={`/${page === 'Home' ? '' : page.toLowerCase()}`} >{page}</Typography>
                     </MenuItem>
                   ))}
                 </Menu>
@@ -78,8 +78,8 @@ function NavBar() {
                   anchorEl={anchorElContact}
                   open={Boolean(anchorElContact)}
                   onClose={handleCloseContact}
-                  anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-                  transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+                  anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
+                  transformOrigin={{ vertical: 'top', horizontal: 'left' }}
                 >
                   <MenuItem onClick={handleCloseContact}>
                     <IconButton  variant="contained"
@@ -88,7 +88,8 @@ function NavBar() {
                       href="http://www.linkedin.com/in/jennifer-lindsey010"
                       target="_blank"
                       rel="noopener noreferrer">
-                      <LinkedInIcon  sx={{ fontSize: "38px" }} />
+                      <LinkedInIcon  sx={{ fontSize: "32px" }} />
+                      <Typography variant='h6'>LinkedIn</Typography>
                     </IconButton>
                   </MenuItem>
                   <MenuItem onClick={handleCloseContact}>
@@ -98,13 +99,14 @@ function NavBar() {
                   component="a"
                   href="mailto:jlindsey010@gmail.com"
                 >
-                  <EmailIcon sx={{ fontSize: "36px" }} />
+                  <EmailIcon sx={{ fontSize: "30px" }} />
+                  <Typography variant='h6'>Email</Typography>
                 </IconButton>
               </MenuItem>
               <MenuItem onClick={handleCloseContact}>
                 <StyledButton
                   color="primary"
-                  size="large"
+                  size="small"
                   variant="outlined"
                   endIcon={<DownloadForOfflineIcon />}
                 >
@@ -114,8 +116,8 @@ function NavBar() {
                 </Menu>
               </Box>
           <Box sx={{ display: { xs: 'none', md: 'flex' }, flexGrow: 1 }}>
-            <StyledButton color="primary" component={Link} to="/" sx={{ml: 4}}>
-            Home
+            <StyledButton color="primary" component={Link} to="/">
+                Home
             </StyledButton>
             <StyledButton color="primary" component={Link} to="/about">
                 About
