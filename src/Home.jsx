@@ -3,6 +3,7 @@ import { Container, Typography,Grid, Box } from '@mui/material'
 import CodeIcon from '@mui/icons-material/Code';
 import CloseTag from './assets/icons8-code-50.png'
 import bauhaus from './assets/bauhausBack2.png'
+import mobileBkgrd from './assets/bauhausMobile2.png'
 
 //import { keyframes } from '@emotion/react';
 //import styled from '@emotion/styled/macro';
@@ -25,11 +26,13 @@ export default function Home() {
    <>
       <Box
         id="hero"
-         
         sx={(theme) => ({
             width: '100%',
             height: 'calc(100vh - 70px)',
-            backgroundImage: `url(${bauhaus})`,
+            backgroundImage: {
+                xs: `url(${mobileBkgrd})`,
+                md: `url(${bauhaus})`
+            },
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -46,7 +49,8 @@ export default function Home() {
             //paddingTop: '100px'
             }}
             >
-            <Grid spacing={1} useFlexGap sx={{ width: { xs: '100%', sm: '80%' }, display: 'flex', flexDirection: 'column', paddingTop: '200px', paddingLeft: '270px' }}>
+            <Grid spacing={1} useFlexGap sx={{ width: { xs: '100%', sm: '80%' }, display: 'flex', flexDirection: 'column',  paddingTop: { xs: '100px', sm: '200px' },
+              paddingLeft: { xs: '20px', sm: '270px' }, }}>
                 <Grid item>
                     <Typography variant='h3'  fontFamily="Noto Sans" fontWeight="600" >JENNIFER LINDSEY</Typography>
                 </Grid>
