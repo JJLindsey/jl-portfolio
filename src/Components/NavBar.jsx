@@ -41,7 +41,7 @@ function NavBar() {
   const pages = ['Home', 'About', 'Projects']
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: "#FFF" }}>
+    <AppBar position="sticky" sx={{ backgroundColor: { md: "#FFF", xs: 'transparent'}, boxShadow: { xs: 'none', md: 2} }}>
       <Toolbar>
           {/* <Typography variant='h6' color='#000'>Jennifer Lindsey</Typography> */}
           <img src={Logo} alt='logo' width={175}/>
@@ -142,7 +142,7 @@ function NavBar() {
               <IconButton variant="contained" color="primary" component="a" href="mailto:jlindsey010@gmail.com">
                 <EmailIcon sx={{fontSize: "36px"}}/>
               </IconButton>
-              <StyledButton  color="primary" size="large" variant='outlined' endIcon={<DownloadForOfflineIcon />} >RESUME</StyledButton>
+              <StyledButton  color="primary" size="small" variant='outlined' endIcon={<DownloadForOfflineIcon />} >RESUME</StyledButton>
           </Box>
       </Toolbar>
     </AppBar>
