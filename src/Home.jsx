@@ -90,7 +90,7 @@ export default function Home() {
                     <Typography variant="h5" textAlign="left" color="#000" style={{paddingTop: "32px", zIndex: 2}}>
                     Frontend engineer with a design soul, passionate about crafting functional, beautiful and intuitive user experiences.  <br />
                 </Typography>
-                <Typography variant="h6" textAlign="left" color="black" style={{paddingTop: "32px", zIndex: 2}}> Curiosity brought me to programming and it keeps me passionate about learning. A highly collaborative and a strategic thinker, always seeking groundbreaking projects.</Typography>
+                <Typography variant="h6" textAlign="left" color="black" style={{paddingTop: "32px", zIndex: 2}}> A highly collaborative and strategic thinker, always seeking groundbreaking projects.</Typography>
                 </Grid>
                 </Grid>
             {/* <svg viewBox="0 0 500 200" style={{ width: '100%', position: 'fixed', bottom: 0, left: '0', zIndex: 0 }}>

@@ -180,7 +180,7 @@ export default function Portfolio() {
                 component="img"
                 src={project.image}
                 alt={`Image for ${project.name}`}
-                sx={{height: 230, color: 'black'}}
+                sx={{height: 225, color: 'black'}}
               />
               <CardContent>
                 <Typography variant="body2" color="#FFF">

@@ -1,11 +1,13 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
-import AppBar from '@mui/material/AppBar';
+import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
+import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
-import { IconButton, Typography, Button, Box, styled } from '@mui/material';
+import { IconButton, Button, Box, styled, Menu, MenuItem, Typography} from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import EmailIcon from '@mui/icons-material/Email';
-import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
+import EmailIcon from '@mui/icons-material/Email'
+import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline'
+import MenuIcon from '@mui/icons-material/Menu'
+import Logo from '../assets/logoJLBauhaus.png'
 
 const StyledButton = styled(Button)(({theme}) => ({
   transition: theme.transitions.create('all', {
@@ -20,12 +22,100 @@ const StyledButton = styled(Button)(({theme}) => ({
 
 function NavBar() {
 
+  const [anchorElNav, setAnchorElNav] = useState(null)
+  const [anchorElContact, setAnchorElContact] = useState(null)
+
+  const handleOpenNavMenu = (e) => {
+    setAnchorElNav(e.currentTarget)
+  }
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null)
+  }
+  const handleOpenContact = (e) => {
+    setAnchorElContact(e.currentTarget)
+  }
+  const handleCloseContact = () => {
+    setAnchorElContact(null)
+  }
+
+  const pages = ['Home', 'About', 'Projects']
+
   return (
     <AppBar position="sticky" sx={{ backgroundColor: "#FFF" }}>
       <Toolbar>
-          <Typography variant='h5' color='#000'>Jennifer Lindsey</Typography>
-            <StyledButton color="primary" component={Link} to="/">
-                    Home
+          {/* <Typography variant='h6' color='#000'>Jennifer Lindsey</Typography> */}
+          <img src={Logo} alt='logo' width={175}/>
+              <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}} >
+                <IconButton
+                  size='large'
+                  aria-label='menu'
+                  onClick={handleOpenNavMenu}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Menu
+                  anchorOrigin={{vertical: 'top', horizontal: 'right'}}
+                  keepMounted
+                  transformOrigin={{vertical: 'top', horizontal: 'right'}}
+                  open={Boolean(anchorElNav)}
+                  onClose={handleCloseNavMenu}
+                >
+                  {pages.map((page) => (
+                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography textAlign='center' component={Link} to={`/${page.toLowerCase()}`} >{page}</Typography>
+                    </MenuItem>
+                  ))}
+                </Menu>
+                {/* contact menu for mobile*/}
+                <Button aria-controls="contact-menu"
+                  aria-haspopup="true"
+                  onClick={handleOpenContact}
+                  sx={{ color: 'primary.main', ml: 2 }}
+                >
+                  Contact 
+                </Button>
+                <Menu
+                  anchorEl={anchorElContact}
+                  open={Boolean(anchorElContact)}
+                  onClose={handleCloseContact}
+                  anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+                  transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+                >
+                  <MenuItem onClick={handleCloseContact}>
+                    <IconButton  variant="contained"
+                      color="primary"
+                      component="a"
+                      href="http://www.linkedin.com/in/jennifer-lindsey010"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      <LinkedInIcon  sx={{ fontSize: "38px" }} />
+                    </IconButton>
+                  </MenuItem>
+                  <MenuItem onClick={handleCloseContact}>
+                <IconButton
+                  variant="contained"
+                  color="primary"
+                  component="a"
+                  href="mailto:jlindsey010@gmail.com"
+                >
+                  <EmailIcon sx={{ fontSize: "36px" }} />
+                </IconButton>
+              </MenuItem>
+              <MenuItem onClick={handleCloseContact}>
+                <StyledButton
+                  color="primary"
+                  size="large"
+                  variant="outlined"
+                  endIcon={<DownloadForOfflineIcon />}
+                >
+                  RESUME
+                </StyledButton>
+              </MenuItem>
+                </Menu>
+              </Box>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, flexGrow: 1 }}>
+            <StyledButton color="primary" component={Link} to="/" sx={{ml: 4}}>
+            Home
             </StyledButton>
             <StyledButton color="primary" component={Link} to="/about">
                 About
@@ -33,9 +123,9 @@ function NavBar() {
             <StyledButton color="primary" component={Link} to="/projects">
                 Projects
             </StyledButton>
-            <StyledButton color="primary" component={Link} to="/contact">
+            {/* <StyledButton color="primary" component={Link} to="/contact">
                 Contact
-            </StyledButton>
+            </StyledButton> */}
             <Box sx={{ flexGrow: 1 }}/>
               <IconButton
                 variant="contained"
@@ -51,9 +141,7 @@ function NavBar() {
                 <EmailIcon sx={{fontSize: "36px"}}/>
               </IconButton>
               <StyledButton  color="primary" size="large" variant='outlined' endIcon={<DownloadForOfflineIcon />} >RESUME</StyledButton>
-                      {/* <a href="#" className="btn btn-light">
-                      Download
-                      </a> */}
+          </Box>
       </Toolbar>
     </AppBar>
   )

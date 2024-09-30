@@ -124,16 +124,16 @@ export default function About() {
         >
           <Box sx={{ position: 'relative', width: 'fit-content', margin: '0 auto' }}>
             <FrameRectangle color="#d71920" sx={{ top: -42, left: -45 }} />
-            <FrameRectangle color="#006aff" sx={{ top: 150, left: -45 }} />
-            <FrameRectangle color="#ffda00" sx={{ top: 200, left: 150 }} />
-            <img src={MyImage} width={300} alt="portrait" style={{ position: 'relative', zIndex: 1 }} />
+            <FrameRectangle color="#006aff" sx={{ top: 35, left: -45 }} />
+            <FrameRectangle color="#ffda00" sx={{ top: 80, left: 50 }} />
+            <img src={MyImage} width={200} alt="portrait" style={{ position: 'relative', zIndex: 1 }} />
           </Box>
           {/* <img src={MyImage} width={300} alt="portrait"/> */}
           <Typography variant="h6" sx={{color: 'grey.800', mt: 6}}>
           <p><strong>Visualizing the Future, Building it in Code: </strong>
             As a designer-turned-frontend engineer, I bridge the gap between imagination and reality.</p>
             <p><strong>Fueled by Curiosity, Driven by Impact: </strong>
-            A lifelong learner, I'm energized by the power of collaboration. I'm a strategic thinker who builds bridges across teams, uniting them around shared goals. </p>
+            Curiosity brought me to programming and it keeps me passionate about learning. A lifelong learner, I'm energized by the power of collaboration. I'm a strategic thinker who builds bridges across teams, uniting them around shared goals. </p>
           </Typography>
         </Box>
         <Grid container spacing={2.5}>
