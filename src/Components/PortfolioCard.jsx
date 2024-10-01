@@ -15,6 +15,7 @@ import reactlogo from '../assets/logo192.png'
 import jslogo from '../assets/icons8-javascript-48.png'
 import clogo from '../assets/icons8-c-sharp-logo-48.png'
 import vuelogo from '../assets/icons8-vue-js-48.png'
+import { CallMade } from '@mui/icons-material';
 
 const StyledCard = styled(Card)(({ theme }) => ({
   th: 200,
@@ -90,14 +91,15 @@ const projects = [
     testimonial:
       "Music Producer needed a website to advertise his services and showcase his work",
   },
-  {
-    avatar: <img src={clogo} alt="c# logo" height={48}/>,
-    name: 'C# Memory Game',
-    image: 'MemoryGame.png',
-    project: 'simple memory game app with timer',
-    testimonial:
-      " ",
-  },
+  // {
+  //   avatar: <img src={clogo} alt="c# logo" height={48}/>,
+  //   name: 'C# Memory Game',
+  //   image: 'MemoryGame.png',
+  //   project: 'simple memory game app with timer',
+  //   url:'',
+  //   testimonial:
+  //     " ",
+  // },
   {
     avatar: <img src={jslogo} alt="react logo" height={48}/>,
     name: 'Current Films app',
@@ -108,14 +110,14 @@ const projects = [
       "",
     width: '40%'
   },
-  {
-    avatar: <Avatar alt="vue logo" src={vuelogo} height={48}/>,
-    name: 'Calculator',
-    project: 'vue.js calculator',
-    image: 'vue-calculator.png',
-    testimonial:
-      "",
-    },
+  // {
+  //   avatar: <Avatar alt="vue logo" src={vuelogo} height={48}/>,
+  //   name: 'Calculator',
+  //   project: 'vue.js calculator',
+  //   image: 'vue-calculator.png',
+  //   testimonial:
+  //     "",
+  //   },
   {
     avatar: <Avatar alt="js logo" src={jslogo} />,
     name: 'Password Strength',
@@ -125,14 +127,14 @@ const projects = [
     testimonial:
       "",
   },
-  {
-    avatar: <Avatar alt="react logo" src={reactlogo}/>,
-    name: 'In Progress',
-    project: 'UXUI Design',
-    image: 'placeholder.png',
-    testimonial:
-      "",
-  },
+  // {
+  //   avatar: <Avatar alt="react logo" src={reactlogo}/>,
+  //   name: 'In Progress',
+  //   project: 'UXUI Design',
+  //   image: 'placeholder.png',
+  //   testimonial:
+  //     "",
+  // },
 ];
 
 
@@ -173,9 +175,32 @@ export default function Portfolio() {
                 justifyContent: 'space-between',
                 flexGrow: 1,
                 p: 1,
-                height: 375,
+                height: 450,
               }}
             >
+                <CardHeader
+                  avatar={project.avatar}
+                  // title={projects.name}
+                  // subheader={projects.project}
+                  title={
+                    <Typography variant="h6" align="left">
+                        {project.name}
+                    </Typography>
+                }
+                subheader={
+                    <Typography variant="body2" align="left">
+                        {project.project}
+                    </Typography>
+                }
+                >
+                </CardHeader>
+                <Button
+                    href={project.url}
+                    target="_blank"
+                    endIcon={<CallMade />}
+                  >
+                    view project
+                </Button>
               <CardMedia
                 component="img"
                 src={project.image}
@@ -188,9 +213,10 @@ export default function Portfolio() {
                 </Typography>
                 <Button variant="contained" color="primary"
                     href={project.url} target="_blank"
-                  >{project.name}</Button>
+                  >{project.name}
+                </Button>
               </CardContent>
-              <Box
+              {/* <Box
                 sx={{
                   display: 'flex',
                   flexDirection: 'row',
@@ -212,7 +238,7 @@ export default function Portfolio() {
                     </Typography>
                 }
                 />
-              </Box>
+              </Box> */}
             </StyledCard>
           </Grid>
         ))}

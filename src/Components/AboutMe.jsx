@@ -116,26 +116,33 @@ export default function About() {
           gap: { xs: 3, sm: 6 },
         }}
       >
-        <Box
+        <Grid
           sx={{
+            display: 'flex',
+            alignItems: 'center',
             width: { sm: '100%', md: '60%' },
             textAlign: { sm: 'left', md: 'left' },
           }}
         >
           <Box sx={{ position: 'relative', width: 'fit-content', margin: '0 auto' }}>
             <FrameRectangle color="#d71920" sx={{ top: -42, left: -45 }} />
-            <FrameRectangle color="#006aff" sx={{ top: 35, left: -45 }} />
-            <FrameRectangle color="#ffda00" sx={{ top: 80, left: 50 }} />
-            <img src={MyImage} width={200} alt="portrait" style={{ position: 'relative', zIndex: 1 }} />
+            <FrameRectangle color="#006aff" sx={{ top: 7, left: -45 }} />
+            <FrameRectangle color="#ffda00" sx={{ top: 45, left: 15 }} />
+            <img src={MyImage} width={175} alt="portrait" style={{ position: 'relative', zIndex: 1 }} />
           </Box>
-          {/* <img src={MyImage} width={300} alt="portrait"/> */}
-          <Typography variant="h6" sx={{color: 'grey.800', mt: 6}}>
-          <p><strong>Visualizing the Future, Building it in Code: </strong>
-            As a designer-turned-frontend engineer, I bridge the gap between imagination and reality.</p>
-            <p><strong>Fueled by Curiosity, Driven by Impact: </strong>
-            Curiosity brought me to programming and it keeps me passionate about learning. A lifelong learner, I'm energized by the power of collaboration. I'm a strategic thinker who builds bridges across teams, uniting them around shared goals. </p>
+          <Typography variant="h3" sx={{color: 'grey.800', mt: 6}}>
+          {/* <p><strong>Visualizing the Future, Building it in Code: </strong>
+            As a designer-turned-frontend engineer, I bridge the gap between imagination and reality.</p> */}
+            Fueled by Curiosity
           </Typography>
-        </Box>
+        </Grid>
+        <Grid sx={{margin: '0 225px'}}>
+          <Typography>
+          {/* <p><strong>Visualizing the Future, Building it in Code: </strong> */}
+          As a designer-turned-frontend engineer, I bridge the gap between imagination and reality
+          Curiosity brought me to programming and it keeps me passionate about learning. A lifelong learner, I'm energized by the power of collaboration. I'm a strategic thinker who builds bridges across teams, uniting them around shared goals.
+          </Typography>
+        </Grid>
         <Grid container spacing={2.5}>
           {items.map((item, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
