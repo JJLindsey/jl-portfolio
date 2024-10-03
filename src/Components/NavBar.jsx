@@ -142,7 +142,18 @@ function NavBar() {
               <IconButton variant="contained" color="primary" component="a" href="mailto:jlindsey010@gmail.com">
                 <EmailIcon sx={{fontSize: "36px"}}/>
               </IconButton>
-              <StyledButton  color="primary" size="small" variant='outlined' endIcon={<DownloadForOfflineIcon />} >RESUME</StyledButton>
+              <StyledButton
+                color="primary"
+                size="small"
+                variant='outlined'
+                component="a"
+                href="/jl-portfolio/JenniferLindseyResume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                endIcon={<DownloadForOfflineIcon />}
+                >
+                  RESUME
+              </StyledButton>
           </Box>
       </Toolbar>
     </AppBar>
