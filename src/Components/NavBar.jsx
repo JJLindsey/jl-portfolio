@@ -150,7 +150,7 @@ function NavBar() {
                 href="/jl-portfolio/JenniferLindseyResume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                endIcon={<DownloadForOfflineIcon />}
+                startIcon={<DownloadForOfflineIcon />}
                 >
                   RESUME
               </StyledButton>
