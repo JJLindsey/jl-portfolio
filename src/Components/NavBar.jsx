@@ -41,7 +41,7 @@ function NavBar() {
   const pages = ['Home', 'About', 'Projects']
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: { md: "#FFF", xs: 'transparent'}, boxShadow: { xs: 'none', md: 2} }}>
+    <AppBar position="sticky" sx={{ backgroundColor: { md: "#FFF", xs: 'transparent'}, boxShadow: { xs: 'none', sm: 'none', md: 'none'} }}>
       <Toolbar>
           {/* <Typography variant='h6' color='#000'>Jennifer Lindsey</Typography> */}
           <img src={Logo} alt='logo' width={175}/>

@@ -15,6 +15,13 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 
+import htmlIcon from '../assets/icons8-html-48.png'
+import cssIcon from '../assets/css-icon.png'
+import reactIcon from '../assets/logo192.png'
+import jsIcon from '../assets/icons8-javascript-48.png'
+import cSharp from '../assets/icons8-c-sharp-logo-48.png'
+import figmaIcon from '../assets/icons8-figma-48.png'
+
 const shimmerAnimation = keyframes`
   0% {
     transform: translateX(-100%);
@@ -67,10 +74,10 @@ const items = [
       ' I thrive in collaborative environments to ensure project success. ',
   },
   {
-    icon: <QueryStatsRoundedIcon sx={{ fontSize: '2.5rem', color: '#ffda00'}}/>,
+    icon: <QueryStatsRoundedIcon sx={{ fontSize: '3.5rem', color: '#ffda00'}}/>,
     title: 'Empowering Interactions',
-    description:
-      'I design user interfaces with intuitive navigation, clear information, and captivating visuals. The result? UIs that empower users and deliver a seamless experience.'
+    // description:
+    //   'I design user interfaces with intuitive navigation, clear information, and captivating visuals. The result? UIs that empower users and deliver a seamless experience.'
   },
 ]
 
@@ -133,15 +140,23 @@ export default function About() {
           <Typography variant="h3" sx={{color: 'grey.800', mt: 6}}>
           {/* <p><strong>Visualizing the Future, Building it in Code: </strong>
             As a designer-turned-frontend engineer, I bridge the gap between imagination and reality.</p> */}
-            Fueled by Curiosity
+            Design & Code
           </Typography>
         </Grid>
         <Grid sx={{margin: '0 225px'}}>
           <Typography>
           {/* <p><strong>Visualizing the Future, Building it in Code: </strong> */}
-          As a designer-turned-frontend engineer, I bridge the gap between imagination and reality
+          As a designer-turned-frontend engineer, I bridge the gap between imagination and reality.
           Curiosity brought me to programming and it keeps me passionate about learning. A lifelong learner, I'm energized by the power of collaboration. I'm a strategic thinker who builds bridges across teams, uniting them around shared goals.
           </Typography>
+        </Grid>
+        <Grid>
+          <img src={reactIcon} alt='react icon' width={64}/>
+          <img src={jsIcon} alt='javascript icon' width={64}/>
+          <img src={htmlIcon} alt='html icon' width={64}/>
+          <img src={cssIcon} alt='css icon' width={64}/>
+          <img src={figmaIcon} alt='figma icon' width={64}/>
+          <img src={cSharp} alt='C Sharp icon' width={64}/>
         </Grid>
         <Grid container spacing={2.5}>
           {items.map((item, index) => (
