@@ -49,18 +49,49 @@ export default function Home() {
             //paddingTop: '100px'
             }}
             >
-            <Grid spacing={1} useFlexGap sx={{ width: { xs: '100%', sm: '80%' }, display: 'flex', flexDirection: 'column',  paddingTop: { xs: '100px', sm: '200px' },
-              paddingLeft: { xs: '20px', sm: '270px' }, }}>
+            <Grid
+                spacing={1}
+                useFlexGap
+                sx={{ width: { xs: '100%', sm: '80%' }, display: 'flex', flexDirection: 'column',  paddingTop: { xs: '100px', sm: '200px' },
+                paddingLeft: { xs: '20px', sm: '270px' }, }}
+            >
                 <Grid item>
-                    <Typography variant='h3'  fontFamily="Noto Sans" fontWeight="600" >JENNIFER LINDSEY</Typography>
+                    <Typography variant='h3' fontFamily="Noto Sans" fontWeight="600"
+                        sx={{ 
+                            fontSize: {
+                                xs: '1.5rem',  
+                                sm: '2rem',
+                                md: '3.5rem',  // Default size for larger screens
+                                },
+                            color: '#000', paddingTop: '5px'
+                        }}>
+                        JENNIFER LINDSEY
+                    </Typography>
                 </Grid>
-                <Grid item>
+                <Grid item sx={{display: 'inline-flex'}}>
                     <Typography
                     component="span"
                     variant="h3"
-                    sx={{display: "flex", alignContent: "center"}}
+                    sx={{display: "flex",
+                        alignContent: "center", 
+                        alignItems: "center", 
+                        fontSize: {
+                        xs: '1.2rem',  
+                        sm: '1.5rem',
+                        md: '3rem',    
+                        },
+                    }}
                     >
-                    <CodeIcon sx={{fontSize: '50px', color: '#000', paddingTop: '5px'}}/>
+                    <CodeIcon
+                        sx={{ 
+                            fontSize: {
+                                xs: '30px',  // Smaller icon for mobile
+                                sm: '40px',  // Medium size for tablets
+                                md: '50px',  // Default size for larger screens
+                            },
+                            color: '#000', paddingTop: '5px'
+                        }}
+                    />
                             not just{' '}
                         <AnimatePresence mode="wait">
                             <motion.span
@@ -69,12 +100,18 @@ export default function Home() {
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: -20, opacity: 0 }}
                             transition={{ duration: 0.3 }}
-                            style={{ marginLeft: '7px', marginRight: '7px', color: "#006aff", fontWeight: 'bold' }}
+                            style={{ marginLeft: '8px', marginRight: '15px', color: "#006aff", fontWeight: 'bold', fontSize: 'inherit',
+                                width: {
+                                    xs: '47px',   // Smaller for mobile
+                                    sm: '100px',  // Medium for tablets
+                                    md: '118px',  // Fixed for desktop
+                                },
+                            }}
                             >
                             {word}
                             </motion.span>
                         </AnimatePresence>
-                        {' '}but{' '}
+                         {' '}but{' '}
                         <AnimatePresence mode="wait">
                             <motion.span
                             key={word === 'code' ? 'craft' : 'code'}
@@ -82,12 +119,40 @@ export default function Home() {
                             animate={{ y: 0, opacity: 1 }}
                             exit={{ y: -20, opacity: 0 }}
                             transition={{ duration: 0.3 }}
-                            style={{ marginLeft: '7px', color: "#006aff", fontWeight: 'bold' }}
+                            style={{ 
+                                marginLeft: '15px',
+                                color: "#006aff",
+                                fontWeight: 'bold',
+                                width: {
+                                    xs: '47px',   // Smaller for mobile
+                                    sm: '100px',  // Medium for tablets
+                                    md: '118px',  // Fixed for desktop
+                                },
+                            }}
                             >
                             {word === 'code' ? 'craft' : 'code'}
                             </motion.span>
-                        </AnimatePresence>   
-                        <img src={CloseTag} style={{ color: '#000', paddingTop: '5px', paddingLeft: '10px' }} height={50} alt='icon'/>
+                        </AnimatePresence>
+                        <Box
+                          component="img"
+                          src={CloseTag}
+                          sx={{ color: '#000', paddingTop: '5px', paddingLeft: '10px', 
+                            height: {
+                            xs: '30px',  // Smaller icon for mobile
+                            sm: '40px',  // Medium size for tablets
+                            md: '50px',  // Default size for larger screens
+                            }, 
+                            width: 'auto'
+                            }} alt='icon'
+                        /> 
+                        {/* <img src={CloseTag} sx={{ color: '#000', paddingTop: '5px', paddingLeft: '10px', 
+                                height: {
+                                xs: '30px',  // Smaller icon for mobile
+                                sm: '40px',  // Medium size for tablets
+                                md: '50px',  // Default size for larger screens
+                                }, 
+                                width: 'auto'
+                                }} alt='icon'/> */}
                     </Typography>
                 </Grid>
                     <Grid item>

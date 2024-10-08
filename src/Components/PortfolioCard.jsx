@@ -13,9 +13,9 @@ import {motion} from 'framer-motion'
 
 import reactlogo from '../assets/logo192.png'
 import jslogo from '../assets/icons8-javascript-48.png'
-import clogo from '../assets/icons8-c-sharp-logo-48.png'
-import vuelogo from '../assets/icons8-vue-js-48.png'
-import { CallMade } from '@mui/icons-material';
+// import clogo from '../assets/icons8-c-sharp-logo-48.png'
+// import vuelogo from '../assets/icons8-vue-js-48.png'
+// import { CallMade } from '@mui/icons-material';
 
 const StyledCard = styled(Card)(({ theme }) => ({
   th: 200,
@@ -194,13 +194,13 @@ export default function Portfolio() {
                 }
                 >
                 </CardHeader>
-                <Button
+                {/* <Button
                     href={project.url}
                     target="_blank"
                     endIcon={<CallMade />}
                   >
                     view project
-                </Button>
+                </Button> */}
               <CardMedia
                 component="img"
                 src={project.image}
