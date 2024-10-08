@@ -51,15 +51,15 @@ const items = [
   },
   {
     icon: <ConstructionRoundedIcon sx={{ fontSize: '2.5rem', color: '#d71920'}}/>,
-    title: 'Perfomance Building',
+    title: 'Build High-Performance Components',
     description:
-      'Crafting high-performing Frontend components for complex forms, tables, and datagrids to streamline data management and elevate user interactions.',
+      'Crafting high-performing, efficient, and scalable frontend components to streamline data management and elevate user interactions.',
   },
   {
     icon: <DesignServicesIcon sx={{ fontSize: '2.5rem', color: '#006aff'}}/>,
-    title: 'User Experience',
+    title: 'Designing Inclusive User Expereriences',
     description:
-      'I translate my visual instincts into intuitive and efficient user experiences, crafting interfaces that are both beautiful and functional.',
+      'I create accessible and inclusive user interfaces that not only look great but also provide exceptional experiences for all users.'
   },
   {
     icon: <AutoFixHighRoundedIcon sx={{ fontSize: '2.5rem', color: '#d71920'}}/>,
@@ -69,15 +69,15 @@ const items = [
   },
   {
     icon: <GroupsIcon sx={{ fontSize: '2.5rem', color: '#006aff'}}/>,
-    title: 'Collaborative',
+    title: 'Collaborate for Impact',
     description:
-      ' I thrive in collaborative environments to ensure project success. ',
+      'Passionate about collaboration, I contribute to successful projects by fostering strong teamwork and open communication.',
   },
   {
-    icon: <QueryStatsRoundedIcon sx={{ fontSize: '3.5rem', color: '#ffda00'}}/>,
-    title: 'Empowering Interactions',
-    // description:
-    //   'I design user interfaces with intuitive navigation, clear information, and captivating visuals. The result? UIs that empower users and deliver a seamless experience.'
+    icon: <QueryStatsRoundedIcon sx={{ fontSize: '2.5rem', color: '#ffda00'}}/>,
+    title: 'Crafting Intuitive UI',
+    description:
+      'With a strong foundation in design and development, I specialize in bringing beautiful designs to life through clean, efficient code to ensure that the final product is both visually stunning and user-friendly.'
   },
 ]
 
@@ -138,25 +138,22 @@ export default function About() {
             <img src={MyImage} width={175} alt="portrait" style={{ position: 'relative', zIndex: 1 }} />
           </Box>
           <Typography variant="h3" sx={{color: 'grey.800', mt: 6}}>
-          {/* <p><strong>Visualizing the Future, Building it in Code: </strong>
-            As a designer-turned-frontend engineer, I bridge the gap between imagination and reality.</p> */}
-            Design & Code
+            Fueled by Curiosity
           </Typography>
         </Grid>
         <Grid sx={{margin: '0 225px'}}>
           <Typography>
-          {/* <p><strong>Visualizing the Future, Building it in Code: </strong> */}
           As a designer-turned-frontend engineer, I bridge the gap between imagination and reality.
           Curiosity brought me to programming and it keeps me passionate about learning. A lifelong learner, I'm energized by the power of collaboration. I'm a strategic thinker who builds bridges across teams, uniting them around shared goals.
           </Typography>
         </Grid>
-        <Grid>
+        <Grid sx={{display: 'flex', alignItems: 'center'}}>
           <img src={reactIcon} alt='react icon' width={64}/>
           <img src={jsIcon} alt='javascript icon' width={64}/>
           <img src={htmlIcon} alt='html icon' width={64}/>
-          <img src={cssIcon} alt='css icon' width={64}/>
-          <img src={figmaIcon} alt='figma icon' width={64}/>
-          <img src={cSharp} alt='C Sharp icon' width={64}/>
+          <img src={cssIcon} alt='css icon' width={50}/>
+          <img src={figmaIcon} alt='figma icon' width={58}/>
+          <img src={cSharp} alt='C Sharp icon' width={60}/>
         </Grid>
         <Grid container spacing={2.5}>
           {items.map((item, index) => (
@@ -176,21 +173,11 @@ export default function About() {
                   backgroundColor: 'white',
                   transition: 'box-shadow 0.3s ease-in-out', 
                   "&:hover":{ boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.4)' },
-                  // '&::before': {
-                  //   content: '""',
-                  //   position: 'absolute',
-                  //   top: 0,
-                  //   right: 0,
-                  //   bottom: 0,
-                  //   left: 0,
-                  //   background: 'linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)',
-                  //   animation: `${shimmerAnimation} 3s linear`,
-                  // },
                 }}
               >
                 <Box>{item.icon}</Box>
                 <div>
-                  <Typography fontWeight="medium" gutterBottom>
+                  <Typography fontWeight="600" gutterBottom>
                     {item.title}
                   </Typography>
                   <Typography variant="body2" sx={{ color: 'grey.700' }}>
