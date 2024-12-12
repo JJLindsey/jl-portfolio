@@ -13,6 +13,7 @@ import {motion} from 'framer-motion'
 
 import reactlogo from '../assets/logo192.png'
 import jslogo from '../assets/icons8-javascript-48.png'
+import nextlogo from '../assets/icons8-next.js-48.png'
 // import clogo from '../assets/icons8-c-sharp-logo-48.png'
 // import vuelogo from '../assets/icons8-vue-js-48.png'
 // import { CallMade } from '@mui/icons-material';
@@ -118,6 +119,26 @@ const projects = [
   //   testimonial:
   //     "",
   //   },
+  {
+    avatar: <Avatar alt="next logo" src={nextlogo}/>,
+    name: 'Tracking Component',
+    project: 'Shipping component: updates status in real-time',
+    image: 'orderStatus.png',
+    url: 'https://github.com/JJLindsey/tracking-app',
+    testimonial:
+      "",
+    width: '30%'
+  },
+  {
+    avatar: <Avatar alt="react logo" src={reactlogo}/>,
+    name: 'Shopping Cart',
+    project: 'Shopping cart and Stripe payment',
+    image: 'ProductPageCleanskin.png',
+    url: 'https://github.com/JJLindsey/checkout-stripe',
+    testimonial:
+      "",
+    width: '30%'
+  },
   {
     avatar: <Avatar alt="js logo" src={jslogo} />,
     name: 'Password Strength',
