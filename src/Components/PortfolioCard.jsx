@@ -92,15 +92,6 @@ const projects = [
     testimonial:
       "Music Producer needed a website to advertise his services and showcase his work",
   },
-  // {
-  //   avatar: <img src={clogo} alt="c# logo" height={48}/>,
-  //   name: 'C# Memory Game',
-  //   image: 'MemoryGame.png',
-  //   project: 'simple memory game app with timer',
-  //   url:'',
-  //   testimonial:
-  //     " ",
-  // },
   {
     avatar: <img src={jslogo} alt="react logo" height={48}/>,
     name: 'Current Films app',
