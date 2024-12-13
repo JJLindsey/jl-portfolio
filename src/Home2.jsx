@@ -30,7 +30,7 @@ export default function Home2() {
                 variant="h5"
                 sx={{ mb: 4, mt: { xs: 4, sm: 4} }}
                 >
-                Jennifer Lindsey
+                Jennifer Lindsey | Frontend Engineer
             </Typography>
             <Button
                 variant="contained"

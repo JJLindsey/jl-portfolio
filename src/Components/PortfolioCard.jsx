@@ -16,15 +16,19 @@ import jslogo from '../assets/icons8-javascript-48.png'
 import nextlogo from '../assets/icons8-next.js-48.png'
 // import clogo from '../assets/icons8-c-sharp-logo-48.png'
 // import vuelogo from '../assets/icons8-vue-js-48.png'
-// import { CallMade } from '@mui/icons-material';
+import threeSixtyImage from '../assets/360Home.png'
+import movieImage from '../assets/MovieApp.png'
+import trackingImage from '../assets/orderStatus.png'
+import stripePayImage from '../assets/ProductPageCleanskin.png'
+import passwordImage from '../assets/passwordPage.png'
+import bracketicon from '../assets/bracketPNG.png'
 
 const StyledCard = styled(Card)(({ theme }) => ({
-  th: 200,
+  //th: 200,
   height: 300,
-  background: 'rgba(255, 255, 255, 0.2)',
+  background: 'rgba(255, 255, 255, 0.8)',
   backdropFilter: 'blur(9px)',
-  border: '1px solid rgba(255, 255, 255, 0.3)',
-  boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+  boxShadow: '0 4px 30px rgba(255, 255, 255, 0.5)',
   borderRadius: theme.spacing(2),
   display: 'flex',
   flexDirection: 'column',
@@ -68,7 +72,7 @@ const AnimatedTypography = ({ text, ...props }) => {
     },
   }
   return (
-    <motion.div style={{overflow: "hidden", display: "flex", justifyContent: "center", fontSize: "2em"}}
+    <motion.div style={{overflow: "hidden", display: "flex", justifyContent: "left", fontSize: "2em"}}
       variants={typeContainer}
       initial="hidden"
       animate="visible"
@@ -86,16 +90,17 @@ const projects = [
   {
     avatar: <img src={reactlogo} alt="react logo" height={48}/>,
     name: 'Three Sixty Sessions',
-    image: '360Home.png',
-    project: 'live - music producers site',
+    image: threeSixtyImage,
+    project: 'LIVE - music producer site',
     url: 'https://threesixtysessions.com/',
     testimonial:
       "Music Producer needed a website to advertise his services and showcase his work",
+    navigation: 'Go to Live site'
   },
   {
     avatar: <img src={jslogo} alt="react logo" height={48}/>,
-    name: 'Current Films app',
-    image: 'MovieApp.png',
+    name: 'Current Films',
+    image: movieImage,
     project: 'search films from TMDB API',
     url: "https://jjlindsey.github.io/movie-appJS/",
     testimonial:
@@ -114,7 +119,7 @@ const projects = [
     avatar: <Avatar alt="next logo" src={nextlogo}/>,
     name: 'Tracking Component',
     project: 'Shipping component: updates status in real-time',
-    image: 'orderStatus.png',
+    image: trackingImage,
     url: 'https://github.com/JJLindsey/tracking-app',
     testimonial:
       "",
@@ -124,7 +129,7 @@ const projects = [
     avatar: <Avatar alt="react logo" src={reactlogo}/>,
     name: 'Shopping Cart',
     project: 'Shopping cart and Stripe payment',
-    image: 'ProductPageCleanskin.png',
+    image: stripePayImage,
     url: 'https://github.com/JJLindsey/checkout-stripe',
     testimonial:
       "",
@@ -134,7 +139,7 @@ const projects = [
     avatar: <Avatar alt="js logo" src={jslogo} />,
     name: 'Password Strength',
     project: 'image clears as password gets stronger',
-    image: 'passwordPage.png',
+    image: passwordImage,
     url: 'https://jjlindsey.github.io/password-str/',
     testimonial:
       "",
@@ -161,20 +166,23 @@ export default function Portfolio() {
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
+        alignItems: 'left',
         gap: { xs: 3, sm: 6 },
       }}
     >
       <Box
         sx={{
           width: { sm: '100%', md: '60%' },
-          textAlign: { sm: 'left', md: 'center' },
+          textAlign: { sm: 'left', md: 'left' },
         }}
       >
-        <Typography variant="h3" color="primary">
+        <Typography variant="h4" color='#CD1C18'>
           Projects
         </Typography>
-        <AnimatedTypography variant="h3" text="Here is a look at some of my work" sx={{ fontWeight: 'bold', letterSpacing: 1 }}/>
+        <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '25px', marginTop: "-10px"}}></img>
+      </Box>
+      <Box>
+      <AnimatedTypography variant="h3" text="Here is a look at some of my work" sx={{ fontWeight: 'bold', letterSpacing: 1 }}/>
       </Box>
       <Grid container spacing={3}>
         {projects.map((project, index) => (
@@ -215,9 +223,9 @@ export default function Portfolio() {
                 </Button> */}
               <CardMedia
                 component="img"
-                src={project.image}
+                image={project.image}
                 alt={`Image for ${project.name}`}
-                sx={{height: 225, color: 'black'}}
+                sx={{height: 250}}
               />
               <CardContent>
                 <Typography variant="body2" color="#FFF">

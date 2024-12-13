@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-//import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+
+import AnimatedCard from './AnimatedCard';
 import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
 import ConstructionRoundedIcon from '@mui/icons-material/ConstructionRounded';
 import QueryStatsRoundedIcon from '@mui/icons-material/QueryStatsRounded';
@@ -24,25 +24,59 @@ import figmaIcon from '../assets/icons8-figma-48.png'
 import { Divider } from '@mui/material';
 import bracketicon from '../assets/bracketPNG.png'
 
-const shimmerAnimation = keyframes`
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-`;
+// const shimmerAnimation = keyframes`
+//   0% {
+// 		background-position: 0% 50%;
+// 	}
+// 	50% {
+// 		background-position: 100% 50%;
+// 	}
+// 	100% {
+// 		background-position: 0% 50%;
+// 	}
+// `;
 
-const ShimmerOverlay = styled('div')(({theme}) => ({
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-  background: 'linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 70%)',
-  zIndex: 9999,
-  animation: `${shimmerAnimation} 3s ease-out forwards`,
-}))
+// const AnimatedCard = ({ index, children }) => {
+//   return (
+//     <Card
+//       direction="column"
+//       sx={{
+//         p: 1,
+//         height: '100%',
+//         position: 'relative',
+//         backgroundColor: index % 2 === 0 ? "#161616" : "#CD1C18",
+//         borderRadius: '3px',
+//         '&::before': {
+//           content: '""',
+//           position: 'absolute',
+//           top: '-3px',
+//           left: '-3px',
+//           height: 'calc(100% + 6px)',
+//           width: 'calc(100% + 6px)',
+//           background: 'linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)',
+//           borderRadius: '6px',
+//           zIndex: -1,
+//           animation: `${shimmerAnimation} 3s ease alternate infinite`,
+//           backgroundSize: '300% 300%',
+//         }
+//       }}
+//     >
+//       {children}
+//     </Card>
+//   );
+// };
+
+// const ShimmerOverlay = styled('div')(({theme}) => ({
+//   position: 'fixed',
+//   top: 0,
+//   left: 0,
+//   right: 0,
+//   bottom: 0,
+//   //background: 'linear-gradient(to right, rgba(217,217,217,0.5) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.5) 70%)',
+//   background: 'linear-gradient(-45deg, rgba(217,217,217,0.3) 0%, rgba(70,70,70,0.5) 35%, rgba(0,0,0,0.5) 50%)',
+//   zIndex: 9999,
+//   animation: `${shimmerAnimation} 15s ease-out forwards`,
+// }))
 
 const items = [
   // {
@@ -79,35 +113,35 @@ const items = [
     icon: <QueryStatsRoundedIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
     title: 'Crafting Intuitive UI',
     description:
-      'With a strong foundation in design and development, I specialize in bringing beautiful designs to life through clean, efficient code to ensure that the final product is both visually stunning and user-friendly.'
+      'With a strong foundation in design, I specialize in bringing designs to life to ensure that the final product is both visually stunning & user-friendly.'
   },
 ]
 
-const FrameRectangle = ({ color, ...props }) => (
-  <Box
-    sx={{
-      position: 'absolute',
-      width: '5px',
-      height: '5px',
-      border: `9px solid ${color}`,
-      ...props.sx
-    }}
-  />
-)
+// const FrameRectangle = ({ color, ...props }) => (
+//   <Box
+//     sx={{
+//       position: 'absolute',
+//       width: '5px',
+//       height: '5px',
+//       border: `9px solid ${color}`,
+//       ...props.sx
+//     }}
+//   />
+// )
 
 export default function About() {
-  const [showShimmer, setShowShimmer] = useState(true)
+  // const [showShimmer, setShowShimmer] = useState(true)
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowShimmer(false)
-    }, 1500)
-    return () => clearTimeout(timer)
-  }, [])
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowShimmer(false)
+  //   }, 1500)
+  //   return () => clearTimeout(timer)
+  // }, [])
 
   return (
     <>
-    {showShimmer && <ShimmerOverlay />}
+    {/* {showShimmer && <ShimmerOverlay />} */}
     <Box
       id="about"
       sx={{
@@ -126,25 +160,66 @@ export default function About() {
           gap: { xs: 3, sm: 6 },
         }}
       >
+        {/* <Grid
+          sx={{
+            display: 'flex',
+            alignItems: 'left',
+            width: { sm: '100%'},
+            textAlign: { sm: 'left', md: 'left' },
+          }}
+        > */}
+
+          {/* <Box sx={{ position: 'relative', width: 'fit-content', margin: '0 auto' }}>
+            <FrameRectangle color="#d71920" sx={{ top: -42, left: -45 }} />
+            <FrameRectangle color="#006aff" sx={{ top: 7, left: -45 }} />
+            <FrameRectangle color="#ffda00" sx={{ top: 45, left: 15 }} />
+            <img src={MyImage} width={175} alt="portrait" style={{ position: 'relative', zIndex: 1 }} />
+          </Box> */}
+          
+        {/* </Grid> */}
+        <Grid container>
+          <Grid item>
+            <Typography align='left' variant="h4" sx={{ mt: 8, color: '#CD1C18'}}>
+              About Me
+            </Typography>
+            <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '45px', marginTop: "-10px"}}></img>
+            <Typography align='left' variant="h3" sx={{ mt: 8, mb: 4, fontWeight: 'bold'}}>
+              Curiosity is my superpower
+            </Typography>
+            <Typography align='left' variant='h6' component='p' sx={{mb:2}}>
+            As a designer-turned-frontend engineer, I bridge the gap between imagination and reality.
+            </Typography>
+            <Typography align='left' variant='h6' component='p' sx={{mr: 16}}>
+            Curiosity brought me to programming and it keeps me passionate about learning. A lifelong learner, I'm energized by the power of collaboration. I'm a strategic thinker who builds bridges across teams, uniting them around shared goals.
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid sx={{display: 'flex', alignItems: 'center', mb: 4}}>
+          <img src={reactIcon} alt='react icon' width={64}/>
+          <img src={jsIcon} alt='javascript icon' width={64}/>
+          <img src={htmlIcon} alt='html icon' width={64}/>
+          <img src={cssIcon} alt='css icon' width={50}/>
+          <img src={figmaIcon} alt='figma icon' width={58}/>
+          <img src={cSharp} alt='C Sharp icon' width={60}/>
+        </Grid>
         <Grid container spacing={2.5}>
           {items.map((item, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card
-                direction="column"
-                color="white"
-                //component={Card}
-                spacing={1}
-                useFlexGap
-                sx={{
-                  p: 1,
-                  height: '100%',
-                  background: 'transparent',
-                  backgroundColor: index % 2 === 0 ? "#161616" : "#CD1C18",
-                  transition: 'zoom 0.3s ease-in-out', 
-                  "&:hover":{ boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.4)' },
-                }}
+              <AnimatedCard
+                index={index}
+                item={item}
+                // direction="column"
+                // color="white"
+                // spacing={2}
+                // sx={{
+                //   p: 1,
+                //   height: '100%',
+                //   backgroundColor: index % 2 === 0 ? "#161616" : "#CD1C18",
+                //   // transition: 'zoom 0.3s ease-in-out', 
+                //   // "&:hover":{ boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.4)' },
+                // }}
               >
-                <Box>{item.icon}</Box>
+                {/* <Box>{item.icon}</Box>
                 <div>
                   <Typography align='left' fontWeight="600" gutterBottom sx={{ color: '#fff', fontSize: '1.5rem', pt: 3, mb: 2 }}>
                     {item.title}
@@ -153,50 +228,10 @@ export default function About() {
                   <Typography align='left' sx={{ color: '#fff', pb: 3 }}>
                     {item.description}
                   </Typography>
-                </div>
-              </Card>
+                </div> */}
+              </AnimatedCard>
             </Grid>
           ))}
-        </Grid>
-        <Grid
-          sx={{
-            display: 'flex',
-            alignItems: 'left',
-            width: { sm: '100%'},
-            textAlign: { sm: 'left', md: 'left' },
-          }}
-        >
-          {/* <Box sx={{ position: 'relative', width: 'fit-content', margin: '0 auto' }}>
-            <FrameRectangle color="#d71920" sx={{ top: -42, left: -45 }} />
-            <FrameRectangle color="#006aff" sx={{ top: 7, left: -45 }} />
-            <FrameRectangle color="#ffda00" sx={{ top: 45, left: 15 }} />
-            <img src={MyImage} width={175} alt="portrait" style={{ position: 'relative', zIndex: 1 }} />
-          </Box> */}
-          
-        </Grid>
-        <Grid>
-          <Typography align='left' variant="h5" sx={{ mt: 8, color: '#CD1C18'}}>
-            About Me
-          </Typography>
-          <img src={bracketicon} alt='icon' width='108px' align="left" style={{marginLeft: '20px', marginTop: "-5px"}}></img>
-          <Typography align='left' variant="h3" sx={{ mt: 8, mb: 4}}>
-            Fueled by Curiosity
-          </Typography>
-          <Typography align='left' variant='body1' component='p'>
-          As a designer-turned-frontend engineer, I bridge the gap between imagination and reality.
-          Curiosity brought me to programming and it keeps me passionate about learning. A lifelong learner, I'm energized by the power of collaboration. I'm a strategic thinker who builds bridges across teams, uniting them around shared goals.
-          </Typography>
-          <Typography align='center' variant="h4" sx={{ mt: 4}}>
-            Tech
-          </Typography>
-        </Grid>
-        <Grid sx={{display: 'flex', alignItems: 'center'}}>
-          <img src={reactIcon} alt='react icon' width={64}/>
-          <img src={jsIcon} alt='javascript icon' width={64}/>
-          <img src={htmlIcon} alt='html icon' width={64}/>
-          <img src={cssIcon} alt='css icon' width={50}/>
-          <img src={figmaIcon} alt='figma icon' width={58}/>
-          <img src={cSharp} alt='C Sharp icon' width={60}/>
         </Grid>
       </Container>
     </Box>

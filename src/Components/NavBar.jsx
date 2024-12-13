@@ -53,7 +53,7 @@ function NavBar() {
   // ]
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: { md: "#000", xs: 'transparent'}, boxShadow: { xs: 'none', sm: 'none', md: 'none'} }}>
+    <AppBar position="sticky" sx={{ backgroundColor: { md: "#000", xs: '#000'}, boxShadow: { xs: 'none', sm: 'none', md: 'none'} }}>
       <Toolbar>
           <img src={Logo} alt='logo' width={175}/>
             {/*Mobile Menu*/}
