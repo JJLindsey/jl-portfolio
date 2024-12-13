@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Button, Box, Container, Divider } from '@mui/material'
+import { Typography, Button, Box, Container } from '@mui/material'
 import HeroImage from '../src/assets/jlHeadshotblack.png'
 import RectangleIcon from '@mui/icons-material/Rectangle';
 

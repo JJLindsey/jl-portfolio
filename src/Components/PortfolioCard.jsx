@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { CardMedia, Button } from '@mui/material'
+import { CardMedia, Button, Divider, CardActions } from '@mui/material'
 import {styled} from '@mui/material/styles'
 import {motion} from 'framer-motion'
 
@@ -22,6 +22,7 @@ import trackingImage from '../assets/orderStatus.png'
 import stripePayImage from '../assets/ProductPageCleanskin.png'
 import passwordImage from '../assets/passwordPage.png'
 import bracketicon from '../assets/bracketPNG.png'
+import { CallMade } from '@mui/icons-material';
 
 const StyledCard = styled(Card)(({ theme }) => ({
   //th: 200,
@@ -91,7 +92,7 @@ const projects = [
     avatar: <img src={reactlogo} alt="react logo" height={48}/>,
     name: 'Three Sixty Sessions',
     image: threeSixtyImage,
-    project: 'LIVE - music producer site',
+    project: 'Live - Music producer\'s site',
     url: 'https://threesixtysessions.com/',
     testimonial:
       "Music Producer needed a website to advertise his services and showcase his work",
@@ -101,11 +102,12 @@ const projects = [
     avatar: <img src={jslogo} alt="react logo" height={48}/>,
     name: 'Current Films',
     image: movieImage,
-    project: 'search films from TMDB API',
+    project: 'Get current films & search films from TMDB API',
     url: "https://jjlindsey.github.io/movie-appJS/",
     testimonial:
       "",
-    width: '40%'
+    width: '40%',
+    navigation: 'Go to Live site'
   },
   // {
   //   avatar: <Avatar alt="vue logo" src={vuelogo} height={48}/>,
@@ -117,32 +119,35 @@ const projects = [
   //   },
   {
     avatar: <Avatar alt="next logo" src={nextlogo}/>,
-    name: 'Tracking Component',
+    name: 'Tracking component',
     project: 'Shipping component: updates status in real-time',
     image: trackingImage,
     url: 'https://github.com/JJLindsey/tracking-app',
     testimonial:
       "",
-    width: '30%'
+    width: '30%',
+    navigation: 'GitHub'
   },
   {
     avatar: <Avatar alt="react logo" src={reactlogo}/>,
-    name: 'Shopping Cart',
-    project: 'Shopping cart and Stripe payment',
+    name: 'Cart & Stripe Pay component',
+    project: 'Shopping cart with Stripe payment',
     image: stripePayImage,
     url: 'https://github.com/JJLindsey/checkout-stripe',
     testimonial:
       "",
-    width: '30%'
+    width: '30%',
+    navigation: 'GitHub'
   },
   {
     avatar: <Avatar alt="js logo" src={jslogo} />,
-    name: 'Password Strength',
-    project: 'image clears as password gets stronger',
+    name: 'Password component',
+    project: 'Image clears as password gets stronger',
     image: passwordImage,
     url: 'https://jjlindsey.github.io/password-str/',
     testimonial:
       "",
+    navigation: 'GitHub'
   },
   // {
   //   avatar: <Avatar alt="react logo" src={reactlogo}/>,
@@ -200,42 +205,41 @@ export default function Portfolio() {
             >
                 <CardHeader
                   avatar={project.avatar}
-                  // title={projects.name}
-                  // subheader={projects.project}
                   title={
                     <Typography variant="h6" align="left">
                         {project.name}
                     </Typography>
                 }
-                subheader={
-                    <Typography variant="body2" align="left">
-                        {project.project}
-                    </Typography>
-                }
-                >
-                </CardHeader>
-                {/* <Button
-                    href={project.url}
-                    target="_blank"
-                    endIcon={<CallMade />}
-                  >
-                    view project
-                </Button> */}
+                />
+                <Divider variant='middle' sx={{ mb: 1}}/>
               <CardMedia
                 component="img"
                 image={project.image}
                 alt={`Image for ${project.name}`}
-                sx={{height: 250}}
+                sx={{height: 220}}
               />
               <CardContent>
                 <Typography variant="body2" color="#FFF">
                   {/* {projects.testimonial} */}
                 </Typography>
-                <Button variant="contained" color="primary"
-                    href={project.url} target="_blank"
-                  >{project.name}
-                </Button>
+                <Typography variant="body1" align="center">
+                        {project.project}
+                </Typography>
               </CardContent>
+              <CardActions>
+                <Button variant="contained"  size='small' sx={{ backgroundColor: '#18C9CD'}}
+                    href={project.url} target="_blank"
+                  >{project.navigation}
+                </Button>
+                <Button
+                    href={project.url}
+                    target="_blank"
+                    endIcon={<CallMade />}
+                    sx={{ color: '#000'}}
+                  >
+                    view project
+                </Button>
+              </CardActions>
               {/* <Box
                 sx={{
                   display: 'flex',
