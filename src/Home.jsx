@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
-import { Container, Typography,Grid, Box } from '@mui/material'
-import CodeIcon from '@mui/icons-material/Code';
+import { Container, Typography,Grid, Box, BottomNavigation } from '@mui/material'
+import CodeIcon from '@mui/icons-material/Code'
+import { Copyright } from '@mui/icons-material'
 import CloseTag from './assets/icons8-code-50.png'
 import bauhaus from './assets/bauhausBack2.png'
 import mobileBkgrd from './assets/bauhausMobile2.png'
@@ -8,11 +9,12 @@ import mobileBkgrd from './assets/bauhausMobile2.png'
 //import { keyframes } from '@emotion/react';
 //import styled from '@emotion/styled/macro';
 import {motion, AnimatePresence} from 'framer-motion'
-import Footer from './Components/Footer';
+//import Footer from './Components/Footer';
 
 
 export default function Home() {
     const [word, setWord] = useState('code')
+    const [value, setValue] = React.useState(0)
       
     useEffect(() => {
         const interval = setInterval(() => {
@@ -24,25 +26,25 @@ export default function Home() {
 
   return (
    <>
-      <Box
+      {/* <Box
         id="hero"
         sx={(theme) => ({
             width: '100%',
             height: 'calc(100vh - 70px)',
-            backgroundImage: {
-                xs: `url(${mobileBkgrd})`,
-                md: `url(${bauhaus})`
-            },
+            // backgroundImage: {
+            //     xs: `url(${mobileBkgrd})`,
+            //     md: `url(${bauhaus})`
+            // },
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             objectFit: { xs: 'scale-down', sm: 'cover' }
         })}
-      >
+      > */}
         <Container
             sx={{
             display: 'flex',
-            justifyContent: 'flex-end',
+            //justifyContent: 'flex-end',
             pt: { xs: 14, sm: 20 },
             pb: { xs: 8, sm: 12 },
             pr: {xs: 2, sm: 10},
@@ -52,18 +54,19 @@ export default function Home() {
             <Grid
                 spacing={1}
                 useFlexGap
-                sx={{ width: { xs: '100%', sm: '80%' }, display: 'flex', flexDirection: 'column',  paddingTop: { xs: '100px', sm: '200px' },
-                paddingLeft: { xs: '20px', sm: '270px' }, }}
+                sx={{ width: { xs: '100%', sm: '80%' }, display: 'flex', flexDirection: 'column',  paddingTop: { xs: '50px', sm: '50px' },
+                paddingLeft: { xs: '10px', sm: '270px' }, }}
             >
                 <Grid item>
-                    <Typography variant='h3' fontFamily="Noto Sans" fontWeight="600"
+                    <Typography variant='h3' fontFamily="Noto Sans" align='center' fontWeight="600"
                         sx={{ 
                             fontSize: {
                                 xs: '1.5rem',  
                                 sm: '2rem',
                                 md: '3.5rem',  // Default size for larger screens
                                 },
-                            color: '#000', paddingTop: '5px'
+                            color: '#000',
+                            paddingTop: '5px'
                         }}>
                         JENNIFER LINDSEY
                     </Typography>
@@ -157,7 +160,7 @@ export default function Home() {
                 </Grid>
                     <Grid item>
                     <Typography variant="h5" textAlign="left" color="#000" style={{paddingTop: "32px", zIndex: 2}}>
-                    Frontend engineer with a design soul, passionate about crafting functional, beautiful and intuitive user experiences.  <br />
+                    Frontend engineer | Crafting intuitive user experiences.  <br />
                 </Typography>
                 <Typography variant="h6" textAlign="left" color="black" style={{paddingTop: "32px", zIndex: 2}}> A highly collaborative and strategic thinker, always seeking groundbreaking projects.</Typography>
                 </Grid>
@@ -168,7 +171,7 @@ export default function Home() {
             <path d="M 0 150 C 215 50 250 200 500 100 L 500 200 L 0 200" fill="#ffff00" opacity="0.5"></path>
             </svg> */}
         </Container>
-      </Box>
+      {/* </Box> */}
       <Box
         sx={{
           width: '100%',
@@ -176,7 +179,7 @@ export default function Home() {
           position: 'fixed',
           bottom: 0,
           left: 0,
-          backgroundColor:'#ffda00',
+          //backgroundColor:'#ffda00',
           color: 'grey',
           display: 'flex',
           alignItems: 'center',
@@ -185,7 +188,16 @@ export default function Home() {
           //zIndex: 1000,
         }}
       >
-        <Footer />
+        <Copyright /> 
+        <Typography>{new Date().getFullYear()} | Jennifer Lindsey</Typography>
+        <BottomNavigation 
+        // sx={{backgroundColor:'#ffda00'}}
+        showLabels
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue)
+        }}>
+        </BottomNavigation>
       </Box>
     </>
   )

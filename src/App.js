@@ -1,38 +1,32 @@
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+//import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css';
 import { ThemeProvider } from '@emotion/react';
 import theme from './theme/theme';
-import Home from './Home';
+//import Home from './Home';
 import About from './Components/AboutMe';
 import Portfolio from './Components/PortfolioCard';
 import NavBar from './Components/NavBar';
+import Home2 from './Home2';
 
-// function App() {
-//   return (
-//       <div className="App">
-//         <NavBar />
-//         <Routes>
-//           <Route path="/" element={<Home />} />
-//           <Route path="/about" element={<About />} />
-//           <Route path="/portfolio" element={<Portfolio />} />
-//         </Routes>
-//       </div>
-//   );
-// }
 function App() {
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
-      <BrowserRouter basename='/jl-portfolio'>
+      {/* <BrowserRouter basename='/jl-portfolio'> */}
       <NavBar/>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Portfolio />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
-      </Routes>
-    </BrowserRouter>   
+      <main>
+          <section id="home">
+            <Home2 />
+          </section>
+          <section id="about">
+            <About />
+          </section>
+          <section id="projects">
+            <Portfolio />
+          </section>
+        </main>
+    {/* </BrowserRouter>    */}
     </div>
     </ThemeProvider>
   )
