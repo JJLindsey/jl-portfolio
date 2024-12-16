@@ -8,6 +8,7 @@ import About from './Components/AboutMe';
 import Portfolio from './Components/PortfolioCard';
 import NavBar from './Components/NavBar';
 import Home2 from './Home2';
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           </section>
           <section id="projects">
             <Portfolio />
+          </section>
+          <section>
+            <Footer />
           </section>
         </main>
     {/* </BrowserRouter>    */}
