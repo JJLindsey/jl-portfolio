@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Button, Box, Container } from '@mui/material'
+import { Typography, Box, Container, Divider } from '@mui/material'
 import HeroImage from '../src/assets/jlHeadshotblack.png'
 import RectangleIcon from '@mui/icons-material/Rectangle';
 
@@ -17,7 +17,7 @@ export default function Home2() {
         >
         <Box sx={{maxWidth: '560px'}}>
             {/* <Divider orientation='vertical' sx={{color: 'white', borderWidth: 5, opacity: 1.0, borderColor: '#18C9CD' }}/> */}
-            <RectangleIcon  sx={{color: '#18C9CD', display: 'flex', fontSize: '5em' }}/>
+            <RectangleIcon  sx={{color: '#18C9CD', display: 'flex', fontSize: '5em'}}/>
             <Typography color="inherit" align="left" variant="h2" marked="center" sx={{fontWeight: 'bold'}}>
                 Crafting intuitive
             </Typography>
@@ -32,15 +32,7 @@ export default function Home2() {
                 >
                 Jennifer Lindsey | Frontend Engineer
             </Typography>
-            <Button
-                variant="contained"
-                size="small"
-                //component="a"
-                href=" "
-                sx={{ display:'flex', backgroundColor: '#CD1C18' }}
-                >
-                Contact
-            </Button>
+            <Divider sx={{backgroundColor: '#CD1C18', width: '100%', height: '24px'}}/>
         </Box>
         <Box
           sx={{
