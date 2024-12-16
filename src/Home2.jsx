@@ -2,6 +2,7 @@ import React from 'react'
 import { Typography, Box, Container, Divider } from '@mui/material'
 import HeroImage from '../src/assets/jlHeadshotblack.png'
 import RectangleIcon from '@mui/icons-material/Rectangle';
+import Sections from './Components/GradientDivider';
 
 
 export default function Home2() {
@@ -48,6 +49,7 @@ export default function Home2() {
           }}
         />
         </Box>
+        <Sections />
   </Container>
   )
 }
