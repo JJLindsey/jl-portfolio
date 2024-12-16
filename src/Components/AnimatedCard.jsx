@@ -40,7 +40,8 @@ const AnimatedCard = ({ index, item }) => {
           sx={{
             position: 'relative',
             height: '100%',
-            backgroundColor: index % 2 === 0 ? "#161616" : "#CD1C18",
+            //backgroundColor: index % 2 === 0 ? "#161616" : "#CD1C18",
+            backgroundColor: '#161616',
             zIndex: 1,
             p: 1,
           }}

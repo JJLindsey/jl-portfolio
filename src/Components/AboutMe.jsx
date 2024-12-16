@@ -9,9 +9,7 @@ import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
 import ConstructionRoundedIcon from '@mui/icons-material/ConstructionRounded';
 import QueryStatsRoundedIcon from '@mui/icons-material/QueryStatsRounded';
 import SettingsSuggestRoundedIcon from '@mui/icons-material/SettingsSuggestRounded';
-import MyImage from '../assets/cartoonJennWeb.png'
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
-import GroupsIcon from '@mui/icons-material/Groups';
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled/macro';
 
@@ -21,7 +19,7 @@ import reactIcon from '../assets/logo192.png'
 import jsIcon from '../assets/icons8-javascript-48.png'
 import cSharp from '../assets/icons8-c-sharp-logo-48.png'
 import figmaIcon from '../assets/icons8-figma-48.png'
-import { Divider, Tooltip } from '@mui/material';
+import { Tooltip } from '@mui/material';
 import bracketicon from '../assets/bracketPNG.png'
 
 // const shimmerAnimation = keyframes`
@@ -35,36 +33,6 @@ import bracketicon from '../assets/bracketPNG.png'
 // 		background-position: 0% 50%;
 // 	}
 // `;
-
-// const AnimatedCard = ({ index, children }) => {
-//   return (
-//     <Card
-//       direction="column"
-//       sx={{
-//         p: 1,
-//         height: '100%',
-//         position: 'relative',
-//         backgroundColor: index % 2 === 0 ? "#161616" : "#CD1C18",
-//         borderRadius: '3px',
-//         '&::before': {
-//           content: '""',
-//           position: 'absolute',
-//           top: '-3px',
-//           left: '-3px',
-//           height: 'calc(100% + 6px)',
-//           width: 'calc(100% + 6px)',
-//           background: 'linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)',
-//           borderRadius: '6px',
-//           zIndex: -1,
-//           animation: `${shimmerAnimation} 3s ease alternate infinite`,
-//           backgroundSize: '300% 300%',
-//         }
-//       }}
-//     >
-//       {children}
-//     </Card>
-//   );
-// };
 
 // const ShimmerOverlay = styled('div')(({theme}) => ({
 //   position: 'fixed',
@@ -187,10 +155,10 @@ export default function About() {
               Curiosity is my superpower
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb:2}}>
-            As a designer-turned-frontend engineer, I bridge the gap between imagination and reality.
+            As a designer-turned-frontend engineer, I blend artistic vision with technical prowess to craft exceptional digital experiences. I'm passionate about creating intuitive and visually appealing interfaces that solve real-world problems.
             </Typography>
-            <Typography align='left' variant='h6' component='p' sx={{mr: 16}}>
-            Curiosity brought me to programming and it keeps me passionate about learning. A lifelong learner, I'm energized by the power of collaboration. I'm a strategic thinker who builds bridges across teams, uniting them around shared goals.
+            <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
+            Driven by curiosity, I'm constantly exploring new technologies and techniques to elevate my craft. I thrive in collaborative environments, where I can learn from others and contribute to the success of the team.
             </Typography>
           </Grid>
         </Grid>
@@ -208,28 +176,7 @@ export default function About() {
               <AnimatedCard
                 index={index}
                 item={item}
-                // direction="column"
-                // color="white"
-                // spacing={2}
-                // sx={{
-                //   p: 1,
-                //   height: '100%',
-                //   backgroundColor: index % 2 === 0 ? "#161616" : "#CD1C18",
-                //   // transition: 'zoom 0.3s ease-in-out', 
-                //   // "&:hover":{ boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.4)' },
-                // }}
-              >
-                {/* <Box>{item.icon}</Box>
-                <div>
-                  <Typography align='left' fontWeight="600" gutterBottom sx={{ color: '#fff', fontSize: '1.5rem', pt: 3, mb: 2 }}>
-                    {item.title}
-                  </Typography>
-                  <Divider sx={{ borderWidth: 2, opacity: 0.8, borderColor: index % 2 === 0 ? "#CD1C18" : "#FFF", mb: 3, mr: 35 }}/>
-                  <Typography align='left' sx={{ color: '#fff', pb: 3 }}>
-                    {item.description}
-                  </Typography>
-                </div> */}
-              </AnimatedCard>
+              />
             </Grid>
           ))}
         </Grid>
