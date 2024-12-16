@@ -92,10 +92,11 @@ const projects = [
     avatar: <img src={reactlogo} alt="react logo" height={48}/>,
     name: 'Three Sixty Sessions',
     image: threeSixtyImage,
-    project: 'Live - Music producer\'s site',
+    project: 'Atlanta-based Music producer\'s site showcasing audio',
     url: 'https://threesixtysessions.com/',
     testimonial:
       "Music Producer needed a website to advertise his services and showcase his work",
+    width: '40%',
     navigation: 'Go to Live site'
   },
   {
@@ -147,7 +148,8 @@ const projects = [
     url: 'https://jjlindsey.github.io/password-str/',
     testimonial:
       "",
-    navigation: 'GitHub'
+    navigation: 'GitHub',
+    width: '40%'
   },
   // {
   //   avatar: <Avatar alt="react logo" src={reactlogo}/>,

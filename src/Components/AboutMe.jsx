@@ -21,7 +21,7 @@ import reactIcon from '../assets/logo192.png'
 import jsIcon from '../assets/icons8-javascript-48.png'
 import cSharp from '../assets/icons8-c-sharp-logo-48.png'
 import figmaIcon from '../assets/icons8-figma-48.png'
-import { Divider } from '@mui/material';
+import { Divider, Tooltip } from '@mui/material';
 import bracketicon from '../assets/bracketPNG.png'
 
 // const shimmerAnimation = keyframes`
@@ -195,12 +195,12 @@ export default function About() {
           </Grid>
         </Grid>
         <Grid sx={{display: 'flex', alignItems: 'center', mb: 4}}>
-          <img src={reactIcon} alt='react icon' width={64}/>
-          <img src={jsIcon} alt='javascript icon' width={64}/>
-          <img src={htmlIcon} alt='html icon' width={64}/>
-          <img src={cssIcon} alt='css icon' width={50}/>
-          <img src={figmaIcon} alt='figma icon' width={58}/>
-          <img src={cSharp} alt='C Sharp icon' width={60}/>
+          <Tooltip title='React'><img src={reactIcon} alt='react icon' width={64}/></Tooltip>
+          <Tooltip title='Javascript'><img src={jsIcon} alt='javascript icon' width={64}/></Tooltip>
+          <Tooltip title='HTML'><img src={htmlIcon} alt='html icon' width={64}/></Tooltip> 
+          <Tooltip title='CSS'><img src={cssIcon} alt='css icon' width={50}/></Tooltip> 
+          <Tooltip title='Figma'><img src={figmaIcon} alt='figma icon' width={58}/></Tooltip> 
+          <Tooltip title='C#'><img src={cSharp} alt='C Sharp icon' width={60}/></Tooltip>
         </Grid>
         <Grid container spacing={2.5}>
           {items.map((item, index) => (
