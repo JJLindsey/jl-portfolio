@@ -22,15 +22,18 @@ import trackingImage from '../assets/orderStatus.png'
 import stripePayImage from '../assets/ProductPageCleanskin.png'
 import passwordImage from '../assets/passwordPage.png'
 import bracketicon from '../assets/bracketPNG.png'
-import { CallMade } from '@mui/icons-material';
+import { CallMade } from '@mui/icons-material'
+import cardBack from '../assets/bubblesred.png'
 
 const StyledCard = styled(Card)(({ theme }) => ({
   //th: 200,
   height: 300,
-  background: 'rgba(255, 255, 255, 0.7)',
-  backdropFilter: 'blur(9px)',
-  boxShadow: '0 4px 30px rgba(255, 255, 255, 0.5)',
+  background: 'rgba(255, 255, 255, 0.48)',
+  backdropFilter: 'blur( 3px )',
+  boxShadow: '0 4px 30px rgba(31, 38, 135, 0.5)',
   borderRadius: theme.spacing(1),
+  color:'#fff',
+  fontWeight: 600,
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
@@ -39,6 +42,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   '&:hover': {
     transform: 'scale(1.05)',
     background: 'rgb(255, 255, 255)',
+    color: 'black'
   },
 }))
 
@@ -176,6 +180,9 @@ export default function Portfolio() {
         flexDirection: 'column',
         alignItems: 'left',
         gap: { xs: 3, sm: 6 },
+        // backgroundImage: `url(${cardBack})`,
+        // backgroundSize: 'cover',
+        // backgroundRepeat: 'no-repeat'
       }}
     >
       <Box
@@ -192,7 +199,15 @@ export default function Portfolio() {
       <Box>
       <AnimatedTypography variant="h3" text="Here is a look at some of my work" sx={{ fontWeight: 'bold', letterSpacing: 1 }}/>
       </Box>
-      <Grid container spacing={3}>
+      <Grid
+          container
+          spacing={3} 
+          sx={{backgroundImage: `url(${cardBack})`,
+          backgroundSize: 'contain',
+          backgroundRepeat: 'repeat',
+          backgroundPosition: 'center'
+          }}
+      >
         {projects.map((project, index) => (
           <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
             <StyledCard
@@ -207,7 +222,6 @@ export default function Portfolio() {
               }}
             >
                 <CardHeader
-                  //sx={{backgroundColor: '#18C9CD', borderRadius: '8px'}}
                   avatar={project.avatar}
                   title={
                     <Typography variant="h6" align="left">
@@ -222,31 +236,31 @@ export default function Portfolio() {
                 alt={`Image for ${project.name}`}
                 sx={{height: 220}}
               />
-              <CardContent>
-                <Typography variant="body2" color="#FFF">
+              <CardContent sx={{backgroundColor: '#fff', opacity: 0.65}}>
+                <Typography variant="body2" color='#000'>
                   {/* {projects.testimonial} */}
                 </Typography>
-                <Typography variant="body1" align="center">
-                        {project.project}
+                <Typography variant="body1" align="center" color='#000'>
+                  {project.project}
                 </Typography>
               </CardContent>
               <CardActions sx={{justifyContent: 'center'}}>
                 <Button
-                  sx={{backgroundColor: '#252525', '&:hover': {backgroundColor: '#18C9CD'}}}
+                  sx={{backgroundColor: '#18C9CD'}}
                   variant="contained"
                   size='small'
                   href={project.url} target="_blank"
                 >
                     {project.navigation}
                 </Button>
-                <Button
+                {/* <Button
                     href={project.url}
                     target="_blank"
                     endIcon={<CallMade />}
                     sx={{ color: '#000'}}
                   >
                     view project
-                </Button>
+                </Button> */}
               </CardActions>
               {/* <Box
                 sx={{
