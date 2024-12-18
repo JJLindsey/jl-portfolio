@@ -23,7 +23,7 @@ export default function Home2() {
                 Crafting intuitive
             </Typography>
             <Typography color="inherit" align="left" variant="h3" marked="center" sx={{fontWeight: 'bold'}}>
-                user experiences
+                User Experiences
             </Typography>
             <Typography
                 color="inherit"

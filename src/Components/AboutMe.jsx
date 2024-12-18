@@ -86,18 +86,6 @@ const items = [
   },
 ]
 
-// const FrameRectangle = ({ color, ...props }) => (
-//   <Box
-//     sx={{
-//       position: 'absolute',
-//       width: '5px',
-//       height: '5px',
-//       border: `9px solid ${color}`,
-//       ...props.sx
-//     }}
-//   />
-// )
-
 export default function About() {
   // const [showShimmer, setShowShimmer] = useState(true)
 
@@ -129,23 +117,6 @@ export default function About() {
           gap: { xs: 3, sm: 6 },
         }}
       >
-        {/* <Grid
-          sx={{
-            display: 'flex',
-            alignItems: 'left',
-            width: { sm: '100%'},
-            textAlign: { sm: 'left', md: 'left' },
-          }}
-        > */}
-
-          {/* <Box sx={{ position: 'relative', width: 'fit-content', margin: '0 auto' }}>
-            <FrameRectangle color="#d71920" sx={{ top: -42, left: -45 }} />
-            <FrameRectangle color="#006aff" sx={{ top: 7, left: -45 }} />
-            <FrameRectangle color="#ffda00" sx={{ top: 45, left: 15 }} />
-            <img src={MyImage} width={175} alt="portrait" style={{ position: 'relative', zIndex: 1 }} />
-          </Box> */}
-          
-        {/* </Grid> */}
         <Grid container>
           <Grid item>
             <Typography align='left' variant="h4" sx={{ mt: 8, color: '#CD1C18'}}>
@@ -171,7 +142,7 @@ export default function About() {
           <Tooltip title='Figma'><img src={figmaIcon} alt='figma icon' width={58}/></Tooltip> 
           <Tooltip title='C#'><img src={cSharp} alt='C Sharp icon' width={60}/></Tooltip>
         </Grid>
-        <Grid container spacing={2.5}>
+        <Grid container spacing={2.5} sx={{mb: 8}}>
           {items.map((item, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <AnimatedCard
