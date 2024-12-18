@@ -28,7 +28,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   //th: 200,
   height: 300,
   background: 'rgba(255, 255, 255, 0.7)',
-  backdropFilter: 'blur(10px)',
+  backdropFilter: 'blur(9px)',
   boxShadow: '0 4px 30px rgba(255, 255, 255, 0.5)',
   borderRadius: theme.spacing(1),
   display: 'flex',
@@ -104,7 +104,7 @@ const projects = [
     avatar: <img src={jslogo} alt="react logo" height={48}/>,
     name: 'Current Films',
     image: movieImage,
-    project: 'Get current films & search films from TMDB API',
+    project: 'Get current film info & search films from TMDB API',
     url: "https://jjlindsey.github.io/movie-appJS/",
     testimonial:
       "",

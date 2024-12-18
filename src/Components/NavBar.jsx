@@ -175,7 +175,7 @@ function NavBar() {
                 size="small"
                 variant='outlined'
                 component="a"
-                href={`${process.env.PUBLIC_URL}/JenniferLindseyResume.pdf`}
+                href={`${process.env.PUBLIC_URL}/JenniferLindseyFE.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
                 startIcon={<DownloadForOfflineIcon />}

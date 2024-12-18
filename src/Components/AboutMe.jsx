@@ -135,7 +135,7 @@ export default function About() {
           </Grid>
         </Grid>
         <Grid sx={{display: 'flex', alignItems: 'center', mb: 4}}>
-          <Tooltip title='React'><img src={reactIcon} alt='react icon' width={64}/></Tooltip>
+          <Tooltip title='React' aria-labelledby='React logo'><img src={reactIcon} alt='react icon' width={64}/></Tooltip>
           <Tooltip title='Javascript'><img src={jsIcon} alt='javascript icon' width={64}/></Tooltip>
           <Tooltip title='HTML'><img src={htmlIcon} alt='html icon' width={64}/></Tooltip> 
           <Tooltip title='CSS'><img src={cssIcon} alt='css icon' width={50}/></Tooltip> 
