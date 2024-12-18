@@ -24,7 +24,7 @@ export default function GradientDivider({height = '3px', width = '100%'}) {
             height,
             width,
             margin: '2rem 0',
-            background: 'linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)',
+            background: 'linear-gradient(60deg, #f79533, #f37055, #CD1C18, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)',
             backgroundSize: '400% 400%',
             animation: `${animatedline} 9s ease alternate infinite`,
             '&::before': {

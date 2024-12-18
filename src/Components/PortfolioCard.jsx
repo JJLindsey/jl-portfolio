@@ -27,10 +27,10 @@ import { CallMade } from '@mui/icons-material';
 const StyledCard = styled(Card)(({ theme }) => ({
   //th: 200,
   height: 300,
-  background: 'rgba(255, 255, 255, 0.8)',
-  backdropFilter: 'blur(9px)',
+  background: 'rgba(255, 255, 255, 0.7)',
+  backdropFilter: 'blur(10px)',
   boxShadow: '0 4px 30px rgba(255, 255, 255, 0.5)',
-  borderRadius: theme.spacing(2),
+  borderRadius: theme.spacing(1),
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
@@ -38,6 +38,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   transition: 'transform 0.3s ease-in-out',
   '&:hover': {
     transform: 'scale(1.05)',
+    background: 'rgb(255, 255, 255)',
   },
 }))
 
@@ -206,6 +207,7 @@ export default function Portfolio() {
               }}
             >
                 <CardHeader
+                  //sx={{backgroundColor: '#18C9CD', borderRadius: '8px'}}
                   avatar={project.avatar}
                   title={
                     <Typography variant="h6" align="left">
@@ -228,10 +230,14 @@ export default function Portfolio() {
                         {project.project}
                 </Typography>
               </CardContent>
-              <CardActions>
-                <Button variant="contained"  size='small' sx={{ backgroundColor: '#18C9CD'}}
-                    href={project.url} target="_blank"
-                  >{project.navigation}
+              <CardActions sx={{justifyContent: 'center'}}>
+                <Button
+                  sx={{backgroundColor: '#252525', '&:hover': {backgroundColor: '#18C9CD'}}}
+                  variant="contained"
+                  size='small'
+                  href={project.url} target="_blank"
+                >
+                    {project.navigation}
                 </Button>
                 <Button
                     href={project.url}

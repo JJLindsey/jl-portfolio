@@ -1,11 +1,13 @@
 import { Copyright, GitHub, LinkedIn, EmailOutlined } from '@mui/icons-material'
 import { Box, Grid, Typography, IconButton} from '@mui/material'
 import React from 'react'
+import GradientDivider from './GradientDivider'
 
 export default function Footer() {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', mt: 2 }}>
+      <GradientDivider />
       <Grid container spacing={1} sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <Grid item xs={4} md={6} sx={{display: 'flex',  flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start'}}>
           <Typography variant='h6' sx={{fontWeight: 'bold', color: '#CD1C18'}}>Contact</Typography>

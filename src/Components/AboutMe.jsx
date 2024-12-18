@@ -21,6 +21,7 @@ import cSharp from '../assets/icons8-c-sharp-logo-48.png'
 import figmaIcon from '../assets/icons8-figma-48.png'
 import { Tooltip } from '@mui/material';
 import bracketicon from '../assets/bracketPNG.png'
+import GradientDivider from './GradientDivider';
 
 // const shimmerAnimation = keyframes`
 //   0% {
@@ -180,7 +181,8 @@ export default function About() {
             </Grid>
           ))}
         </Grid>
-      </Container>
+        <GradientDivider />
+      </Container> 
     </Box>
     </>
   );
