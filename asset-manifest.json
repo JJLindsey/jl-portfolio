@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/jl-portfolio/static/css/main.3357bea7.css",
-    "main.js": "/jl-portfolio/static/js/main.5ff85c76.js",
+    "main.js": "/jl-portfolio/static/js/main.7661fce0.js",
     "static/js/453.62e3e54a.chunk.js": "/jl-portfolio/static/js/453.62e3e54a.chunk.js",
+    "static/media/appScreenshot.png": "/jl-portfolio/static/media/appScreenshot.920c4301f33254d9aa70.png",
     "static/media/360Home.png": "/jl-portfolio/static/media/360Home.b6a6634e161542511c23.png",
     "static/media/ProductPageCleanskin.png": "/jl-portfolio/static/media/ProductPageCleanskin.53e1216210d4d6309ccc.png",
     "static/media/passwordPage.png": "/jl-portfolio/static/media/passwordPage.7ec1f10ee2f30a8ed1f9.png",
-    "static/media/MovieApp.png": "/jl-portfolio/static/media/MovieApp.e51495ca9eb5ca878465.png",
     "static/media/jlHeadshotblack.png": "/jl-portfolio/static/media/jlHeadshotblack.b70deffcbe99ead1a8df.png",
     "static/media/bubblesred.png": "/jl-portfolio/static/media/bubblesred.888787c660228677a377.png",
     "static/media/orderStatus.png": "/jl-portfolio/static/media/orderStatus.50e7c11844a346867f5e.png",
     "static/media/css-icon.png": "/jl-portfolio/static/media/css-icon.d1a3c1e59ca82dbdf815.png",
     "index.html": "/jl-portfolio/index.html",
     "main.3357bea7.css.map": "/jl-portfolio/static/css/main.3357bea7.css.map",
-    "main.5ff85c76.js.map": "/jl-portfolio/static/js/main.5ff85c76.js.map",
+    "main.7661fce0.js.map": "/jl-portfolio/static/js/main.7661fce0.js.map",
     "453.62e3e54a.chunk.js.map": "/jl-portfolio/static/js/453.62e3e54a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3357bea7.css",
-    "static/js/main.5ff85c76.js"
+    "static/js/main.7661fce0.js"
   ]
 }
