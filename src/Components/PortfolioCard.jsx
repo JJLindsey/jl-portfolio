@@ -269,29 +269,6 @@ export default function Portfolio() {
                     view project
                 </Button> */}
               </CardActions>
-              {/* <Box
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                }}
-              >
-                <CardHeader
-                  avatar={project.avatar}
-                  // title={projects.name}
-                  // subheader={projects.project}
-                  title={
-                    <Typography variant="h6" align="left">
-                        {project.name}
-                    </Typography>
-                }
-                subheader={
-                    <Typography variant="body2" align="left">
-                        {project.project}
-                    </Typography>
-                }
-                />
-              </Box> */}
             </StyledCard>
           </Grid>
         ))}
