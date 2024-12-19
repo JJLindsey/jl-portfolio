@@ -97,7 +97,7 @@ const projects = [
     avatar: <img src={reactlogo} alt="react logo" height={48}/>,
     name: 'Three Sixty Sessions',
     image: threeSixtyImage,
-    project: 'Atlanta-based Music producer\'s site showcasing audio',
+    project: 'Atlanta-based Music producer\'s site showcasing audio samples',
     url: 'https://threesixtysessions.com/',
     testimonial:
       "Music Producer needed a website to advertise his services and showcase his work",
@@ -125,8 +125,8 @@ const projects = [
   //   },
   {
     avatar: <Avatar alt="next logo" src={nextlogo}/>,
-    name: 'Tracking component',
-    project: 'Shipping component: updates status in real-time',
+    name: 'Real Time component',
+    project: 'Tracking & Shipping component status updates in real-time',
     image: trackingImage,
     url: 'https://github.com/JJLindsey/tracking-app',
     testimonial:
@@ -202,9 +202,10 @@ export default function Portfolio() {
       <Grid
           container
           spacing={3} 
-          sx={{backgroundImage: `url(${cardBack})`,
-          backgroundSize: 'contain',
-          backgroundRepeat: 'repeat',
+          sx={{
+          backgroundImage: `url(${cardBack})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center'
           }}
       >
@@ -222,12 +223,18 @@ export default function Portfolio() {
               }}
             >
                 <CardHeader
+                  sx={{flexDirection: 'column', backgroundColor: 'rgba(255,255,255,0.4)', color: '#000', borderRadius: '4px'}}
                   avatar={project.avatar}
                   title={
-                    <Typography variant="h6" align="left">
+                    <Typography variant="h6" align="center">
                         {project.name}
                     </Typography>
-                }
+                  }
+                  subheader={
+                    <Typography variant="body1" align="center">
+                      {project.project}
+                    </Typography>
+                  }
                 />
                 <Divider variant='middle' sx={{ mb: 1}}/>
               <CardMedia
@@ -236,13 +243,13 @@ export default function Portfolio() {
                 alt={`Image for ${project.name}`}
                 sx={{height: 220}}
               />
-              <CardContent sx={{backgroundColor: '#fff', opacity: 0.65}}>
+              <CardContent>
                 <Typography variant="body2" color='#000'>
                   {/* {projects.testimonial} */}
                 </Typography>
-                <Typography variant="body1" align="center" color='#000'>
+                {/* <Typography variant="body1" align="center" color='#000'>
                   {project.project}
-                </Typography>
+                </Typography> */}
               </CardContent>
               <CardActions sx={{justifyContent: 'center'}}>
                 <Button
