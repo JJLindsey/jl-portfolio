@@ -17,7 +17,7 @@ import nextlogo from '../assets/icons8-next.js-48.png'
 // import clogo from '../assets/icons8-c-sharp-logo-48.png'
 // import vuelogo from '../assets/icons8-vue-js-48.png'
 import threeSixtyImage from '../assets/360Home.png'
-import movieImage from '../assets/MovieApp.png'
+import movieImage from '../assets/appScreenshot.png'
 import trackingImage from '../assets/orderStatus.png'
 import stripePayImage from '../assets/ProductPageCleanskin.png'
 import passwordImage from '../assets/passwordPage.png'
@@ -41,8 +41,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   transition: 'transform 0.3s ease-in-out',
   '&:hover': {
     transform: 'scale(1.05)',
-    background: 'rgb(255, 255, 255)',
-    color: 'black'
+    background: 'rgb(255, 255, 255, 0.85)',
   },
 }))
 
@@ -179,10 +178,7 @@ export default function Portfolio() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'left',
-        gap: { xs: 3, sm: 6 },
-        // backgroundImage: `url(${cardBack})`,
-        // backgroundSize: 'cover',
-        // backgroundRepeat: 'no-repeat'
+        gap: { xs: 3, sm: 6 }
       }}
     >
       <Box
@@ -219,11 +215,18 @@ export default function Portfolio() {
                 justifyContent: 'space-between',
                 flexGrow: 1,
                 p: 1,
+                paddingBottom: 2,
                 height: 450,
               }}
             >
                 <CardHeader
-                  sx={{flexDirection: 'column', backgroundColor: 'rgba(255,255,255,0.4)', color: '#000', borderRadius: '4px'}}
+                  sx={{
+                    flexDirection: 'column',
+                    fontWeight: 700,
+                    backgroundColor: 'rgba(255,255,255,0.4)',
+                    color: '#000',
+                    borderRadius: '4px'
+                  }}
                   avatar={project.avatar}
                   title={
                     <Typography variant="h6" align="center">
@@ -241,15 +244,12 @@ export default function Portfolio() {
                 component="img"
                 image={project.image}
                 alt={`Image for ${project.name}`}
-                sx={{height: 220}}
+                sx={{height: 200}}
               />
               <CardContent>
                 <Typography variant="body2" color='#000'>
                   {/* {projects.testimonial} */}
                 </Typography>
-                {/* <Typography variant="body1" align="center" color='#000'>
-                  {project.project}
-                </Typography> */}
               </CardContent>
               <CardActions sx={{justifyContent: 'center'}}>
                 <Button
