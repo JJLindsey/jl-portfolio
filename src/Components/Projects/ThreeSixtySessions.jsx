@@ -9,7 +9,7 @@ export default function ThreeSixtySessions() {
           <Typography>360 Sessions - Atlanta-based Music Producer</Typography>
         </Grid>
         <Grid item>
-          
+          <Typography>Development</Typography>
         </Grid>
       </Grid>
     </div>
