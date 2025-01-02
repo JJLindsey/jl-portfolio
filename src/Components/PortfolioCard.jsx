@@ -1,13 +1,12 @@
 import React from 'react';
 import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
+//import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
-import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { CardMedia, Button, Divider, CardActions } from '@mui/material'
+import { CardMedia, Button, CardActions } from '@mui/material'
 import {styled} from '@mui/material/styles'
 import {motion} from 'framer-motion'
 
@@ -40,7 +39,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   transition: 'transform 0.3s ease-in-out',
   '&:hover': {
     transform: 'scale(1.05)',
-    background: 'rgb(255, 255, 255, 0.85)',
+    background: 'rgb(0, 0, 0, 0.85)',
   },
 }))
 
