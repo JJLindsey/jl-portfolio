@@ -23,15 +23,14 @@ import stripePayImage from '../assets/ProductPageCleanskin.png'
 import passwordImage from '../assets/passwordPage.png'
 import bracketicon from '../assets/bracketPNG.png'
 //import { CallMade } from '@mui/icons-material'
-import cardBack from '../assets/bubblesred.png'
+//import cardBack from '../assets/bubblesred.png'
 
 const StyledCard = styled(Card)(({ theme }) => ({
-  //th: 200,
   height: 300,
-  background: 'rgba(255, 255, 255, 0.48)',
   backdropFilter: 'blur( 3px )',
-  boxShadow: '0 4px 30px rgba(31, 38, 135, 0.5)',
-  borderRadius: theme.spacing(1),
+  boxShadow: '0 4px 30px rgba(205, 28, 24, 0.7)',
+  borderRadius: 4,
+  background: 'linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)',
   color:'#fff',
   fontWeight: 600,
   display: 'flex',
@@ -123,29 +122,29 @@ const projects = [
   //     "",
   //   },
   {
-    avatar: <Avatar alt="next logo" src={nextlogo}/>,
+    avatar: <img alt="next logo" src={nextlogo} height={48}/>,
     name: 'Real Time component',
     project: 'Tracking & Shipping component status updates in real-time',
     image: trackingImage,
     url: 'https://github.com/JJLindsey/tracking-app',
     testimonial:
       "",
-    width: '30%',
+    width: '40%',
     navigation: 'GitHub'
   },
   {
-    avatar: <Avatar alt="react logo" src={reactlogo}/>,
+    avatar:<img src={reactlogo} alt="react logo" height={48}/>,
     name: 'Cart & Stripe Pay component',
     project: 'Shopping cart with Stripe payment',
     image: stripePayImage,
     url: 'https://github.com/JJLindsey/checkout-stripe',
     testimonial:
       "",
-    width: '30%',
+    width: '40%',
     navigation: 'GitHub'
   },
   {
-    avatar: <Avatar alt="js logo" src={jslogo} />,
+    avatar: <img src={jslogo} alt="react logo" height={48}/>,
     name: 'Password component',
     project: 'Image clears as password gets stronger',
     image: passwordImage,
@@ -198,12 +197,6 @@ export default function Portfolio() {
       <Grid
           container
           spacing={3} 
-          sx={{
-          backgroundImage: `url(${cardBack})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center'
-          }}
       >
         {projects.map((project, index) => (
           <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
@@ -219,27 +212,6 @@ export default function Portfolio() {
                 height: 450,
               }}
             >
-                <CardHeader
-                  sx={{
-                    flexDirection: 'column',
-                    fontWeight: 700,
-                    backgroundColor: 'rgba(255,255,255,0.4)',
-                    color: '#000',
-                    borderRadius: '4px'
-                  }}
-                  avatar={project.avatar}
-                  title={
-                    <Typography variant="h6" align="center">
-                        {project.name}
-                    </Typography>
-                  }
-                  subheader={
-                    <Typography variant="body1" align="center">
-                      {project.project}
-                    </Typography>
-                  }
-                />
-                <Divider variant='middle' sx={{ mb: 1}}/>
               <CardMedia
                 component="img"
                 image={project.image}
@@ -247,8 +219,15 @@ export default function Portfolio() {
                 sx={{height: 200}}
               />
               <CardContent>
+                {project.avatar}
                 <Typography variant="body2" color='#000'>
                   {/* {projects.testimonial} */}
+                </Typography>
+                <Typography variant="h6" align="center">
+                        {project.name}
+                </Typography>
+                <Typography variant="body1" align="center">
+                      {project.project}
                 </Typography>
               </CardContent>
               <CardActions sx={{justifyContent: 'center'}}>
