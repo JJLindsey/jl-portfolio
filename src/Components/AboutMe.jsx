@@ -98,7 +98,6 @@ export default function About() {
 
   return (
     <>
-    {/* {showShimmer && <ShimmerOverlay />} */}
     <Box
       id="about"
       sx={{
