@@ -21,6 +21,8 @@ import trackingImage from '../assets/orderStatus.png'
 import stripePayImage from '../assets/ProductPageCleanskin.png'
 import passwordImage from '../assets/passwordPage.png'
 import bracketicon from '../assets/bracketPNG.png'
+import AnimatedTypography from './AnimatedTypography'
+
 //import { CallMade } from '@mui/icons-material'
 //import cardBack from '../assets/bubblesred.png'
 
@@ -43,51 +45,51 @@ const StyledCard = styled(Card)(({ theme }) => ({
   },
 }))
 
-const AnimatedTypography = ({ text, ...props }) => {
-  const typeContainer = {
-    hidden: { opacity: 0 },
-    visible: (i = 1) => ({
-      opacity: 1,
-      transition: { staggerChildren: 0.03, delayChildren: 0.04 * i },
-    }),
-  }
+// const AnimatedTypography = ({ text, ...props }) => {
+//   const typeContainer = {
+//     hidden: { opacity: 0 },
+//     visible: (i = 1) => ({
+//       opacity: 1,
+//       transition: { staggerChildren: 0.03, delayChildren: 0.04 * i },
+//     }),
+//   }
 
-  const child = {
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: {
-        type: "spring",
-        damping: 12,
-        stiffness: 100,
-      },
-    },
-    hidden: {
-      opacity: 0,
-      x: -10,
-      y: 5,
-      transition: {
-        type: "spring",
-        damping: 12,
-        stiffness: 100,
-      },
-    },
-  }
-  return (
-    <motion.div style={{overflow: "hidden", display: "flex", justifyContent: "left", fontSize: "2em"}}
-      variants={typeContainer}
-      initial="hidden"
-      animate="visible"
-    >
-      {text.split("").map((letter, index) => (
-        <motion.span variants={child} key={index}>
-          {letter === " " ? "\u00A0" : letter}
-        </motion.span>
-      ))}
-    </motion.div>
-  )
-}
+//   const child = {
+//     visible: {
+//       opacity: 1,
+//       x: 0,
+//       y: 0,
+//       transition: {
+//         type: "spring",
+//         damping: 12,
+//         stiffness: 100,
+//       },
+//     },
+//     hidden: {
+//       opacity: 0,
+//       x: -10,
+//       y: 5,
+//       transition: {
+//         type: "spring",
+//         damping: 12,
+//         stiffness: 100,
+//       },
+//     },
+//   }
+//   return (
+//     <motion.div style={{overflow: "hidden", display: "flex", justifyContent: "left", fontSize: "2em"}}
+//       variants={typeContainer}
+//       initial="hidden"
+//       animate="visible"
+//     >
+//       {text.split("").map((letter, index) => (
+//         <motion.span variants={child} key={index}>
+//           {letter === " " ? "\u00A0" : letter}
+//         </motion.span>
+//       ))}
+//     </motion.div>
+//   )
+// }
 
 const projects = [
   {
@@ -161,7 +163,7 @@ const projects = [
   //   testimonial:
   //     "",
   // },
-];
+]
 
 
 export default function Portfolio() {
@@ -191,7 +193,7 @@ export default function Portfolio() {
         <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '25px', marginTop: "-10px"}}></img>
       </Box>
       <Box>
-      <AnimatedTypography variant="h3" text="Here is a look at some of my work" sx={{ fontWeight: 'bold', letterSpacing: 1 }}/>
+      <AnimatedTypography variant='h4' text="Here is a look at some of my work" sx={{ fontWeight: 'bold', letterSpacing: 1 }}/>
       </Box>
       <Grid
           container

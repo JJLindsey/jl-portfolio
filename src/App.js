@@ -4,11 +4,11 @@ import './App.css';
 import { ThemeProvider } from '@emotion/react';
 import theme from './theme/theme';
 //import Home from './Home';
-import About from './Components/AboutMe';
-import Portfolio from './Components/PortfolioCard';
-import NavBar from './Components/NavBar';
+import About from './newcomponents/AboutMe';
+import Portfolio from './newcomponents/PortfolioCard';
+import NavBar from './newcomponents/NavBar';
 import Home2 from './Home2';
-import Footer from './Components/Footer';
+import Footer from './newcomponents/Footer';
 
 function App() {
   return (
