@@ -98,6 +98,9 @@ function NavBar() {
                   color="primary"
                   size="small"
                   variant="contained"
+                  href={`${process.env.PUBLIC_URL}/JenniferLindseyFE.pdf`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   endIcon={<DownloadForOfflineIcon />}
                 >
                   RESUME
