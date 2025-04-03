@@ -5,13 +5,11 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 import AnimatedCard from './AnimatedCard';
-import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
+//import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
 import ConstructionRoundedIcon from '@mui/icons-material/ConstructionRounded';
 import QueryStatsRoundedIcon from '@mui/icons-material/QueryStatsRounded';
-import SettingsSuggestRoundedIcon from '@mui/icons-material/SettingsSuggestRounded';
+//import SettingsSuggestRoundedIcon from '@mui/icons-material/SettingsSuggestRounded';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
-import { keyframes } from '@emotion/react';
-import styled from '@emotion/styled/macro';
 
 import htmlIcon from '../assets/icons8-html-48.png'
 import cssIcon from '../assets/css-icon.png'
@@ -23,29 +21,6 @@ import { Tooltip } from '@mui/material';
 import bracketicon from '../assets/bracketPNG.png'
 import GradientDivider from './GradientDivider';
 
-// const shimmerAnimation = keyframes`
-//   0% {
-// 		background-position: 0% 50%;
-// 	}
-// 	50% {
-// 		background-position: 100% 50%;
-// 	}
-// 	100% {
-// 		background-position: 0% 50%;
-// 	}
-// `;
-
-// const ShimmerOverlay = styled('div')(({theme}) => ({
-//   position: 'fixed',
-//   top: 0,
-//   left: 0,
-//   right: 0,
-//   bottom: 0,
-//   //background: 'linear-gradient(to right, rgba(217,217,217,0.5) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.5) 70%)',
-//   background: 'linear-gradient(-45deg, rgba(217,217,217,0.3) 0%, rgba(70,70,70,0.5) 35%, rgba(0,0,0,0.5) 50%)',
-//   zIndex: 9999,
-//   animation: `${shimmerAnimation} 15s ease-out forwards`,
-// }))
 
 const items = [
   // {
@@ -87,14 +62,6 @@ const items = [
 ]
 
 export default function About() {
-  // const [showShimmer, setShowShimmer] = useState(true)
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setShowShimmer(false)
-  //   }, 1500)
-  //   return () => clearTimeout(timer)
-  // }, [])
 
   return (
     <>
