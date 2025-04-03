@@ -14,16 +14,15 @@ const animatedline = keyframes`
     }
 `
 
-export default function GradientDivider({height = '3px', width = '100%'}) {
+export default function GradientDivider({height = '3px', width = '100%', margin = '4rem 0'}) {
   return (
-    <>
     <Box
         component='div'
         sx={{
             position: 'relative',
             height,
             width,
-            margin: '2rem 0',
+            margin,
             background: 'linear-gradient(60deg, #f79533, #f37055, #CD1C18, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)',
             backgroundSize: '400% 400%',
             animation: `${animatedline} 9s ease alternate infinite`,
@@ -33,9 +32,6 @@ export default function GradientDivider({height = '3px', width = '100%'}) {
                 inset: 0,
             }
         }}
-        >
-        <div />
-    </Box>
-    </>
+    />
   )
 }

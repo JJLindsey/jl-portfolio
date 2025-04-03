@@ -102,7 +102,7 @@ export default function About() {
       id="about"
       sx={{
         pt: { xs: 4, sm: 12 },
-        pb: { xs: 8, sm: 16 },
+        pb: { xs: 8, sm: 2 },
         color: 'white',
         bgcolor: '#000',
         mt: 8

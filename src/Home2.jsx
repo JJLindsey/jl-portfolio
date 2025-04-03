@@ -14,7 +14,7 @@ export default function Home2() {
           flexDirection: { xs: 'column', md: 'row' },
           alignItems: 'center',
           justifyContent: 'space-between',
-          height: '50vh',
+          height: 'auto',
         }}
         >
         <Box sx={{maxWidth: '560px'}}>
@@ -48,7 +48,7 @@ export default function Home2() {
           sx={{
             flex: 1,
             backgroundImage: `url(${HeroImage})`,
-            backgroundSize: {xs: 'contain', sm: ' contain', md: 'contain'},
+            backgroundSize: {xs: 'none', sm: ' contain', md: 'contain'},
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             height: { xs: '200px', md: '300px' },

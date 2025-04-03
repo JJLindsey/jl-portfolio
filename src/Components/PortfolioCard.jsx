@@ -185,7 +185,7 @@ export default function Portfolio() {
           textAlign: { sm: 'left', md: 'left' },
         }}
       >
-        <Typography variant="h4" color='#CD1C18'>
+        <Typography  align= 'left' variant="h4" color='#CD1C18'>
           Projects
         </Typography>
         <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '25px', marginTop: "-10px"}}></img>
