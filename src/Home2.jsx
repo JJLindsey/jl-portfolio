@@ -2,7 +2,7 @@ import React from 'react'
 import { Typography, Box, Container, Divider} from '@mui/material'
 import HeroImage from '../src/assets/jlHeadshotblack.png'
 import RectangleIcon from '@mui/icons-material/Rectangle';
-import Sections from './newcomponents/GradientDivider'
+import Sections from './components/GradientDivider'
 import { Code, DesignServices, Palette } from '@mui/icons-material';
 
 
