@@ -58,6 +58,7 @@ export const projects = [
         "",
       width: '40%',
       navigation: 'GitHub',
+      videoUrl: 'https://www.youtube.com/embed/eaEnQw4v3Qo?si=hHukVmUidQIZo_iQ',
       description: 'This project is a shopping cart component that allows users to add items to their cart and proceed to checkout using Stripe for payment processing. The component is built using React and integrates with the Stripe API for secure payment handling.'
     },
     {
