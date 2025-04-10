@@ -43,7 +43,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   transition: 'transform 0.3s ease-in-out',
   '&:hover': {
     transform: 'scale(1.05)',
-    background: 'rgb(0, 0, 0, 0.85)',
+    //background: 'rgb(0, 0, 0, 0.85)',
   },
 }))
 
