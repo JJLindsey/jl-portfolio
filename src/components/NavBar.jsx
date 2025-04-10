@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import { useLocation, useNavigate } from 'react-router-dom';
+
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import { IconButton, Button, Box, styled, Menu, MenuItem, Typography} from '@mui/material';
@@ -22,6 +24,9 @@ const StyledButton = styled(Button)(({theme}) => ({
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null)
+  const location = useLocation();
+const navigate = useNavigate();
+
 
   const handleOpenNavMenu = (e) => {
     setAnchorElNav(e.currentTarget)
@@ -32,10 +37,24 @@ function NavBar() {
 
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
-    element?.scrollIntoView({ behavior: 'smooth'})
-    handleCloseNavMenu()
-  }
+    const scroll = () => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+  
+    if (location.pathname !== '/') {
+      // Navigate to homepage first, then scroll after load
+      navigate('/');
+      // Delay scrolling until after navigation
+      setTimeout(() => scroll(), 100);
+    } else {
+      scroll();
+    }
+  
+    handleCloseNavMenu();
+  };
 
   return (
     <AppBar position="sticky" sx={{ backgroundColor: { md: "#000", xs: '#000'}, boxShadow: { xs: 'none', sm: 'none', md: 'none'} }}>

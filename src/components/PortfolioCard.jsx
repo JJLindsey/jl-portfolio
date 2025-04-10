@@ -11,9 +11,9 @@ import { CardMedia, Button, CardActions } from '@mui/material'
 import {styled} from '@mui/material/styles'
 import {motion} from 'framer-motion'
 
-import reactlogo from '../assets/logo192.png'
-import jslogo from '../assets/icons8-javascript-48.png'
-import nextlogo from '../assets/icons8-next.js-48.png'
+// import reactlogo from '../assets/logo192.png'
+// import jslogo from '../assets/icons8-javascript-48.png'
+// import nextlogo from '../assets/icons8-next.js-48.png'
 // import clogo from '../assets/icons8-c-sharp-logo-48.png'
 // import vuelogo from '../assets/icons8-vue-js-48.png'
 // import threeSixtyImage from '../assets/360Home.png'
@@ -25,6 +25,7 @@ import bracketicon from '../assets/bracketPNG.png'
 import AnimatedTypography from './AnimatedTypography'
 
 import { CallMade } from '@mui/icons-material'
+import { Link } from 'react-router-dom';
 //import cardBack from '../assets/bubblesred.png'
 
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -242,8 +243,9 @@ export default function Portfolio() {
                     {project.navigation}
                 </Button>
                 <Button
-                    href={project.url}
-                    target="_blank"
+                    //href={project.url}
+                    component={Link}
+                    to={`/projects/${project.id}`}
                     endIcon={<CallMade />}
                     sx={{ color: '#000'}}
                   >

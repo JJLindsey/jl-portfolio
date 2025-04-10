@@ -4,7 +4,8 @@ import nextlogo from '../assets/icons8-next.js-48.png'
 
 export const projects = [
     {
-      avatar: <img src={reactlogo} alt="react logo" height={48}/>,
+      id: 'three-sixty-sessions',
+        avatar: <img src={reactlogo} alt="react logo" height={48}/>,
       name: 'Three Sixty Sessions',
       image: `${process.env.PUBLIC_URL}/images/360Home.png`,
       project: 'Atlanta-based Music producer\'s site showcasing audio samples',
@@ -15,6 +16,7 @@ export const projects = [
       navigation: 'Go to Live site'
     },
     {
+        id: 'movie-app',
       avatar: <img src={jslogo} alt="react logo" height={48}/>,
       name: 'Current Films',
       image: `${process.env.PUBLIC_URL}/images/MovieApp.png`,
@@ -34,7 +36,8 @@ export const projects = [
     //     "",
     //   },
     {
-      avatar: <img alt="next logo" src={nextlogo} height={48}/>,
+      id: 'tracking-app',
+        avatar: <img alt="next logo" src={nextlogo} height={48}/>,
       name: 'Real Time component',
       project: 'Tracking & Shipping component status updates in real-time',
       image: `${process.env.PUBLIC_URL}/images/orderStatus.png`,
@@ -45,7 +48,8 @@ export const projects = [
       navigation: 'GitHub'
     },
     {
-      avatar:<img src={reactlogo} alt="react logo" height={48}/>,
+      id: 'checkout-stripe',
+        avatar:<img src={reactlogo} alt="react logo" height={48}/>,
       name: 'Cart & Stripe Pay component',
       project: 'Shopping cart with Stripe payment',
       image: `${process.env.PUBLIC_URL}/images/ProductPageCleanskin.png`,
@@ -53,10 +57,13 @@ export const projects = [
       testimonial:
         "",
       width: '40%',
-      navigation: 'GitHub'
+      navigation: 'GitHub',
+      description: 'This project is a shopping cart component that allows users to add items to their cart and proceed to checkout using Stripe for payment processing. The component is built using React and integrates with the Stripe API for secure payment handling.'
     },
     {
-      avatar: <img src={jslogo} alt="react logo" height={48}/>,
+      
+      id:'password-component',
+        avatar: <img src={jslogo} alt="react logo" height={48}/>,
       name: 'Password component',
       project: 'Image clears as password gets stronger',
       image: `${process.env.PUBLIC_URL}/images/passwordPage.png`,
