@@ -64,7 +64,7 @@ export default function ProjectDetails() {
 
         {/* Full-width image after goal */}
         {project.screenshots && project.screenshots.length > 0 && (
-          <ImageList cols={2} variant="woven" sx={{ mb: 4 }}>
+          <ImageList cols={2} variant="masonry" sx={{ mb: 4}}>
              {project.screenshots.map((src, index) => (
                 <ImageListItem key={index}>
                     <img
@@ -72,6 +72,7 @@ export default function ProjectDetails() {
                     alt={`${project.name} screenshot ${index + 1}`}
                     style={{ borderRadius: 4 }}
                     loading="lazy"
+
                     />
                 </ImageListItem>
                 ))}
