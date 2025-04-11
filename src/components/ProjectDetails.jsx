@@ -24,6 +24,8 @@ export default function ProjectDetails() {
             <Grid item xs={12} sm={6} sx={{ mb: 4 }}>
                 <Typography variant="h3" textAlign='left' gutterBottom color='#fff'>{project.name}</Typography>
                 <Typography variant="body1" textAlign='left' sx={{ mb: 4 }}>{project.description}</Typography>
+                <Typography variant="h6" textAlign='left' gutterBottom color='#fff'>My Role</Typography>
+                <Typography variant="body1" textAlign='left' sx={{ mb: 4 }}>{project.role}</Typography>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 4 }}>
                 {project.label.map((label, index) => (
                     <Chip
