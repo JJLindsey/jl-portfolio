@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import {projects} from '../data/projects'
-import { Box, Button, Chip, Container, Grid, Typography } from '@mui/material'
+import { Box, Button, Chip, Container, Grid, ImageList, ImageListItem, Typography } from '@mui/material'
 import MediaPreview from './MediaPreview'
 
 
@@ -63,19 +63,19 @@ export default function ProjectDetails() {
         </Typography>
 
         {/* Full-width image after goal */}
-        {project.image && (
-          <Box sx={{ mb: 4 }}>
-            <img
-              src={project.image}
-              alt={`${project.name} preview`}
-              style={{
-                width: '100%',
-                maxHeight: 500,
-                objectFit: 'cover',
-                borderRadius: 8,
-              }}
-            />
-          </Box>
+        {project.screenshots && project.screenshots.length > 0 && (
+          <ImageList cols={2} variant="woven" sx={{ mb: 4 }}>
+             {project.screenshots.map((src, index) => (
+                <ImageListItem key={index}>
+                    <img
+                    src={src}
+                    alt={`${project.name} screenshot ${index + 1}`}
+                    style={{ borderRadius: 4 }}
+                    loading="lazy"
+                    />
+                </ImageListItem>
+                ))}
+          </ImageList>
         )}
       </Box>
        {/* Conditionally render the Figma embed */}
