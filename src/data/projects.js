@@ -76,10 +76,10 @@ export const projects = [
       width: '40%',
       navigation: 'GitHub',
       goal: 'The main objective of this project was to create a websocket-based tracking component that allows users to see the status of their order in real-time.',
-      screenshots: [`${process.env.PUBLIC_URL}/images/moviehome.png`, `${process.env.PUBLIC_URL}/images/moviesearchresult.png`, `${process.env.PUBLIC_URL}/images/movieInfo.png`],
-      description: 'This project is a movie app that displays current films, a synopsis of each film, and allows users to search for movies by actor, genre or title. The app uses the TMDB API to fetch movie data and display it in a user-friendly interface.',
-      label: [ 'JavaScript', 'HTML', 'CSS', 'API'],
-      role: 'Design and Build a responsive app using Vanilla JavaScript, HTML, and CSS, integrate TMDB API to fetch movie data, deploy site via GitHub Pages.',
+      screenshots: [`${process.env.PUBLIC_URL}/images/preparing.png`, `${process.env.PUBLIC_URL}/images/noconnection.png`, `${process.env.PUBLIC_URL}/images/shipping.png`],
+      description: 'This project is a real-time app component that tracks the status of an order using websockets. The component is built using Next.js and allows users to see the status of their order in real-time.',
+      label: [ 'Next', 'Websockets', 'MUI', 'RealTime'],
+      role: 'Build a real-time app using Next.js and websocket.',
     },
     {
       id: 'checkout-stripe',
@@ -101,18 +101,36 @@ export const projects = [
       role: 'Design app wireframes and prototypes in Figma, build components in React, implement Stripe API for payment processing.',
     },
     {
-      
-      id:'password-component',
-        avatar: <img src={jslogo} alt="react logo" height={48}/>,
-      name: 'Password component',
-      project: 'Image clears as password gets stronger',
-      image: `${process.env.PUBLIC_URL}/images/passwordPage.png`,
-      url: 'https://jjlindsey.github.io/password-str/',
+        id: 'fitness-dashboard',
+        name: 'Fitness Dashboard',
+        avatar:<img src={reactlogo} alt="react logo" height={48}/>,
+        image:`${process.env.PUBLIC_URL}/images/comingsoon.png`,
+        project: 'Fitness Tracker',
+      url: '',
       testimonial:
         "",
-      navigation: 'GitHub',
-      width: '40%'
-    },
+        goal: 'Coming soon',
+      width: '40%',
+      navigation: '',
+      videoUrl: '',
+      screenshots: [],
+      description: 'In Progress',
+      label: [ 'React.js', 'Typescript', 'TailwindCSS', 'Figma', 'UI Design', 'App Design'],
+      figmaEmbed: '',
+      role: 'Design app wireframes and prototypes in Figma. Build Fitness Tracker app using React, Typescript, TailwindCSS.',
+    }
+    // {
+    //   id:'password-component',
+    //     avatar: <img src={jslogo} alt="react logo" height={48}/>,
+    //   name: 'Password component',
+    //   project: 'Image clears as password gets stronger',
+    //   image: `${process.env.PUBLIC_URL}/images/passwordPage.png`,
+    //   url: 'https://jjlindsey.github.io/password-str/',
+    //   testimonial:
+    //     "",
+    //   navigation: 'GitHub',
+    //   width: '40%'
+    // },
     // {
     //   avatar: <Avatar alt="react logo" src={reactlogo}/>,
     //   name: 'In Progress',
