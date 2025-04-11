@@ -16,7 +16,7 @@ export default function MediaPreview({ videoUrl, screenshots }) {
             position: 'absolute',
             top: 0,
             left: 0,
-            width: '100%',
+            width: '80%',
             height: '100%',
             borderRadius: 8
           }}
