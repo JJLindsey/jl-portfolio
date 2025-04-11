@@ -104,7 +104,7 @@ export default function ProjectDetails() {
               <div dangerouslySetInnerHTML={{ __html: project.figmaEmbed }} />
             </Box>
           )}
-      <Button variant='contained'  sx={{backgroundColor: '#18C9CD'}} onClick={() => navigate('/')}>
+      <Button variant='contained'  sx={{backgroundColor: '#18C9CD', mt: 4}} onClick={() => navigate('/')}>
         Back to Projects
       </Button>
     </Container>
