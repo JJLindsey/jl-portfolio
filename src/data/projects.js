@@ -13,11 +13,12 @@ export const projects = [
       testimonial:
         "Music Producer needed a website to advertise his services and showcase his work",
       width: '40%',
-      navigation: 'Go to Live site',
-      goal: 'The main objective of this project was to create a website for an Atlanta-based music producer to showcase their work. We built a custom audio player using Wavesurfer.js to allow users to listen to sample music.',
+      navigation: 'Live Site',
+      goal: 'The main objective of this project was to create a website for an Atlanta-based music producer to showcase their work. We built a custom audio player using Wavesurfer.js to allow users to sample music.',
       screenshots: [`${process.env.PUBLIC_URL}/images/musicplayer.png`, `${process.env.PUBLIC_URL}/images/about360.png`, `${process.env.PUBLIC_URL}/images/360Home.png`],
       description: 'This project is a website for a music producer that showcases audio samples and allows users to listen to the music directly on the site. Site is built using React and features a custom audio player.',
       label: [ 'React.js', 'Wavesurfer.js', 'Bootstrap', 'JavaScript'],
+      role: 'Design logo, assets, and components for custom React site, build a custom audio player using Wavesurfer.js, deploy site via Firebase.',
     },
     {
         id: 'movie-app',
@@ -29,7 +30,12 @@ export const projects = [
       testimonial:
         "",
       width: '40%',
-      navigation: 'Go to Live site'
+      navigation: 'Go to Live site',
+      goal: 'The main objective of this project was to create a movie search app that allows users to search for movies and view the rating. The app uses the TMDB API to fetch movie data and display it in a user-friendly interface.',
+      screenshots: [`${process.env.PUBLIC_URL}/images/musicplayer.png`, `${process.env.PUBLIC_URL}/images/about360.png`, `${process.env.PUBLIC_URL}/images/360Home.png`],
+      description: 'This project is a website for a music producer that showcases audio samples and allows users to listen to the music directly on the site. Site is built using React and features a custom audio player.',
+      label: [ 'React.js', 'Wavesurfer.js', 'Bootstrap', 'JavaScript'],
+      role: 'Design logo, assets, and components for custom React site, build a custom audio player using Wavesurfer.js, deploy site via Firebase.',
     },
     // {
     //   avatar: <Avatar alt="vue logo" src={vuelogo} height={48}/>,

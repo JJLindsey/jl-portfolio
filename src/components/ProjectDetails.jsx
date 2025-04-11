@@ -22,16 +22,32 @@ export default function ProjectDetails() {
     <Container sx={{ pt: 8, pb: 12 }}>
         <Grid container spacing={2} alignItems='flex-start'>
             <Grid item xs={12} sm={6} sx={{ mb: 4 }}>
-                <Typography variant="h3" textAlign='left' gutterBottom color='#fff'>{project.name}</Typography>
-                <Typography variant="body1" textAlign='left' sx={{ mb: 4 }}>{project.description}</Typography>
-                <Typography variant="h6" textAlign='left' gutterBottom color='#fff'>My Role</Typography>
-                <Typography variant="body1" textAlign='left' sx={{ mb: 4 }}>{project.role}</Typography>
+                <Typography variant='h3' textAlign='left' gutterBottom color='#fff'>{project.name}</Typography>
+                <Typography variant='body1' textAlign='left' sx={{ mb: 4 }}>{project.description}</Typography>
+                <Typography variant='h6' textAlign='left' gutterBottom color='#fff'>My Role</Typography>
+                <Typography variant='body1' textAlign='left' sx={{ mb: 4 }}>{project.role}</Typography>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2 }}>
+                {project.url && (
+                    <Button
+                        variant='outlined'
+                        color='secondary'
+                        href={project.url}
+                        target='_blank'
+                        sx={{
+                            borderRadius: 4,
+                            alignContent: 'left'
+                        }}
+                        >
+                        {project.navigation}
+                    </Button>
+                )}
+                </Box>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 4 }}>
                 {project.label.map((label, index) => (
                     <Chip
                     key={index}
                     label={label}
-                    variant="outlined"
+                    variant='outlined'
                     sx={{color: '#fff', borderColor: '#18C9CD', backgroundColor: 'transparent', borderWidth: 2}}
                     />
                 ))}
@@ -39,7 +55,7 @@ export default function ProjectDetails() {
             </Grid>
         <Grid item xs={12} sm={6} sx={{ mb: 4 }}>
         {/* Conditionally render screenshots or video */}
-        <MediaPreview videoUrl={project.videoUrl} screenshots={project.screenshots}/>
+        <MediaPreview videoUrl={project.videoUrl} image={project.image}/>
         {/* {project.image && (
           <Box sx={{ mb: 4 }}>
             <img
@@ -57,23 +73,23 @@ export default function ProjectDetails() {
         </Grid>
       </Grid>
       <Box sx={{ mt: 8 }}>
-        <Typography variant="h4" textAlign='left' gutterBottom color="#fff">
+        <Typography variant='h4' textAlign='left' gutterBottom color='#fff'>
           Project Goal
         </Typography>
-        <Typography variant="body1" textAlign='left' sx={{ mb: 4 }}>
+        <Typography variant='body1' textAlign='left' sx={{ mb: 4 }}>
             {project.goal}
         </Typography>
 
         {/* Full-width image after goal */}
         {project.screenshots && project.screenshots.length > 0 && (
-          <ImageList cols={2} variant="masonry" sx={{ mb: 4}}>
+          <ImageList cols={2} variant='masonry' sx={{ mb: 4}}>
              {project.screenshots.map((src, index) => (
                 <ImageListItem key={index}>
                     <img
                     src={src}
                     alt={`${project.name} screenshot ${index + 1}`}
                     style={{ borderRadius: 4 }}
-                    loading="lazy"
+                    loading='lazy'
 
                     />
                 </ImageListItem>
@@ -84,11 +100,11 @@ export default function ProjectDetails() {
        {/* Conditionally render the Figma embed */}
        {project.figmaEmbed && (
             <Box sx={{ mt: 4, mb: 4 }}>
-              <Typography variant="h6" textAlign='left' gutterBottom color='#fff'>Figma Prototype</Typography>
+              <Typography variant='h6' textAlign='left' gutterBottom color='#fff'>Figma Prototype</Typography>
               <div dangerouslySetInnerHTML={{ __html: project.figmaEmbed }} />
             </Box>
           )}
-      <Button variant="contained"  sx={{backgroundColor: '#18C9CD'}} onClick={() => navigate('/')}>
+      <Button variant='contained'  sx={{backgroundColor: '#18C9CD'}} onClick={() => navigate('/')}>
         Back to Projects
       </Button>
     </Container>

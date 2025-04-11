@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material'
 
-export default function MediaPreview({ videoUrl, screenshots }) {
+export default function MediaPreview({ videoUrl, image }) {
      // If there's a video URL, render it first
   if (videoUrl) {
     return (
@@ -9,6 +9,7 @@ export default function MediaPreview({ videoUrl, screenshots }) {
         <iframe
           src={videoUrl}
           title="Project Demo"
+          alt={`${videoUrl} preview`}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -25,27 +26,25 @@ export default function MediaPreview({ videoUrl, screenshots }) {
     )
   }
 
-  // If there are screenshots
-  if (screenshots.length > 0) {
+  // otherwise render image
+  if (image) {
     return (
       <Box sx={{ mb: 4 }}>
-        <Typography variant="h6" gutterBottom>Screenshots</Typography>
-        {screenshots.map((src, index) => (
-          <Box key={index} sx={{ mb: 2 }}>
+        {/* <Typography variant="h6" gutterBottom>preview</Typography> */}
+          <Box>
             <img
-              src={src}
-              alt={`Screenshot ${index + 1}`}
+              src={image}
+              alt='Project preview'
               style={{
                 width: '100%',
-                maxHeight: 400,
+                maxHeight: 500,
                 objectFit: 'cover',
-                borderRadius: 8
+                borderRadius: 8,
               }}
             />
           </Box>
-        ))}
       </Box>
-    );
+    )
   }
 
   // Fallback message
