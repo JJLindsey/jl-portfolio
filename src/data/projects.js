@@ -21,6 +21,25 @@ export const projects = [
       role: 'Design logo, assets, and components for custom React site, build a custom audio player using Wavesurfer.js, deploy site via Firebase.',
     },
     {
+        id: 'neo-dashboard',
+        avatar:<img src={reactlogo} alt="react logo" height={48}/>,
+        name: 'Data Visualization Dashboard',
+        project: 'Neo Graphs',
+        image: `${process.env.PUBLIC_URL}/images/NEOhome.png`,
+        url: 'https://jjlindsey.github.io/space-dashboard/',
+        testimonial:
+          "",
+        goal: 'The main goal of this project was to create a data visualization dashboard that displays information about Near Earth Objects (NEOs) using NASA API.',
+        width: '40%',
+        navigation: 'Live Site',
+        videoUrl: 'https://www.youtube.com/embed/kZSAEHHHqIE?si=pMKHsIR7hBjBFYUz',
+        screenshots: [`${process.env.PUBLIC_URL}/images/NEOhome.png`, `${process.env.PUBLIC_URL}/images/NEOLight.png`, `${process.env.PUBLIC_URL}/images/NEOcharts.png`],
+        description: 'This project is a data visualization dashboard.',
+        label: [ 'React.js', 'D3.js', 'Chart.js', 'NASA API', 'UI Design', 'MUI'],
+        figmaEmbed: '',
+        role: 'Design app, build chart components using D3 and Charts.js, implement NASA API to generate data for visuals.',
+      },
+    {
         id: 'movie-app',
       avatar: <img src={jslogo} alt="react logo" height={48}/>,
       name: 'Current Films',
@@ -55,7 +74,12 @@ export const projects = [
       testimonial:
         "",
       width: '40%',
-      navigation: 'GitHub'
+      navigation: 'GitHub',
+      goal: 'The main objective of this project was to create a websocket-based tracking component that allows users to see the status of their order in real-time.',
+      screenshots: [`${process.env.PUBLIC_URL}/images/moviehome.png`, `${process.env.PUBLIC_URL}/images/moviesearchresult.png`, `${process.env.PUBLIC_URL}/images/movieInfo.png`],
+      description: 'This project is a movie app that displays current films, a synopsis of each film, and allows users to search for movies by actor, genre or title. The app uses the TMDB API to fetch movie data and display it in a user-friendly interface.',
+      label: [ 'JavaScript', 'HTML', 'CSS', 'API'],
+      role: 'Design and Build a responsive app using Vanilla JavaScript, HTML, and CSS, integrate TMDB API to fetch movie data, deploy site via GitHub Pages.',
     },
     {
       id: 'checkout-stripe',
