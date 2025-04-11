@@ -60,11 +60,11 @@ export const projects = [
       url: 'https://github.com/JJLindsey/checkout-stripe',
       testimonial:
         "",
-        goal: 'The main objective of this project was to implement a seamless Stripe checkout experience in a modern e-commerce interface.',
+        goal: 'The main goal of this project was to implement a seamless Stripe checkout experience in a modern e-commerce interface.',
       width: '40%',
       navigation: 'GitHub',
       videoUrl: 'https://www.youtube.com/embed/eaEnQw4v3Qo?si=hHukVmUidQIZo_iQ',
-      screenshots: [`${process.env.PUBLIC_URL}/images/ProductPageCleanskin.png`],
+      screenshots: [`${process.env.PUBLIC_URL}/images/homeClean.png`, `${process.env.PUBLIC_URL}/images/addedItems.png`, `${process.env.PUBLIC_URL}/images/cart.png`, `${process.env.PUBLIC_URL}/images/stripecheckout.png`],
       description: 'This project is a shopping cart component that allows users to add items to their cart and proceed to checkout using Stripe for payment processing. The component is built using React and integrates with the Stripe API for secure payment handling.',
       label: [ 'React.js', 'Stripe API', 'E-commerce', 'Figma'],
       figmaEmbed: '<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/Hn02KhH70ppWphpeEhMejO/EComm-site?node-id=1211-2&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1211%3A2&embed-host=share" allowfullscreen></iframe>'

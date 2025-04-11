@@ -37,8 +37,8 @@ export default function ProjectDetails() {
             </Grid>
         <Grid item xs={12} sm={6} sx={{ mb: 4 }}>
         {/* Conditionally render screenshots or video */}
-        {/* <MediaPreview videoUrl={project.videoUrl} screenshots={project.screenshots}/> */}
-        {project.image && (
+        <MediaPreview videoUrl={project.videoUrl} screenshots={project.screenshots}/>
+        {/* {project.image && (
           <Box sx={{ mb: 4 }}>
             <img
               src={project.image}
@@ -51,7 +51,7 @@ export default function ProjectDetails() {
               }}
             />
           </Box>
-        )}
+        )} */}
         </Grid>
       </Grid>
       <Box sx={{ mt: 8 }}>
