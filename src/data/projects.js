@@ -33,7 +33,7 @@ export const projects = [
         width: '40%',
         navigation: 'Live Site',
         videoUrl: 'https://www.youtube.com/embed/kZSAEHHHqIE?si=pMKHsIR7hBjBFYUz',
-        screenshots: [`${process.env.PUBLIC_URL}/images/NEOhome.png`, `${process.env.PUBLIC_URL}/images/NEOLight.png`, `${process.env.PUBLIC_URL}/images/NEOcharts.png`],
+        screenshots: [`${process.env.PUBLIC_URL}/images/NEOhome.png`, `${process.env.PUBLIC_URL}/images/neoLight.png`, `${process.env.PUBLIC_URL}/images/NEOcharts.png`],
         description: 'This project is a data visualization dashboard.',
         label: [ 'React.js', 'D3.js', 'Chart.js', 'NASA API', 'UI Design', 'MUI'],
         figmaEmbed: '',
