@@ -16,7 +16,7 @@ export default function Footer() {
           sx={{display: 'flex', justifyContent: 'center', alignItems: 'flex-start'}}
         >
           <IconButton variant='contained' component='a' href='mailto:jlindsey010@gmail.com' rel='noopener noreferrer'>
-            <EmailOutlined sx={{fontSize: '36px', color: '#FFF'}}/>
+            <EmailOutlined sx={{fontSize: '38px', color: '#FFF'}}/>
           </IconButton>
           <IconButton
             variant='contained'
