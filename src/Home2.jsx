@@ -34,6 +34,12 @@ export default function Home2() {
                 >
                 Jennifer Lindsey | Frontend Engineer
             </Typography>
+            <Typography
+              color="inherit"
+              align="left"
+              variant="h6"
+              sx={{ mb: 4, mt: { xs: 4, sm: 4} }}
+            > I understand the "why" behind design decisions, not just the "how" of implementation, leading to more thoughtful and purposeful frontend solutions.</Typography>
             <Box sx={{display: 'flex', gap: 2, mb: 3}}>
                 <Code />
                 <Typography>Developer</Typography>

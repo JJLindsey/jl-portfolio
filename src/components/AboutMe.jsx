@@ -93,7 +93,7 @@ export default function About() {
               Curiosity is my superpower
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb:2}}>
-            As a designer-turned-frontend engineer, I blend artistic vision with technical prowess to craft exceptional digital experiences. I'm passionate about creating intuitive and visually appealing interfaces that solve real-world problems.
+            As a designer-turned-frontend engineer, I blend artistic vision with technical prowess to craft exceptional digital experiences. My background helps me approach development from the user's perspective.  I'm passionate about creating intuitive and visually appealing interfaces that solve real-world problems.
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
             Driven by curiosity, I'm constantly exploring new technologies and techniques to elevate my craft. I thrive in collaborative environments, where I can learn from others and contribute to the success of the team.
