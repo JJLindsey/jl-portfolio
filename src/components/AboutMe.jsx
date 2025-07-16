@@ -90,7 +90,7 @@ export default function About() {
             </Typography>
             <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '45px', marginTop: "-10px"}}></img>
             <Typography align='left' variant="h3" sx={{ mt: 8, mb: 4, fontWeight: 'bold'}}>
-            From 19th-centur Art to React Components
+            From 19th-century Art to React Components
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb:2}}>
             My art history background trained me to analyze visual culture, understand context, and think critically about design decisions. Now I apply that same analytical rigor to frontend engineering—building interfaces that aren't just functional, but culturally aware and aesthetically intentional.

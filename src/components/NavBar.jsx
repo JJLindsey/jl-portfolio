@@ -90,7 +90,7 @@ const navigate = useNavigate();
                       <Typography textAlign='center'>About</Typography>
                     </MenuItem>
                     <MenuItem onClick={() => scrollToSection('projects')}>
-                      <Typography textAlign='center'>Projects</Typography>
+                      <Typography textAlign='center'>Work</Typography>
                     </MenuItem>
                   <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'flex-start' }}>
                     <IconButton  variant="contained"
@@ -136,7 +136,7 @@ const navigate = useNavigate();
                 About
             </StyledButton>
             <StyledButton onClick={() => scrollToSection('projects')}>
-                Projects
+                Work
             </StyledButton>
             <Box sx={{ flexGrow: 1 }}/>
               <IconButton
