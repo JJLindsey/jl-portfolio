@@ -31,15 +31,15 @@ const items = [
   // },
   {
     icon: <ConstructionRoundedIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
-    title: 'Scalable Components',
+    title: 'Design Systems',
     description:
-      'Crafting high-performing, efficient, and scalable frontend components to streamline data management and elevate user interactions.',
+      'Building scalable component libraries that bridge design and development teams, ensuring consistency across products while maintaining flexibility for creative expression.',
   },
   {
     icon: <DesignServicesIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
-    title: 'Inclusive User Experiences',
+    title: 'Culturally-Aware UX',
     description:
-      'I create accessible and inclusive user interfaces that not only look great but also provide exceptional experiences for all users.'
+      'Leveraging art history training to create interfaces that consider cultural context, aesthetic principles, and user psychology—not just technical requirements.'
   },
   // {
   //   icon: <AutoFixHighRoundedIcon sx={{ fontSize: '2.5rem', color: '#d71920'}}/>,
@@ -55,9 +55,9 @@ const items = [
   // },
   {
     icon: <QueryStatsRoundedIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
-    title: 'Crafting Intuitive UI',
+    title: 'Strategic Implementation',
     description:
-      'With a strong foundation in design, I specialize in bringing designs to life to ensure that the final product is both visually stunning & user-friendly.'
+      'Translating business objectives into technical solutions through analytical thinking and contextual understanding developed through years of visual culture analysis.'
   },
 ]
 
@@ -90,13 +90,13 @@ export default function About() {
             </Typography>
             <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '45px', marginTop: "-10px"}}></img>
             <Typography align='left' variant="h3" sx={{ mt: 8, mb: 4, fontWeight: 'bold'}}>
-              Curiosity is my superpower
+            From 19th-centur Art to React Components
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb:2}}>
-            As a designer-turned-frontend engineer, I blend artistic vision with technical prowess to craft exceptional digital experiences. My background helps me approach development from the user's perspective.  I'm passionate about creating intuitive and visually appealing interfaces that solve real-world problems.
+            My art history background trained me to analyze visual culture, understand context, and think critically about design decisions. Now I apply that same analytical rigor to frontend engineering—building interfaces that aren't just functional, but culturally aware and aesthetically intentional.
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
-            Driven by curiosity, I'm constantly exploring new technologies and techniques to elevate my craft. I thrive in collaborative environments, where I can learn from others and contribute to the success of the team.
+            I bridge the gap between design and development teams, ensuring consistency at scale while maintaining the flexibility for creative expression. My unique perspective helps teams make decisions that consider both technical constraints and user experience holistically. I thrive in collaborative environments, where I can learn from others and contribute to the success of the team.
             </Typography>
           </Grid>
         </Grid>

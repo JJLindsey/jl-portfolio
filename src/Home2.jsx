@@ -21,10 +21,21 @@ export default function Home2() {
             {/* <Divider orientation='vertical' sx={{color: 'white', borderWidth: 5, opacity: 1.0, borderColor: '#18C9CD' }}/> */}
             <RectangleIcon  sx={{color: '#18C9CD', display: 'flex', fontSize: '5em'}}/>
             <Typography color="inherit" align="left" variant="h2" sx={{fontWeight: 'bold'}}>
-                Crafting Intuitive
+                UX Engineer
             </Typography>
-            <Typography color="inherit" align="left" variant="h3" sx={{fontWeight: 'bold'}}>
+            {/* <Typography color="inherit" align="left" variant="h3" sx={{fontWeight: 'bold'}}>
                 User Experiences
+            </Typography> */}
+            <Typography color="inherit" align="left" variant="h3" sx={{fontWeight: 'bold'}}>
+                Where Art History Meets Modern UX
+            </Typography>
+            <Typography
+                color="inherit"
+                align="left"
+                variant="h4"
+                sx={{ mb: 4, mt: { xs: 4, sm: 4} }}
+                >
+                Jennifer Lindsey
             </Typography>
             <Typography
                 color="inherit"
@@ -32,7 +43,7 @@ export default function Home2() {
                 variant="h5"
                 sx={{ mb: 4, mt: { xs: 4, sm: 4} }}
                 >
-                Jennifer Lindsey | Frontend Engineer
+                Frontend Engineer | Design Systems
             </Typography>
             <Typography
               color="inherit"
@@ -42,9 +53,9 @@ export default function Home2() {
             > I understand the "why" behind design decisions, not just the "how" of implementation, leading to more thoughtful and purposeful frontend solutions.</Typography>
             <Box sx={{display: 'flex', gap: 2, mb: 3}}>
                 <Code />
-                <Typography>Developer</Typography>
+                <Typography>Engineer</Typography>
                 <DesignServices />
-                <Typography>UI Design</Typography>
+                <Typography>Design</Typography>
                 <Palette />
                 <Typography>Creative</Typography>
             </Box>
