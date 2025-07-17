@@ -14,6 +14,7 @@ import CodeIcon from '@mui/icons-material/Code'
 import DescriptionIcon from '@mui/icons-material/Description'
 import CodeProjects from './CodeProjects'
 import Articles from './Articles'
+import ProcessDocumentation from './ProcessDocumentation'
 //import cardBack from '../assets/bubblesred.png'
 
 // const AnimatedTypography = ({ text, ...props }) => {
@@ -114,6 +115,9 @@ export default function PortfolioCard({ projects= []}) {
       </TabPanel>
       <TabPanel value={tab} index={1}>
         <Articles />
+      </TabPanel>
+      <TabPanel value={tab} index={2}>
+        <ProcessDocumentation />
       </TabPanel>
     </Container>
   )

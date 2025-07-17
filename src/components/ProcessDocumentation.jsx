@@ -1,0 +1,266 @@
+import React, {useState} from 'react'
+import {  Box,
+  Container,
+  Typography,
+  Paper,
+  Grid,
+  Chip,
+  useTheme, } from '@mui/material'
+import StarIcon from '@mui/icons-material/Star'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle'
+import HomeIcon from '@mui/icons-material/Home'
+import Warning from '@mui/icons-material/Warning'
+import Error from '@mui/icons-material/Error';
+
+const steps = {
+    processOne: [
+      ['Visual Analysis', 'Apply art historical methods to understand design intent, cultural context, and user psychology'],
+      ['Component Architecture', 'Plan scalable component structure using composition patterns and design system principles'],
+      ['Accessibility-First Implementation', 'Build with semantic HTML, proper ARIA labels, and keyboard navigation from the start'],
+      ['Cultural Adaptation', 'Ensure components work across different cultural contexts and reading patterns'],
+      ['Performance Optimization', 'Optimize for speed while maintaining visual fidelity and user experience'],
+    ],
+    processTwo: [
+      ['Automated Testing', 'Run axe-core, WAVE, and Lighthouse accessibility audits for baseline compliance'],
+      ['Manual Navigation Testing', 'Test keyboard navigation, screen reader compatibility, and focus management'],
+      ['Cultural Accessibility Review', 'Assess color contrast, reading patterns, and cultural symbols for global usability'],
+      ['User Testing with Disabilities', 'Conduct real-world testing with users who have various accessibility needs'],
+      ['Documentation & Guidelines', 'Create accessibility documentation and guidelines for team implementation'],
+    ],
+    processThree: [
+      ['Design Token Foundation', 'Establish color, typography, and spacing systems based on design principles'],
+      ['Atomic Design Implementation', 'Build components from atoms up, ensuring consistency and reusability'],
+      ['Storybook Documentation', 'Create interactive documentation with all component states and variations'],
+      ['Testing & Validation', 'Comprehensive testing including unit, integration, and visual regression tests'],
+      ['Team Adoption Strategy', 'Training, migration plan, and ongoing support for design system adoption'],
+    ],
+  };
+  
+  const workflowSteps = [
+    'Figma Analysis',
+    'Component Planning',
+    'Token Creation',
+    'Implementation',
+    'Testing',
+    'Documentation',
+  ];
+  
+  const checklistItems = [
+    ['Color contrast meets WCAG AAA standards', 'ok'],
+    ['Keyboard navigation fully functional', 'ok'],
+    ['Focus indicators need enhancement', 'warn'],
+    ['Screen reader compatibility verified', 'ok'],
+    ['RTL language support implemented', 'ok'],
+    ['Cultural symbols need review for global markets', 'error'],
+  ];
+  
+  const components = [
+    ['Button System', 'Culturally adapted sizing and spacing'],
+    ['Typography Scale', 'Multi-language font optimization'],
+    ['Color Palette', 'Art historical color theory applied'],
+    ['Layout Grid', 'Golden ratio-based proportions'],
+    ['Navigation', 'Directional and cultural adaptations'],
+    ['Form Elements', 'Accessible and culturally appropriate'],
+  ];
+  
+  export default function ProcessDocumentation() {
+    const theme = useTheme();
+    const [activeComponent, setActiveComponent] = useState(null);
+  
+    const renderProcessCard = (title, icon, stepsArr) => (
+      <Paper elevation={3} sx={{ borderRadius: 3, p: 4, position: 'relative', backgroundColor: '#000' }}>
+        <Box sx={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, bgcolor: 'error.main' }} />
+        <Box display="flex" alignItems="center" mb={3}>
+          <Box
+            sx={{
+              width: 48,
+              height: 48,
+              background: 'linear-gradient(135deg, #CD1C18, #ff6b6b)',
+              borderRadius: 2,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              mr: 2,
+            }}
+          >
+            {icon}
+          </Box>
+          <Typography variant="h6" fontWeight="bold" sx={{ color: '#fff' }}>
+            {title}
+          </Typography>
+        </Box>
+        <Box component="ol" sx={{ pl: 0, listStyle: 'none', counterReset: 'step-counter' }}>
+          {stepsArr.map(([stepTitle, desc], idx) => (
+            <Box
+              key={idx}
+              component="li"
+              sx={{
+                position: 'relative',
+                borderLeft: '2px solid #e9ecef',
+                pl: 4,
+                pb: 2,
+                '&::before': {
+                  content: 'counter(step-counter)',
+                  counterIncrement: 'step-counter',
+                  position: 'absolute',
+                  left: -14,
+                  top: 8,
+                  width: 24,
+                  height: 24,
+                  bgcolor: 'error.main',
+                  color: '#fff',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontWeight: 'bold',
+                  fontSize: '0.9rem',
+                },
+              }}
+            >
+              <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
+                {stepTitle}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {desc}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+      </Paper>
+    );
+  
+    return (
+      <Container sx={{ py: { xs: 4, sm: 10 } }}>
+        <Box textAlign="center" mb={6}>
+          <Typography variant="h4" color="error.main" fontWeight="bold" gutterBottom>
+            My Process
+          </Typography>
+          <Typography variant="subtitle1" color="text.secondary">
+            How I apply art historical methodology to modern frontend development
+          </Typography>
+        </Box>
+  
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={4}>
+            {renderProcessCard('Design-to-Development Workflow', <StarIcon sx={{ fill: '#fff' }} />, steps.processOne)}
+          </Grid>
+          <Grid item xs={12} md={4}>
+            {renderProcessCard('Accessibility Audit Process', <CheckCircleIcon sx={{ fill: '#fff' }} />, steps.processTwo)}
+          </Grid>
+          <Grid item xs={12} md={4}>
+            {renderProcessCard('Component Library Creation', <HomeIcon sx={{ fill: '#fff' }} />, steps.processThree)}
+          </Grid>
+        </Grid>
+  
+        <Paper
+          sx={{
+            mt: 8,
+            p: 4,
+            borderRadius: 3,
+            bgcolor: '#000',
+            border: '2px solid #dee2e6'
+            }}
+          >
+          <Typography variant="h5" fontWeight="bold" textAlign="center" sx={{color: "#fff", mb: 3}}>
+            Design-to-Code Workflow
+          </Typography>
+          <Box display="flex" flexWrap="wrap" justifyContent="center" alignItems="center" gap={2}>
+            {workflowSteps.map((step, idx) => (
+              <React.Fragment key={step}>
+                <Box
+                  sx={{
+                    px: 3,
+                    py: 1,
+                    borderRadius: 2,
+                    border: '2px solid #dee2e6',
+                    bgcolor: idx === 0 ? 'error.main' : 'grey.100',
+                    color: idx === 0 ? '#fff' : 'inherit',
+                    minWidth: 120,
+                    textAlign: 'center',
+                  }}
+                >
+                  {step}
+                </Box>
+                {idx < workflowSteps.length - 1 && (
+                  <Typography variant="h6" fontWeight="bold" color="error.main">
+                    →
+                  </Typography>
+                )}
+              </React.Fragment>
+            ))}
+          </Box>
+        </Paper>
+  
+        <Paper sx={{ mt: 8, p: 4, borderRadius: 3 }}>
+          <Typography variant="h5" fontWeight="bold" gutterBottom>
+            Interactive Accessibility Checklist
+          </Typography>
+          <Typography variant="body2" color="text.secondary" gutterBottom>
+            A sample of how I approach accessibility audits, combining automated tools with cultural awareness
+          </Typography>
+          <Grid container spacing={2}>
+            {checklistItems.map(([label, status], i) => (
+              <Grid item xs={12} sm={6} md={4} key={i}>
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  sx={{
+                    bgcolor: '#f8f9fa',
+                    p: 2,
+                    borderRadius: 2,
+                    borderLeft: `4px solid ${
+                      status === 'ok' ? '#28a745' : status === 'warn' ? '#ffc107' : '#dc3545'
+                    }`,
+                  }}
+                >
+                  {status === 'ok' && (
+                    <CheckCircleIcon sx={{ color: '#28a745', mr: 1.5 }} />
+                  )}
+                  {status === 'warn' && (
+                    <Warning sx={{ color: '#ffc107', mr: 1.5 }} />
+                  )}
+                  {status === 'error' && (
+                    <Error sx={{ color: '#dc3545', mr: 1.5 }} />
+                  )}
+                  <Typography variant="body2">{label}</Typography>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Paper>
+        <Paper sx={{ mt: 8, p: 4, borderRadius: 3 }}>
+          <Typography variant="h5" fontWeight="bold" gutterBottom>
+            Design System Components
+          </Typography>
+          <Typography variant="body2" color="text.secondary" gutterBottom>
+            Click each component to see how I approach culturally-aware design systems
+          </Typography>
+          <Grid container spacing={2} mt={2}>
+            {components.map(([title, desc], idx) => (
+              <Grid item xs={12} sm={6} md={4} key={idx}>
+                <Paper
+                  onClick={() => setActiveComponent(idx)}
+                  sx={{
+                    p: 3,
+                    textAlign: 'center',
+                    cursor: 'pointer',
+                    border: activeComponent === idx ? '2px solid #CD1C18' : '2px dashed #dee2e6',
+                    backgroundColor: activeComponent === idx ? '#fff' : '#f8f9fa',
+                    transition: 'all 0.3s ease',
+                  }}
+                >
+                  <Typography variant="subtitle1" fontWeight="bold">
+                    {title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {desc}
+                  </Typography>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+        </Paper>
+      </Container>
+    );
+  }
