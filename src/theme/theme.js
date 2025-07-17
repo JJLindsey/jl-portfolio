@@ -7,7 +7,7 @@ const theme = createTheme({
         warning: { main: "#d71920"},
         text: {
             primary: 'rgba(0, 0, 0, 0.87)',
-            secondary: 'rgba(0, 0, 0, 0.54)',
+            secondary: 'rgb(253, 253, 253)',
         }
     }
 })

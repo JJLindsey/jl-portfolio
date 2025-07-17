@@ -75,14 +75,6 @@ export const projects = [
       label: [ 'JavaScript', 'HTML', 'CSS', 'API'],
       role: 'Design and Build a responsive app using Vanilla JavaScript, HTML, and CSS, integrate TMDB API to fetch movie data, deploy site via GitHub Pages.',
     },
-    // {
-    //   avatar: <Avatar alt="vue logo" src={vuelogo} height={48}/>,
-    //   name: 'Calculator',
-    //   project: 'vue.js calculator',
-    //   image: 'vue-calculator.png',
-    //   testimonial:
-    //     "",
-    //   },
     {
       id: 'tracking-app',
         avatar: <img alt="next logo" src={nextlogo} height={48}/>,

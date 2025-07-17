@@ -10,6 +10,7 @@ import NavBar from './components/NavBar';
 import Home2 from './Home2';
 import Footer from './components/Footer';
 import ProjectDetails from './components/ProjectDetails';
+import TechnicalDeepDive from './components/TechDeepDive';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
                 <section id="projects">
                   <Portfolio />
                 </section>
+                <TechnicalDeepDive />
                 <section>
                   <Footer />
                 </section>
