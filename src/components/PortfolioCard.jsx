@@ -1,51 +1,20 @@
-import React from 'react';
-import { projects } from '../data/projects'
-import Card from '@mui/material/Card';
-//import CardHeader from '@mui/material/CardHeader';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import { CardMedia, Button, CardActions } from '@mui/material'
+import React, { useState } from 'react'
+
+import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
+import Container from '@mui/material/Container'
+import { Tab, Tabs } from '@mui/material'
 import {styled} from '@mui/material/styles'
 //import {motion} from 'framer-motion'
 
-// import reactlogo from '../assets/logo192.png'
-// import jslogo from '../assets/icons8-javascript-48.png'
-// import nextlogo from '../assets/icons8-next.js-48.png'
-// import clogo from '../assets/icons8-c-sharp-logo-48.png'
-// import vuelogo from '../assets/icons8-vue-js-48.png'
-// import threeSixtyImage from '../assets/360Home.png'
-// import movieImage from '../assets/appScreenshot.png'
-// import trackingImage from '../assets/orderStatus.png'
-// import stripePayImage from '../assets/ProductPageCleanskin.png'
-// import passwordImage from '../assets/passwordPage.png'
 import bracketicon from '../assets/bracketPNG.png'
 import AnimatedTypography from './AnimatedTypography'
 
-import { CallMade } from '@mui/icons-material'
-import { Link } from 'react-router-dom';
+import CodeIcon from '@mui/icons-material/Code'
+import DescriptionIcon from '@mui/icons-material/Description'
+import CodeProjects from './CodeProjects'
+import Articles from './Articles'
 //import cardBack from '../assets/bubblesred.png'
-
-const StyledCard = styled(Card)(({ theme }) => ({
-  height: 300,
-  backdropFilter: 'blur( 3px )',
-  boxShadow: '0 4px 30px rgba(205, 28, 24, 0.7)',
-  borderRadius: 4,
-  background: 'linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)',
-  color:'#fff',
-  fontWeight: 600,
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-between',
-  padding: theme.spacing(2),
-  transition: 'transform 0.3s ease-in-out',
-  '&:hover': {
-    transform: 'scale(1.05)',
-    //background: 'rgb(0, 0, 0, 0.85)',
-  },
-}))
 
 // const AnimatedTypography = ({ text, ...props }) => {
 //   const typeContainer = {
@@ -92,9 +61,20 @@ const StyledCard = styled(Card)(({ theme }) => ({
 //     </motion.div>
 //   )
 // }
+function TabPanel({children, value, index}) {
+  return value === index && (
+    <Box>
+      {children}
+    </Box>
+  )
+}
 
+export default function PortfolioCard({ projects= []}) {
+  const [tab, setTab] = useState(0)
 
-export default function PortfolioCard() {
+  const handleTabChange = (event, newValue) => {
+    setTab(newValue)
+  }
 
   return (
     <Container
@@ -123,65 +103,18 @@ export default function PortfolioCard() {
       <Box>
       <AnimatedTypography variant='h4' text="Here is a look at some of my work" sx={{ fontWeight: 'bold', letterSpacing: 1 }}/>
       </Box>
-      <Grid
-          container
-          spacing={3} 
-      >
-        {projects.map((project, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
-            <StyledCard
-              raised={true}
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                flexGrow: 1,
-                p: 1,
-                paddingBottom: 2,
-                height: 450,
-              }}
-            >
-              <CardMedia
-                component="img"
-                image={project.image}
-                alt={`Image for ${project.name}`}
-                sx={{height: 200}}
-              />
-              <CardContent>
-                {project.avatar}
-                <Typography variant="body2" color='#000'>
-                  {/* {projects.testimonial} */}
-                </Typography>
-                <Typography variant="h6" align="center">
-                        {project.name}
-                </Typography>
-                <Typography variant="body1" align="center">
-                      {project.project}
-                </Typography>
-              </CardContent>
-              <CardActions sx={{justifyContent: 'center'}}>
-                <Button
-                  sx={{backgroundColor: '#18C9CD'}}
-                  variant="contained"
-                  size='small'
-                  href={project.url} target="_blank"
-                >
-                    {project.navigation}
-                </Button>
-                <Button
-                    //href={project.url}
-                    component={Link}
-                    to={`/projects/${project.id}`}
-                    endIcon={<CallMade />}
-                    sx={{ color: '#000'}}
-                  >
-                    view project
-                </Button>
-              </CardActions>
-            </StyledCard>
-          </Grid>
-        ))}
-      </Grid>
+      {/* Tabs */}
+      <Tabs value={tab} onChange={handleTabChange} variant='fullWidth' aria-label="portfolio tabs">
+        <Tab icon={<CodeIcon />} label="Code" iconPosition="start"/>
+        <Tab icon={<DescriptionIcon />} label="Writing" iconPosition="start"/>
+        <Tab label="UX" />
+      </Tabs>
+      <TabPanel value={tab} index={0}>
+        <CodeProjects projects={projects} />
+      </TabPanel>
+      <TabPanel value={tab} index={1}>
+        <Articles />
+      </TabPanel>
     </Container>
   )
 }
