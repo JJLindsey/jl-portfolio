@@ -36,7 +36,6 @@ function App() {
                 <section id="projects">
                   <Portfolio />
                 </section>
-                <TechnicalDeepDive />
                 <section>
                   <Footer />
                 </section>
