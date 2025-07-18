@@ -7,10 +7,12 @@ import { Card,CardMedia, Button, CardActions, CardContent, Grid, Typography } fr
 
 const StyledCard = styled(Card)(({ theme }) => ({
     height: 300,
-    backdropFilter: 'blur( 3px )',
-    boxShadow: '0 4px 30px rgba(205, 28, 24, 0.7)',
-    borderRadius: 4,
-    background: 'linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)',
+    //backdropFilter: 'blur( 3px )',
+    boxShadow: '0 4px 20px rgba(255, 255, 255, 0.2)',
+    borderRadius: 6,
+    border: '2px solid rgba(24, 202, 205, 0.2)',
+    //background: 'linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)',
+    backgroundColor: '#000',
     color:'#fff',
     fontWeight: 600,
     display: 'flex',
@@ -20,7 +22,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
     transition: 'transform 0.3s ease-in-out',
     '&:hover': {
       transform: 'scale(1.05)',
-      //background: 'rgb(0, 0, 0, 0.85)',
+      //background: 'rgba(255, 255, 255, 0.2)',
     },
   }))
 
@@ -64,8 +66,8 @@ export default function CodeProjects() {
               </CardContent>
               <CardActions sx={{justifyContent: 'center'}}>
                 <Button
-                  sx={{backgroundColor: '#18C9CD'}}
-                  variant="contained"
+                  sx={{color: '#18C9CD'}}
+                  variant="outlined"
                   size='small'
                   href={project.url} target="_blank"
                 >
@@ -76,7 +78,7 @@ export default function CodeProjects() {
                     component={Link}
                     to={`/projects/${project.id}`}
                     endIcon={<CallMade />}
-                    sx={{ color: '#000'}}
+                    sx={{ color: '#18C9CD'}}
                   >
                     view project
                 </Button>

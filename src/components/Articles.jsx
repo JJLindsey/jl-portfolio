@@ -15,14 +15,46 @@ const ArticleCard = ({ title, badge, description, platform, tags, badgeColor }) 
     variant='outlined'
     sx={{
         p: 4,
-        borderRadius: 3,
-        backgroundColor: 'black',
-        border: '3px solid', // Adjust border thickness as needed
+        borderRadius: 4,
+        //backgroundColor: 'black',
         backgroundClip: 'padding-box', // Ensure the background is clipped within the border
-        borderColor: '#18C9CD',
         content: '""',
         zIndex: -1,
-        transition: 'transform 0.3s', '&:hover': { transform: 'translateY(-5px)' }
+        transition: 'transform 0.3s', '&:hover': { transform: 'translateY(-5px)' },
+        background: 'rgba(255, 255, 255, 0.08)',
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
+        border: '2px solid rgba(24, 202, 205, 0.41)',
+        boxShadow: `
+          0 8px 25px rgba(255, 255, 255, 0.16),
+          inset 0 1px 0 rgba(255, 255, 255, 0.5),
+          inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+          inset 0 0 0px 0px rgba(255, 255, 255, 0)
+        `,
+        position: 'relative',
+        overflow: 'hidden',
+      
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '1px',
+          background: 'linear-gradient(90deg, transparent, rgba(24, 202, 205, 0.94), transparent)',
+          zIndex: 0,
+        },
+      
+        '&::after': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '1px',
+          height: '100%',
+          background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent, rgba(255, 255, 255, 0.3))',
+          zIndex: 0,
+        },
     }}
     >
     <Chip label={badge} color={badgeColor} size='small' />
