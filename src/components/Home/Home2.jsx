@@ -3,7 +3,7 @@ import { Typography, Box, Container, Divider} from '@mui/material'
 import HeroImage from '../../assets/jlHeadshotblack.png'
 import RectangleIcon from '@mui/icons-material/Rectangle'
 import Sections from '../GradientDivider'
-import { Code, DesignServices, Palette } from '@mui/icons-material'
+import { Code, DesignServices, Palette, CategoryOutlined } from '@mui/icons-material'
 import './Home.css'
 
 
@@ -21,16 +21,16 @@ export default function Home2() {
         <Box sx={{maxWidth: '560px'}}>
             {/* <Divider orientation='vertical' sx={{color: 'white', borderWidth: 5, opacity: 1.0, borderColor: '#18C9CD' }}/> */}
             <RectangleIcon  sx={{color: '#18C9CD', display: 'flex', fontSize: '5em'}}/>
-            <Typography color="inherit" align="left" variant="h2" sx={{fontWeight: 'bold', fontFamily: '"Michroma", sans-serif'}}>
+            {/* <Typography color="inherit" align="left" variant="h2" sx={{fontWeight: 'bold', fontFamily: '"Michroma", sans-serif'}}>
                 UX
-            </Typography>
-            <Typography align="left" variant="h4" className="neon-glow" sx={{fontWeight: 'bold', fontFamily: '"Michroma", sans-serif'}}>
+            </Typography> */}
+            <Typography align="left" variant="h3" sx={{fontWeight: 'light', fontFamily: '"Sansation", sans-serif'}}>
             Where Critical Analysis Meets Product Innovation
             </Typography>
             <Typography
                 align="left"
                 variant="h3"
-                sx={{ mb: 4, mt: { xs: 4, sm: 4} }}
+                sx={{ mb: 4, mt: { xs: 4, sm: 4}, fontWeight: 'regular', fontFamily: '"Sansation", sans-serif' }}
                 >
                 Jennifer Lindsey
             </Typography>
@@ -38,7 +38,7 @@ export default function Home2() {
                 color="inherit"
                 align="left"
                 variant="h5"
-                sx={{ mb: 4, mt: { xs: 4, sm: 4} }}
+                sx={{ mb: 4, mt: { xs: 4, sm: 4}, fontWeight: 'light', fontFamily: '"Sansation", sans-serif' }}
                 >
                 Product Engineer | User-Centric Solutions
             </Typography>
@@ -49,12 +49,12 @@ export default function Home2() {
               sx={{ mb: 4, mt: { xs: 4, sm: 4} }}
             > I understand the "why" behind design decisions, not just the "how" of implementation, leading to more thoughtful and purposeful frontend solutions.</Typography>
             <Box sx={{display: 'flex', gap: 2, mb: 3, }}>
-                <Code />
-                <Typography>Engineer</Typography>
+                <CategoryOutlined />
+                <Typography>Technical</Typography>
                 <DesignServices />
-                <Typography>Design</Typography>
+                <Typography>Research</Typography>
                 <Palette />
-                <Typography>Creative</Typography>
+                <Typography>Design</Typography>
             </Box>
             {/* <Divider sx={{backgroundColor: '#CD1C18', width: '100%', height: '24px'}}/> */}
         </Box>

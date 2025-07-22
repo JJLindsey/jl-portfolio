@@ -56,20 +56,6 @@ export default function ProjectDetails() {
         <Grid item xs={12} sm={6} sx={{ mb: 4 }}>
         {/* Conditionally render screenshots or video */}
         <MediaPreview videoUrl={project.videoUrl} image={project.image}/>
-        {/* {project.image && (
-          <Box sx={{ mb: 4 }}>
-            <img
-              src={project.image}
-              alt={`${project.name} preview`}
-              style={{
-                width: '100%',
-                maxHeight: 500,
-                objectFit: 'cover',
-                borderRadius: 8,
-              }}
-            />
-          </Box>
-        )} */}
         </Grid>
       </Grid>
       <Box sx={{ mt: 8 }}>

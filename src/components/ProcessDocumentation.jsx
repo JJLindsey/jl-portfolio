@@ -14,35 +14,35 @@ import Error from '@mui/icons-material/Error';
 
 const steps = {
     processOne: [
-      ['Visual Analysis', 'Apply art historical methods to understand design intent, cultural context, and user psychology'],
-      ['Component Architecture', 'Plan scalable component structure using composition patterns and design system principles'],
-      ['Accessibility-First Implementation', 'Build with semantic HTML, proper ARIA labels, and keyboard navigation from the start'],
-      ['Cultural Adaptation', 'Ensure components work across different cultural contexts and reading patterns'],
-      ['Performance Optimization', 'Optimize for speed while maintaining visual fidelity and user experience'],
+      ['User Research & Discovery', 'Apply analytical methods to understand user needs, market context, and behavioral patterns through interviews, surveys, and data analysis'],
+      ['Problem Definition', 'Frame user problems using contextual analysis skills to identify root causes rather than surface-level symptoms'],
+      ['Solution Prioritization', 'Evaluate potential solutions against user impact, technical feasibility, and business objectives using structured frameworks'],
+      ['Cross-Cultural Validation', 'Ensure solutions work across different user contexts and cultural backgrounds through inclusive research methods'],
+      ['Success Metrics Definition', 'Establish measurable outcomes that align with both user value and business goals'],
     ],
     processTwo: [
-      ['Automated Testing', 'Run axe-core, WAVE, and Lighthouse accessibility audits for baseline compliance'],
-      ['Manual Navigation Testing', 'Test keyboard navigation, screen reader compatibility, and focus management'],
-      ['Cultural Accessibility Review', 'Assess color contrast, reading patterns, and cultural symbols for global usability'],
-      ['User Testing with Disabilities', 'Conduct real-world testing with users who have various accessibility needs'],
-      ['Documentation & Guidelines', 'Create accessibility documentation and guidelines for team implementation'],
+      ['Stakeholder Alignment', 'Facilitate conversations between engineering, design, and business teams to establish shared product vision'],
+      ['Requirements Documentation', 'Create clear, actionable product requirements that bridge user needs and technical implementation'],
+      ['Technical Feasibility Assessment', 'Leverage engineering background to evaluate implementation complexity and resource requirements'],
+      ['Risk Identification', 'Anticipate potential challenges in user adoption, technical implementation, and market fit'],
+      ['Communication Strategy', 'Develop messaging that resonates with different audiences: users, stakeholders, and development teams'],
     ],
     processThree: [
-      ['Design Token Foundation', 'Establish color, typography, and spacing systems based on design principles'],
-      ['Atomic Design Implementation', 'Build components from atoms up, ensuring consistency and reusability'],
-      ['Storybook Documentation', 'Create interactive documentation with all component states and variations'],
-      ['Testing & Validation', 'Comprehensive testing including unit, integration, and visual regression tests'],
-      ['Team Adoption Strategy', 'Training, migration plan, and ongoing support for design system adoption'],
+      ['Market Analysis', 'Research competitive landscape and identify opportunities using systematic analytical approaches'],
+      ['Feature Roadmap Planning', 'Balance user needs, technical debt, and business priorities in strategic product planning'],
+      ['User Testing & Validation', 'Design and conduct user research to validate assumptions and iterate on solutions'],
+      ['Performance Monitoring', 'Track key metrics and user behavior to measure product success and identify improvement opportunities'],
+      ['Continuous Iteration', 'Use feedback loops and data insights to refine product strategy and enhance user experience'],
     ],
   };
   
   const workflowSteps = [
-    'Figma Analysis',
-    'Component Planning',
-    'Token Creation',
-    'Implementation',
+    'Problem',
+    'Research',
+    'Solution',
+    'Impact Framework',
     'Testing',
-    'Documentation',
+    'Iterate',
   ];
   
   const checklistItems = [
@@ -64,8 +64,8 @@ const steps = {
   ];
   
   export default function ProcessDocumentation() {
-    const theme = useTheme();
-    const [activeComponent, setActiveComponent] = useState(null);
+    //const theme = useTheme();
+    //const [activeComponent, setActiveComponent] = useState(null);
   
     const renderProcessCard = (title, icon, stepsArr) => (
       <Paper elevation={3} sx={{ borderRadius: 3, p: 4, position: 'relative', backgroundColor: '#000' }}>
@@ -118,7 +118,7 @@ const steps = {
                 },
               }}
             >
-              <Typography variant="subtitle1" fontWeight="bold" gutterBottom>
+              <Typography variant="subtitle1" fontWeight="bold" gutterBottom color="#18C9CD">
                 {stepTitle}
               </Typography>
               <Typography variant="body2" color="text.secondary">
@@ -131,31 +131,30 @@ const steps = {
     );
   
     return (
-      <Container sx={{ py: { xs: 4, sm: 10 } }}>
+      <Container sx={{ py: { xs: 4, sm: 6 } }}>
         <Box textAlign="center" mb={6}>
           <Typography variant="h4" color="error.main" fontWeight="bold" gutterBottom>
             My Process
           </Typography>
           <Typography variant="subtitle1" color="text.secondary">
-            How I apply art historical methodology to modern frontend development
+            How I apply art historical methodology to product methodology
           </Typography>
         </Box>
-  
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
-            {renderProcessCard('Design-to-Development Workflow', <StarIcon sx={{ fill: '#fff' }} />, steps.processOne)}
+            {renderProcessCard('Product Discovery', <StarIcon sx={{ fill: '#fff' }} />, steps.processOne)}
           </Grid>
           <Grid item xs={12} md={4}>
-            {renderProcessCard('Accessibility Audit Process', <CheckCircleIcon sx={{ fill: '#fff' }} />, steps.processTwo)}
+            {renderProcessCard('Cross-Functional Collaboration', <CheckCircleIcon sx={{ fill: '#fff' }} />, steps.processTwo)}
           </Grid>
           <Grid item xs={12} md={4}>
-            {renderProcessCard('Component Library Creation', <HomeIcon sx={{ fill: '#fff' }} />, steps.processThree)}
+            {renderProcessCard('Strategic Product Planning', <HomeIcon sx={{ fill: '#fff' }} />, steps.processThree)}
           </Grid>
         </Grid>
   
         <Paper
           sx={{
-            mt: 8,
+            mt: 4,
             p: 4,
             borderRadius: 3,
             bgcolor: '#000',
@@ -163,7 +162,7 @@ const steps = {
             }}
           >
           <Typography variant="h5" fontWeight="bold" textAlign="center" sx={{color: "#fff", mb: 3}}>
-            Design-to-Code Workflow
+            Product Thinking
           </Typography>
           <Box display="flex" flexWrap="wrap" justifyContent="center" alignItems="center" gap={2}>
             {workflowSteps.map((step, idx) => (
@@ -229,7 +228,7 @@ const steps = {
             ))}
           </Grid>
         </Paper>
-        <Paper sx={{ mt: 8, p: 4, borderRadius: 3 }}>
+        {/* <Paper sx={{ mt: 8, p: 4, borderRadius: 3 }}>
           <Typography variant="h5" fontWeight="bold" gutterBottom>
             Design System Components
           </Typography>
@@ -260,7 +259,7 @@ const steps = {
               </Grid>
             ))}
           </Grid>
-        </Paper>
+        </Paper> */}
       </Container>
     );
   }

@@ -15,6 +15,7 @@ import DescriptionIcon from '@mui/icons-material/Description'
 import CodeProjects from './CodeProjects'
 import Articles from './Articles'
 import ProcessDocumentation from './ProcessDocumentation'
+import CategoryIcon from '@mui/icons-material/Category'
 //import cardBack from '../assets/bubblesred.png'
 
 // const AnimatedTypography = ({ text, ...props }) => {
@@ -96,19 +97,30 @@ export default function PortfolioCard({ projects= []}) {
           textAlign: { sm: 'left', md: 'left' },
         }}
       >
-        <Typography align='left' variant='h4' color='#CD1C18' sx={{fontFamily: '"Michroma", sans-serif'}}>
+        <Typography align='left' variant='h4' color='#CD1C18' sx={{fontFamily: '"Sansation", sans-serif'}}>
            My Work
         </Typography>
-        <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '95px', marginTop: "-10px"}}></img>
+        <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '45px', marginTop: "-10px"}}></img>
       </Box>
       <Box>
       <AnimatedTypography variant='h4' text="Here is a look at some of my work" sx={{ fontWeight: 'bold', letterSpacing: 1 }}/>
       </Box>
       {/* Tabs */}
-      <Tabs value={tab} onChange={handleTabChange} variant='fullWidth' aria-label="portfolio tabs">
-        <Tab icon={<CodeIcon />} label="Code" iconPosition="start"/>
+      <Tabs value={tab} onChange={handleTabChange} variant='fullWidth' aria-label="portfolio tabs"
+        sx={{
+        '& .MuiTabs-indicator': {
+          backgroundColor: '#18c9cd', // Color of the indicator line
+        },
+        '& .MuiTab-root': {
+          color: '#fff', // Default color for all tab labels (inactive)
+        },
+        '& .Mui-selected': {
+          color: '#18c9cd', // Color for the active tab label
+        },
+        }}>
+        <Tab icon={<CodeIcon />} label="Projects" iconPosition="start"/>
         <Tab icon={<DescriptionIcon />} label="Writing" iconPosition="start"/>
-        <Tab label="UX" />
+        <Tab icon={<CategoryIcon />} label="Product Thinking" iconPosition="start"/>
       </Tabs>
       <TabPanel value={tab} index={0}>
         <CodeProjects projects={projects} />

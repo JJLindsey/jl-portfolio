@@ -10,6 +10,8 @@ import ConstructionRoundedIcon from '@mui/icons-material/ConstructionRounded';
 import QueryStatsRoundedIcon from '@mui/icons-material/QueryStatsRounded';
 //import SettingsSuggestRoundedIcon from '@mui/icons-material/SettingsSuggestRounded';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
+import Diversity1Icon from '@mui/icons-material/Diversity1';
+import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 
 import htmlIcon from '../assets/icons8-html-48.png'
 import cssIcon from '../assets/css-icon.png'
@@ -31,15 +33,15 @@ const items = [
   // },
   {
     icon: <ConstructionRoundedIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
-    title: 'Design Systems',
+    title: 'Team Collaboration',
     description:
-      'Building scalable component libraries that bridge design and development teams, ensuring consistency across products while maintaining flexibility for creative expression.',
+      'I connect technical and creative teams, transforming complex requirements into a clear, user-centric product vision. I leverage my technical expertise to foster strong collaboration across teams.',
   },
   {
-    icon: <DesignServicesIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
-    title: 'Culturally-Aware UX',
+    icon: <Diversity1Icon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
+    title: 'User Experience Strategy',
     description:
-      'Leveraging art history training to create interfaces that consider cultural context, aesthetic principles, and user psychology—not just technical requirements.'
+      'I leverage cultural analysis training to understand user psychology and behavior patterns, creating products that resonate across diverse audiences while maintaining technical feasibility.'
   },
   // {
   //   icon: <AutoFixHighRoundedIcon sx={{ fontSize: '2.5rem', color: '#d71920'}}/>,
@@ -47,18 +49,18 @@ const items = [
   //   description:
   //     'My critical thinking and insatiable curiosity fuel my desire to learn new skills and tackle challenging projects, constantly pushing the boundaries of what is possible.',
   // },
-  // {
-  //   icon: <GroupsIcon sx={{ fontSize: '2.5rem', color: '#006aff'}}/>,
-  //   title: 'Collaborate for Impact',
-  //   description:
-  //     'Passionate about collaboration, I contribute to successful projects by fostering strong teamwork and open communication.',
-  // },
   {
-    icon: <QueryStatsRoundedIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
-    title: 'Strategic Implementation',
+    icon: <SettingsSuggestIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
+    title: 'Product Impact',
     description:
-      'Translating business objectives into technical solutions through analytical thinking and contextual understanding developed through years of visual culture analysis.'
+      'I connect user needs with business objectives, using analytical frameworks from art history to understand context, identify opportunities, and drive product decisions that create meaningful impact.',
   },
+  // {
+  //   icon: <QueryStatsRoundedIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
+  //   title: 'Strategic Implementation',
+  //   description:
+  //     'Translating business objectives into technical solutions through analytical thinking and contextual understanding developed through years of visual culture analysis.'
+  // },
 ]
 
 export default function About() {
@@ -85,11 +87,11 @@ export default function About() {
       >
         <Grid container>
           <Grid item>
-            <Typography align='left' variant="h4" sx={{ mt: 4, color: '#CD1C18', fontFamily: '"Michroma", sans-serif'}}>
+            <Typography align='left' variant="h4" sx={{ mt: 4, color: '#CD1C18', fontFamily: '"Sansation", sans-serif'}}>
               About Me
             </Typography>
-            <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '115px', marginTop: "-10px"}}></img>
-            <Typography align='left' variant="h4" sx={{ mt: 8, mb: 4, fontWeight: 'bold', fontFamily: '"Michroma", sans-serif'}}>
+            <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '55px', marginTop: "-10px"}}></img>
+            <Typography align='left' variant="h4" sx={{ mt: 8, mb: 4, fontWeight: 'light', fontFamily: '"Sansation", sans-serif'}}>
             From 19th-Century Art to React Components
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb:2}}>
