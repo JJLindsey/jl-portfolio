@@ -24,9 +24,9 @@ const ArticleCard = ({ title, badge, description, platform, tags, badgeColor }) 
         background: 'rgba(255, 255, 255, 0.08)',
         backdropFilter: 'blur(10px)',
         WebkitBackdropFilter: 'blur(10px)',
-        border: '2px solid rgba(24, 202, 205, 0.41)',
+        border: '2px solid rgba(24, 202, 205, 0.21)',
         boxShadow: `
-          0 8px 25px rgba(255, 255, 255, 0.16),
+          0 8px 25px rgba(255, 255, 255, 0.08),
           inset 0 1px 0 rgba(255, 255, 255, 0.5),
           inset 0 -1px 0 rgba(255, 255, 255, 0.1),
           inset 0 0 0px 0px rgba(255, 255, 255, 0)

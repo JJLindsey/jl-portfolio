@@ -49,7 +49,7 @@ const AnimatedCard = ({ index, item }) => {
           <Box>{item.icon}</Box>
           {/* <div> */}
             <Typography 
-              align='left' 
+              align='center' 
               fontWeight="600" 
               gutterBottom 
               sx={{ 
@@ -63,11 +63,10 @@ const AnimatedCard = ({ index, item }) => {
             </Typography>
             <Divider 
               sx={{ 
-                borderWidth: 2, 
+                borderWidth: 1, 
                 opacity: 0.8, 
-                borderColor: index % 2 === 0 ? "#CD1C18" : "#FFF", 
-                mb: 3, 
-                mr: 35 
+                borderColor: "#CD1C18", 
+                mb: 3
               }}
             />
             <Typography 

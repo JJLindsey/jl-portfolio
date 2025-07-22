@@ -96,10 +96,10 @@ export default function PortfolioCard({ projects= []}) {
           textAlign: { sm: 'left', md: 'left' },
         }}
       >
-        <Typography align='left' variant='h4' color='#CD1C18'>
+        <Typography align='left' variant='h4' color='#CD1C18' sx={{fontFamily: '"Michroma", sans-serif'}}>
            My Work
         </Typography>
-        <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '28px', marginTop: "-10px"}}></img>
+        <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '95px', marginTop: "-10px"}}></img>
       </Box>
       <Box>
       <AnimatedTypography variant='h4' text="Here is a look at some of my work" sx={{ fontWeight: 'bold', letterSpacing: 1 }}/>

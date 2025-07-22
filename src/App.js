@@ -7,10 +7,9 @@ import theme from './theme/theme';
 import About from './components/AboutMe';
 import Portfolio from './components/PortfolioCard';
 import NavBar from './components/NavBar';
-import Home2 from './Home2';
+import Home2 from './components/Home/Home2';
 import Footer from './components/Footer';
 import ProjectDetails from './components/ProjectDetails';
-import TechnicalDeepDive from './components/TechDeepDive';
 
 function App() {
   return (

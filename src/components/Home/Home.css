@@ -1,0 +1,9 @@
+.neon-glow {
+    color: #00ffff;
+    text-shadow:
+      0 0 9px #6c009e,
+      0 0 10px #00ffff,
+      0 0 10px #df0b2b,
+      0 0 15px #18C9CD;
+      transition: opacity 1s ease, transform 1s ease;
+}
