@@ -109,15 +109,16 @@ export default function PortfolioCard({ projects= []}) {
       <Tabs value={tab} onChange={handleTabChange} variant='fullWidth' aria-label="portfolio tabs"
         sx={{
         '& .MuiTabs-indicator': {
-          backgroundColor: '#18c9cd', // Color of the indicator line
+          backgroundColor: '#000', // Color of the indicator line
         },
-        '& .MuiTab-root': {
-          color: '#fff', // Default color for all tab labels (inactive)
+        // '& .MuiTab-root': {
+        //   color: '#fff', // Default color for all tab labels (inactive)
+        // },
+        '& .MuiTab-root.Mui-selected': {
+                    color: '#18C9CD', // Color for the selected tab label
         },
-        '& .Mui-selected': {
-          color: '#18c9cd', // Color for the active tab label
-        },
-        }}>
+        }}
+      >
         <Tab icon={<CodeIcon />} label="Projects" iconPosition="start"/>
         <Tab icon={<DescriptionIcon />} label="Writing" iconPosition="start"/>
         <Tab icon={<CategoryIcon />} label="Product Thinking" iconPosition="start"/>
