@@ -158,7 +158,7 @@ const steps = {
             p: 4,
             borderRadius: 3,
             bgcolor: '#000',
-            border: '2px solid #dee2e6'
+            border: '1px solid rgb(206, 206, 206)'
             }}
           >
           <Typography variant="h5" fontWeight="bold" textAlign="center" sx={{color: "#fff", mb: 3}}>
@@ -172,9 +172,9 @@ const steps = {
                     px: 3,
                     py: 1,
                     borderRadius: 2,
-                    border: '2px solid #dee2e6',
+                    border: '1px solid #dee2e6',
                     bgcolor: idx === 0 ? 'error.main' : 'grey.100',
-                    color: idx === 0 ? '#fff' : 'inherit',
+                    color: idx === 0 ? '#fff' : '#000',
                     minWidth: 120,
                     textAlign: 'center',
                   }}
@@ -191,14 +191,14 @@ const steps = {
           </Box>
         </Paper>
   
-        <Paper sx={{ mt: 8, p: 4, borderRadius: 3 }}>
-          <Typography variant="h5" fontWeight="bold" gutterBottom>
+        <Paper sx={{ mt: 8, p: 4, borderRadius: 4, border: '3px solid rgb(92, 92, 92)' }}>
+          <Typography variant="h5" fontWeight="bold" gutterBottom  color="#000" >
             Interactive Accessibility Checklist
           </Typography>
-          <Typography variant="body2" color="text.secondary" gutterBottom>
+          <Typography variant="body2" color="#000" gutterBottom>
             A sample of how I approach accessibility audits, combining automated tools with cultural awareness
           </Typography>
-          <Grid container spacing={2}>
+          <Grid container spacing={2} mt={2}>
             {checklistItems.map(([label, status], i) => (
               <Grid item xs={12} sm={6} md={4} key={i}>
                 <Box
@@ -211,6 +211,7 @@ const steps = {
                     borderLeft: `4px solid ${
                       status === 'ok' ? '#28a745' : status === 'warn' ? '#ffc107' : '#dc3545'
                     }`,
+                    borderBottom: '1px solid #c9c9c9'
                   }}
                 >
                   {status === 'ok' && (
@@ -222,7 +223,7 @@ const steps = {
                   {status === 'error' && (
                     <Error sx={{ color: '#dc3545', mr: 1.5 }} />
                   )}
-                  <Typography variant="body2">{label}</Typography>
+                  <Typography variant="body2" color='#000'>{label}</Typography>
                 </Box>
               </Grid>
             ))}
