@@ -21,7 +21,9 @@ import cSharp from '../assets/icons8-c-sharp-logo-48.png'
 import figmaIcon from '../assets/icons8-figma-48.png'
 import { Tooltip } from '@mui/material';
 import bracketicon from '../assets/bracketPNG.png'
-import GradientDivider from './GradientDivider';
+import jiraIcon from '../assets/jira.png'
+import designThinking from '../assets/design-thinking.png'
+import GradientDivider from './GradientDivider'
 
 
 const items = [
@@ -92,23 +94,24 @@ export default function About() {
             </Typography>
             <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '55px', marginTop: "-10px"}}></img>
             <Typography align='left' variant="h4" sx={{ mt: 8, mb: 4, fontWeight: 'light', fontFamily: '"Sansation", sans-serif'}}>
-            From 19th-Century Art to React Components
+            From 19th-Century Art to Product Vision
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb:2}}>
-            My art history background trained me to analyze visual culture, understand context, and think critically about design decisions. Now I apply that same analytical rigor to frontend engineering—building interfaces that aren't just functional, but culturally aware and aesthetically intentional.
+            My art history background trained me to analyze visual culture, understand context, and think critically about design decisions.  Now I apply that same analytical rigor to product focused—building solutions that aren't just functional, but meaningful and user-centered..
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
-            I bridge the gap between design and development teams, ensuring consistency at scale while maintaining the flexibility for creative expression. My unique perspective helps teams make decisions that consider both technical constraints and user experience holistically. I thrive in collaborative environments, where I can learn from others and contribute to the success of the team.
+            I bridge the gap between technical possibility and user need, translating complex requirements into actionable product strategies. My unique combination of technical depth and design thinking helps teams make decisions that balance user experience, technical constraints, and business objectives. I thrive in collaborative environments where I can synthesize diverse perspectives into cohesive product vision.
             </Typography>
           </Grid>
         </Grid>
-        <Grid sx={{display: 'flex', alignItems: 'center', mb: 4}}>
-          <Tooltip title='React' aria-labelledby='React logo'><img src={reactIcon} alt='react icon' width={64}/></Tooltip>
+        <Grid  container spacing={2} sx={{display: 'flex', justifyContent:'center', alignItems: 'center', mb: 4}}>
+          {/* <Tooltip title='React' aria-labelledby='React logo'><img src={reactIcon} alt='react icon' width={64}/></Tooltip> */}
+          <Tooltip title='Figma'><img src={figmaIcon} alt='figma icon' width={58}/></Tooltip> 
+          <Tooltip title='Design Thinking'><img src={designThinking} alt='design thinking icon' width={52}/></Tooltip>
+          <Tooltip title='Jira'><img src={jiraIcon} alt='jira icon' width={50}/></Tooltip>
           <Tooltip title='Javascript'><img src={jsIcon} alt='javascript icon' width={64}/></Tooltip>
           <Tooltip title='HTML'><img src={htmlIcon} alt='html icon' width={64}/></Tooltip> 
-          <Tooltip title='CSS'><img src={cssIcon} alt='css icon' width={50}/></Tooltip> 
-          <Tooltip title='Figma'><img src={figmaIcon} alt='figma icon' width={58}/></Tooltip> 
-          <Tooltip title='C#'><img src={cSharp} alt='C Sharp icon' width={60}/></Tooltip>
+          <Tooltip title='CSS'><img src={cssIcon} alt='css icon' width={50}/></Tooltip>
         </Grid>
         <Grid container spacing={2.5} sx={{mb: 8}}>
           {items.map((item, index) => (

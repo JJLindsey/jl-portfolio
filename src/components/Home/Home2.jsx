@@ -47,14 +47,14 @@ export default function Home2() {
               align="left"
               variant="h6"
               sx={{ mb: 4, mt: { xs: 4, sm: 4} }}
-            > I understand the "why" behind design decisions, not just the "how" of implementation, leading to more thoughtful and purposeful frontend solutions.</Typography>
+            > I understand the "why" behind design decisions and user needs, not just the "how" of implementation, leading to more stategic and impactful decisions.</Typography>
             <Box sx={{display: 'flex', gap: 2, mb: 3, }}>
                 <CategoryOutlined />
                 <Typography>Technical</Typography>
                 <DesignServices />
                 <Typography>Research</Typography>
                 <Palette />
-                <Typography>Design</Typography>
+                <Typography>Design Thinking</Typography>
             </Box>
             {/* <Divider sx={{backgroundColor: '#CD1C18', width: '100%', height: '24px'}}/> */}
         </Box>
