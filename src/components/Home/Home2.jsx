@@ -21,24 +21,24 @@ export default function Home2() {
         <Box sx={{maxWidth: '560px'}}>
             {/* <Divider orientation='vertical' sx={{color: 'white', borderWidth: 5, opacity: 1.0, borderColor: '#18C9CD' }}/> */}
             <RectangleIcon  sx={{color: '#18C9CD', display: 'flex', fontSize: '5em'}}/>
-            {/* <Typography color="inherit" align="left" variant="h2" sx={{fontWeight: 'bold', fontFamily: '"Michroma", sans-serif'}}>
-                UX
-            </Typography> */}
-            <Typography align="left" variant="h3" sx={{fontWeight: 'light', fontFamily: '"Sansation", sans-serif'}}>
-            Where Critical Analysis Meets Product Innovation
+            <Typography color="inherit" align="left" variant="h2" sx={{fontWeight: 'regular italic', fontFamily: '"Michroma", sans-serif'}}>
+                Jennifer Lindsey
+            </Typography>
+            <Typography align="left" variant="h2" sx={{fontWeight: 'bold', fontFamily: '"Sansation", sans-serif'}}>
+            Critical Analysis Meets Product Innovation
             </Typography>
             <Typography
                 align="left"
-                variant="h3"
+                variant="h4"
                 sx={{ mb: 4, mt: { xs: 4, sm: 4}, fontWeight: 'regular', fontFamily: '"Sansation", sans-serif' }}
                 >
-                Jennifer Lindsey
+                 Bridging art, technology, and human understanding
             </Typography>
             <Typography
                 color="inherit"
                 align="left"
                 variant="h5"
-                sx={{ mb: 4, mt: { xs: 4, sm: 4}, fontWeight: 'light', fontFamily: '"Sansation", sans-serif' }}
+                sx={{ mb: 4, mt: { xs: 4, sm: 4}, fontWeight: 'light' }}
                 >
                 Product Engineer | User-Centric Solutions
             </Typography>

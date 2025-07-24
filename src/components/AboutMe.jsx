@@ -93,11 +93,11 @@ export default function About() {
               About Me
             </Typography>
             <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '55px', marginTop: "-10px"}}></img>
-            <Typography align='left' variant="h4" sx={{ mt: 8, mb: 4, fontWeight: 'light', fontFamily: '"Sansation", sans-serif'}}>
-            From 19th-Century Art to Product Vision
+            <Typography align='left' variant="h3" sx={{ mt: 8, mb: 4, fontWeight: 'light', fontFamily: '"Sansation", sans-serif'}}>
+            Contextual Thinking for Digital Products
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb:2}}>
-            My art history background trained me to analyze visual culture, understand context, and think critically about design decisions.  Now I apply that same analytical rigor to product focused—building solutions that aren't just functional, but meaningful and user-centered..
+            From analyzing 19th-century masterpieces to decoding user behavior patterns, I bring a unique lens to each product. My art history background taught me to see beyond the surface—to understand context, meaning, and human motivation.  Now I apply that same analytical rigor to product focused—building solutions that aren't just functional, but meaningful and user-centered.
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
             I bridge the gap between technical possibility and user need, translating complex requirements into actionable product strategies. My unique combination of technical depth and design thinking helps teams make decisions that balance user experience, technical constraints, and business objectives. I thrive in collaborative environments where I can synthesize diverse perspectives into cohesive product vision.
