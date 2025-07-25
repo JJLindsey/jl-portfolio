@@ -22,6 +22,42 @@ const StyledButton = styled(Button)(({theme}) => ({
   color: '#FFF'
 }))
 
+const GlassAppBar = styled(AppBar)(({ theme }) => ({
+  width: '100%',
+  background: 'rgba(0, 0, 0, 0.3)', // translucent dark background
+  backdropFilter: 'blur(10px)',
+  WebkitBackdropFilter: 'blur(10px)',
+  borderBottom: '1px solid rgba(255, 255, 255, 0.19)', // subtle border
+  boxShadow: `
+    0 4px 20px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.21)
+  `,
+  position: 'relative',
+  overflow: 'hidden',
+
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: '1px',
+    background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent)',
+    zIndex: 0,
+  },
+
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '1px',
+    height: '100%',
+    background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent)',
+    zIndex: 0,
+  },
+}))
+
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null)
   const location = useLocation();
@@ -57,7 +93,7 @@ const navigate = useNavigate();
   };
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: { md: "#000", xs: '#000'}, boxShadow: { xs: 'none', sm: 'none', md: 'none'} }}>
+    <GlassAppBar position="sticky" sx={{ backgroundColor: { md: "#011640", xs: '#011640'}, boxShadow: { xs: 'none', sm: 'none', md: 'none'} }}>
       <Toolbar>
           <img src={Logo} alt='logo' width={175}/>
             {/*Mobile Menu*/}
@@ -175,7 +211,7 @@ const navigate = useNavigate();
               </StyledButton>
           </Box>
       </Toolbar>
-    </AppBar>
+    </GlassAppBar>
   )
 }
 

@@ -5,12 +5,18 @@ import {  Box,
   Paper,
   Grid,
   Chip,
-  useTheme, } from '@mui/material'
+  useTheme,
+  useMediaQuery,
+  Stepper,
+  Step,
+  StepLabel,
+ } from '@mui/material'
 import StarIcon from '@mui/icons-material/Star'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import HomeIcon from '@mui/icons-material/Home'
 import Warning from '@mui/icons-material/Warning'
-import Error from '@mui/icons-material/Error';
+import Error from '@mui/icons-material/Error'
+import { ArrowForward } from '@mui/icons-material'
 
 const steps = {
     processOne: [
@@ -37,12 +43,14 @@ const steps = {
   };
   
   const workflowSteps = [
-    'Problem',
-    'Research',
-    'Solution',
-    'Impact Framework',
-    'Testing',
-    'Iterate',
+    'Identify Problem',
+    'Understand Users',
+    'Define Success',
+    'Prototype Solutions',
+    'Develop Solution',
+    'Validate & Test',
+    'Measure Impact',
+    'Iterate & Scale'
   ];
   
   const checklistItems = [
@@ -64,11 +72,12 @@ const steps = {
   ];
   
   export default function ProcessDocumentation() {
-    //const theme = useTheme();
+    const theme = useTheme()
     //const [activeComponent, setActiveComponent] = useState(null);
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'))
   
     const renderProcessCard = (title, icon, stepsArr) => (
-      <Paper elevation={3} sx={{ borderRadius: 3, p: 4, position: 'relative', backgroundColor: '#000' }}>
+      <Paper elevation={3} sx={{ borderRadius: 3, p: 4, position: 'relative', backgroundColor: '#011640' }}>
         <Box sx={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, bgcolor: 'error.main' }} />
         <Box display="flex" alignItems="center" mb={3}>
           <Box
@@ -157,38 +166,63 @@ const steps = {
             mt: 4,
             p: 4,
             borderRadius: 3,
-            bgcolor: '#000',
-            border: '1px solid rgb(206, 206, 206)'
-            }}
+            bgcolor: '#011640',
+            border: '1px solid rgb(206, 206, 206)',
+          }}
+        >
+          <Typography
+            variant="h5"
+            fontWeight="bold"
+            textAlign="center"
+            sx={{ color: '#fff', mb: 3 }}
           >
-          <Typography variant="h5" fontWeight="bold" textAlign="center" sx={{color: "#fff", mb: 3}}>
             Product Thinking
           </Typography>
-          <Box display="flex" flexWrap="wrap" justifyContent="center" alignItems="center" gap={2}>
-            {workflowSteps.map((step, idx) => (
-              <React.Fragment key={step}>
-                <Box
-                  sx={{
-                    px: 3,
-                    py: 1,
-                    borderRadius: 2,
-                    border: '1px solid #dee2e6',
-                    bgcolor: idx === 0 ? 'error.main' : 'grey.100',
-                    color: idx === 0 ? '#fff' : '#000',
-                    minWidth: 120,
-                    textAlign: 'center',
-                  }}
-                >
-                  {step}
-                </Box>
-                {idx < workflowSteps.length - 1 && (
-                  <Typography variant="h6" fontWeight="bold" color="error.main">
-                    →
-                  </Typography>
-                )}
-              </React.Fragment>
-            ))}
-          </Box>
+
+          {isSmallScreen ? (
+            // Vertical Stepper for small screens
+            <Stepper orientation="vertical" activeStep={-1}>
+              {workflowSteps.map((step, idx) => (
+                <Step key={idx}>
+                  <StepLabel>
+                    <Typography variant="body1" fontWeight={500}>
+                      {step}
+                    </Typography>
+                  </StepLabel>
+                </Step>
+              ))}
+            </Stepper>
+          ) : (
+            <Box
+              display="flex"
+              flexWrap="wrap"
+              justifyContent="center"
+              alignItems="center"
+              gap={2}
+            >
+              {workflowSteps.map((step, idx) => (
+                <React.Fragment key={step}>
+                  <Box
+                    sx={{
+                      px: 3,
+                      py: 1,
+                      borderRadius: 2,
+                      border: '1px solid #dee2e6',
+                      bgcolor: idx === 0 ? '#7ba696' : 'grey.100',
+                      color: idx === 0 ? '#fff' : '#000',
+                      minWidth: 120,
+                      textAlign: 'center',
+                    }}
+                  >
+                    {step}
+                  </Box>
+                  {idx < workflowSteps.length - 1 && (
+                    <ArrowForward sx={{ color: '#b82601', fontSize: 28 }} />
+                  )}
+                </React.Fragment>
+              ))}
+            </Box>
+          )}
         </Paper>
   
         <Paper sx={{ mt: 8, p: 4, borderRadius: 4, border: '3px solid rgb(92, 92, 92)' }}>

@@ -20,7 +20,7 @@ export default function Home2() {
         >
         <Box sx={{maxWidth: '560px'}}>
             {/* <Divider orientation='vertical' sx={{color: 'white', borderWidth: 5, opacity: 1.0, borderColor: '#18C9CD' }}/> */}
-            <RectangleIcon  sx={{color: '#18C9CD', display: 'flex', fontSize: '5em'}}/>
+            <RectangleIcon  sx={{color: '#ffc300', display: 'flex', fontSize: '5em'}}/>
             <Typography color="inherit" align="left" variant="h2" sx={{fontWeight: 'regular italic', fontFamily: '"Michroma", sans-serif'}}>
                 Jennifer Lindsey
             </Typography>
