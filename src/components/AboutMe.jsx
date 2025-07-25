@@ -7,20 +7,20 @@ import Typography from '@mui/material/Typography';
 import AnimatedCard from './AnimatedCard';
 //import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
 import ConstructionRoundedIcon from '@mui/icons-material/ConstructionRounded';
-import QueryStatsRoundedIcon from '@mui/icons-material/QueryStatsRounded';
+//import QueryStatsRoundedIcon from '@mui/icons-material/QueryStatsRounded';
 //import SettingsSuggestRoundedIcon from '@mui/icons-material/SettingsSuggestRounded';
-import DesignServicesIcon from '@mui/icons-material/DesignServices';
+//import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import Diversity1Icon from '@mui/icons-material/Diversity1';
 import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 
 import htmlIcon from '../assets/icons8-html-48.png'
 import cssIcon from '../assets/css-icon.png'
-import reactIcon from '../assets/logo192.png'
+//import reactIcon from '../assets/logo192.png'
 import jsIcon from '../assets/icons8-javascript-48.png'
-import cSharp from '../assets/icons8-c-sharp-logo-48.png'
+//import cSharp from '../assets/icons8-c-sharp-logo-48.png'
 import figmaIcon from '../assets/icons8-figma-48.png'
-import { Tooltip } from '@mui/material';
-import bracketicon from '../assets/bracketPNG.png'
+import { Divider, Tooltip } from '@mui/material';
+//import bracketicon from '../assets/bracketPNG.png'
 import jiraIcon from '../assets/jira.png'
 import designThinking from '../assets/design-thinking.png'
 import GradientDivider from './GradientDivider'
@@ -87,10 +87,11 @@ export default function About() {
       >
         <Grid container>
           <Grid item>
-            <Typography align='left' variant="h4" sx={{ mt: 4, color: '#CD1C18', fontFamily: '"Sansation", sans-serif'}}>
+            <Typography align='left' variant="h4" sx={{ mt: 4, color: '#FFc300', fontFamily: '"Sansation", sans-serif'}}>
               About Me
             </Typography>
-            <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '55px', marginTop: "-10px"}}></img>
+            <Divider sx={{width: '100px', height: '3px', backgroundColor: '#FFc300', mt: 1}}/>
+            {/* <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '55px', marginTop: "-10px"}}></img> */}
             <Typography align='left' variant="h3" sx={{ mt: 8, mb: 4, fontWeight: 'light', fontFamily: '"Sansation", sans-serif'}}>
             Contextual Thinking for Digital Products
             </Typography>

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
-import { Tab, Tabs } from '@mui/material'
+import { Tab, Tabs, Divider } from '@mui/material'
 import {styled} from '@mui/material/styles'
 //import {motion} from 'framer-motion'
 
@@ -97,10 +97,11 @@ export default function PortfolioCard({ projects= []}) {
           textAlign: { sm: 'left', md: 'left' },
         }}
       >
-        <Typography align='left' variant='h4' color='#CD1C18' sx={{fontFamily: '"Sansation", sans-serif'}}>
+        <Typography align='left' variant='h4' color='#ffc300' sx={{fontFamily: '"Sansation", sans-serif'}}>
            My Work
         </Typography>
-        <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '45px', marginTop: "-10px"}}></img>
+        <Divider sx={{width: '100px', height: '3px', backgroundColor: '#FFc300', mt: 1}}/>
+        {/* <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '45px', marginTop: "-10px"}}></img> */}
       </Box>
       <Box>
       <AnimatedTypography variant='h4' text="Here is a look at some of my work" sx={{ fontWeight: 'bold', letterSpacing: 1 }}/>

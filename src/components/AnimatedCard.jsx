@@ -30,7 +30,8 @@ const AnimatedCard = ({ index, item }) => {
           right: 0,
           bottom: 0,
           borderRadius: '4px',
-          background: 'linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)',
+          //background: 'linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)',
+          background: 'linear-gradient(60deg, #ffc300, #e3be15, #c6ba2a, #aab540, #8eb055, #71ac6a, #55a77f, #39a295, #1c9eaa, #0099bf)',
           backgroundSize: '400% 400%',
           animation: `${animatedgradient} 3s ease alternate infinite`,
           zIndex: 0
@@ -65,7 +66,7 @@ const AnimatedCard = ({ index, item }) => {
               sx={{ 
                 borderWidth: 1, 
                 opacity: 0.8, 
-                borderColor: "#CD1C18", 
+                borderColor: "#ffc300", 
                 mb: 3
               }}
             />

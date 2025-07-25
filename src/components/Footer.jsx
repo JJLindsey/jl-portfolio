@@ -10,7 +10,7 @@ export default function Footer() {
       <GradientDivider />
       <Grid container spacing={1} sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <Grid item xs={4} md={6} sx={{display: 'flex',  flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start'}}>
-          <Typography variant='h6' sx={{fontWeight: 'bold', color: '#CD1C18'}}>Contact</Typography>
+          <Typography variant='h6' sx={{fontWeight: 'bold', color: '#ffc300'}}>Contact</Typography>
         </Grid>
         <Grid item xs={6} md={6}
           sx={{display: 'flex', justifyContent: 'center', alignItems: 'flex-start'}}
