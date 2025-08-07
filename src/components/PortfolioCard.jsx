@@ -16,6 +16,10 @@ import CodeProjects from './CodeProjects'
 import Articles from './Articles'
 import ProcessDocumentation from './ProcessDocumentation'
 import CategoryIcon from '@mui/icons-material/Category'
+import ProductProjectDetails from './ProductProjectDetails'
+import CaseStudyCard from './CaseStudy/CaseStudyCard'
+//import { products } from '../data/products'
+
 //import cardBack from '../assets/bubblesred.png'
 
 // const AnimatedTypography = ({ text, ...props }) => {
@@ -71,7 +75,7 @@ function TabPanel({children, value, index}) {
   )
 }
 
-export default function PortfolioCard({ projects= []}) {
+export default function PortfolioCard({ projects= [], products = [] }) {
   const [tab, setTab] = useState(0)
 
   const handleTabChange = (event, newValue) => {
@@ -121,14 +125,16 @@ export default function PortfolioCard({ projects= []}) {
         }}
       >
         <Tab icon={<CodeIcon />} label="Projects" iconPosition="start"/>
-        <Tab icon={<DescriptionIcon />} label="Writing" iconPosition="start"/>
+        <Tab icon={<DescriptionIcon />} label="Case Studies" iconPosition="start"/>
         <Tab icon={<CategoryIcon />} label="Product Thinking" iconPosition="start"/>
       </Tabs>
       <TabPanel value={tab} index={0}>
         <CodeProjects projects={projects} />
       </TabPanel>
       <TabPanel value={tab} index={1}>
-        <Articles />
+        {/* <Articles /> */}
+        {/* <CaseStudyCard /> */}
+        <ProductProjectDetails productId="accessible-meditation" products={products} />
       </TabPanel>
       <TabPanel value={tab} index={2}>
         <ProcessDocumentation />
