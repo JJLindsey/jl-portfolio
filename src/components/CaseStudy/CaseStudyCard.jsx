@@ -3,6 +3,7 @@ import { Button, Card, CardContent, CardActions, CardMedia, Typography, CardActi
 import { products } from '../../data/products'
 import { CallMade } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
+import { FrostedCard } from '../FrostedCard/FrostedCard'
 
 export default function CaseStudyCard() {
   //const navigate = useNavigate()
@@ -33,7 +34,7 @@ export default function CaseStudyCard() {
     ))} */}
       {products.map((product, index) => (
           <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
-            <Card
+            <FrostedCard
               raised={true}
               sx={{
                 display: 'flex',
@@ -53,13 +54,13 @@ export default function CaseStudyCard() {
               />
               <CardContent>
                 {product.avatar}
-                <Typography variant="body2" color='#000'>
+                <Typography variant="body2" color='#fff'>
                   {/* {projects.testimonial} */}
                 </Typography>
-                <Typography variant="h6" align="center">
+                <Typography variant="h6" align="center" color='#fff'>
                         {product.name}
                 </Typography>
-                <Typography variant="body1" align="center">
+                <Typography variant="body1" align="center" color='#fff'>
                       {product.description}
                 </Typography>
               </CardContent>
@@ -82,7 +83,7 @@ export default function CaseStudyCard() {
                     view product
                 </Button>
               </CardActions>
-            </Card>
+            </FrostedCard>
           </Grid>
         ))}
     </Grid>
