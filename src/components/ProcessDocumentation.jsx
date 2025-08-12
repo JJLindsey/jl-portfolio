@@ -10,6 +10,7 @@ import {  Box,
   Stepper,
   Step,
   StepLabel,
+  Button
  } from '@mui/material'
 import StarIcon from '@mui/icons-material/Star'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
@@ -17,6 +18,7 @@ import HomeIcon from '@mui/icons-material/Home'
 import Warning from '@mui/icons-material/Warning'
 import Error from '@mui/icons-material/Error'
 import { ArrowForward } from '@mui/icons-material'
+import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material'
 
 const steps = {
     processOne: [
@@ -70,16 +72,90 @@ const steps = {
     ['Navigation', 'Directional and cultural adaptations'],
     ['Form Elements', 'Accessible and culturally appropriate'],
   ];
+
+  const stepCards = [
+    { title: 'Discover', icon: <StarIcon />, steps: steps.processOne },
+    { title: 'Design', icon: <HomeIcon />, steps: steps.processTwo },
+    { title: 'Deliver', icon: <CheckCircleIcon />, steps: steps.processThree },
+  ];
+  
   
   export default function ProcessDocumentation() {
     const theme = useTheme()
-    //const [activeComponent, setActiveComponent] = useState(null);
+    const [activeStep, setActiveStep] = useState(0)
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'))
+    const maxSteps = stepCards.length
+
+    const handleStepClick = (index) => {
+      setActiveStep(index);
+    }
   
-    const renderProcessCard = (title, icon, stepsArr) => (
-      <Paper elevation={3} sx={{ borderRadius: 3, p: 4, position: 'relative', backgroundColor: '#011640' }}>
+    // const renderProcessCard = (title, icon, stepsArr) => (
+    //   <Paper elevation={3} sx={{ borderRadius: 3, p: 4, position: 'relative', backgroundColor: '#011640' }}>
+    //     <Box sx={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, bgcolor: 'error.main' }} />
+    //     <Box display="flex" alignItems="center" mb={3}>
+    //       <Box
+    //         sx={{
+    //           width: 48,
+    //           height: 48,
+    //           background: 'linear-gradient(135deg, #CD1C18, #ff6b6b)',
+    //           borderRadius: 2,
+    //           display: 'flex',
+    //           alignItems: 'center',
+    //           justifyContent: 'center',
+    //           mr: 2,
+    //         }}
+    //       >
+    //         {icon}
+    //       </Box>
+    //       <Typography variant="h6" fontWeight="bold" sx={{ color: '#fff' }}>
+    //         {title}
+    //       </Typography>
+    //     </Box>
+    //     <Box component="ol" sx={{ pl: 0, listStyle: 'none', counterReset: 'step-counter' }}>
+    //       {stepsArr.map(([stepTitle, desc], idx) => (
+    //         <Box
+    //           key={idx}
+    //           component="li"
+    //           sx={{
+    //             position: 'relative',
+    //             borderLeft: '2px solid #e9ecef',
+    //             pl: 4,
+    //             pb: 2,
+    //             '&::before': {
+    //               content: 'counter(step-counter)',
+    //               counterIncrement: 'step-counter',
+    //               position: 'absolute',
+    //               left: -14,
+    //               top: 8,
+    //               width: 24,
+    //               height: 24,
+    //               bgcolor: 'error.main',
+    //               color: '#fff',
+    //               borderRadius: '50%',
+    //               display: 'flex',
+    //               alignItems: 'center',
+    //               justifyContent: 'center',
+    //               fontWeight: 'bold',
+    //               fontSize: '0.9rem',
+    //             },
+    //           }}
+    //         >
+    //           <Typography variant="subtitle1" fontWeight="bold" gutterBottom color="#18C9CD">
+    //             {stepTitle}
+    //           </Typography>
+    //           <Typography variant="body2" color="text.secondary">
+    //             {desc}
+    //           </Typography>
+    //         </Box>
+    //       ))}
+    //     </Box>
+    //   </Paper>
+    // );
+    const renderProcessCard = ({ title, icon, steps }) => (
+      <Paper elevation={3} sx={{ borderRadius: 3, p: 4, mt: 4, backgroundColor: '#011640' }}>
         <Box sx={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, bgcolor: 'error.main' }} />
-        <Box display="flex" alignItems="center" mb={3}>
+        <Box display="flex" alignItems="center" justifyContent='center' mb={3}>
           <Box
             sx={{
               width: 48,
@@ -98,46 +174,45 @@ const steps = {
             {title}
           </Typography>
         </Box>
-        <Box component="ol" sx={{ pl: 0, listStyle: 'none', counterReset: 'step-counter' }}>
-          {stepsArr.map(([stepTitle, desc], idx) => (
-            <Box
-              key={idx}
-              component="li"
-              sx={{
-                position: 'relative',
-                borderLeft: '2px solid #e9ecef',
-                pl: 4,
-                pb: 2,
-                '&::before': {
-                  content: 'counter(step-counter)',
-                  counterIncrement: 'step-counter',
-                  position: 'absolute',
-                  left: -14,
-                  top: 8,
-                  width: 24,
-                  height: 24,
-                  bgcolor: 'error.main',
-                  color: '#fff',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: 'bold',
-                  fontSize: '0.9rem',
-                },
-              }}
-            >
-              <Typography variant="subtitle1" fontWeight="bold" gutterBottom color="#18C9CD">
-                {stepTitle}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {desc}
-              </Typography>
-            </Box>
-          ))}
-        </Box>
+        {steps.map(([stepTitle, desc], idx) => (
+           <Box
+           key={idx}
+           component="li"
+           sx={{
+             position: 'relative',
+             borderLeft: '2px solid #e9ecef',
+             listStyle: 'none',
+             pl: 4,
+             pb: 2,
+             '&::before': {
+               content: 'counter(step-counter)',
+               counterIncrement: 'step-counter',
+               position: 'absolute',
+               left: -14,
+               top: 8,
+               width: 24,
+               height: 24,
+               bgcolor: 'error.main',
+               color: '#fff',
+               borderRadius: '50%',
+               display: 'flex',
+               alignItems: 'center',
+               justifyContent: 'center',
+               fontWeight: 'bold',
+               fontSize: '0.9rem',
+             },
+           }}
+         >
+           <Typography variant="subtitle1" fontWeight="bold" gutterBottom color="#18C9CD">
+             {stepTitle}
+           </Typography>
+           <Typography variant="body2" color="text.secondary">
+             {desc}
+           </Typography>
+         </Box>
+        ))}
       </Paper>
-    );
+    )
   
     return (
       <Container sx={{ py: { xs: 4, sm: 6 } }}>
@@ -149,7 +224,7 @@ const steps = {
             How I apply art historical methodology to product methodology
           </Typography>
         </Box>
-        <Grid container spacing={4}>
+        {/* <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
             {renderProcessCard('Product Discovery', <StarIcon sx={{ fill: '#fff' }} />, steps.processOne)}
           </Grid>
@@ -159,8 +234,38 @@ const steps = {
           <Grid item xs={12} md={4}>
             {renderProcessCard('Strategic Product Planning', <HomeIcon sx={{ fill: '#fff' }} />, steps.processThree)}
           </Grid>
-        </Grid>
-  
+        </Grid> */}
+        <Box sx={{ maxWidth: 600, flexGrow: 1, mx: 'auto' }}>
+           <Stepper alternativeLabel activeStep={activeStep}>
+            {stepCards.map((step, index) => (
+              <Step key={step.title} onClick={() => handleStepClick(index)}>
+                <StepLabel icon={step.icon}  
+                  sx={{
+                    '& .MuiStepLabel-label': {
+                      color: index === activeStep ? 'text.light' : 'text.main',
+                      fontWeight: index === activeStep ? 'bold' : 'normal',
+                    },
+                    '& .MuiStepLabel-iconContainer': {
+                      color: index === activeStep ? 'secondary.main' : 'text.main',
+                    },
+                  }}
+                  >
+                    {step.title}
+                </StepLabel>
+              </Step>
+            ))}
+          </Stepper>
+
+          {/* Show only the active step card */}
+          <Box>{renderProcessCard(stepCards[activeStep])}</Box>
+        </Box>
+        {/* <Grid container spacing={4} sx={{ display: { xs: 'none', md: 'flex' } }}>
+          {stepCards.map((card, idx) => (
+            <Grid item xs={12} md={4} key={idx}>
+              {renderProcessCard(card.title, card.icon, card.steps)}
+            </Grid>
+          ))}
+        </Grid> */}
         <Paper
           sx={{
             mt: 4,
@@ -296,5 +401,5 @@ const steps = {
           </Grid>
         </Paper> */}
       </Container>
-    );
+    )
   }

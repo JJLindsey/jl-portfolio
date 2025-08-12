@@ -40,14 +40,14 @@ export default function Home2() {
                 variant="h5"
                 sx={{ mb: 4, mt: { xs: 4, sm: 4}, fontWeight: 'light' }}
                 >
-                Product Engineer | User-Centric Solutions
+                Product Design | User-Centric Solutions | Technical Expertise
             </Typography>
             <Typography
               color="inherit"
               align="left"
               variant="h6"
               sx={{ mb: 4, mt: { xs: 4, sm: 4} }}
-            > I understand the "why" behind design decisions and user needs, not just the "how" of implementation, leading to more stategic and impactful decisions.</Typography>
+            > I understand the "why" behind design decisions and user needs, not just the "how" of implementation, leading to more stategic and impactful decisions. I bring cultural analysis and contextual thinking to digital strategy. My art history training taught me to see patterns and understand the 'why' behind behavior, while my engineering experience gives me technical credibility. I help teams build products that don't just solve problems—they solve the right problems for the right reasons.</Typography>
             <Box sx={{display: 'flex', gap: 2, mb: 3, }}>
                 <CategoryOutlined />
                 <Typography>Technical</Typography>
