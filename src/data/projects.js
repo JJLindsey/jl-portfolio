@@ -10,10 +10,13 @@ export const projects = [
       image: `${process.env.PUBLIC_URL}/images/360Home.png`,
       project: 'Atlanta-based Music producer\'s site showcasing audio samples',
       url: 'https://threesixtysessions.com/',
-      subtitle: 'Music Producer Portfolio Website',
+      subtitle: 'Music Producer Site',
       timeline: '8 weeks',
       client: 'Jeff Mills - Music Producer',
-      problem: 'Jeff Mills needed a professional website to showcase his studio services and audio samples with a retro aesthetic, while keeping costs low without database requirements.',
+      productType: 'End-to-End Web Product',
+      scope: 'Complete product development from concept to deployment',
+      businessImpact: 'Fully operational lead generation and website showcase platform',
+      problem: 'Music Producer needed a professional website to showcase his studio services and audio samples with a retro aesthetic, while keeping costs low without database requirements.',
       solution: 'Created a React-based site with custom audio players, warm retro design, and strategic use of credibility indicators to establish trust with musician clientele.',
       testimonial:
         "Music Producer needed a website to advertise his services and showcase his work",
@@ -26,7 +29,8 @@ export const projects = [
         'Retro-inspired warm color palette',
         'Mobile-responsive design',
         'Cost-effective static site architecture',
-        'Strategic credibility showcasing'
+        'Real-time waveform visualization for audio preview',
+        'Playlist functionality with smooth track transitions'
       ],
       // Design
       designDecisions: [
@@ -49,12 +53,14 @@ export const projects = [
         'Audio-focused UX encourages sample listening',
         'Professional credibility through strategic design',
         'Zero ongoing server costs for client',
-        'Mobile-optimized responsive experience'
+        'Mobile-optimized responsive experience',
+        'Enhanced user engagement through visual audio feedback',
+        'Seamless brand integration with custom player styling'
       ],
       screenshots: [`${process.env.PUBLIC_URL}/images/musicplayer.png`, `${process.env.PUBLIC_URL}/images/about360.png`, `${process.env.PUBLIC_URL}/images/360Home.png`],
-      description: 'This project is a website for a music producer that showcases audio samples and allows users to listen to the music directly on the site. Site is built using React and features a custom audio player.',
-      label: [ 'React.js', 'Wavesurfer.js', 'Bootstrap', 'JavaScript', 'UI/UX Design', 'Figma'],
-      role: 'UI/UX Designer & Frontend Developer - Designed logo, assets, and components for custom React site, built custom audio player using Wavesurfer.js, deployed via Firebase.',
+      description: 'Professional music producer website featuring custom audio player, retro aesthetic to showcase work and attract clientele.',
+      label: [ 'React.js', 'Wavesurfer.js', 'Bootstrap', 'JavaScript', 'UI/UX Design', 'Figma', 'Photoshop', 'Firebase'],
+      role: 'UI/UX Designer & Frontend Developer - Led complete product lifecycle from initial client consultation through research, design, development, and deployment of a fully functional business website.',
     },
     {
         id: 'neo-dashboard',

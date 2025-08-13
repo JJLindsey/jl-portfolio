@@ -1,8 +1,12 @@
 import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import {projects} from '../data/projects'
-import { Box, Button, Chip, Container, Grid, ImageList, ImageListItem, Typography } from '@mui/material'
+import { Box, Button, Chip, Container, Divider, Grid, ImageList, ImageListItem, Typography, Tooltip } from '@mui/material'
 import MediaPreview from './MediaPreview'
+import { CallMade } from '@mui/icons-material'
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline'
+import CropSquareIcon from '@mui/icons-material/CropSquare'
+import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 
 
 export default function ProjectDetails() {
@@ -23,16 +27,44 @@ export default function ProjectDetails() {
         <Grid container spacing={2} alignItems='flex-start'>
             <Grid item xs={12} sm={6} sx={{ mb: 4 }}>
                 <Typography variant='h3' textAlign='left' gutterBottom color='#fff'>{project.name}</Typography>
-                <Typography variant='body1' textAlign='left' sx={{ mb: 4 }}>{project.description}</Typography>
-                <Typography variant='h6' textAlign='left' gutterBottom color='#fff'>My Role</Typography>
+                <Typography variant='h5' textAlign='left' sx={{ mb: 2 }}>{project.subtitle}</Typography>
+                <Typography textAlign='left' sx={{ mb: 4 }}>{project.description}</Typography>
+                <Box sx={{ mb: 2 }}>
+                  <Typography variant="h6" textAlign='left' sx={{ color: '#18C9CD', mb: 1 }}>
+                    Details
+                  </Typography>
+                  {/* <Typography textAlign='left' sx={{ mb: 1 }}>PROJECT TYPE: {project.productType}</Typography>
+                  <Typography textAlign='left' sx={{ mb: 1 }}>SCOPE: {project.scope}</Typography>
+                  <Typography textAlign='left' sx={{ mb: 2 }}>IMPACT: {project.businessImpact}</Typography> */}
+                </Box>
+                 {/* Icon Details */}
+                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, mb: 5 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                      <WorkOutlineIcon sx={{ fontSize: 24, color: '#18C9CD' }} />
+                      <Typography variant="body">{project.productType}</Typography>
+                    </Box>
+                    
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                      <CropSquareIcon sx={{ fontSize: 24, color: '#18C9CD' }} />
+                      <Typography variant="body">{project.scope}</Typography>
+                    </Box>
+                    
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                      <TrendingUpIcon sx={{ fontSize: 24, color: '#18C9CD' }} />
+                      <Typography variant="body">{project.businessImpact}</Typography>
+                    </Box>
+                  </Box>
+                <Typography variant='h6' textAlign='left' gutterBottom sx={{ color: '#18c9cd'}}>My Role</Typography>
                 <Typography variant='body1' textAlign='left' sx={{ mb: 4 }}>{project.role}</Typography>
+               
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2 }}>
                 {project.url && (
                     <Button
-                        variant='outlined'
+                        variant='contained'
                         color='secondary'
                         href={project.url}
                         target='_blank'
+                        endIcon={<CallMade />}
                         sx={{
                             borderRadius: 4,
                             alignContent: 'left'
@@ -58,14 +90,77 @@ export default function ProjectDetails() {
         <MediaPreview videoUrl={project.videoUrl} image={project.image}/>
         </Grid>
       </Grid>
-      <Box sx={{ mt: 8 }}>
+       {/* Problem & Solution Section */}
+      {(project.problem || project.solution) && (
+        <Grid container spacing={4} sx={{ mb: 8 }}>
+          {project.problem && (
+            <Grid item xs={12} md={6}>
+              <Typography variant='h5' textAlign='left' gutterBottom color='#fff'>
+                The Challenge
+              </Typography>
+              <Typography variant='body1' textAlign='left'>
+                {project.problem}
+              </Typography>
+            </Grid>
+          )}
+          {project.solution && (
+            <Grid item xs={12} md={6}>
+              <Typography variant='h5' textAlign='left' gutterBottom color='#fff'>
+                The Solution
+              </Typography>
+              <Typography variant='body1' textAlign='left'>
+                {project.solution}
+              </Typography>
+            </Grid>
+          )}
+        </Grid>
+      )}
+       <Divider orientation='horizontal' flexItem sx={{ backgroundColor: '#18C9CD', mx: 1 }} />
+      <Box sx={{ mt: 4 }}>
         <Typography variant='h4' textAlign='left' gutterBottom color='#fff'>
           Project Goal
         </Typography>
         <Typography variant='body1' textAlign='left' sx={{ mb: 4 }}>
             {project.goal}
         </Typography>
-
+        </Box>
+        {/* Key Features */}
+        {project.keyFeatures && (
+          <Box sx={{ mb: 8 }}>
+            <Typography variant='h4' textAlign='left' gutterBottom color='#fff'>
+              Key Features
+            </Typography>
+            <Grid container spacing={2}>
+              {project.keyFeatures.map((feature, index) => (
+                <Grid item xs={12} sm={6} key={index}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                    <Box sx={{ width: 8, height: 8, backgroundColor: '#18C9CD', borderRadius: '50%', mr: 2 }} />
+                    <Typography variant='body1'>{feature}</Typography>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        )}
+        <Box>
+         {/* Design Decisions */}
+        {project.designDecisions && (
+          <Box sx={{ mb: 8 }}>
+            <Typography variant='h4' textAlign='left' gutterBottom color='#fff'>
+              Design Decisions
+            </Typography>
+            {project.designDecisions.map((item, index) => (
+              <Box key={index} sx={{ mb: 3, p: 3, border: '1px solid #333', borderRadius: 2 }}>
+                <Typography variant='h6' color='#18C9CD' gutterBottom>
+                  {item.decision}
+                </Typography>
+                <Typography variant='body1'>
+                  {item.rationale}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+        )}
         {/* Full-width image after goal */}
         {project.screenshots && project.screenshots.length > 0 && (
           <ImageList cols={2} variant='masonry' sx={{ mb: 4}}>
@@ -83,6 +178,24 @@ export default function ProjectDetails() {
           </ImageList>
         )}
       </Box>
+       {/* Results */}
+        {project.results && (
+          <Box sx={{ mb: 8 }}>
+            <Typography variant='h4' textAlign='left' gutterBottom color='#fff'>
+              Results & Impact
+            </Typography>
+            <Grid container spacing={2}>
+              {project.results.map((result, index) => (
+                <Grid item xs={12} sm={6} key={index}>
+                  <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
+                    <Typography variant='h6' color='#18C9CD' sx={{ mr: 1 }}>✓</Typography>
+                    <Typography variant='body1'>{result}</Typography>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        )}
        {/* Conditionally render the Figma embed */}
        {project.figmaEmbed && (
             <Box sx={{ mt: 4, mb: 4 }}>

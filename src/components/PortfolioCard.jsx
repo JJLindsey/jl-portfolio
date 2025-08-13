@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
-import { Tab, Tabs, Divider } from '@mui/material'
+import { Tab, Tabs, Divider, Chip } from '@mui/material'
 import {styled} from '@mui/material/styles'
 //import {motion} from 'framer-motion'
 
@@ -17,7 +17,9 @@ import Articles from './Articles'
 import ProcessDocumentation from './ProcessDocumentation'
 import CategoryIcon from '@mui/icons-material/Category'
 import ProductProjectDetails from './ProductProjectDetails'
-import CaseStudyCard from './CaseStudy/CaseStudyCard'
+import { EmojiObjects } from '@mui/icons-material'
+import TechDecisionMatrix from './Strategy/TechDecisionMatrix'
+//import CaseStudyCard from './CaseStudy/CaseStudyCard'
 //import { products } from '../data/products'
 
 //import cardBack from '../assets/bubblesred.png'
@@ -127,6 +129,7 @@ export default function PortfolioCard({ projects= [], products = [] }) {
         <Tab icon={<CodeIcon />} label="Projects" iconPosition="start"/>
         <Tab icon={<DescriptionIcon />} label="Case Studies" iconPosition="start"/>
         <Tab icon={<CategoryIcon />} label="Product Thinking" iconPosition="start"/>
+        <Tab icon={<EmojiObjects />} label="Strategic Product Design" iconPosition="start"/>
       </Tabs>
       <TabPanel value={tab} index={0}>
         <CodeProjects projects={projects} />
@@ -137,7 +140,22 @@ export default function PortfolioCard({ projects= [], products = [] }) {
         <ProductProjectDetails productId="accessible-meditation" products={products} />
       </TabPanel>
       <TabPanel value={tab} index={2}>
-        <ProcessDocumentation />
+        {/* <ProcessDocumentation /> */}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, py: 4 }}>
+          <Chip label="In Progress" color="secondary" variant="contained" />
+          <Typography variant="body" color="text.secondary">
+            This section is under development and will be available soon.
+          </Typography>
+        </Box>
+      </TabPanel>
+      <TabPanel value={tab} index={3}>
+        {/* <TechDecisionMatrix /> */}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, py: 4 }}>
+          <Chip label="Coming Soon" color="secondary" variant="contained" />
+          <Typography variant="body" color="text.secondary">
+            This section will be live shortly.
+          </Typography>
+        </Box>
       </TabPanel>
     </Container>
   )

@@ -61,7 +61,7 @@ const GlassAppBar = styled(AppBar)(({ theme }) => ({
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null)
   const location = useLocation();
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
 
   const handleOpenNavMenu = (e) => {
@@ -90,7 +90,7 @@ const navigate = useNavigate();
     }
   
     handleCloseNavMenu();
-  };
+  }
 
   return (
     <GlassAppBar position="sticky" sx={{ backgroundColor: { md: "#011640", xs: '#011640'}, boxShadow: { xs: 'none', sm: 'none', md: 'none'} }}>
@@ -153,7 +153,7 @@ const navigate = useNavigate();
                   color="primary"
                   size="small"
                   variant="contained"
-                  href={`${process.env.PUBLIC_URL}/JenniferLindseyFE.pdf`}
+                  href={`${process.env.PUBLIC_URL}/JenniferLindseyDesign.pdf`}
                   target="_blank"
                   rel="noopener noreferrer"
                   endIcon={<DownloadForOfflineIcon />}
@@ -202,7 +202,7 @@ const navigate = useNavigate();
                 size="small"
                 variant='outlined'
                 component="a"
-                href={`${process.env.PUBLIC_URL}/JenniferLindseyFE.pdf`}
+                href={`${process.env.PUBLIC_URL}/JenniferLindseyDesign.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
                 startIcon={<DownloadForOfflineIcon />}
