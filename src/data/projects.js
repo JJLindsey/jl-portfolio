@@ -5,20 +5,56 @@ import nextlogo from '../assets/icons8-next.js-48.png'
 export const projects = [
     {
       id: 'three-sixty-sessions',
-        avatar: <img src={reactlogo} alt="react logo" height={48}/>,
+      avatar: <img src={reactlogo} alt="react logo" height={48}/>,
       name: 'Three Sixty Sessions',
       image: `${process.env.PUBLIC_URL}/images/360Home.png`,
       project: 'Atlanta-based Music producer\'s site showcasing audio samples',
       url: 'https://threesixtysessions.com/',
+      subtitle: 'Music Producer Portfolio Website',
+      timeline: '8 weeks',
+      client: 'Jeff Mills - Music Producer',
+      problem: 'Jeff Mills needed a professional website to showcase his studio services and audio samples with a retro aesthetic, while keeping costs low without database requirements.',
+      solution: 'Created a React-based site with custom audio players, warm retro design, and strategic use of credibility indicators to establish trust with musician clientele.',
       testimonial:
         "Music Producer needed a website to advertise his services and showcase his work",
       width: '40%',
       navigation: 'Live Site',
-      goal: 'The main objective of this project was to create a website for an Atlanta-based music producer to showcase their work. We built a custom audio player using Wavesurfer.js to allow users to sample music.',
+      goal: 'Design and develop a professional music producer website that showcases audio samples through custom players, establishes credibility with industry recognition, and provides easy contact pathways - all while maintaining a distinctive retro aesthetic that stands out in the competitive music production market.',
+      // Key features/highlights
+      keyFeatures: [
+        'Custom vinyl record-style audio players',
+        'Retro-inspired warm color palette',
+        'Mobile-responsive design',
+        'Cost-effective static site architecture',
+        'Strategic credibility showcasing'
+      ],
+      // Design
+      designDecisions: [
+        {
+          decision: 'Split-screen hero layout',
+          rationale: 'Immediately establishes both personal credibility and professional achievements by combining compelling photography with key information.'
+        },
+        {
+          decision: 'Custom vinyl record audio players',
+          rationale: 'Music quality is the ultimate selling point - custom players that feel familiar to musicians encourage engagement with samples.'
+        },
+        {
+          decision: 'Warm orange accent color (#f39c12)',
+          rationale: 'Evokes creativity and warmth while maintaining professional appearance, differentiating from cold, technical aesthetics common in the industry.'
+        }
+      ],
+    // Results/impact
+      results: [
+        'Distinctive brand identity that stands out in music industry',
+        'Audio-focused UX encourages sample listening',
+        'Professional credibility through strategic design',
+        'Zero ongoing server costs for client',
+        'Mobile-optimized responsive experience'
+      ],
       screenshots: [`${process.env.PUBLIC_URL}/images/musicplayer.png`, `${process.env.PUBLIC_URL}/images/about360.png`, `${process.env.PUBLIC_URL}/images/360Home.png`],
       description: 'This project is a website for a music producer that showcases audio samples and allows users to listen to the music directly on the site. Site is built using React and features a custom audio player.',
-      label: [ 'React.js', 'Wavesurfer.js', 'Bootstrap', 'JavaScript'],
-      role: 'Design logo, assets, and components for custom React site, build a custom audio player using Wavesurfer.js, deploy site via Firebase.',
+      label: [ 'React.js', 'Wavesurfer.js', 'Bootstrap', 'JavaScript', 'UI/UX Design', 'Figma'],
+      role: 'UI/UX Designer & Frontend Developer - Designed logo, assets, and components for custom React site, built custom audio player using Wavesurfer.js, deployed via Firebase.',
     },
     {
         id: 'neo-dashboard',
