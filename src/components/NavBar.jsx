@@ -9,7 +9,7 @@ import { GitHub } from '@mui/icons-material'
 import EmailIcon from '@mui/icons-material/Email'
 import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline'
 import MenuIcon from '@mui/icons-material/Menu'
-import Logo from '../assets/logoJL2.png'
+import Logo from '../assets/JLnameLogo.png'
 
 const StyledButton = styled(Button)(({theme}) => ({
   transition: theme.transitions.create('all', {

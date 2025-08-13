@@ -17,12 +17,27 @@ export default function Home2() {
           justifyContent: 'space-between',
           height: 'auto',
         }}
-        >
+        > 
         <Box sx={{maxWidth: '560px'}}>
             {/* <Divider orientation='vertical' sx={{color: 'white', borderWidth: 5, opacity: 1.0, borderColor: '#18C9CD' }}/> */}
             <RectangleIcon  sx={{color: '#ffc300', display: 'flex', fontSize: '5em'}}/>
-            <Typography color="inherit" align="left" variant="h2" sx={{fontWeight: 'regular italic', fontFamily: '"Michroma", sans-serif'}}>
-                Jennifer Lindsey
+            {/* <Typography color="inherit" align="left" variant="h2" sx={{fontWeight: 'regular italic', fontFamily: '"Michroma", sans-serif'}}>
+                Jennifer Lindsey, MA, CSPO®
+            </Typography> */}
+            <Typography
+              color="inherit"
+              align="left"
+              variant="h3"
+              sx={{ fontWeight: 'regular', fontFamily: '"Michroma", sans-serif', mb:2 }}
+            >
+              Jennifer Lindsey
+              <Typography
+                component="span"
+                variant="body1"
+                sx={{ fontWeight: 'light', ml: 1 }}
+              >
+                MA, CSPO®
+              </Typography>
             </Typography>
             <Typography align="left" variant="h2" sx={{fontWeight: 'bold', fontFamily: '"Sansation", sans-serif'}}>
             Critical Analysis Meets Product Innovation
