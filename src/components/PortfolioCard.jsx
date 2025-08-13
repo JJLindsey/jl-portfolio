@@ -141,18 +141,18 @@ export default function PortfolioCard({ projects= [], products = [] }) {
       </TabPanel>
       <TabPanel value={tab} index={2}>
         {/* <ProcessDocumentation /> */}
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, py: 4 }}>
+        <Box sx={{ display: 'flex', flexDirection:'column', justifyContent: 'center', gap: 1, py: 4 }}>
           <Chip label="In Progress" color="secondary" variant="contained" />
-          <Typography variant="body" color="text.secondary">
+          <Typography variant="h6" color="text.secondary">
             This section is under development and will be available soon.
           </Typography>
         </Box>
       </TabPanel>
       <TabPanel value={tab} index={3}>
         {/* <TechDecisionMatrix /> */}
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, py: 4 }}>
+        <Box sx={{ display: 'flex', flexDirection:'column', justifyContent: 'center', gap: 1, py: 4 }}>
           <Chip label="Coming Soon" color="secondary" variant="contained" />
-          <Typography variant="body" color="text.secondary">
+          <Typography variant="h6" color="text.secondary">
             This section will be live shortly.
           </Typography>
         </Box>

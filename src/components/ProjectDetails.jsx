@@ -33,25 +33,22 @@ export default function ProjectDetails() {
                   <Typography variant="h6" textAlign='left' sx={{ color: '#18C9CD', mb: 1 }}>
                     Details
                   </Typography>
-                  {/* <Typography textAlign='left' sx={{ mb: 1 }}>PROJECT TYPE: {project.productType}</Typography>
-                  <Typography textAlign='left' sx={{ mb: 1 }}>SCOPE: {project.scope}</Typography>
-                  <Typography textAlign='left' sx={{ mb: 2 }}>IMPACT: {project.businessImpact}</Typography> */}
                 </Box>
                  {/* Icon Details */}
                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, mb: 5 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                       <WorkOutlineIcon sx={{ fontSize: 24, color: '#18C9CD' }} />
-                      <Typography variant="body">{project.productType}</Typography>
+                      <Typography variant="body" textAlign='left'>{project.productType}</Typography>
                     </Box>
                     
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                       <CropSquareIcon sx={{ fontSize: 24, color: '#18C9CD' }} />
-                      <Typography variant="body">{project.scope}</Typography>
+                      <Typography variant="body" textAlign='left'>{project.scope}</Typography>
                     </Box>
                     
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                       <TrendingUpIcon sx={{ fontSize: 24, color: '#18C9CD' }} />
-                      <Typography variant="body">{project.businessImpact}</Typography>
+                      <Typography variant="body" textAlign='left'>{project.businessImpact}</Typography>
                     </Box>
                   </Box>
                 <Typography variant='h6' textAlign='left' gutterBottom sx={{ color: '#18c9cd'}}>My Role</Typography>

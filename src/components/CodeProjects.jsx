@@ -9,10 +9,13 @@ const StyledCard = styled(Card)(({ theme }) => ({
     height: 300,
     //backdropFilter: 'blur( 3px )',
     boxShadow: '0 4px 20px rgba(255, 255, 255, 0.2)',
-    borderRadius: 6,
-    border: '2px solid rgba(24, 202, 205, 0.2)',
-    //background: 'linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)',
-    backgroundColor: '#000',
+    borderRadius: 9,
+    border: '1px solid rgba(24, 202, 205, 0.2)',
+    background: `linear-gradient(to bottom right,
+    rgba(255,255,255,0.9) 0%,
+   rgba(255,255,255,0.1) 40%,
+   rgba(0,150,255,0.1) 60%,
+   rgba(0, 225, 255, 0.9) 100%)`,
     color:'#fff',
     fontWeight: 600,
     display: 'flex',
@@ -66,19 +69,19 @@ export default function CodeProjects() {
               </CardContent>
               <CardActions sx={{justifyContent: 'center'}}>
                 <Button
-                  sx={{color: '#18C9CD'}}
+                  sx={{color: '#fff', borderColor: '#ffd'}}
                   variant="outlined"
-                  size='small'
                   href={project.url} target="_blank"
                 >
                     {project.navigation}
                 </Button>
                 <Button
                     //href={project.url}
+                    variant="outlined"
                     component={Link}
                     to={`/projects/${project.id}`}
                     endIcon={<CallMade />}
-                    sx={{ color: '#18C9CD'}}
+                    sx={{ color: '#fff', borderColor: '#ffd' }}
                   >
                     view project
                 </Button>
