@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import {projects} from '../data/projects'
-import { Box, Button, Chip, Container, Divider, Grid, ImageList, ImageListItem, Typography, Tooltip } from '@mui/material'
+import { Box, Button, Chip, Container, Divider, Grid, ImageList, ImageListItem, Typography, Tooltip, List, ListItem } from '@mui/material'
 import MediaPreview from './MediaPreview'
 import { CallMade } from '@mui/icons-material'
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline'
@@ -141,7 +141,7 @@ export default function ProjectDetails() {
         )}
         <Box>
          {/* Design Decisions */}
-        {project.designDecisions && (
+        {/* {project.designDecisions && (
           <Box sx={{ mb: 8 }}>
             <Typography variant='h4' textAlign='left' gutterBottom color='#fff'>
               Design Decisions
@@ -157,7 +157,34 @@ export default function ProjectDetails() {
               </Box>
             ))}
           </Box>
-        )}
+        )} */}
+        {project.designDecisions.map((item, index) => (
+            <Box
+              key={index}
+              sx={{
+                mb: 3,
+                p: 3,
+                border: '1px solid #333',
+                borderRadius: 2
+              }}
+            >
+              <Typography variant="h6" color="#18C9CD" gutterBottom>
+                {item.decision}
+              </Typography>
+
+              {Array.isArray(item.rationale) ? (
+                <List style={{ marginTop: 8, paddingLeft: 20 }}>
+                  {item.rationale.map((point, i) => (
+                    <ListItem key={i}>
+                      <Typography variant="body1">{point}</Typography>
+                    </ListItem>
+                  ))}
+                </List>
+              ) : (
+                <Typography variant="body1">{item.rationale}</Typography>
+              )}
+            </Box>
+          ))}
         {/* Full-width image after goal */}
         {project.screenshots && project.screenshots.length > 0 && (
           <ImageList cols={2} variant='masonry' sx={{ mb: 4}}>

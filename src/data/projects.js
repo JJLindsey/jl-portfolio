@@ -35,16 +35,20 @@ export const projects = [
       // Design
       designDecisions: [
         {
-          decision: 'Split-screen hero layout',
-          rationale: 'Immediately establishes both personal credibility and professional achievements by combining compelling photography with key information.'
+          decision: 'Flip cards showing services',
+          rationale: 'Establishes services offered by combining compelling photography with key information.'
         },
         {
-          decision: 'Custom vinyl record audio players',
-          rationale: 'Music quality is the ultimate selling point - custom players that feel familiar to musicians encourage engagement with samples.'
+          decision: 'Audio Experience - Custom audio player',
+          rationale: 'Music quality is the ultimate selling point - custom player that feel familiar to musicians encourage engagement with samples.'
         },
         {
-          decision: 'Warm orange accent color (#f39c12)',
-          rationale: 'Evokes creativity and warmth while maintaining professional appearance, differentiating from cold, technical aesthetics common in the industry.'
+          decision: 'Color Psychology',
+          rationale: ['Evokes creativity and warmth while maintaining professional appearance, differentiating from cold, technical aesthetics common in the industry.', 
+                      'Warm black backgrounds create focus and eliminate distractions',
+                      'Warm orange (#f39c12) evokes creativity, energy, and warmth',
+                      'High contrast ensures accessibility and readability'
+                      ]
         }
       ],
     // Results/impact
