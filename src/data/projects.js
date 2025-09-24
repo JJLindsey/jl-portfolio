@@ -140,21 +140,54 @@ export const projects = [
     //     role: 'Design app wireframes and prototypes in Figma, build components in React, implement Stripe API for payment processing.',
     // },
     {
-        id: 'movie-app',
+      id: 'movie-app',
       avatar: <img src={jslogo} alt="react logo" height={48}/>,
       name: 'Current Films',
+      subtitle: 'Movie Ratings and Search',
       image: `${process.env.PUBLIC_URL}/images/MovieApp.png`,
       project: 'Get current film info & search films from TMDB API',
+      productType: 'Web API Product',
       url: "https://jjlindsey.github.io/movie-appJS/",
+      scope: 'Complete product development from concept to deployment',
+      businessImpact: 'Real-time data updates for most current films',
+      problem: '',
+      solution: '',
       testimonial:
         "",
       width: '40%',
       navigation: 'Live Site',
-      goal: 'The main objective of this project was to create a movie search app that allows users to search for movies and view their ratings.',
-      screenshots: [`${process.env.PUBLIC_URL}/images/moviehome.png`, `${process.env.PUBLIC_URL}/images/moviesearchresult.png`, `${process.env.PUBLIC_URL}/images/movieInfo.png`],
+      goal: 'The main objective of this project was to create a movie search app that allows users to search for movies and view their ratings in real time.',
       description: 'This project is a movie app that displays current films, a synopsis of each film, and allows users to search for movies by actor, genre or title. The app uses the TMDB API to fetch movie data and display it in a user-friendly interface.',
       label: [ 'JavaScript', 'HTML', 'CSS', 'API'],
       role: 'Design and Build a responsive app using Vanilla JavaScript, HTML, and CSS, integrate TMDB API to fetch movie data, deploy site via GitHub Pages.',
+      keyFeatures: [
+        'Real-time movie data from TMDB API',
+        'Search functionality by title, actor, or genre',
+        'Responsive design for mobile and desktop',
+        'Simple rating display with star icons',
+        'Detailed movie information cards',
+        'Interactive hover effects for movie cards',
+        'Cost-effective static site architecture',
+        'Error handling for API requests'
+      ],
+      designDecisions: [
+        {
+          decision: 'Hover cards to show movie details',
+          rationale: 'Preview film image with key information and allow user to hover for synopsis.'
+        },
+        {
+          decision: 'Rating display with stars',
+          rationale: 'Visual star ratings provide quick, intuitive view of movie rating.',
+        },
+        {
+          decision: 'Responsive, clean layout',
+          rationale: ['Black backgrounds create a cinematic feel and make images pop', 
+                      'Cards to highlight movie posters and separate content',
+                      'High contrast ensures accessibility and readability'
+                      ]
+        }
+      ],
+      screenshots: [ `${process.env.PUBLIC_URL}/images/moviehome.png`,`${process.env.PUBLIC_URL}/images/movieCard.png`, `${process.env.PUBLIC_URL}/images/synopsis.png`],
     },
     // {
     //   id: 'tracking-app',

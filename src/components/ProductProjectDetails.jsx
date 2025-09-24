@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { Button, Container,Typography, Grid, Chip, Box, TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Image, ImageList, ImageListItem, Paper } from '@mui/material'
 import { products } from '../data/products'
 import MediaPreview from './MediaPreview'
+import { FrostedCard } from './FrostedCard/FrostedCard'
+import { EmojiObjects } from '@mui/icons-material'
 
 // component for PM case studies
 export default function ProductProjectDetails({productId}) {
@@ -30,11 +32,22 @@ export default function ProductProjectDetails({productId}) {
     ]
 
   return (
-    <Paper sx={{ pt: 8, pb: 12, border: 'solid 1px #fff', color: '#fff', backgroundColor: '#000' }}>
+    <FrostedCard sx={{ pt: 8, pb: 12, color: '#fff', backgroundColor: '#021640' }}>
+          <Typography variant='h4' gutterBottom>
+                    <EmojiObjects fontSize='large'/>
+                    Iterating...
+                </Typography> 
+        <Box sx={{filter: 'blur(6px)'}}>
         {/* Hero Section */}
         <Grid container spacing={4} justifyContent='center'>
             <Grid item xs={12} md={6} sx={{ mb: 4 }}>
-                <Chip label={product.type} sx={{ mb: 2, bgcolor: '#18C9CD', color: '#fff' }} />
+                {/* <Chip label={product.type} size='large' sx={{ mb: 2, bgcolor: '#18C9CD', color: '#fff' }} /> */}
+                <Button
+                        variant='outlined'
+                        color='secondary'
+                        target='_blank'
+                        sx={{ borderRadius: 4, mb: 4 }}
+                    > {product.type}</Button>
                 <Typography variant='h3' textAlign='center' gutterBottom color='#fff'>
                     {product.name}
                 </Typography>
@@ -175,7 +188,8 @@ export default function ProductProjectDetails({productId}) {
         {product.screenshots && product.screenshots.length > 0 && (
             <Box sx={{ mt: 8 }}>
                 <Typography variant='h4' gutterBottom color='#fff'>Visual Design</Typography>
-                <ImageList cols={2} variant='masonry' sx={{ mb: 4}}>
+                <Typography variant='body' sx={{ mb: 4 }}>In Progress...</Typography>
+                {/* <ImageList cols={2} variant='masonry' sx={{ mb: 4}}>
                     {product.screenshots.map((src, index) => (
                         <ImageListItem key={index}>
                             <img
@@ -186,14 +200,14 @@ export default function ProductProjectDetails({productId}) {
                             />
                         </ImageListItem>
                     ))}
-                </ImageList>
+                </ImageList> */}
             </Box>
         )}
 
         {/* Figma Prototype */}
         {product.figmaEmbed && (
             <Box sx={{ mt: 4, mb: 4 }}>
-                <Typography variant='h4' gutterBottom color='#fff'>Interactive Prototype</Typography>
+                <Typography variant='h4' gutterBottom color='#fff'>Interactive Prototype... in Progress</Typography>
                 <div dangerouslySetInnerHTML={{ __html: product.figmaEmbed }} />
             </Box>
         )}
@@ -205,6 +219,7 @@ export default function ProductProjectDetails({productId}) {
         >
             Back to Case Studies
         </Button>
-    </Paper>
+        </Box>
+    </FrostedCard>
   )
 }
