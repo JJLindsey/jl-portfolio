@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button, Container,Typography, Grid, Chip, Box, TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Image, ImageList, ImageListItem, Paper } from '@mui/material'
-import { products } from '../data/products'
+import { caseStudies } from '../data/caseStudies'
 import MediaPreview from './MediaPreview'
 import { FrostedCard } from './FrostedCard/FrostedCard'
 import { EmojiObjects } from '@mui/icons-material'
@@ -10,7 +10,7 @@ import { EmojiObjects } from '@mui/icons-material'
 export default function ProductProjectDetails({productId}) {
     //const {id} = useParams()
     const navigate = useNavigate()
-    const product = products.find((product) => product.id === productId)
+    const product = caseStudies.find((item) => item.id === productId)
 
     if(!product) {
         return(

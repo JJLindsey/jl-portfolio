@@ -1,4 +1,4 @@
-export const products = [
+export const caseStudies = [
     {
       id: 'accessible-meditation',
       name: 'Mindful Pose',
@@ -18,8 +18,8 @@ export const products = [
   
       description: 'Research-backed case study exploring accessibility-focused product innovation...',
       metrics: [
-        { value: '400K', label: 'Potential Users' },
-        { value: '$24M', label: 'Market Value' },
+        { value: '~400K', label: 'Potential Users' },
+        { value: '~$24M', label: 'Market Value' },
       ],
       methods: [
         'Accessibility Audit', 'RICE Prioritization', 'Persona Development',
@@ -56,7 +56,20 @@ export const products = [
           priority: 'Medium'
         },
       ],
-  
+      designDecisions: [
+        {
+           "decision": "Prioritizing Animated Breathing Guides over auditory ones.",
+    "rationale": "While most meditation apps rely on sound, this decision was made to ensure the core feature was accessible 'out-of-the-box' for D/HH users. This choice aligns with the core problem statement and serves the target market more effectively than simply adding closed captions."
+        },
+        {
+          "decision": "Visual-first animated breathing guides.",
+          "rationale": "Directly addresses the key insight that Deaf and Hard of Hearing (D/HH) users need visual cues to meditate effectively, as traditional auditory guides are inaccessible to them."
+        },
+        {
+          "decision": "Implementation of a brand-specific color palette.",
+          "rationale": "Primary color, #13BABA, was selected for its calming and professional qualities, directly supporting the app’s purpose of mental restoration. Secondary and accent colors, #FBD14C and #F87E01, introduce warmth and energy, creating a visually engaging experience that counters the cold, sterile aesthetic common in wellness apps. This palette is designed to be both aesthetically pleasing for users and easily adaptable for social media marketing, ensuring brand consistency and recognizability."
+      }
+      ],
       screenshots: [
         '/images/restore/screen1.png',
         '/images/restore/screen2.png',
