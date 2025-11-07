@@ -19,6 +19,7 @@ import CategoryIcon from '@mui/icons-material/Category'
 import ProductProjectDetails from './ProductProjectDetails'
 import { EmojiObjects } from '@mui/icons-material'
 import TechDecisionMatrix from './Strategy/TechDecisionMatrix'
+import PortfolioGrid from './PortfolioGrid'
 //import CaseStudyCard from './CaseStudy/CaseStudyCard'
 //import { products } from '../data/products'
 
@@ -157,6 +158,7 @@ export default function PortfolioCard({ projects= [], products = [] }) {
           </Typography>
         </Box>
       </TabPanel>
+      <PortfolioGrid products={products} />
     </Container>
   )
 }

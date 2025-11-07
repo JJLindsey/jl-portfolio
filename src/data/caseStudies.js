@@ -4,10 +4,10 @@ export const caseStudies = [
       name: 'Mindful Pose',
       slug: 'mindful-pose',
       logo: `${process.env.PUBLIC_URL}/images/MindfulPoseLogo2.png`,
-      tagline: 'Visual-First Meditation for Accessibility',
+      tagline: 'Inclusive Meditation',
       type: 'Inclusive Product Strategy & Accessibility Research',
       timeline: '4 months - Case Study Project',
-      role: 'Product Manager & UX Researcher',
+      role: 'Product Manager & UXUI Designer',
       problem: 'The 48M Americans with hearing loss are excluded from the $4.2B meditation app market...',
       opportunity: 'Untapped $273M market...',
       userResearch: 'Secondary research synthesis of 7+ academic studies...',
@@ -24,8 +24,10 @@ export const caseStudies = [
       methods: [
         'Accessibility Audit', 'RICE Prioritization', 'Persona Development',
       ],
+      badge: 'WCAG 2.1 AA Compliant',
+      accessibilityReportId: 'mindful-pose-audit',
       navigation: 'Read Case Study',
-      url: 'https://example.com/case-study/restorevision',
+      url: '',
       image: `${process.env.PUBLIC_URL}/images/Mobile-Home.png`,
       videoUrl: '',
   
@@ -58,8 +60,8 @@ export const caseStudies = [
       ],
       designDecisions: [
         {
-           "decision": "Prioritizing Animated Breathing Guides over auditory ones.",
-    "rationale": "While most meditation apps rely on sound, this decision was made to ensure the core feature was accessible 'out-of-the-box' for D/HH users. This choice aligns with the core problem statement and serves the target market more effectively than simply adding closed captions."
+          "decision": "Prioritizing Animated Breathing Guides over auditory ones.",
+          "rationale": "While most meditation apps rely on sound, this decision was made to ensure the core feature was accessible 'out-of-the-box' for D/HH users. This choice aligns with the core problem statement and serves the target market more effectively than simply adding closed captions."
         },
         {
           "decision": "Visual-first animated breathing guides.",
@@ -74,7 +76,11 @@ export const caseStudies = [
         '/images/restore/screen1.png',
         '/images/restore/screen2.png',
       ],
-  
+       badges: [
+        { label: 'WCAG 2.2 AA', color: 'success' },
+        { label: 'ARIA Compliant', color: 'warning' },
+        { label: 'Lighthouse 98%', color: 'secondary' },
+      ],
       figmaEmbed: '<iframe ...></iframe>'
     },
     // Add more projects

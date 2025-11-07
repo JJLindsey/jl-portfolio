@@ -1,6 +1,6 @@
 import { Button, Card, CardContent, CardActions, CardMedia, Typography, CardActionArea, Grid } from '@mui/material';
 //import { useNavigate } from 'react-router-dom'
-import { products } from '../../data/products'
+import { caseStudies } from '../../data/caseStudies'
 import { CallMade } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
 import { FrostedCard } from '../FrostedCard/FrostedCard'
@@ -32,7 +32,7 @@ export default function CaseStudyCard() {
     </Card>
     </Grid>
     ))} */}
-      {products.map((product, index) => (
+      {caseStudies.map((product, index) => (
           <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
             <FrostedCard
               raised={true}
@@ -80,7 +80,7 @@ export default function CaseStudyCard() {
                     endIcon={<CallMade />}
                     sx={{ color: '#18C9CD'}}
                   >
-                    view product
+                    view case study
                 </Button>
               </CardActions>
             </FrostedCard>
