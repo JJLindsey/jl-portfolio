@@ -1,18 +1,31 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import {projects} from '../data/projects'
+import { accessibilityReport } from '../data/accessibility'
 import { Box, Button, Chip, Container, Divider, Grid, ImageList, ImageListItem, Typography, Tooltip, List, ListItem } from '@mui/material'
 import MediaPreview from './MediaPreview'
 import { CallMade } from '@mui/icons-material'
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline'
 import CropSquareIcon from '@mui/icons-material/CropSquare'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
+import AccessibilityReportModal from './Accessibility/AccessibilityReportModal'
+import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 
 
 export default function ProjectDetails() {
     const {id} = useParams()
     const navigate = useNavigate()
     const project = projects.find((project) => project.id === id)
+    const accessibility = accessibilityReport.find((item) => item.id === project.id)
+    const [openModal, setOpenModal] = useState(false)
+
+    const handleOpenModal = () => {
+      setOpenModal(true)
+    }
+
+    const handleCloseModal = () => {
+      setOpenModal(false)
+    }
 
     if(!project) {
         return(
@@ -70,6 +83,17 @@ export default function ProjectDetails() {
                         {project.navigation}
                     </Button>
                 )}
+                 {accessibility && (
+                    <Button
+                      variant='outlined'
+                      color='secondary'
+                      startIcon={<AccessibilityNewIcon />}
+                      onClick={handleOpenModal}
+                      sx={{ borderRadius: 4 }}
+                    >
+                      Accessibility Report
+                    </Button>
+                  )}
                 </Box>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 4 }}>
                 {project.label.map((label, index) => (
@@ -230,6 +254,13 @@ export default function ProjectDetails() {
       <Button variant='contained'  sx={{backgroundColor: '#18C9CD', mt: 4}} onClick={() => navigate('/')}>
         Back to Projects
       </Button>
+      {accessibility && (
+      <AccessibilityReportModal
+        open={openModal}
+        onClose={handleCloseModal}
+        report={accessibility}
+      />
+    )}
     </Container>
   )
 }
