@@ -130,22 +130,20 @@ function NavBar() {
                     </MenuItem>
                   <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'flex-start' }}>
                     <IconButton  variant="contained"
-                      color="primary"
                       component="a"
                       href="http://www.linkedin.com/in/jennifer-lindsey010"
                       target="_blank"
                       rel="noopener noreferrer">
-                      <LinkedInIcon  sx={{ fontSize: "28px" }} />
-                      <Typography>LinkedIn</Typography>
+                      <LinkedInIcon  sx={{ fontSize: "28px", color: "#ffc300" }} />
+                      <Typography sx={{color: "#ffc300"}}>LinkedIn</Typography>
                     </IconButton>
                 <IconButton
                   variant="contained"
-                  color="primary"
                   component="a"
                   href="mailto:jlindsey010@gmail.com"
                 >
-                  <EmailIcon sx={{ fontSize: "28px" }} />
-                  <Typography>Email</Typography>
+                  <EmailIcon sx={{ fontSize: "28px", color: "#ffc300" }} />
+                  <Typography sx={{color: "#ffc300"}}>Email</Typography>
                 </IconButton>
               </Box>
               <Box>
@@ -153,7 +151,7 @@ function NavBar() {
                   color="primary"
                   size="small"
                   variant="contained"
-                  href={`${process.env.PUBLIC_URL}/JenniferLindseyDesign.pdf`}
+                  href={`${process.env.PUBLIC_URL}/JenniferLindseyFrontendEngineer.pdf`}
                   target="_blank"
                   rel="noopener noreferrer"
                   endIcon={<DownloadForOfflineIcon />}
@@ -202,7 +200,7 @@ function NavBar() {
                 size="small"
                 variant='outlined'
                 component="a"
-                href={`${process.env.PUBLIC_URL}/JenniferLindseyDesign.pdf`}
+                href={`${process.env.PUBLIC_URL}/JenniferLindseyFrontendEngineer.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
                 startIcon={<DownloadForOfflineIcon />}
