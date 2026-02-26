@@ -5,7 +5,7 @@ import { ThemeProvider } from '@emotion/react';
 import theme from './theme/theme';
 //import Home from './Home';
 import About from './components/AboutMe';
-import Portfolio from './components/PortfolioCard';
+import Portfolio from './components/PortfolioTabs';
 import NavBar from './components/NavBar';
 import Home2 from './components/Home/Home2';
 import Footer from './components/Footer';
