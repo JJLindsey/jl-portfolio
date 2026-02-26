@@ -42,7 +42,7 @@ export default function Home2() {
             <Typography
                 align="left"
                 variant="h4"
-                sx={{ mb: 4, mt: { xs: 4, sm: 4}, fontWeight: 'regular', fontFamily: '"Sansation", sans-serif' }}
+                sx={{ mb: 6, mt: { xs: 4, sm: 4}, fontWeight: 'regular', fontFamily: '"Sansation", sans-serif' }}
                 >
                  Frontend Engineer building scalable, user-centered interfaces
             </Typography>
