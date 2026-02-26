@@ -36,7 +36,7 @@ export default function Home2() {
                 variant="body1"
                 sx={{ fontWeight: 'light', ml: 1 }}
               >
-                MA, CSPO®
+                MA
               </Typography>
             </Typography>
             <Typography
@@ -50,7 +50,7 @@ export default function Home2() {
               color="inherit"
               align="left"
               variant="h6"
-              sx={{ mb: 4, mt: { xs: 4, sm: 4} }}
+              sx={{ mb: 6, mt: { xs: 4, sm: 4} }}
             > I specialize in translating complex data and requirements into accessible frontend systems using React and Vue. With a background in art history and hands-on engineering experience, I bring contextual analysis to UI decisions while maintaining a strong focus on technical feasibility and maintainability.</Typography>
             <Box sx={{display: 'flex', gap: 2, mb: 3, }}>
                 <CategoryOutlined />

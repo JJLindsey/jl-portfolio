@@ -193,10 +193,10 @@ export const projects = [
         `${process.env.PUBLIC_URL}/images/studyMode.png`
       ],
       description: 'A virtual museum gallery exploring Baroque chiaroscuro through the Metropolitan Museum of Art collection.',
-      label: ['Vue 3', 'Composition API', 'Met Museum API', 'CSS Custom Properties', 'UI Design'],
+      label: ['Vue 3', 'Met Museum API', 'CSS Custom Properties', 'UI Design', 'Composition API',],
       figmaEmbed: '',
       badges: [
-        { label: 'Vue 3', color: 'success' },
+        { label: 'Vue', color: 'success' },
         { label: 'Open Access API', color: 'primary' },
         { label: 'Interactive', color: 'info' },
         { label: 'Responsive', color: 'secondary' }
@@ -252,179 +252,179 @@ export const projects = [
       ],
       screenshots: [ `${process.env.PUBLIC_URL}/images/moviehome.png`,`${process.env.PUBLIC_URL}/images/movieCard.png`, `${process.env.PUBLIC_URL}/images/synopsis.png`],
     },
-    {
-    id: 'vue-react-accessibility-comparison',
-    category: 'writing',
-    type: 'Technical Article',
-    name: 'The Case for Vue.js in Accessible Web Development',
-    subtitle: 'How Framework Design Influences Accessibility Outcomes',
-    description: 'Comparative analysis of Vue.js and React.js developer experience for building accessible applications, based on real implementation experience.',
+  //   {
+  //   id: 'vue-react-accessibility-comparison',
+  //   category: 'writing',
+  //   type: 'Technical Article',
+  //   name: 'The Case for Vue.js in Accessible Web Development',
+  //   subtitle: 'How Framework Design Influences Accessibility Outcomes',
+  //   description: 'Comparative analysis of Vue.js and React.js developer experience for building accessible applications, based on real implementation experience.',
     
-    // Article-specific
-    publishedDate: 'November 2024', 
-    readTime: '8 min read',
-    medium: 'Technical Analysis',
+  //   // Article-specific
+  //   publishedDate: 'November 2024', 
+  //   readTime: '8 min read',
+  //   medium: 'Technical Analysis',
     
-    // portfolio fields
-    productType: 'Research & Writing',
-    scope: '2 weeks research and implementation',
-    businessImpact: 'Influenced framework selection for team',
-    role: 'Technical Writer & Researcher',
+  //   // portfolio fields
+  //   productType: 'Research & Writing',
+  //   scope: '2 weeks research and implementation',
+  //   businessImpact: 'Influenced framework selection for team',
+  //   role: 'Technical Writer & Researcher',
     
-    label: [
-      'Vue.js',
-      'React',
-      'Accessibility',
-      'Developer Experience',
-      'WCAG',
-      'Semantic HTML'
-    ],
+  //   label: [
+  //     'Vue.js',
+  //     'React',
+  //     'Accessibility',
+  //     'Developer Experience',
+  //     'WCAG',
+  //     'Semantic HTML'
+  //   ],
     
-    badges: [
-      { label: 'Vue.js', color: 'success' },
-      { label: 'React', color: 'info' },
-      { label: 'Accessibility', color: 'primary' },
-      { label: 'Research', color: 'secondary' }
-    ],
+  //   badges: [
+  //     { label: 'Vue.js', color: 'success' },
+  //     { label: 'React', color: 'info' },
+  //     { label: 'Accessibility', color: 'primary' },
+  //     { label: 'Research', color: 'secondary' }
+  //   ],
     
-    // Main content
-    abstract: `After building the same PWA in both Vue.js and React, I discovered Vue's HTML-first template syntax naturally encourages accessible coding patterns. This analysis examines how framework design decisions impact accessibility outcomes, with quantitative comparisons and real code examples.`,
+  //   // Main content
+  //   abstract: `After building the same PWA in both Vue.js and React, I discovered Vue's HTML-first template syntax naturally encourages accessible coding patterns. This analysis examines how framework design decisions impact accessibility outcomes, with quantitative comparisons and real code examples.`,
     
-    problem: `While both Vue.js and React.js support building accessible applications, I noticed React's JSX abstraction often led to semantic HTML being an afterthought. This raised questions: Does framework design influence accessibility outcomes? Can template syntax reduce common mistakes?`,
+  //   problem: `While both Vue.js and React.js support building accessible applications, I noticed React's JSX abstraction often led to semantic HTML being an afterthought. This raised questions: Does framework design influence accessibility outcomes? Can template syntax reduce common mistakes?`,
     
-    keyFindings: [
-      'Vue projects showed 3x higher semantic HTML usage',
-      'Focus management required 40% less boilerplate in Vue',
-      'Developers rated Vue accessibility patterns as more intuitive',
-      '"Div soup" reduced by 64% in Vue compared to React'
-    ],
+  //   keyFindings: [
+  //     'Vue projects showed 3x higher semantic HTML usage',
+  //     'Focus management required 40% less boilerplate in Vue',
+  //     'Developers rated Vue accessibility patterns as more intuitive',
+  //     '"Div soup" reduced by 64% in Vue compared to React'
+  //   ],
     
-    solution: `Built identical accessible PWAs in both frameworks to compare developer experience. Documented semantic HTML usage, ARIA implementation patterns, focus management approaches, and overall accessibility scores.`,
+  //   solution: `Built identical accessible PWAs in both frameworks to compare developer experience. Documented semantic HTML usage, ARIA implementation patterns, focus management approaches, and overall accessibility scores.`,
     
-    //article content
-    findings: `**1. Semantic HTML Usage**
-  Vue's template syntax encourages semantic elements:
-  - Vue: <nav>, <button>, <main> used naturally
-  - React: Tendency toward <div> with onClick handlers
+  //   //article content
+  //   findings: `**1. Semantic HTML Usage**
+  // Vue's template syntax encourages semantic elements:
+  // - Vue: <nav>, <button>, <main> used naturally
+  // - React: Tendency toward <div> with onClick handlers
 
-  **2. Separation of Concerns**
-  Vue's <template>, <script>, <style> separation makes accessibility auditing easier. You can review semantic structure without parsing JavaScript logic.
+  // **2. Separation of Concerns**
+  // Vue's <template>, <script>, <style> separation makes accessibility auditing easier. You can review semantic structure without parsing JavaScript logic.
 
-  **3. Focus Management**
-  Vue's router.afterEach provides centralized focus management. React requires useEffect + useLocation + refs across components.
+  // **3. Focus Management**
+  // Vue's router.afterEach provides centralized focus management. React requires useEffect + useLocation + refs across components.
 
-  **4. ARIA Attributes**
-  Both support ARIA equally, but Vue's :aria-expanded feels more natural than React's aria-expanded={value} to developers familiar with HTML.`,
+  // **4. ARIA Attributes**
+  // Both support ARIA equally, but Vue's :aria-expanded feels more natural than React's aria-expanded={value} to developers familiar with HTML.`,
     
-    codeExamples: [
-      {
-        title: 'Semantic Button Pattern',
-        before: `// React - Common antipattern
-  <div 
-    className="button"
-    onClick={handleClick}
-  >
-    Click me
-  </div>
+  //   codeExamples: [
+  //     {
+  //       title: 'Semantic Button Pattern',
+  //       before: `// React - Common antipattern
+  // <div 
+  //   className="button"
+  //   onClick={handleClick}
+  // >
+  //   Click me
+  // </div>
 
-  // Not keyboard accessible
-  // No implicit ARIA role
-  // Requires manual accessibility work`,
-        after: `<!-- Vue - Natural pattern -->
-  <button 
-    @click="handleClick"
-    class="button"
-  >
-    Click me
-  </button>
+  // // Not keyboard accessible
+  // // No implicit ARIA role
+  // // Requires manual accessibility work`,
+  //       after: `<!-- Vue - Natural pattern -->
+  // <button 
+  //   @click="handleClick"
+  //   class="button"
+  // >
+  //   Click me
+  // </button>
 
-  <!-- Semantic by default -->
-  <!-- Keyboard accessible -->
-  <!-- Proper ARIA implicit -->`,
-        explanation: 'Vue templates encourage semantic HTML because you\'re writing actual HTML. React\'s JSX makes divs and buttons feel equally natural, leading to accessibility debt.'
-      },
-      {
-        title: 'Focus Management on Route Change',
-        before: `// React - Multiple pieces
-  const location = useLocation()
-  const mainRef = useRef(null)
+  // <!-- Semantic by default -->
+  // <!-- Keyboard accessible -->
+  // <!-- Proper ARIA implicit -->`,
+  //       explanation: 'Vue templates encourage semantic HTML because you\'re writing actual HTML. React\'s JSX makes divs and buttons feel equally natural, leading to accessibility debt.'
+  //     },
+  //     {
+  //       title: 'Focus Management on Route Change',
+  //       before: `// React - Multiple pieces
+  // const location = useLocation()
+  // const mainRef = useRef(null)
 
-  useEffect(() => {
-    mainRef.current?.focus()
-  }, [location])
+  // useEffect(() => {
+  //   mainRef.current?.focus()
+  // }, [location])
 
-  return <main ref={mainRef} tabIndex={-1}>
-    {children}
-  </main>`,
-        after: `<!-- Vue - Centralized -->
-  <template>
-    <main ref="mainContent" tabindex="-1">
-      <router-view />
-    </main>
-  </template>
+  // return <main ref={mainRef} tabIndex={-1}>
+  //   {children}
+  // </main>`,
+  //       after: `<!-- Vue - Centralized -->
+  // <template>
+  //   <main ref="mainContent" tabindex="-1">
+  //     <router-view />
+  //   </main>
+  // </template>
 
-  <script setup>
-  import { ref } from 'vue'
-  import { useRouter } from 'vue-router'
+  // <script setup>
+  // import { ref } from 'vue'
+  // import { useRouter } from 'vue-router'
 
-  const router = useRouter()
-  const mainContent = ref(null)
+  // const router = useRouter()
+  // const mainContent = ref(null)
 
-  router.afterEach(() => {
-    mainContent.value?.focus()
-  })
-  </script>`,
-        explanation: 'Vue\'s router hooks provide a single place to handle focus management for the entire app. React requires hooks, refs, and effects scattered across components.'
-      }
-    ],
+  // router.afterEach(() => {
+  //   mainContent.value?.focus()
+  // })
+  // </script>`,
+  //       explanation: 'Vue\'s router hooks provide a single place to handle focus management for the entire app. React requires hooks, refs, and effects scattered across components.'
+  //     }
+  //   ],
     
-    impact: `**Developer Experience:**
-  - Reduced accessibility implementation time by 40%
-  - Team adopted Vue for new accessible projects
-  - Created internal Vue accessibility component library
+  //   impact: `**Developer Experience:**
+  // - Reduced accessibility implementation time by 40%
+  // - Team adopted Vue for new accessible projects
+  // - Created internal Vue accessibility component library
 
-  **Community:**
-  - Shared findings with Vue.js community
-  - Influenced framework discussions on accessibility
-  - Helped 15+ developers improve their approach`,
+  // **Community:**
+  // - Shared findings with Vue.js community
+  // - Influenced framework discussions on accessibility
+  // - Helped 15+ developers improve their approach`,
     
-    lessons: `**1. Framework Design Matters**
-  Vue's HTML-first approach reduces barrier to entry for accessible development.
+  //   lessons: `**1. Framework Design Matters**
+  // Vue's HTML-first approach reduces barrier to entry for accessible development.
 
-  **2. Separation of Concerns Aids Auditing**
-  Clear template/script/style separation makes reviewing accessibility easier.
+  // **2. Separation of Concerns Aids Auditing**
+  // Clear template/script/style separation makes reviewing accessibility easier.
 
-  **3. Documentation Drives Behavior**
-  Vue's prominent accessibility docs signal importance to developers.`,
+  // **3. Documentation Drives Behavior**
+  // Vue's prominent accessibility docs signal importance to developers.`,
     
-    futureWork: [
-      'Expand comparison to include Angular and Svelte',
-      'Quantitative study of production applications',
-      'Create Vue accessibility best practices guide',
-      'Develop testing tools for Vue components'
-    ],
+  //   futureWork: [
+  //     'Expand comparison to include Angular and Svelte',
+  //     'Quantitative study of production applications',
+  //     'Create Vue accessibility best practices guide',
+  //     'Develop testing tools for Vue components'
+  //   ],
     
-    references: [
-      'WCAG 2.1 Guidelines',
-      'Vue.js Accessibility Documentation',
-      'React Accessibility Documentation',
-      'WebAIM: Semantic Structure'
-    ],
+  //   references: [
+  //     'WCAG 2.1 Guidelines',
+  //     'Vue.js Accessibility Documentation',
+  //     'React Accessibility Documentation',
+  //     'WebAIM: Semantic Structure'
+  //   ],
     
-    // URLs
-    url: null, // add Dev.to or Medium link
-    githubRepo: '',
-    liveDemoUrl: null,
+  //   // URLs
+  //   url: null, // add Dev.to or Medium link
+  //   githubRepo: '',
+  //   liveDemoUrl: null,
     
-    navigation: 'Read Article', // Button text
+  //   navigation: 'Read Article', // Button text
     
-    image: '/articles/vue-react-comparison-thumb.png',
-    screenshots: [
-      '/articles/semantic-html-chart.png',
-      '/articles/focus-management-comparison.png',
-      '/articles/lighthouse-scores.png'
-    ],
+  //   image: '/articles/vue-react-comparison-thumb.png',
+  //   screenshots: [
+  //     '/articles/semantic-html-chart.png',
+  //     '/articles/focus-management-comparison.png',
+  //     '/articles/lighthouse-scores.png'
+  //   ],
 
-    metrics: null
-}
+  //   metrics: null
+  //   }
   ]

@@ -24,6 +24,7 @@ import { Divider, Tooltip } from '@mui/material';
 import jiraIcon from '../assets/jira.png'
 import designThinking from '../assets/design-thinking.png'
 import GradientDivider from './GradientDivider'
+import { QueryStatsOutlined } from '@mui/icons-material';
 
 
 const items = [
@@ -37,13 +38,13 @@ const items = [
     icon: <ConstructionRoundedIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
     title: 'Team Collaboration',
     description:
-      'I connect technical and creative teams, transforming complex requirements into a clear, user-centric product vision. I leverage my technical expertise to foster strong collaboration across teams.',
+      'Translating design and product requirements into implementable frontend systems by aligning design intent, component architecture, and backend constraints.',
   },
   {
-    icon: <Diversity1Icon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
-    title: 'User Experience Strategy',
+    icon: <QueryStatsOutlined sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
+    title: 'UX & Interaction',
     description:
-      'I leverage cultural analysis training to understand user psychology and behavior patterns, creating products that resonate across diverse audiences while maintaining technical feasibility.'
+      'Applying visual and contextual analysis to interaction patterns, layout, and data presentation that are grounded in real frontend constraints.'
   },
   // {
   //   icon: <AutoFixHighRoundedIcon sx={{ fontSize: '2.5rem', color: '#d71920'}}/>,
@@ -53,9 +54,9 @@ const items = [
   // },
   {
     icon: <SettingsSuggestIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
-    title: 'Product Impact',
+    title: 'System Level Desicions',
     description:
-      'I connect user needs with business objectives, using analytical frameworks from art history to understand context, identify opportunities, and drive product decisions that create meaningful impact.',
+      'Translating product and business requirements into frontend architecture decisions that balance usability, technical constraints, and long-term maintainability.',
   },
   // {
   //   icon: <QueryStatsRoundedIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
@@ -92,26 +93,22 @@ export default function About() {
             </Typography>
             <Divider sx={{width: '100px', height: '3px', backgroundColor: '#FFc300', mt: 1}}/>
             {/* <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '55px', marginTop: "-10px"}}></img> */}
-            {/* <Typography align='left' variant="h3" sx={{ mt: 8, mb: 4, fontWeight: 'light', fontFamily: '"Sansation", sans-serif'}}>
-            Contextual Thinking for Digital Products
-            </Typography> */}
-             <Typography align="left" variant="h2" sx={{fontWeight: 'bold', fontFamily: '"Sansation", sans-serif'}}>
+             {/* <Typography align="left" variant="h4" sx={{fontWeight: 'bold', fontFamily: '"Sansation", sans-serif'}}>
               Critical Analysis Meets Product Innovation
-            </Typography>
+            </Typography> */}
              <Typography
                 color="inherit"
                 align="left"
                 variant="h5"
-                sx={{ mb: 4, mt: { xs: 4, sm: 4}, fontWeight: 'light' }}
+                sx={{ mb: 4, mt: { xs: 4, sm: 4}, fontWeight: 'bold' }}
                 >
                 Frontend Engineering | Data, Analysis & UX | System & Product Thinking
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb:2}}>
-            From analyzing 19th-century masterpieces to decoding user behavior patterns, I bring a unique lens to each product. My art history training taught me to read visual culture and understand context. Now I apply that same analytical rigor to understanding user behavior—looking beyond what people do to understand why they do it.
-            I’m a frontend engineer with several years of experience building data-driven, production UI in React and Vue. My work focuses on component architecture, state management, accessibility, and performance to ensure interfaces are not only intuitive, but scalable and maintainable in real-world systems.
+              I’m a frontend engineer with several years of experience building data-driven, production UI in React and Vue. My work focuses on component architecture, state management, accessibility, and performance to ensure interfaces are not only intuitive, but scalable and maintainable in real-world systems.
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
-            With a background in art history and product design, I bring strong visual and contextual reasoning to frontend work. I’m comfortable working across design and engineering workflows, translating design intent into maintainable code while contributing to interaction and system-level decisions.
+              With a background in art history and product design, I bring strong visual and contextual reasoning to frontend work. I’m comfortable working across design and engineering workflows, translating design intent into maintainable code while contributing to interaction and system-level decisions.
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
               My technical foundation comes from professional experience in production systems and continuous study of computer science fundamentals.
