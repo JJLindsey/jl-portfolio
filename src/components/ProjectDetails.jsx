@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import {projects} from '../data/projects'
 import { accessibilityReport } from '../data/accessibility'
-import { Box, Button, Chip, Container, Divider, Grid, ImageList, ImageListItem, Typography, Tooltip, List, ListItem } from '@mui/material'
+import { Box, Button, Chip, Container, Divider, Grid, ImageList, ImageListItem, Typography, Tooltip, List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
 import MediaPreview from './MediaPreview'
 import { CallMade } from '@mui/icons-material'
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline'
@@ -11,12 +11,15 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import AccessibilityReportModal from './Accessibility/AccessibilityReportModal'
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 
+import ArticleDisplay from './Articles'
+
 
 export default function ProjectDetails() {
     const {id} = useParams()
     const navigate = useNavigate()
     const project = projects.find((project) => project.id === id)
     const accessibility = accessibilityReport.find((item) => item.id === project.id)
+    const isArticle = project.category === 'writing'
     const [openModal, setOpenModal] = useState(false)
 
     const handleOpenModal = () => {
@@ -37,6 +40,11 @@ export default function ProjectDetails() {
     }
   return (
     <Container sx={{ pt: 8, pb: 12 }}>
+       {isArticle ? (
+        <ArticleDisplay project={project} />
+
+      ) : (
+        <>
         <Grid container spacing={2} alignItems='flex-start'>
             <Grid item xs={12} sm={6} sx={{ mb: 4 }}>
                 <Typography variant='h3' textAlign='left' gutterBottom color='#fff'>{project.name}</Typography>
@@ -151,37 +159,36 @@ export default function ProjectDetails() {
             <Typography variant='h4' textAlign='left' gutterBottom color='#fff'>
               Key Features
             </Typography>
-            <Grid container spacing={2}>
+            {/* <Grid container spacing={2}>
               {project.keyFeatures.map((feature, index) => (
                 <Grid item xs={12} sm={6} key={index}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
                     <Box sx={{ width: 8, height: 8, backgroundColor: '#18C9CD', borderRadius: '50%', mr: 2 }} />
-                    <Typography variant='body1'>{feature}</Typography>
+                    <Typography variant='body1' textAlign="left">{feature}</Typography>
                   </Box>
                 </Grid>
               ))}
-            </Grid>
+            </Grid> */}
+            <List disablePadding>
+                {project.keyFeatures.map((feature, index) => (
+                  <ListItem key={index} disableGutters alignItems="flex-start">
+                    <ListItemIcon sx={{ minWidth: 20, mt: '9px' }}>
+                      <Box
+                        sx={{
+                          width: 8,
+                          height: 8,
+                          backgroundColor: '#18C9CD',
+                          borderRadius: '50%',
+                        }}
+                      />
+                    </ListItemIcon>
+                    <ListItemText primary={feature} />
+                  </ListItem>
+                ))}
+              </List>
           </Box>
         )}
         <Box>
-         {/* Design Decisions */}
-        {/* {project.designDecisions && (
-          <Box sx={{ mb: 8 }}>
-            <Typography variant='h4' textAlign='left' gutterBottom color='#fff'>
-              Design Decisions
-            </Typography>
-            {project.designDecisions.map((item, index) => (
-              <Box key={index} sx={{ mb: 3, p: 3, border: '1px solid #333', borderRadius: 2 }}>
-                <Typography variant='h6' color='#18C9CD' gutterBottom>
-                  {item.decision}
-                </Typography>
-                <Typography variant='body1'>
-                  {item.rationale}
-                </Typography>
-              </Box>
-            ))}
-          </Box>
-        )} */}
         {project.designDecisions.map((item, index) => (
             <Box
               key={index}
@@ -235,9 +242,9 @@ export default function ProjectDetails() {
             <Grid container spacing={2}>
               {project.results.map((result, index) => (
                 <Grid item xs={12} sm={6} key={index}>
-                  <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
+                  <Box sx={{ display: 'flex', mb: 2 }}>
                     <Typography variant='h6' color='#18C9CD' sx={{ mr: 1 }}>✓</Typography>
-                    <Typography variant='body1'>{result}</Typography>
+                    <Typography variant='body1' textAlign="left">{result}</Typography>
                   </Box>
                 </Grid>
               ))}
@@ -260,7 +267,9 @@ export default function ProjectDetails() {
         onClose={handleCloseModal}
         report={accessibility}
       />
-    )}
+      )}
+      </>
+      )}
     </Container>
   )
 }
