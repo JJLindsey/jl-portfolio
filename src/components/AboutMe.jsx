@@ -15,9 +15,9 @@ import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 
 import htmlIcon from '../assets/icons8-html-48.png'
 import cssIcon from '../assets/css-icon.png'
-//import reactIcon from '../assets/logo192.png'
+import reactIcon from '../assets/logo192.png'
 import jsIcon from '../assets/icons8-javascript-48.png'
-//import cSharp from '../assets/icons8-c-sharp-logo-48.png'
+import cSharp from '../assets/icons8-c-sharp-logo-48.png'
 import figmaIcon from '../assets/icons8-figma-48.png'
 import { Divider, Tooltip } from '@mui/material';
 //import bracketicon from '../assets/bracketPNG.png'
@@ -92,14 +92,29 @@ export default function About() {
             </Typography>
             <Divider sx={{width: '100px', height: '3px', backgroundColor: '#FFc300', mt: 1}}/>
             {/* <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '55px', marginTop: "-10px"}}></img> */}
-            <Typography align='left' variant="h3" sx={{ mt: 8, mb: 4, fontWeight: 'light', fontFamily: '"Sansation", sans-serif'}}>
+            {/* <Typography align='left' variant="h3" sx={{ mt: 8, mb: 4, fontWeight: 'light', fontFamily: '"Sansation", sans-serif'}}>
             Contextual Thinking for Digital Products
+            </Typography> */}
+             <Typography align="left" variant="h2" sx={{fontWeight: 'bold', fontFamily: '"Sansation", sans-serif'}}>
+              Critical Analysis Meets Product Innovation
+            </Typography>
+             <Typography
+                color="inherit"
+                align="left"
+                variant="h5"
+                sx={{ mb: 4, mt: { xs: 4, sm: 4}, fontWeight: 'light' }}
+                >
+                Frontend Engineering | Data, Analysis & UX | System & Product Thinking
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb:2}}>
             From analyzing 19th-century masterpieces to decoding user behavior patterns, I bring a unique lens to each product. My art history training taught me to read visual culture and understand context. Now I apply that same analytical rigor to understanding user behavior—looking beyond what people do to understand why they do it.
+            I’m a frontend engineer with several years of experience building data-driven, production UI in React and Vue. My work focuses on component architecture, state management, accessibility, and performance to ensure interfaces are not only intuitive, but scalable and maintainable in real-world systems.
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
-            I bridge the gap between technical possibility and user need, translating complex requirements into actionable product strategies. My unique combination of technical depth and design thinking helps teams make decisions that balance user experience, technical constraints, and business objectives. I thrive in collaborative environments where I can synthesize diverse perspectives into cohesive product vision.
+            With a background in art history and product design, I bring strong visual and contextual reasoning to frontend work. I’m comfortable working across design and engineering workflows, translating design intent into maintainable code while contributing to interaction and system-level decisions.
+            </Typography>
+            <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
+              My technical foundation comes from professional experience in production systems and continuous study of computer science fundamentals.
             </Typography>
           </Grid>
         </Grid>
@@ -107,8 +122,9 @@ export default function About() {
           {/* <Tooltip title='React' aria-labelledby='React logo'><img src={reactIcon} alt='react icon' width={64}/></Tooltip> */}
           <Tooltip title='Figma'><img src={figmaIcon} alt='figma icon' width={58}/></Tooltip> 
           <Tooltip title='Design Thinking'><img src={designThinking} alt='design thinking icon' width={52}/></Tooltip>
-          <Tooltip title='Jira'><img src={jiraIcon} alt='jira icon' width={50}/></Tooltip>
+          <Tooltip title='React'><img src={reactIcon} alt='react icon' width={50}/></Tooltip>
           <Tooltip title='Javascript'><img src={jsIcon} alt='javascript icon' width={64}/></Tooltip>
+          <Tooltip title='C#'><img src={cSharp} alt='cSharp icon' width={64}/></Tooltip>
           <Tooltip title='HTML'><img src={htmlIcon} alt='html icon' width={64}/></Tooltip> 
           <Tooltip title='CSS'><img src={cssIcon} alt='css icon' width={50}/></Tooltip>
         </Grid>

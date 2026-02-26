@@ -39,37 +39,26 @@ export default function Home2() {
                 MA, CSPO®
               </Typography>
             </Typography>
-            <Typography align="left" variant="h2" sx={{fontWeight: 'bold', fontFamily: '"Sansation", sans-serif'}}>
-            Critical Analysis Meets Product Innovation
-            </Typography>
             <Typography
                 align="left"
                 variant="h4"
                 sx={{ mb: 4, mt: { xs: 4, sm: 4}, fontWeight: 'regular', fontFamily: '"Sansation", sans-serif' }}
                 >
-                 Bridging art, technology, and human understanding
-            </Typography>
-            <Typography
-                color="inherit"
-                align="left"
-                variant="h5"
-                sx={{ mb: 4, mt: { xs: 4, sm: 4}, fontWeight: 'light' }}
-                >
-                Product Design | User-Centric Solutions | Technical Expertise
+                 Frontend Engineer building scalable, user-centered interfaces
             </Typography>
             <Typography
               color="inherit"
               align="left"
               variant="h6"
               sx={{ mb: 4, mt: { xs: 4, sm: 4} }}
-            > I understand the "why" behind design decisions and user needs, not just the "how" of implementation, leading to more stategic and impactful decisions. I bring cultural analysis and contextual thinking to digital strategy. My art history training taught me to see patterns and understand the 'why' behind behavior, while my engineering experience gives me technical credibility. I help teams build products that don't just solve problems—they solve the right problems for the right reasons.</Typography>
+            > I specialize in translating complex data and requirements into accessible frontend systems using React and Vue. With a background in art history and hands-on engineering experience, I bring contextual analysis to UI decisions while maintaining a strong focus on technical feasibility and maintainability.</Typography>
             <Box sx={{display: 'flex', gap: 2, mb: 3, }}>
                 <CategoryOutlined />
                 <Typography>Technical</Typography>
                 <DesignServices />
-                <Typography>Research</Typography>
+                <Typography>Design</Typography>
                 <Palette />
-                <Typography>Design Thinking</Typography>
+                <Typography>Product & System Thinking</Typography>
             </Box>
             {/* <Divider sx={{backgroundColor: '#CD1C18', width: '100%', height: '24px'}}/> */}
         </Box>
