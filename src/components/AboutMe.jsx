@@ -108,7 +108,7 @@ export default function About() {
               I’m a frontend engineer with several years of experience building data-driven, production UI in React and Vue. My work focuses on component architecture, state management, accessibility, and performance to ensure interfaces are not only intuitive, but scalable and maintainable in real-world systems.
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
-              With a background in art history and product design, I bring strong visual and contextual reasoning to frontend work. I’m comfortable working across design and engineering workflows, translating design intent into maintainable code while contributing to interaction and system-level decisions.
+              With a background in art history and design, I bring strong visual and contextual reasoning to frontend work. I’m comfortable working across design and engineering workflows, translating design intent into maintainable code while contributing to interaction and system-level decisions.
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
               My technical foundation comes from professional experience in production systems and continuous study of computer science fundamentals.
