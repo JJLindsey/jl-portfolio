@@ -110,11 +110,11 @@ export default function PortfolioCard({ projects= [], products = [] }) {
         <Divider sx={{width: '100px', height: '3px', backgroundColor: '#FFc300', mt: 1}}/>
         {/* <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '45px', marginTop: "-10px"}}></img> */}
       </Box>
-      <Box>
+      {/* <Box>
       <AnimatedTypography variant='h4' text="Here is a look at some of my work" sx={{ fontWeight: 'bold', letterSpacing: 1 }}/>
-      </Box>
+      </Box> */}
       {/* Tabs */}
-      <Tabs value={tab} onChange={handleTabChange} variant='fullWidth' aria-label="portfolio tabs"
+      {/* <Tabs value={tab} onChange={handleTabChange} variant='fullWidth' aria-label="portfolio tabs"
         sx={{
         '& .MuiTabs-indicator': {
           backgroundColor: '#000', // Color of the indicator line
@@ -131,33 +131,7 @@ export default function PortfolioCard({ projects= [], products = [] }) {
         <Tab icon={<DescriptionIcon />} label="Case Studies" iconPosition="start"/>
         <Tab icon={<CategoryIcon />} label="Product Thinking" iconPosition="start"/>
         <Tab icon={<EmojiObjects />} label="Strategic Product Design" iconPosition="start"/>
-      </Tabs>
-      <TabPanel value={tab} index={0}>
-        <CodeProjects projects={projects} />
-      </TabPanel>
-      <TabPanel value={tab} index={1}>
-        {/* <Articles /> */}
-        {/* <CaseStudyCard /> */}
-        <ProductProjectDetails productId="accessible-meditation" products={products} />
-      </TabPanel>
-      <TabPanel value={tab} index={2}>
-        {/* <ProcessDocumentation /> */}
-        <Box sx={{ display: 'flex', flexDirection:'column', justifyContent: 'center', gap: 1, py: 4 }}>
-          <Chip label="In Progress" color="secondary" variant="contained" />
-          <Typography variant="h6" color="text.secondary">
-            This section is under development and will be available soon.
-          </Typography>
-        </Box>
-      </TabPanel>
-      <TabPanel value={tab} index={3}>
-        {/* <TechDecisionMatrix /> */}
-        <Box sx={{ display: 'flex', flexDirection:'column', justifyContent: 'center', gap: 1, py: 4 }}>
-          <Chip label="Coming Soon" color="secondary" variant="contained" />
-          <Typography variant="h6" color="text.secondary">
-            This section will be live shortly.
-          </Typography>
-        </Box>
-      </TabPanel>
+      </Tabs> */}
       <PortfolioGrid products={products} />
     </Container>
   )
