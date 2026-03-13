@@ -103,10 +103,10 @@ export default function PortfolioGrid() {
     <Container maxWidth="lg">
       <Box sx={{ mb: 6, textAlign: 'center' }}>
         <Typography variant="h5" gutterBottom>
-          Frontend Developer • Design Systems & Interaction • Design Engineer
+          Developer • Design Systems & Interaction • Designer
         </Typography>
         <Typography variant="body1" color="#ccc" sx={{ mt: 2 }}>
-          Building scalable, accessible frontend systems with React and Vue
+          Building scalable, design forward systems
         </Typography>
         {/* Stats Bar */}
         <Stack

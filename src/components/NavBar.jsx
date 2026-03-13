@@ -93,7 +93,7 @@ function NavBar() {
   }
 
   return (
-    <GlassAppBar position="sticky" sx={{ backgroundColor: { md: "#011640", xs: '#011640'}, boxShadow: { xs: 'none', sm: 'none', md: 'none'} }}>
+    <GlassAppBar position="sticky" sx={{ backgroundColor: { md: "#001a4e", xs: '#001a4e'}, boxShadow: { xs: 'none', sm: 'none', md: 'none'} }}>
       <Toolbar>
           <img src={Logo} alt='logo' width={175}/>
             {/*Mobile Menu*/}

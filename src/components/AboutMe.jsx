@@ -19,6 +19,9 @@ import reactIcon from '../assets/logo192.png'
 import jsIcon from '../assets/icons8-javascript-48.png'
 import cSharp from '../assets/icons8-c-sharp-logo-48.png'
 import figmaIcon from '../assets/icons8-figma-48.png'
+import photoshopIcon from '../assets/photoshop.png'
+import illustratorIcon from '../assets/illustrator.png'
+import indesignIcon from '../assets/Indesign.png'
 import { Divider, Tooltip } from '@mui/material';
 //import bracketicon from '../assets/bracketPNG.png'
 import jiraIcon from '../assets/jira.png'
@@ -35,16 +38,16 @@ const items = [
   //     'I go beyond the immediate task, fostering understanding of an organization\'s broader objectives and ensuring my work aligns with them.',
   // },
   {
-    icon: <ConstructionRoundedIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
+    icon: <QueryStatsOutlined sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
     title: 'Team Collaboration',
     description:
-      'Translating design and product requirements into implementable frontend systems by aligning design intent, component architecture, and backend constraints.',
+      'Translating design and product requirements into implementable systems by aligning design intent, component architecture, and backend constraints.',
   },
   {
-    icon: <QueryStatsOutlined sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
-    title: 'UX & Interaction',
+    icon: <ConstructionRoundedIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
+    title: 'Design & Engineering',
     description:
-      'Applying visual and contextual analysis to interaction patterns, layout, and data presentation that are grounded in real frontend constraints.'
+      'With 13+ years experience, design isn\'t a separate skill; it\'s embedded in how I engineer. Visual and systems thinking shapes everything from component architecture and interaction patterns to data schemas and API contracts.'
   },
   // {
   //   icon: <AutoFixHighRoundedIcon sx={{ fontSize: '2.5rem', color: '#d71920'}}/>,
@@ -54,9 +57,9 @@ const items = [
   // },
   {
     icon: <SettingsSuggestIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
-    title: 'System Level Desicions',
+    title: 'Architecture & Systems',
     description:
-      'Translating product and business requirements into frontend architecture decisions that balance usability, technical constraints, and long-term maintainability.',
+      'From design tokens and component libraries to state management, API contracts, and backend logic — I build systems that scale and stay maintainable end-to-end.',
   },
   // {
   //   icon: <QueryStatsRoundedIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
@@ -102,10 +105,10 @@ export default function About() {
                 variant="h5"
                 sx={{ mb: 4, mt: { xs: 4, sm: 4}, fontWeight: 'bold' }}
                 >
-                Frontend Engineering | Data, Analysis & UX | System & Product Thinking
+                Engineering | Creative Technology | Design Systems | AI-Powered workfloes
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb:2}}>
-              I’m a frontend engineer with several years of experience building data-driven, production UI in React and Vue. My work focuses on component architecture, state management, accessibility, and performance to ensure interfaces are not only intuitive, but scalable and maintainable in real-world systems.
+              I'm a Creative Technologist and Engineer with 13+ years in the Adobe Creative Cloud ecosystem and 4+ years building scalable, production UI in React and Vue. I work across the full creative-to-code pipeline — from brand identity and high-fidelity Figma prototypes through component architecture, state management, and deployment.
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
               With a background in art history and design, I bring strong visual and contextual reasoning to frontend work. I’m comfortable working across design and engineering workflows, translating design intent into maintainable code while contributing to interaction and system-level decisions.
@@ -117,7 +120,9 @@ export default function About() {
         </Grid>
         <Grid  container spacing={2} sx={{display: 'flex', justifyContent:'center', alignItems: 'center', mb: 4}}>
           {/* <Tooltip title='React' aria-labelledby='React logo'><img src={reactIcon} alt='react icon' width={64}/></Tooltip> */}
-          <Tooltip title='Figma'><img src={figmaIcon} alt='figma icon' width={58}/></Tooltip> 
+          <Tooltip title='Figma'><img src={figmaIcon} alt='figma icon' width={58}/></Tooltip>
+          <Tooltip title='PhotoShop'><img src={photoshopIcon} alt='photoshop icon' width={58}/></Tooltip>
+          <Tooltip title='Illustrator'><img src={illustratorIcon} alt='illustrator icon' width={58}/></Tooltip>
           <Tooltip title='Design Thinking'><img src={designThinking} alt='design thinking icon' width={52}/></Tooltip>
           <Tooltip title='React'><img src={reactIcon} alt='react icon' width={50}/></Tooltip>
           <Tooltip title='Javascript'><img src={jsIcon} alt='javascript icon' width={64}/></Tooltip>

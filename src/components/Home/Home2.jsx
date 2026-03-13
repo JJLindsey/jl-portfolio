@@ -44,14 +44,14 @@ export default function Home2() {
                 variant="h4"
                 sx={{ mb: 6, mt: { xs: 4, sm: 4}, fontWeight: 'regular', fontFamily: '"Sansation", sans-serif' }}
                 >
-                 Frontend Engineer building scalable, user-centered interfaces
+                 Engineer & Creative Technologist
             </Typography>
             <Typography
               color="inherit"
               align="left"
               variant="h6"
               sx={{ mb: 6, mt: { xs: 4, sm: 4} }}
-            > I specialize in translating complex data and requirements into accessible frontend systems using React and Vue. With a background in art history and hands-on engineering experience, I bring contextual analysis to UI decisions while maintaining a strong focus on technical feasibility and maintainability.</Typography>
+            > I specialize in translating complex data and requirements into accessible systems. With a background in art history and hands-on engineering experience, I bring contextual analysis to UI decisions while maintaining a strong focus on technical feasibility and maintainability.</Typography>
             <Box sx={{display: 'flex', gap: 2, mb: 3, }}>
                 <CategoryOutlined />
                 <Typography>Technical</Typography>
