@@ -199,7 +199,8 @@ export const projects = [
         { label: 'Vue.js', color: 'success' },
         { label: 'API Integration', color: 'primary' },
         { label: 'Interactive', color: 'info' },
-        { label: 'Responsive', color: 'secondary' }
+        { label: 'Responsive', color: 'secondary' },
+        { label: 'Design', color: 'warning' },
       ],
     },
     {

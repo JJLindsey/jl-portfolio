@@ -7,7 +7,10 @@ import {
 import { Accessibility, Code, DesignServices, CallMade, Article } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
+import { designProjects } from '../data/designprojects';
 import {styled} from '@mui/material/styles'
+
+const allProjects = [...projects, ...designProjects]
 
 const StyledCard = styled(Card)(({ theme }) => ({
   height: 450,
@@ -33,7 +36,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 export default function PortfolioGrid() {
   const navigate = useNavigate();
    const {id} = useParams()
-  const project = projects.find((project) => project.id === id)
+  const project = allProjects.find((project) => project.id === id)
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedTags, setSelectedTags] = useState([]);
 
@@ -62,7 +65,7 @@ export default function PortfolioGrid() {
 
   // Filter projects
   const filteredProjects = useMemo(() => {
-  let filtered = projects;
+  let filtered = allProjects;
 
   if (selectedCategory !== 'all') {
     filtered = filtered.filter(project => project.category.includes(selectedCategory));
@@ -79,7 +82,7 @@ export default function PortfolioGrid() {
   }
 
   return filtered;
-}, [projects, selectedCategory, selectedTags]);
+}, [selectedCategory, selectedTags]);
 
   const handleCategoryChange = (event, newCategory) => {
     if (newCategory !== null) {
@@ -182,8 +185,8 @@ export default function PortfolioGrid() {
             aria-label="product design"
             sx={{
               '&.Mui-selected': {
-                bgcolor: `${categoryColors.product}40`,
-                borderColor: categoryColors.product
+                bgcolor: `${categoryColors.design}40`,
+                borderColor: categoryColors.design
               }
             }}
           >
@@ -211,7 +214,7 @@ export default function PortfolioGrid() {
           Click to filter by skills & tools:
         </Typography>
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, justifyContent: 'center' }}>
-          {['Accessibility', 'Vue.js', 'React', 'Figma', 'Interaction Design', 'API Integration'].map(tag => (
+          {['Accessibility', 'Vue.js', 'React', 'Figma', 'Design', 'API Integration'].map(tag => (
             <Chip
               key={tag}
               label={tag}

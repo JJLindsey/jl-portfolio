@@ -1,5 +1,4 @@
-
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
 import './App.css';
 import { ThemeProvider } from '@emotion/react';
 import theme from './theme/theme';
@@ -10,8 +9,22 @@ import NavBar from './components/NavBar';
 import Home2 from './components/Home/Home2';
 import Footer from './components/Footer';
 import ProjectDetails from './components/ProjectDetails';
+import DesignProjectDetail from './components/DesignProjectDetails';
+import { projects } from './data/projects';
+import { designProjects } from './data/designprojects';
+
+const allProjects = [...projects, ...designProjects]
+
+function ProjectRouter() {
+  const { id } = useParams();
+  const project = allProjects.find(p => p.id === id);
+   const isDesignOnly = project?.category?.length === 1 && 
+                       project?.category?.includes('design');
+  return isDesignOnly ? <DesignProjectDetail /> : <ProjectDetails />;
+}
 
 function App() {
+
   return (
     <ThemeProvider theme={theme}>
     <div className="App">
@@ -19,7 +32,7 @@ function App() {
       <NavBar/>
       <Routes>
        {/* Dedicated project route */}
-       <Route path="/projects/:id" element={<ProjectDetails />} />
+       <Route path="/projects/:id" element={ <ProjectRouter/> } />
         {/* Main site SPA sections */}
         <Route
           path="/"
