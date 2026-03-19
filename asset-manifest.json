@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/jl-portfolio/static/css/main.b5680376.css",
-    "main.js": "/jl-portfolio/static/js/main.c08ab3c0.js",
+    "main.js": "/jl-portfolio/static/js/main.d724db64.js",
     "static/js/453.62e3e54a.chunk.js": "/jl-portfolio/static/js/453.62e3e54a.chunk.js",
     "static/media/jlHeadshotblack.png": "/jl-portfolio/static/media/jlHeadshotblack.b70deffcbe99ead1a8df.png",
     "static/media/design-thinking.png": "/jl-portfolio/static/media/design-thinking.a72186a4430508ea876d.png",
@@ -12,11 +12,11 @@
     "static/media/illustrator.png": "/jl-portfolio/static/media/illustrator.c8306d9279929e8b8cfe.png",
     "index.html": "/jl-portfolio/index.html",
     "main.b5680376.css.map": "/jl-portfolio/static/css/main.b5680376.css.map",
-    "main.c08ab3c0.js.map": "/jl-portfolio/static/js/main.c08ab3c0.js.map",
+    "main.d724db64.js.map": "/jl-portfolio/static/js/main.d724db64.js.map",
     "453.62e3e54a.chunk.js.map": "/jl-portfolio/static/js/453.62e3e54a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b5680376.css",
-    "static/js/main.c08ab3c0.js"
+    "static/js/main.d724db64.js"
   ]
 }
