@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color System — Art & Meditation PWA</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark: #1a1816;
+    --light-bg: #fff9f0;
+    --light-accent: #a67c52;
+    --dark-accent: #c9a87c;
+    --grey: #b9cad1;
+    --cta: #c94e11;
+    --success: #6b9e78;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--light-bg);
+    color: var(--dark);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 80px 60px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,124,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    color: var(--light-accent);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--dark);
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--light-accent);
+  }
+
+  .hero-sub {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--dark-accent);
+    margin-top: 20px;
+    max-width: 500px;
+    line-height: 1.6;
+  }
+
+  /* ── SWATCH STRIP ── */
+  .swatch-strip {
+    display: flex;
+    height: 8px;
+    margin: 0 60px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .swatch-strip div { flex: 1; }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 70px 60px;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--grey), transparent);
+    opacity: 0.4;
+  }
+
+  /* ── PALETTE GRID ── */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .color-card {
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 24px rgba(26,24,22,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .color-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(26,24,22,0.12);
+  }
+
+  .color-swatch {
+    height: 120px;
+    display: flex;
+    align-items: flex-end;
+    padding: 14px 18px;
+  }
+
+  .color-hex {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    opacity: 0.75;
+  }
+
+  .color-body {
+    padding: 20px 20px 22px;
+  }
+
+  .color-name {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: var(--dark);
+  }
+
+  .color-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--light-accent);
+    margin-bottom: 12px;
+  }
+
+  .color-emotion {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--dark-accent);
+    margin-bottom: 14px;
+  }
+
+  .color-uses {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .color-uses li {
+    font-size: 0.78rem;
+    color: #5a4a3a;
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .color-uses li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--grey);
+  }
+
+  /* ── DARK PREVIEW ── */
+  .dark-preview {
+    background: var(--dark);
+    margin: 0 60px;
+    border-radius: 24px;
+    padding: 50px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dark-preview::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,124,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .dp-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--dark-accent);
+    margin-bottom: 30px;
+  }
+
+  .dp-title {
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--dark-accent);
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+
+  .dp-body {
+    font-size: 1rem;
+    color: var(--grey);
+    line-height: 1.7;
+    max-width: 500px;
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+
+  .dp-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .dp-btn {
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+  }
+
+  .dp-btn:hover { opacity: 0.85; }
+
+  .dp-btn-primary { background: var(--cta); color: var(--light-bg); }
+  .dp-btn-secondary { background: var(--light-accent); color: var(--light-bg); }
+  .dp-btn-ghost { background: transparent; color: var(--dark-accent); border: 1px solid var(--dark-accent); }
+  .dp-btn-disabled { background: transparent; color: var(--grey); border: 1px solid rgba(185,202,209,0.3); }
+
+  /* ── TOKENS SECTION ── */
+  .token-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .token-card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 12px rgba(26,24,22,0.05);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .token-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .token-info { flex: 1; }
+
+  .token-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--light-accent);
+    letter-spacing: 0.05em;
+    margin-bottom: 3px;
+  }
+
+  .token-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--dark);
+    font-weight: 400;
+  }
+
+  /* ── REFINEMENT ── */
+  .refinement-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 780px;
+  }
+
+  .refinement-item {
+    padding: 16px 20px;
+    border-radius: 12px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #3a2e24;
+  }
+
+  .r-strength { background: #f2f8f4; border-left: 3px solid var(--success); }
+  .r-consider { background: #fdf8f0; border-left: 3px solid var(--dark-accent); }
+  .r-idea { background: #fef6f2; border-left: 3px solid var(--cta); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 40px 60px;
+    border-top: 1px solid rgba(166,124,82,0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer p {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--grey);
+    text-transform: uppercase;
+  }
+
+  .footer-swatches {
+    display: flex;
+    gap: 6px;
+  }
+
+  .footer-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Color System · v1.0 · Art & Meditation PWA</p>
+  <h1 class="hero-title">Warm.<br><em>Earthy.</em><br>Intentional.</h1>
+  <p class="hero-sub">A palette built for stillness, creativity, and mindful interaction — inspired by natural pigments, aged paper, and ember light.</p>
+</section>
+
+<!-- SWATCH STRIP -->
+<div class="swatch-strip" style="margin: 0 60px 70px;">
+  <div style="background:#1a1816"></div>
+  <div style="background:#fff9f0; border: 1px solid rgba(166,124,82,0.2);"></div>
+  <div style="background:#a67c52"></div>
+  <div style="background:#c9a87c"></div>
+  <div style="background:#b9cad1"></div>
+  <div style="background:#c94e11"></div>
+  <div style="background:#6b9e78"></div>
+</div>
+
+<!-- PALETTE -->
+<section class="section" style="padding-top: 0">
+  <div class="section-label">Color Definitions</div>
+  <div class="palette-grid">
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#1a1816">
+        <span class="color-hex" style="color:#fff9f0">#1a1816</span>
+      </div>
+      <div class="color-body">
+        <div class="color-name">Charcoal Ink</div>
+        <div class="color-role">Dark Theme Background</div>
+        <div class="color-emotion">Grounding · Depth · Focus</div>
+        <ul class="color-uses">
+          <li>App background in dark mode</li>
+          <li>Modals, drawers, overlays</li>
+          <li>Body text on light surfaces</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#fff9f0; border-bottom: 1px solid rgba(166,124,82,0.15)">
+        <span class="color-hex" style="color:#a67c52">#fff9f0</span>
+      </div>
+      <div class="color-body">
+        <div class="color-name">Parchment Glow</div>
+        <div class="color-role">Light Theme Background</div>
+        <div class="color-emotion">Calm · Openness · Clarity</div>
+        <ul class="color-uses">
+          <li>Main app background, light mode</li>
+          <li>Card surfaces & journal areas</li>
+          <li>Canvas / drawing workspace</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#a67c52">
+        <span class="color-hex" style="color:#fff9f0">#a67c52</span>
+      </div>
+      <div class="color-body">
+        <div class="color-name">Warm Earth</div>
+        <div class="color-role">Light Accent</div>
+        <div class="color-emotion">Warmth · Craft · Authenticity</div>
+        <ul class="color-uses">
+          <li>Secondary buttons & links</li>
+          <li>Icon fills, dividers</li>
+          <li>Progress indicators</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#c9a87c">
+        <span class="color-hex" style="color:#1a1816">#c9a87c</span>
+      </div>
+      <div class="color-body">
+        <div class="color-name">Golden Sand</div>
+        <div class="color-role">Dark Accent / Hover</div>
+        <div class="color-emotion">Softness · Elevation · Reward</div>
+        <ul class="color-uses">
+          <li>Hover & active states</li>
+          <li>Achievement backgrounds</li>
+          <li>Gradient partner to Warm Earth</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#b9cad1">
+        <span class="color-hex" style="color:#1a1816">#b9cad1</span>
+      </div>
+      <div class="color-body">
+        <div class="color-name">Misted Sky</div>
+        <div class="color-role">Grey Accent / Neutral</div>
+        <div class="color-emotion">Stillness · Space · Rest</div>
+        <ul class="color-uses">
+          <li>Disabled / inactive states</li>
+          <li>Breath timer backgrounds</li>
+          <li>Skeleton loaders, tags</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#c94e11">
+        <span class="color-hex" style="color:#fff9f0">#c94e11</span>
+      </div>
+      <div class="color-body">
+        <div class="color-name">Ember Orange</div>
+        <div class="color-role">CTA / Primary Action</div>
+        <div class="color-emotion">Energy · Urgency · Passion</div>
+        <ul class="color-uses">
+          <li>Primary action buttons</li>
+          <li>Streaks & notifications</li>
+          <li>Onboarding CTAs</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="color-card" style="border: 2px dashed rgba(107,158,120,0.4)">
+      <div class="color-swatch" style="background:#6b9e78">
+        <span class="color-hex" style="color:#fff9f0">#6b9e78</span>
+      </div>
+      <div class="color-body">
+        <div class="color-name">Sage Mist</div>
+        <div class="color-role">Success</div>
+        <div class="color-emotion">Growth · Completion · Peace</div>
+        <ul class="color-uses">
+          <li>Completed meditation sessions</li>
+          <li>Saved artwork confirmations</li>
+          <li>Streak milestones</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DARK PREVIEW -->
+<div class="dark-preview">
+  <div class="dp-label">Dark Mode Preview</div>
+  <div class="dp-title">Begin your practice.</div>
+  <p class="dp-body">Find stillness in the space between brushstrokes. Your creative session awaits — all your tools, intentions, and reflections, in one mindful space.</p>
+  <div class="dp-buttons">
+    <button class="dp-btn dp-btn-primary">Start Session</button>
+    <button class="dp-btn dp-btn-secondary">Browse Art</button>
+    <button class="dp-btn dp-btn-ghost">Journal</button>
+    <button class="dp-btn dp-btn-disabled">Locked</button>
+  </div>
+</div>
+
+<!-- TOKENS -->
+<section class="section">
+  <div class="section-label">Design Tokens</div>
+  <div class="token-grid">
+    <div class="token-card"><div class="token-dot" style="background:#1a1816"></div><div class="token-info"><div class="token-name">color/dark</div><div class="token-val">#1a1816</div></div></div>
+    <div class="token-card"><div class="token-dot" style="background:#fff9f0; border:1px solid rgba(166,124,82,0.2)"></div><div class="token-info"><div class="token-name">color/light-bg</div><div class="token-val">#fff9f0</div></div></div>
+    <div class="token-card"><div class="token-dot" style="background:#a67c52"></div><div class="token-info"><div class="token-name">color/light-accent</div><div class="token-val">#a67c52</div></div></div>
+    <div class="token-card"><div class="token-dot" style="background:#c9a87c"></div><div class="token-info"><div class="token-name">color/dark-accent</div><div class="token-val">#c9a87c</div></div></div>
+    <div class="token-card"><div class="token-dot" style="background:#b9cad1"></div><div class="token-info"><div class="token-name">color/grey-accent</div><div class="token-val">#b9cad1</div></div></div>
+    <div class="token-card"><div class="token-dot" style="background:#c94e11"></div><div class="token-info"><div class="token-name">color/cta</div><div class="token-val">#c94e11</div></div></div>
+    <div class="token-card"><div class="token-dot" style="background:#6b9e78"></div><div class="token-info"><div class="token-name">color/success</div><div class="token-val">#6b9e78</div></div></div>
+  </div>
+</section>
+
+<footer>
+  <p>Art & Meditation PWA · Color System v1.0 · 2025</p>
+  <div class="footer-swatches">
+    <div class="footer-dot" style="background:#1a1816"></div>
+    <div class="footer-dot" style="background:#fff9f0; border:1px solid rgba(166,124,82,0.3)"></div>
+    <div class="footer-dot" style="background:#a67c52"></div>
+    <div class="footer-dot" style="background:#c9a87c"></div>
+    <div class="footer-dot" style="background:#b9cad1"></div>
+    <div class="footer-dot" style="background:#c94e11"></div>
+    <div class="footer-dot" style="background:#6b9e78"></div>
+  </div>
+</footer>
+
+</body>
+</html>
