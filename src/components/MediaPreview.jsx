@@ -50,7 +50,7 @@ export default function MediaPreview({ videoUrl, image }) {
   // Fallback message
   return (
     <Typography variant="body2" color="text.secondary">
-      No media available for this project.
+      
     </Typography>
   )
 }

@@ -37,8 +37,14 @@ export default function DesignProjectDetail() {
   const imgs = project.screenshots || []
 
   return (
+    <>
+      <Grid>
+         <Button variant='text' sx={{ mt: 2, color: 'lightgrey' }}
+                onClick={() => navigate('/')}>
+            Back to Projects
+        </Button>
+        </Grid>
     <Container sx={{ pt: 8, pb: 12 }}>
-
       {/* ── Hero Image ── */}
       <Box sx={{ position: 'relative', borderRadius: 2, overflow: 'hidden',
                  mb: 6, cursor: 'zoom-in' }}
@@ -97,13 +103,13 @@ export default function DesignProjectDetail() {
               {project.problem && (
                 <Grid item xs={12} md={6}>
                   <Typography variant='h5' color='#fff' gutterBottom>The Challenge</Typography>
-                  <Typography variant='body1'>{project.problem}</Typography>
+                  <Typography variant='body1' textAlign='left'>{project.problem}</Typography>
                 </Grid>
               )}
               {project.solution && (
                 <Grid item xs={12} md={6}>
                   <Typography variant='h5' color='#fff' gutterBottom>The Solution</Typography>
-                  <Typography variant='body1'>{project.solution}</Typography>
+                  <Typography variant='body1' textAlign='left'>{project.solution}</Typography>
                 </Grid>
               )}
             </Grid>
@@ -205,7 +211,7 @@ export default function DesignProjectDetail() {
               <Typography variant='caption'
                 sx={{ color: secondary, letterSpacing: '0.15em',
                       textTransform: 'uppercase', display: 'block', mb: 1 }}>
-                Available on Creative Market
+                Coming Soon for purchase
               </Typography>
               <Typography variant='h5' color='#fff' sx={{ mb: 0.5 }}>
                 {project.name}
@@ -216,13 +222,13 @@ export default function DesignProjectDetail() {
               <Button fullWidth variant='contained' color='secondary'
                 href={project.url} target='_blank' rel='noopener noreferrer'
                 startIcon={<ShoppingCart />} sx={{ mb: 1.5, borderRadius: 4 }}>
-                Get This Template
+                Get This Template - Coming Soon
               </Button>
-              <Button fullWidth variant='outlined' color='secondary'
+              {/* <Button fullWidth variant='outlined' color='secondary'
                 href={project.url} target='_blank' rel='noopener noreferrer'
                 endIcon={<OpenInNew />} sx={{ borderRadius: 4 }}>
                 View on Creative Market
-              </Button>
+              </Button> */}
             </Box>
           )}
 
@@ -317,5 +323,6 @@ export default function DesignProjectDetail() {
         </Box>
       )}
     </Container>
+    </>
   )
 }

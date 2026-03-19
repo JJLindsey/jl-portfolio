@@ -14,16 +14,16 @@ export const designProjects = [
  
     // ── Page hero ─────────────────────────────────────────────
     subtitle: 'Product Catalog Template',
-    productType: 'InDesign Template (.indd + .idml)',
+    productType: 'InDesign Template Data Merge ready (.indd + .idml)',
     timeline: '1 weeks',
     client: 'Commercial Release',
  
     // ── The sell (shown in hero blurb) ────────────────────────
-    tagline: 'InDesign data merge template with optioanl Shopify automation. Print-ready. Fully editable.',
+    tagline: 'InDesign Data Merge template with optioanl Shopify automation. Print-ready. Fully editable.',
     problem:
       'Small lifestyle brands and independent retailers need catalog-quality print materials but can\'t afford agency design rates or the learning curve of building a complex InDesign grid from scratch.',
     solution:
-      'A fully production-ready 32-page InDesign template with a modular editorial grid, pre-built master pages, a complete paragraph and character style system, and placeholder smart objects — so buyers are layout-complete in under an hour.',
+      'A fully production-ready InDesign template with a modular editorial grid, pre-built master page, a complete paragraph and character style system, and placeholder smart objects. Buyers are layout-complete in under an hour.',
  
     // ── What's included (design-specific field) ────────────────
     whatsIncluded: [

@@ -105,7 +105,7 @@ export default function About() {
                 variant="h5"
                 sx={{ mb: 4, mt: { xs: 4, sm: 4}, fontWeight: 'bold' }}
                 >
-                Engineering | Creative Technology | Design Systems | AI-Powered workfloes
+                Engineering | Creative Technology | Design Systems | AI-Powered workflow
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb:2}}>
               I'm a Creative Technologist and Engineer with 13+ years in the Adobe Creative Cloud ecosystem and 4+ years building scalable, production UI in React and Vue. I work across the full creative-to-code pipeline — from brand identity and high-fidelity Figma prototypes through component architecture, state management, and deployment.

@@ -2,9 +2,9 @@ import React, {useState} from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import {projects} from '../data/projects'
 import { accessibilityReport } from '../data/accessibility'
-import { Box, Button, Chip, Container, Divider, Grid, ImageList, ImageListItem, Typography, Tooltip, List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
+import { Box, Button, Chip, Container, Divider, Grid, ImageList, ImageListItem, Typography, Tooltip, List, ListItem, ListItemIcon, ListItemText, IconButton } from '@mui/material'
 import MediaPreview from './MediaPreview'
-import { CallMade } from '@mui/icons-material'
+import { CallMade, ChevronLeft, ChevronRight, Close } from '@mui/icons-material'
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline'
 import CropSquareIcon from '@mui/icons-material/CropSquare'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
@@ -21,6 +21,7 @@ export default function ProjectDetails() {
     const accessibility = accessibilityReport.find((item) => item.id === project.id)
     const isArticle = project.category === 'writing'
     const [openModal, setOpenModal] = useState(false)
+    const [lightboxIdx, setLightboxIdx] = useState(null)
 
     const handleOpenModal = () => {
       setOpenModal(true)
@@ -29,6 +30,8 @@ export default function ProjectDetails() {
     const handleCloseModal = () => {
       setOpenModal(false)
     }
+    const imgs = project.screenshots || []
+    const accent = '#18C9CD'
 
     if(!project) {
         return(
@@ -45,18 +48,63 @@ export default function ProjectDetails() {
 
       ) : (
         <>
+        {/* <Grid container spacing={2} alignItems='flex-start'> */}
+          {/* ── Hero Image ── */}
+            {/* {project.videoUrl ? (
+                <Box sx={{ mb: 6 }}>
+                  <MediaPreview videoUrl={project.videoUrl} />
+                </Box>
+              ) : ( */}
+                <Box sx={{ position: 'relative', borderRadius: 2, overflow: 'hidden',
+                          mb: 6, cursor: imgs.length > 0 ? 'zoom-in' : 'default' }}
+                    onClick={() => imgs.length > 0 && setLightboxIdx(0)}>
+                  <Box
+                    component='img'
+                    src={imgs[0] || project.image}
+                    alt={project.name}
+                    sx={{ width: '100%', height: { xs: 260, sm: 420, md: 500 },
+                          objectFit: 'cover', display: 'block', filter: 'brightness(0.75)' }}
+                  />
+                  {/* gradient overlay */}
+                  <Box sx={{ position: 'absolute', inset: 0,
+                            background: 'linear-gradient(to top, #011640ee 0%, transparent 55%)' }} />
+                  {/* title on image */}
+                  <Box sx={{ position: 'absolute', bottom: 0, left: 0, p: { xs: 3, md: 5 } }}>
+                    <Typography variant='h3' color='#fff' gutterBottom>{project.name}</Typography>
+                    <Typography variant='h6' sx={{ color: '#18C9CD' }}>{project.subtitle}</Typography>
+                  </Box>
+                  {/* zoom hint */}
+                  {imgs.length > 0 && (
+                    <Box sx={{ position: 'absolute', top: 12, right: 16,
+                              bgcolor: '#80808066', borderRadius: 1, px: 1.5, py: 0.5 }}>
+                      <Typography variant='caption' sx={{ color: '#aaa', letterSpacing: '0.1em' }}>
+                        click to expand
+                      </Typography>
+                    </Box>
+                  )}
+                </Box>
+          {/* )} */}
         <Grid container spacing={2} alignItems='flex-start'>
             <Grid item xs={12} sm={6} sx={{ mb: 4 }}>
-                <Typography variant='h3' textAlign='left' gutterBottom color='#fff'>{project.name}</Typography>
+              {/* Only show title here if video — hero already shows it for image projects */}
+              {/* {project.videoUrl && (
+                <>
+                  <Typography variant='h3' textAlign='left' gutterBottom color='#fff'>{project.name}</Typography>
+                  <Typography variant='h5' textAlign='left' sx={{ mb: 2 }}>{project.subtitle}</Typography>
+                </>
+              )} */}
+                {/* <Typography variant='h3' textAlign='left' gutterBottom color='#fff'>{project.name}</Typography>
                 <Typography variant='h5' textAlign='left' sx={{ mb: 2 }}>{project.subtitle}</Typography>
-                <Typography textAlign='left' sx={{ mb: 4 }}>{project.description}</Typography>
+                <Typography textAlign='left' sx={{ mb: 4 }}>{project.description}</Typography> */}
                 <Box sx={{ mb: 2 }}>
                   <Typography variant="h6" textAlign='left' sx={{ color: '#18C9CD', mb: 1 }}>
                     Details
                   </Typography>
                 </Box>
+
                  {/* Icon Details */}
                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, mb: 5 }}>
+                  <Typography textAlign='left' sx={{ mb: 4 }}>{project.description}</Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                       <WorkOutlineIcon sx={{ fontSize: 24, color: '#18C9CD' }} />
                       <Typography variant="body" textAlign='left'>{project.productType}</Typography>
@@ -116,8 +164,9 @@ export default function ProjectDetails() {
             </Grid>
         <Grid item xs={12} sm={6} sx={{ mb: 4 }}>
         {/* Conditionally render screenshots or video */}
-        <MediaPreview videoUrl={project.videoUrl} image={project.image}/>
+        <MediaPreview videoUrl={project.videoUrl} />
         </Grid>
+        
       </Grid>
        {/* Problem & Solution Section */}
       {(project.problem || project.solution) && (
@@ -145,6 +194,28 @@ export default function ProjectDetails() {
         </Grid>
       )}
        <Divider orientation='horizontal' flexItem sx={{ backgroundColor: '#18C9CD', mx: 1 }} />
+        {/* ── Screenshot strip (right column, image projects only) ── */}
+            {!project.videoUrl && imgs.length > 1 && (
+              <Grid item xs={12} sm={6} sx={{ mb: 4 }}>
+                <Typography variant='h6' sx={{ color: '#18C9CD', mb: 2 }}>Preview</Typography>
+                <Grid container spacing={1.5}>
+                  {imgs.slice(1).map((src, i) => (
+                    <Grid item xs={6} key={i}>
+                      <Box
+                        component='img' src={src}
+                        alt={`Preview ${i + 2}`}
+                        onClick={() => setLightboxIdx(i + 1)}
+                        sx={{ width: '100%', borderRadius: 4, aspectRatio: '3/2',
+                              objectFit: 'cover', cursor: 'zoom-in', display: 'block',
+                              border: '1px solid #333',
+                              transition: 'transform 0.2s, border-color 0.2s',
+                              '&:hover': { transform: 'scale(1.02)', borderColor: '#18C9CD' } }}
+                      />
+                    </Grid>
+                  ))}
+                </Grid>
+              </Grid>
+            )}
       <Box sx={{ mt: 4 }}>
         <Typography variant='h4' textAlign='left' gutterBottom color='#fff'>
           Project Goal
@@ -217,7 +288,7 @@ export default function ProjectDetails() {
             </Box>
           ))}
         {/* Full-width image after goal */}
-        {project.screenshots && project.screenshots.length > 0 && (
+        {/* {project.screenshots && project.screenshots.length > 0 && (
           <ImageList cols={2} variant='masonry' sx={{ mb: 4}}>
              {project.screenshots.map((src, index) => (
                 <ImageListItem key={index}>
@@ -231,7 +302,7 @@ export default function ProjectDetails() {
                 </ImageListItem>
                 ))}
           </ImageList>
-        )}
+        )} */}
       </Box>
        {/* Results */}
         {project.results && (
@@ -270,6 +341,41 @@ export default function ProjectDetails() {
       )}
       </>
       )}
+       {/* ── Lightbox ── */}
+            {lightboxIdx !== null && (
+              <Box onClick={() => setLightboxIdx(null)}
+                sx={{ position: 'fixed', inset: 0, zIndex: 9999,
+                      bgcolor: '#000000ee', display: 'flex',
+                      alignItems: 'center', justifyContent: 'center' }}>
+                <IconButton onClick={() => setLightboxIdx(null)}
+                  sx={{ position: 'absolute', top: 20, right: 20, color: '#fff' }}>
+                  <Close />
+                </IconButton>
+                {imgs.length > 1 && (
+                  <IconButton
+                    onClick={(e) => { e.stopPropagation(); setLightboxIdx((i) => (i - 1 + imgs.length) % imgs.length) }}
+                    sx={{ position: 'absolute', left: 20, color: '#fff' }}>
+                    <ChevronLeft />
+                  </IconButton>
+                )}
+                <Box component='img' src={imgs[lightboxIdx]}
+                  alt={`Lightbox ${lightboxIdx + 1}`}
+                  onClick={(e) => e.stopPropagation()}
+                  sx={{ maxWidth: '88vw', maxHeight: '88vh',
+                        objectFit: 'contain', borderRadius: 2 }} />
+                {imgs.length > 1 && (
+                  <IconButton
+                    onClick={(e) => { e.stopPropagation(); setLightboxIdx((i) => (i + 1) % imgs.length) }}
+                    sx={{ position: 'absolute', right: 20, color: '#fff' }}>
+                    <ChevronRight />
+                  </IconButton>
+                )}
+                <Typography variant='caption'
+                  sx={{ position: 'absolute', bottom: 24, color: '#888', letterSpacing: '0.1em' }}>
+                  {lightboxIdx + 1} / {imgs.length}
+                </Typography>
+              </Box>
+            )}
     </Container>
   )
 }
