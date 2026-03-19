@@ -10,6 +10,7 @@ import Home2 from './components/Home/Home2';
 import Footer from './components/Footer';
 import ProjectDetails from './components/ProjectDetails';
 import DesignProjectDetail from './components/DesignProjectDetails';
+import MindfulDesign from './components/DesignSystems/MindfulColorSys.jsx'
 import { projects } from './data/projects';
 import { designProjects } from './data/designprojects';
 
@@ -33,7 +34,8 @@ function App() {
       <Routes>
        {/* Dedicated project route */}
        <Route path="/projects/:id" element={ <ProjectRouter/> } />
-        {/* Main site SPA sections */}
+       <Route path="/design/art-meditation-color-system" element={ <MindfulDesign />}
+/>        {/* Main site SPA sections */}
         <Route
           path="/"
           element={
