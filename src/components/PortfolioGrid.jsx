@@ -302,10 +302,14 @@ export default function PortfolioGrid() {
                 </CardContent>
                 {/* Buttons */}
                 <CardActions sx={{ justifyContent: 'center' }}>
-                    {project.url && (
+                    {(project.url || project.internalRoute) && (
                     <Button
                         variant="outlined"
-                        href={project.url}
+                        {...(project.internalRoute
+                          ? { component: Link, to: project.internalRoute }
+                          : { href: project.url, target: '_blank' }
+                        )}
+                        // href={project.url}
                         target="_blank"
                         sx={{
                         color: '#fff',

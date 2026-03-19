@@ -69,6 +69,7 @@ export const projects = [
       badges: [
       { label: 'React', color: 'success' },
       { label: 'PWA', color: 'primary' },
+      { label: 'Design', color: 'warning' },
     ],
     },
     {

@@ -1,6 +1,6 @@
 export const designProjects = [
     {
-    id: 'luminara-catalog',               // used in /projects/:id route
+    id: 'luminara-catalog',               
     category: ['design'],
  
     // ── Card preview (shared card component) ──────────────────
@@ -92,10 +92,78 @@ export const designProjects = [
  
     role: 'Designer & Template Author — concept, grid architecture, style system, production, and Creative Market listing.',
   },
+{
+  id: 'art-meditation-color-system',
+  category: ['design'],
  
-  // ── Add more design projects below in the same shape ─────────
-  // {
-  //   id: 'folio-magazine',
-  //   ...
-  // },
+  // ── Card preview ──────────────────────────────────────────
+  name: 'Art & Meditation PWA',
+  image: `${process.env.PUBLIC_URL}/images/colorScreen.png`,
+  project: 'Color system for a mindfulness and art PWA',
+  description: 'A warm, earthy color system built for stillness and creative intention — covering palette definitions, design tokens, dark mode, and emotional rationale.',
+  label: ['Color Theory', 'Design Tokens', 'UI/UX Design', 'PWA', 'Design Systems'],
+  navigation: 'Design',  // card button label
+  url: null,                         // no external URL — uses internal route below
+  internalRoute: '/design/art-meditation-color-system', // used instead of url
+ 
+  // ── Page hero ─────────────────────────────────────────────
+  subtitle: 'Color System · v1.0',
+  productType: 'Design System Document',
+  timeline: 'In Progress',
+  tagline: 'Warm. Earthy. Intentional.',
+ 
+  problem: 'A mindfulness and art journaling PWA needs a color language that feels calming and creative simultaneously — without defaulting to the cold, clinical palettes common in wellness apps.',
+  solution: 'A 7-token palette drawn from natural pigments, aged paper, and ember light — with full dark mode support, emotional rationale per color, and button state documentation baked in.',
+ 
+  designDecisions: [
+    {
+      decision: 'Warm neutrals over pure white or pure black',
+      rationale: 'Parchment Glow (#fff9f0) and Charcoal Ink (#1a1816) reduce eye strain during long creative or meditation sessions while reinforcing the handmade, organic brand feel.'
+    },
+    {
+      decision: 'Single high-contrast CTA (Ember Orange)',
+      rationale: 'One clear action color ensures users always know what to tap next. Ember Orange (#c94e11) pops against both light and dark backgrounds without feeling aggressive in a mindfulness context.'
+    },
+    {
+      decision: 'Misted Sky as disabled/rest state',
+      rationale: 'Using a blue-grey (#b9cad1) for inactive states creates a subtle breath-like visual pause — reinforcing the meditative UX intention rather than using a generic grey.'
+    },
+    {
+      decision: 'Sage Mist for success only',
+      rationale: 'Reserving green exclusively for completions and milestones gives it semantic weight — users learn to associate it with achievement rather than just another accent color.'
+    }
+  ],
+ 
+  results: [
+    '7-token palette covering all UI states',
+    'Full dark mode — tested in-situ',
+    'Emotional rationale documented per color',
+    'Design tokens ready for Figma Variables or CSS custom properties',
+    'Button states: primary, secondary, ghost, disabled',
+    'Mobile-responsive color system document',
+  ],
+ 
+  whatsIncluded: null,
+  specs: {
+    'Status':     'In Progress',
+    'Format':     'React component + HTML',
+    'Tokens':     '7 design tokens',
+    'Modes':      'Light + Dark',
+    'Platform':   'PWA (Progressive Web App)',
+    'Tools':      'Figma, CSS custom properties, Color Theory',
+  },
+ 
+  screenshots: [
+    `${process.env.PUBLIC_URL}/images/colorScreen.png`,
+    // `${process.env.PUBLIC_URL}/images/art-meditation-dark.png`,
+    // `${process.env.PUBLIC_URL}/images/art-meditation-tokens.png`,
+  ],
+ 
+  badges: [
+    { label: 'Design', color: 'warning' },
+    { label: 'In Progress', color: 'secondary' },
+  ],
+ 
+  role: 'UX Designer — color strategy, token architecture, dark mode design, and emotional rationale documentation.',
+},
 ]
