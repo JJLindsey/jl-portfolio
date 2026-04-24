@@ -13,13 +13,14 @@ import DesignProjectDetail from './components/DesignProjectDetails';
 import MindfulDesign from './components/DesignSystems/MindfulColorSys.jsx'
 import { projects } from './data/projects';
 import { designProjects } from './data/designprojects';
+import { CssBaseline } from '@mui/material';
 
 const allProjects = [...projects, ...designProjects]
 
 function ProjectRouter() {
   const { id } = useParams();
   const project = allProjects.find(p => p.id === id);
-   const isDesignOnly = project?.category?.length === 1 && 
+  const isDesignOnly = project?.category?.length === 1 && 
                        project?.category?.includes('design');
   return isDesignOnly ? <DesignProjectDetail /> : <ProjectDetails />;
 }
@@ -28,7 +29,8 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-    <div className="App">
+    <CssBaseline />
+    {/* <div className="App"> */}
       <BrowserRouter basename='/jl-portfolio'>
       <NavBar/>
       <Routes>
@@ -59,7 +61,7 @@ function App() {
         />
         </Routes>
     </BrowserRouter>   
-    </div>
+    {/* </div> */}
     </ThemeProvider>
   )
 }

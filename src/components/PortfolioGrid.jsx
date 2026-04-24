@@ -13,23 +13,64 @@ import {styled} from '@mui/material/styles'
 const allProjects = [...projects, ...designProjects]
 
 const StyledCard = styled(Card)(({ theme }) => ({
-  height: 450,
-  boxShadow: '0 4px 20px rgba(255, 255, 255, 0.2)',
-  borderRadius: 9,
-  border: '1px solid rgba(24, 202, 205, 0.2)',
-  background: `linear-gradient(to bottom right,
-    rgba(255,255,255,0.9) 0%,
-    rgba(255,255,255,0.1) 40%,
-    rgba(0,150,255,0.1) 60%,
-    rgba(0, 225, 255, 0.9) 100%)`,
-  color: '#fff',
+  //height: 450,
+  borderRadius: 4,
+  border: '0.25px solid rgba(191, 155, 122, 0.26)',
+  background: `
+    linear-gradient(
+      160deg,
+      rgba(38, 28, 20, 0.95) 0%,
+      rgba(28, 21, 16, 0.98) 50%,
+      rgba(20, 14, 10, 1.0) 100%
+    )
+  `,
+  boxShadow: `
+    0 0 0 1px rgba(191, 155, 122, 0.08),
+    0 4px 24px rgba(0, 0, 0, 0.6),
+    0 1px 0 rgba(191, 155, 122, 0.15) inset
+  `,
+  color: 'text.primary',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  padding: theme.spacing(2),
-  transition: 'transform 0.3s ease-in-out',
+  padding: theme.spacing(3),
+  transition: 'transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease',
+  position: 'relative',
+  overflow: 'hidden',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: '1px',
+    background: 'linear-gradient(90deg, transparent 0%, #CD7F18 50%, transparent 100%)',
+    opacity: 0,
+    transition: 'opacity 0.3s ease',
+  },
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: 'radial-gradient(ellipse at 50% 0%, rgba(205, 127, 24, 0.04) 0%, transparent 60%)',
+    opacity: 0,
+    transition: 'opacity 0.4s ease',
+    pointerEvents: 'none',
+  },
+ 
   '&:hover': {
-    transform: 'scale(1.03)',
+    transform: 'translateY(-4px)',
+    borderColor: 'rgba(191, 155, 122, 0.28)',
+    boxShadow: `
+      0 0 0 1px rgba(191, 155, 122, 0.2),
+      0 12px 40px rgba(0, 0, 0, 0.7),
+      0 1px 0 rgba(191, 155, 122, 0.25) inset
+    `,
+    '&::before': { opacity: 1 },
+    '&::after': { opacity: 1 },
   },
 }));
 
@@ -42,9 +83,9 @@ export default function PortfolioGrid() {
 
   const categoryColors = {
     audit: '#18C9CD',
-    design: '#FF6B9D',
-    code: '#FFA500',
-    writing: '#bf83ffff'
+    design: '#8C3220',
+    code: '#CD7F18',
+    writing: 'rgb(55, 0, 114)'
   };
 
   const categoryIcons = {
@@ -119,7 +160,7 @@ export default function PortfolioGrid() {
           sx={{ mt: 4, flexWrap: 'wrap' }}
         >
           <Box>
-            <Typography variant="h4" color="#18C9CD">4</Typography>
+            <Typography variant="h4" color="secondary.main">4</Typography>
             <Typography variant="body2">End-to-End Projects Built</Typography>
           </Box>
           <Box>
@@ -143,7 +184,7 @@ export default function PortfolioGrid() {
           sx={{
             '& .MuiToggleButton-root': {
               color: '#fff',
-              borderColor: '#a0efffff',
+              borderColor: 'primary.light',
               '&.Mui-selected': {
                 color: '#fff',
                 fontWeight: 'bold'
@@ -257,10 +298,10 @@ export default function PortfolioGrid() {
                     }}
                 />
                 <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
-                    <Typography variant="h6" color="#ffffffff" gutterBottom>
+                    <Typography variant="h4" gutterBottom>
                     {project.name}
                     </Typography>
-                    <Typography variant="body2" color="#ffffffff" sx={{ mb: 2 }}>
+                    <Typography variant="body1" sx={{ mb: 2 }}>
                     {project.project}
                     </Typography>
 
@@ -273,7 +314,7 @@ export default function PortfolioGrid() {
                               size="small"
                               sx={{
                               bgcolor: `${categoryColor}20`,
-                              color: categoryColor,
+                              color: 'text.primary',
                               border: `1px solid ${categoryColor}`,
                               fontWeight: 500,
                               cursor: 'pointer'
@@ -363,23 +404,23 @@ export default function PortfolioGrid() {
       )}
 
       {/* Call to Action */}
-      <Box sx={{ mt: 8, textAlign: 'center', p: 4, bgcolor: '#0a2540', borderRadius: 2 }}>
+      <Box sx={{ mt: 8, textAlign: 'center', p: 4, borderRadius: 2 }}>
         {/* <Typography variant="h5" gutterBottom color="#fff">
           Currently Pursuing WAS & CPACC Certification
         </Typography> */}
         <Typography variant="body1" color="#ccc" sx={{ mb: 3 }}>
-          Passionate about building inclusive web experiences that work for everyone
+          Passionate about building inclusive experiences that work for everyone
         </Typography>
         <Stack direction="row" spacing={2} justifyContent="center">
           <Button
             variant="contained"
-            sx={{ bgcolor: '#18C9CD', '&:hover': { bgcolor: '#18C9CD', opacity: 0.9 } }}
+            sx={{ bgcolor: 'accent.main', '&:hover': { bgcolor: 'primary.light', opacity: 0.9 } }}
           >
             Contact Me
           </Button>
           <Button
             variant="outlined"
-            sx={{ borderColor: '#18C9CD', color: '#18C9CD' }}
+            sx={{ borderColor: 'accent.main', color: 'accent.main', '&:hover': { bgcolor: 'primary.light', opacity: 0.9 } }}
           >
             Download Resume
           </Button>

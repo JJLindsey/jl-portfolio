@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
-import { Tab, Tabs, Divider, Chip } from '@mui/material'
-import {styled} from '@mui/material/styles'
+import { Divider } from '@mui/material'
+//import {styled} from '@mui/material/styles'
 //import {motion} from 'framer-motion'
 
-import bracketicon from '../assets/bracketPNG.png'
-import AnimatedTypography from './AnimatedTypography'
+// import bracketicon from '../assets/bracketPNG.png'
+// import AnimatedTypography from './AnimatedTypography'
 
-import CodeIcon from '@mui/icons-material/Code'
-import DescriptionIcon from '@mui/icons-material/Description'
-import CodeProjects from './CodeProjects'
-import Articles from './Articles'
-import ProcessDocumentation from './ProcessDocumentation'
-import CategoryIcon from '@mui/icons-material/Category'
-import ProductProjectDetails from './ProductProjectDetails'
-import { EmojiObjects } from '@mui/icons-material'
-import TechDecisionMatrix from './Strategy/TechDecisionMatrix'
+// import CodeIcon from '@mui/icons-material/Code'
+// import DescriptionIcon from '@mui/icons-material/Description'
+// import CodeProjects from './CodeProjects'
+// import Articles from './Articles'
+// import ProcessDocumentation from './ProcessDocumentation'
+// import CategoryIcon from '@mui/icons-material/Category'
+// import ProductProjectDetails from './ProductProjectDetails'
+// import { EmojiObjects } from '@mui/icons-material'
+// import TechDecisionMatrix from './Strategy/TechDecisionMatrix'
 import PortfolioGrid from './PortfolioGrid'
 //import CaseStudyCard from './CaseStudy/CaseStudyCard'
 //import { products } from '../data/products'
@@ -70,20 +70,20 @@ import PortfolioGrid from './PortfolioGrid'
 //     </motion.div>
 //   )
 // }
-function TabPanel({children, value, index}) {
-  return value === index && (
-    <Box>
-      {children}
-    </Box>
-  )
-}
+// function TabPanel({children, value, index}) {
+//   return value === index && (
+//     <Box>
+//       {children}
+//     </Box>
+//   )
+// }
 
 export default function PortfolioCard({ projects= [], products = [] }) {
-  const [tab, setTab] = useState(0)
+  // const [tab, setTab] = useState(0)
 
-  const handleTabChange = (event, newValue) => {
-    setTab(newValue)
-  }
+  // const handleTabChange = (event, newValue) => {
+  //   setTab(newValue)
+  // }
 
   return (
     <Container
@@ -104,10 +104,10 @@ export default function PortfolioCard({ projects= [], products = [] }) {
           textAlign: { sm: 'left', md: 'left' },
         }}
       >
-        <Typography align='left' variant='h4' color='#ffc300' sx={{fontFamily: '"Sansation", sans-serif'}}>
+        <Typography align='left' variant='h2' color='secondary.main'>
            My Work
         </Typography>
-        <Divider sx={{width: '100px', height: '3px', backgroundColor: '#FFc300', mt: 1}}/>
+        <Divider sx={{width: '125px', height: '3px', backgroundColor: 'secondary.main', mt: 1}}/>
         {/* <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '45px', marginTop: "-10px"}}></img> */}
       </Box>
       {/* <Box>

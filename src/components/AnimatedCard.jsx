@@ -18,7 +18,7 @@ const AnimatedCard = ({ index, item }) => {
   return (
     <Box sx={{ 
         position: 'relative',
-        padding: '3px',
+        padding: '2px',
         borderRadius: '4px',
         border: '2px',
         width: '100%',
@@ -30,10 +30,23 @@ const AnimatedCard = ({ index, item }) => {
           right: 0,
           bottom: 0,
           borderRadius: '4px',
-          //background: 'linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)',
-          background: 'linear-gradient(60deg, #ffc300, #e3be15, #c6ba2a, #aab540, #8eb055, #71ac6a, #55a77f, #39a295, #1c9eaa, #0099bf)',
+          background: `linear-gradient(
+            60deg,
+            #E8C87A,
+            #D4A84B,
+            #BF9B7A,
+            #C87B3A,
+            #B85C2A,
+            #A84430,
+            #8C3220,
+            #7A2840,
+            #5E3060,
+            #8C3220,
+            #BF9B7A
+          )`,
+          //background: 'linear-gradient(60deg, #ffc300, #e3be15, #c6ba2a, #aab540, #8eb055, #71ac6a, #55a77f, #39a295, #1c9eaa, #0099bf)',
           backgroundSize: '400% 400%',
-          animation: `${animatedgradient} 3s ease alternate infinite`,
+          animation: `${animatedgradient} 8s ease alternate infinite`,
           zIndex: 0
         }
       }}>
@@ -41,7 +54,7 @@ const AnimatedCard = ({ index, item }) => {
           sx={{
             position: 'relative',
             height: '100%',
-            backgroundColor: '#011640',
+            backgroundColor: '#0a1728',
             zIndex: 1,
             p: 2,
           }}
@@ -51,10 +64,11 @@ const AnimatedCard = ({ index, item }) => {
             <Typography 
               align='center' 
               fontWeight="600" 
-              gutterBottom 
+              gutterBottom
+              color='text.gold'
               sx={{ 
-                color: '#fff', 
                 fontSize: '1.5rem', 
+                color: '#F5ECD9',
                 pt: 3, 
                 mb: 2 
               }}
