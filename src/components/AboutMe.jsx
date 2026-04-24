@@ -38,16 +38,16 @@ const items = [
   //     'I go beyond the immediate task, fostering understanding of an organization\'s broader objectives and ensuring my work aligns with them.',
   // },
   {
-    icon: <QueryStatsOutlined sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
-    title: 'Team Collaboration',
+    icon: <QueryStatsOutlined sx={{ fontSize: '2rem', color: '#fff'}}/>,
+    title: 'Curatorial Discernment',
     description:
-      'Translating design and product requirements into implementable systems by aligning design intent, component architecture, and backend constraints.',
+      'Art history trained me to analyze visual systems with precision and cultural context. That judgment shapes every interface decision, from color token semantics to the hierarchy of information on a screen.',
   },
   {
-    icon: <ConstructionRoundedIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
-    title: 'Design & Engineering',
+    icon: <ConstructionRoundedIcon sx={{ fontSize: '2rem', color: '#fff'}}/>,
+    title: 'Design Embedded in Engineering',
     description:
-      'With 13+ years experience, design isn\'t a separate skill; it\'s embedded in how I engineer. Visual and systems thinking shapes everything from component architecture and interaction patterns to data schemas and API contracts.'
+      'Design is not a separate phase in my process. Visual and systems thinking shapes component architecture, interaction patterns, and API contracts from the first decision, not after the fact.',
   },
   // {
   //   icon: <AutoFixHighRoundedIcon sx={{ fontSize: '2.5rem', color: '#d71920'}}/>,
@@ -56,10 +56,10 @@ const items = [
   //     'My critical thinking and insatiable curiosity fuel my desire to learn new skills and tackle challenging projects, constantly pushing the boundaries of what is possible.',
   // },
   {
-    icon: <SettingsSuggestIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
-    title: 'Architecture & Systems',
+    icon: <SettingsSuggestIcon sx={{ fontSize: '2rem', color: '#fff'}}/>,
+    title: 'Systems That Scale',
     description:
-      'From design tokens and component libraries to state management, API contracts, and backend logic — I build systems that scale and stay maintainable end-to-end.',
+      'From design tokens and component libraries through state management and backend logic, I build end-to-end systems that stay maintainable because they were designed with the same rigor they were engineered with.',
   },
   // {
   //   icon: <QueryStatsRoundedIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
@@ -91,10 +91,10 @@ export default function About() {
       >
         <Grid container>
           <Grid item>
-            <Typography align='left' variant="h4" sx={{ mt: 4, color: '#FFc300', fontFamily: '"Sansation", sans-serif'}}>
+            <Typography align='left' variant="h2" sx={{ color: 'secondary.main', mt: 4}}>
               About Me
             </Typography>
-            <Divider sx={{width: '100px', height: '3px', backgroundColor: '#FFc300', mt: 1}}/>
+            <Divider sx={{width: '135px', height: '3px', backgroundColor: 'secondary.main', mt: 1}}/>
             {/* <img src={bracketicon} alt='icon' width='120px' align="left" style={{marginLeft: '55px', marginTop: "-10px"}}></img> */}
              {/* <Typography align="left" variant="h4" sx={{fontWeight: 'bold', fontFamily: '"Sansation", sans-serif'}}>
               Critical Analysis Meets Product Innovation
@@ -105,16 +105,16 @@ export default function About() {
                 variant="h5"
                 sx={{ mb: 4, mt: { xs: 4, sm: 4}, fontWeight: 'bold' }}
                 >
-                Engineering | Creative Technology | Design Systems | AI-Powered workflow
+                Design Engineer
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb:2}}>
-              I'm a Creative Technologist and Engineer with 13+ years in the Adobe Creative Cloud ecosystem and 4+ years building scalable, production UI in React and Vue. I work across the full creative-to-code pipeline — from brand identity and high-fidelity Figma prototypes through component architecture, state management, and deployment.
+              I work across the full creative-to-code pipeline, from brand identity and high-fidelity prototypes through component architecture, state management, and deployment.
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
-              With a background in art history and design, I bring strong visual and contextual reasoning to frontend work. I’m comfortable working across design and engineering workflows, translating design intent into maintainable code while contributing to interaction and system-level decisions.
+              My background in art history and visual analysis gives me something AI cannot replicate: curatorial judgment. I read interfaces the way a curator reads an exhibition, composition, hierarchy, color, and spatial logic as problems with real solutions. That same eye follows me outside the editor. I shoot landscape photography because nature is our first canvas, and there is no better study in texture, pattern, and color relationships than the one that has been running for four billion years. While AI can generate code, it cannot navigate color theory, historical context, or the cultural nuance that makes a digital product legally compliant and genuinely resonant. I provide that oversight.
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
-              My technical foundation comes from professional experience in production systems and continuous study of computer science fundamentals.
+              I've spent 13 years developing production-grade visual craft and 4 years building scalable UI in React and Vue. I contribute to interaction decisions, design system architecture, and the gap between design intent and what actually ships, which is usually where the interesting problems live.
             </Typography>
           </Grid>
         </Grid>

@@ -22,6 +22,7 @@ const AnimatedCard = ({ index, item }) => {
         borderRadius: '4px',
         border: '2px',
         width: '100%',
+        backgroundImage:'none',
         '&::before': {
           content: '""',
           position: 'absolute',
@@ -46,7 +47,7 @@ const AnimatedCard = ({ index, item }) => {
           )`,
           //background: 'linear-gradient(60deg, #ffc300, #e3be15, #c6ba2a, #aab540, #8eb055, #71ac6a, #55a77f, #39a295, #1c9eaa, #0099bf)',
           backgroundSize: '400% 400%',
-          animation: `${animatedgradient} 8s ease alternate infinite`,
+          animation: `${animatedgradient} 6s ease alternate infinite`,
           zIndex: 0
         }
       }}>
@@ -54,22 +55,18 @@ const AnimatedCard = ({ index, item }) => {
           sx={{
             position: 'relative',
             height: '100%',
-            backgroundColor: '#0a1728',
+            backgroundColor: 'background.default',
             zIndex: 1,
             p: 2,
           }}
         >
-          <Box>{item.icon}</Box>
+          {/* <Box>{item.icon}</Box> */}
           {/* <div> */}
             <Typography 
               align='center' 
-              fontWeight="600" 
               gutterBottom
-              color='text.gold'
+              variant='h6'
               sx={{ 
-                fontSize: '1.5rem', 
-                color: '#F5ECD9',
-                pt: 3, 
                 mb: 2 
               }}
             >
@@ -79,14 +76,14 @@ const AnimatedCard = ({ index, item }) => {
               sx={{ 
                 borderWidth: 1, 
                 opacity: 0.8, 
-                borderColor: "#ffc300", 
+                borderColor: "accent.main", 
                 mb: 3
               }}
             />
             <Typography 
-              align='left' 
+              align='left'
+              variant='body1'
               sx={{ 
-                color: '#fff', 
                 pb: 3 
               }}
             >
