@@ -9,7 +9,7 @@ import { GitHub } from '@mui/icons-material'
 import EmailIcon from '@mui/icons-material/Email'
 import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline'
 import MenuIcon from '@mui/icons-material/Menu'
-import Logo from '../assets/JLnameLogo.png'
+//import Logo from '../assets/JLnameLogo.png'
 
 const StyledButton = styled(Button)(({theme}) => ({
   transition: theme.transitions.create('all', {
@@ -19,7 +19,7 @@ const StyledButton = styled(Button)(({theme}) => ({
     transform: 'scale(1.15)',
     borderRadius: '8px'
   },
-  color: '#FFF'
+  color: 'primary.light'
 }))
 
 const GlassAppBar = styled(AppBar)(({ theme }) => ({
@@ -32,7 +32,7 @@ const GlassAppBar = styled(AppBar)(({ theme }) => ({
     0 4px 20px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.21)
   `,
-  position: 'relative',
+  position: 'sticky',
   overflow: 'hidden',
 
   '&::before': {
@@ -93,16 +93,17 @@ function NavBar() {
   }
 
   return (
-    <GlassAppBar position="sticky" sx={{ backgroundColor: { md: "#001a4e", xs: '#001a4e'}, boxShadow: { xs: 'none', sm: 'none', md: 'none'} }}>
+    <GlassAppBar sx={{ boxShadow: { xs: 'none', sm: 'none', md: 'none'} }}>
       <Toolbar>
-          <img src={Logo} alt='logo' width={175}/>
+        <Typography>Jennifer Lindsey</Typography>
+          {/* <img src={Logo} alt='logo' width={175}/> */}
             {/*Mobile Menu*/}
               <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end'}} >
                 <IconButton
                   size='large'
                   aria-label='menu'
                   onClick={handleOpenNavMenu}
-                  sx={{ color: '#FFF' }}
+                  sx={{ color: 'primary.light' }}
                 >
                   <MenuIcon />
                 </IconButton>
@@ -115,7 +116,7 @@ function NavBar() {
                   PaperProps={{
                     sx: {
                       backgroundColor: '#000',
-                      color: '#FFF'
+                      color: 'primary.light'
                     }
                   }}
                 >
@@ -134,16 +135,16 @@ function NavBar() {
                       href="http://www.linkedin.com/in/jennifer-lindsey010"
                       target="_blank"
                       rel="noopener noreferrer">
-                      <LinkedInIcon  sx={{ fontSize: "28px", color: "#ffc300" }} />
-                      <Typography sx={{color: "#ffc300"}}>LinkedIn</Typography>
+                      <LinkedInIcon  sx={{ fontSize: "28px", color: "primary.light" }} />
+                      <Typography sx={{color: "primary.light"}}>LinkedIn</Typography>
                     </IconButton>
                 <IconButton
                   variant="contained"
                   component="a"
                   href="mailto:jlindsey010@gmail.com"
                 >
-                  <EmailIcon sx={{ fontSize: "28px", color: "#ffc300" }} />
-                  <Typography sx={{color: "#ffc300"}}>Email</Typography>
+                  <EmailIcon sx={{ fontSize: "28px", color: "primary.light" }} />
+                  <Typography sx={{color: "primary.light"}}>Email</Typography>
                 </IconButton>
               </Box>
               <Box>
@@ -162,7 +163,7 @@ function NavBar() {
                 </Menu>
               </Box>
             {/*Desktop Menu*/}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, flexGrow: 1, color: "#FFF" }}>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, flexGrow: 1, color: "primary.light" }}>
             <StyledButton onClick={() => scrollToSection('home')}>
                 Home
             </StyledButton>
@@ -180,7 +181,7 @@ function NavBar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 >
-                <LinkedInIcon sx={{fontSize: "38px", color: '#FFF'}} />
+                <LinkedInIcon sx={{fontSize: "38px", color: 'primary.light'}} />
               </IconButton>
               <IconButton
                 variant="contained"
@@ -190,20 +191,20 @@ function NavBar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 >
-                <GitHub sx={{fontSize: "38px", color: '#FFF'}} />
+                <GitHub sx={{fontSize: "38px", color: 'primary.light'}} />
               </IconButton>
               <IconButton variant="contained" component="a" href="mailto:jlindsey010@gmail.com">
-                <EmailIcon sx={{fontSize: "36px", color: "#FFF"}}/>
+                <EmailIcon sx={{fontSize: "36px", color: 'primary.light'}}/>
               </IconButton>
               <StyledButton
-                color="primary"
                 size="small"
-                variant='outlined'
+                variant='text'
                 component="a"
                 href={`${process.env.PUBLIC_URL}/JenniferLindseyFrontendEngineer.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
                 startIcon={<DownloadForOfflineIcon />}
+                sx={{color: 'primary.light'}}
                 >
                   RESUME
               </StyledButton>
