@@ -19,14 +19,14 @@ const StyledCard = styled(Card)(({ theme }) => ({
   background: `
     linear-gradient(
       160deg,
-      rgba(38, 28, 20, 0.95) 0%,
-      rgba(28, 21, 16, 0.98) 50%,
+      rgba(43, 37, 33, 0.95) 0%,
+      rgba(16, 12, 9, 0.98) 50%,
       rgba(20, 14, 10, 1.0) 100%
     )
   `,
   boxShadow: `
     0 0 0 1px rgba(191, 155, 122, 0.08),
-    0 4px 24px rgba(0, 0, 0, 0.6),
+    0 4px 24px rgba(83, 83, 83, 0.53),
     0 1px 0 rgba(191, 155, 122, 0.15) inset
   `,
   color: 'text.primary',
@@ -147,7 +147,7 @@ export default function PortfolioGrid() {
     <Container maxWidth="lg">
       <Box sx={{ mb: 6, textAlign: 'center' }}>
         <Typography variant="h5" gutterBottom>
-          Developer • Design Systems & Interaction • Designer
+          Development • Design Systems & Interaction • Design
         </Typography>
         <Typography variant="body1" color="#ccc" sx={{ mt: 2 }}>
           Building scalable, design forward systems
@@ -164,7 +164,7 @@ export default function PortfolioGrid() {
             <Typography variant="body2">End-to-End Projects Built</Typography>
           </Box>
           <Box>
-            <Typography variant="h4" color="#FF6B9D">9+</Typography>
+            <Typography variant="h4" color="primary.secondary">9+</Typography>
             <Typography variant="body2">Custom Interactive Features</Typography>
           </Box>
           {/* <Box>
@@ -183,12 +183,12 @@ export default function PortfolioGrid() {
           aria-label="project category filter"
           sx={{
             '& .MuiToggleButton-root': {
-              color: '#fff',
+              color: 'primary.light',
               borderColor: 'primary.light',
-              '&.Mui-selected': {
-                color: '#fff',
-                fontWeight: 'bold'
-              }
+              // '&.Mui-selected': {
+              //   color: 'categoryColors.selectedCategory',
+              //   fontWeight: 'bold'
+              // }
             }
           }}
         >
@@ -251,7 +251,7 @@ export default function PortfolioGrid() {
       </Box>
       {/* Tag Filter */}
       <Box sx={{ mb: 4 }}>
-        <Typography variant="body2" color="#ccc" gutterBottom textAlign="center">
+        <Typography variant="body1" color="accent.main" gutterBottom textAlign="center">
           Click to filter by skills & tools:
         </Typography>
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, justifyContent: 'center' }}>
@@ -264,12 +264,25 @@ export default function PortfolioGrid() {
               color={selectedTags.includes(tag) ? 'primary' : 'default'}
               sx={{
                 cursor: 'pointer',
-                borderColor: selectedTags.includes(tag) ? '#777' : '#d2d2d2ff',
-                color: selectedTags.includes(tag) ? '#fff' : '#dcdcdcff',
-                bgcolor: selectedTags.includes(tag) ? '#18c9cd' : 'transparent'
+                borderColor: selectedTags.includes(tag) ? '#841717' : '#D4B896',
+                color: selectedTags.includes(tag) ? 'text.primary' : 'text.secondary',
+                bgcolor: selectedTags.includes(tag) ? 'cta.main' : 'transparent'
               }}
             />
           ))}
+        </Box>
+        <Box sx={{ mb: 4, display: 'flex', justifyContent: 'center' }}>
+          <Button
+            variant="contained"
+            size='small'
+            onClick={() => {
+              setSelectedCategory('all');
+              setSelectedTags([]);
+            }}
+            sx={{ mt: 2, borderColor: '', color: 'primary.contrastText' }}
+          >
+            Clear All Filters
+          </Button>
         </Box>
       </Box>
 
@@ -298,10 +311,10 @@ export default function PortfolioGrid() {
                     }}
                 />
                 <CardContent sx={{ flexGrow: 1, textAlign: 'center' }}>
-                    <Typography variant="h4" gutterBottom>
+                    <Typography variant="overline" gutterBottom>
                     {project.name}
                     </Typography>
-                    <Typography variant="body1" sx={{ mb: 2 }}>
+                    <Typography variant="body2" sx={{ mb: 2, mt: 2 }}>
                     {project.project}
                     </Typography>
 
@@ -314,7 +327,7 @@ export default function PortfolioGrid() {
                               size="small"
                               sx={{
                               bgcolor: `${categoryColor}20`,
-                              color: 'text.primary',
+                              color: 'text.secondary',
                               border: `1px solid ${categoryColor}`,
                               fontWeight: 500,
                               cursor: 'pointer'
@@ -330,7 +343,7 @@ export default function PortfolioGrid() {
                               size="small"
                               sx={{
                               bgcolor: '#222',
-                              color: '#fff',
+                              color: 'text.primary',
                               border: `1px solid ${categoryColor}`,
                               fontWeight: 500,
                               }}
@@ -353,8 +366,8 @@ export default function PortfolioGrid() {
                         // href={project.url}
                         target="_blank"
                         sx={{
-                        color: '#fff',
-                        borderColor: '#ffd',
+                        color: 'primary.light',
+                        borderColor: 'cta.main',
                         '&:hover': { bgcolor: `${categoryColor}20` },
                         }}
                     >
@@ -367,12 +380,12 @@ export default function PortfolioGrid() {
                     to={`/projects/${project.id}`}
                     endIcon={<CallMade />}
                     sx={{
-                        color: '#fff',
-                        borderColor: '#ffd',
+                        color: 'primary.light',
+                        borderColor: 'cta.main',
                         '&:hover': { bgcolor: `${categoryColor}20` },
                     }}
                     >
-                    View Project
+                    Case Study
                     </Button>
                 </CardActions>
                 </StyledCard>
@@ -391,12 +404,13 @@ export default function PortfolioGrid() {
             Try adjusting your category or tag selections
           </Typography>
           <Button
-            variant="outlined"
+            variant="contained"
+            size='large'
             onClick={() => {
               setSelectedCategory('all');
               setSelectedTags([]);
             }}
-            sx={{ mt: 2, borderColor: '#18C9CD', color: '#18C9CD' }}
+            sx={{ mt: 2, backgroundColor: 'warning.main', color: 'text.primary' }}
           >
             Clear All Filters
           </Button>
@@ -414,13 +428,13 @@ export default function PortfolioGrid() {
         <Stack direction="row" spacing={2} justifyContent="center">
           <Button
             variant="contained"
-            sx={{ bgcolor: 'accent.main', '&:hover': { bgcolor: 'primary.light', opacity: 0.9 } }}
+            sx={{ bgcolor: 'cta.main', '&:hover': { bgcolor: 'primary.light', opacity: 0.9 } }}
           >
             Contact Me
           </Button>
           <Button
             variant="outlined"
-            sx={{ borderColor: 'accent.main', color: 'accent.main', '&:hover': { bgcolor: 'primary.light', opacity: 0.9 } }}
+            sx={{ borderColor: 'cta.main', color: 'cta.main', '&:hover': { bgcolor: 'primary.light', opacity: 0.9 } }}
           >
             Download Resume
           </Button>

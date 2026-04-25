@@ -13,6 +13,11 @@ import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 
 import ArticleDisplay from './Articles'
 
+const PARCHMENT = '#BF9B7A'
+const GOLD      = '#CD7F18'
+const WARM_WHITE = '#F5ECD9'
+const SURFACE   = '#1C1510'
+const RULE      = 'rgba(191, 155, 122, 0.15)'
 
 export default function ProjectDetails() {
     const {id} = useParams()
@@ -48,13 +53,6 @@ export default function ProjectDetails() {
 
       ) : (
         <>
-        {/* <Grid container spacing={2} alignItems='flex-start'> */}
-          {/* ── Hero Image ── */}
-            {/* {project.videoUrl ? (
-                <Box sx={{ mb: 6 }}>
-                  <MediaPreview videoUrl={project.videoUrl} />
-                </Box>
-              ) : ( */}
                 <Box sx={{ position: 'relative', borderRadius: 2, overflow: 'hidden',
                           mb: 6, cursor: imgs.length > 0 ? 'zoom-in' : 'default' }}
                     onClick={() => imgs.length > 0 && setLightboxIdx(0)}>
@@ -70,8 +68,13 @@ export default function ProjectDetails() {
                             background: 'linear-gradient(to top, #011640ee 0%, transparent 55%)' }} />
                   {/* title on image */}
                   <Box sx={{ position: 'absolute', bottom: 0, left: 0, p: { xs: 3, md: 5 } }}>
-                    <Typography variant='h3' color='#fff' gutterBottom>{project.name}</Typography>
-                    <Typography variant='h6' sx={{ color: '#18C9CD' }}>{project.subtitle}</Typography>
+                      <Typography variant="overline"
+                        sx={{ color: PARCHMENT, letterSpacing: '0.14em', display: 'block', mb: 4 }}
+                      >
+                        Case Study
+                      </Typography>
+                    <Typography variant="h2" color={WARM_WHITE} gutterBottom>{project.name}</Typography>
+                    <Typography variant='h6' sx={{ color: 'text.gold' }}>{project.subtitle}</Typography>
                   </Box>
                   {/* zoom hint */}
                   {imgs.length > 0 && (
@@ -84,8 +87,8 @@ export default function ProjectDetails() {
                   )}
                 </Box>
           {/* )} */}
-        <Grid container spacing={2} alignItems='flex-start'>
-            <Grid item xs={12} sm={6} sx={{ mb: 4 }}>
+        <Grid container spacing={1} alignItems='flex-start'>
+            <Grid item xs={12} sm={6} md={8} sx={{ mb: 4 }}>
               {/* Only show title here if video — hero already shows it for image projects */}
               {/* {project.videoUrl && (
                 <>
@@ -96,31 +99,46 @@ export default function ProjectDetails() {
                 {/* <Typography variant='h3' textAlign='left' gutterBottom color='#fff'>{project.name}</Typography>
                 <Typography variant='h5' textAlign='left' sx={{ mb: 2 }}>{project.subtitle}</Typography>
                 <Typography textAlign='left' sx={{ mb: 4 }}>{project.description}</Typography> */}
+                   {project.openingStatement && (
+                      <Box sx={{ mb: 8, maxWidth: 850 }}>
+                        <Typography
+                          variant="body1"
+                          sx={{
+                            fontSize: '1.1rem',
+                            lineHeight: 1.85,
+                            color: '#D4C4A8',
+                            fontStyle: 'italic',
+                            borderLeft: `2px solid ${GOLD}`,
+                            pl: 3,
+                          }}
+                        >
+                          {project.openingStatement}
+                        </Typography>
+                      </Box>
+                    )}
+                <Divider sx={{ borderColor: RULE, mb: 6 }} />
                 <Box sx={{ mb: 2 }}>
-                  <Typography variant="h6" textAlign='left' sx={{ color: '#18C9CD', mb: 1 }}>
+                  <Typography textAlign='left' variant="overline" sx={{ color: PARCHMENT }}>
                     Details
                   </Typography>
                 </Box>
 
                  {/* Icon Details */}
-                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, mb: 5 }}>
-                  <Typography textAlign='left' sx={{ mb: 4 }}>{project.description}</Typography>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                      <WorkOutlineIcon sx={{ fontSize: 24, color: '#18C9CD' }} />
-                      <Typography variant="body" textAlign='left'>{project.productType}</Typography>
-                    </Box>
-                    
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                      <CropSquareIcon sx={{ fontSize: 24, color: '#18C9CD' }} />
-                      <Typography variant="body" textAlign='left'>{project.scope}</Typography>
-                    </Box>
-                    
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                      <TrendingUpIcon sx={{ fontSize: 24, color: '#18C9CD' }} />
-                      <Typography variant="body" textAlign='left'>{project.businessImpact}</Typography>
-                    </Box>
-                  </Box>
-                <Typography variant='h6' textAlign='left' gutterBottom sx={{ color: '#18c9cd'}}>My Role</Typography>
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, mt: 1.5, mb: 4 }}>
+                <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
+                  <WorkOutlineIcon sx={{ fontSize: 20, color: PARCHMENT, mt: '2px' }} />
+                  <Typography variant="body2">{project.productType}</Typography>
+                </Box>
+                <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
+                  <CropSquareIcon sx={{ fontSize: 20, color: PARCHMENT, mt: '2px' }} />
+                  <Typography variant="body2">{project.scope}</Typography>
+                </Box>
+                <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
+                  <TrendingUpIcon sx={{ fontSize: 20, color: PARCHMENT, mt: '2px' }} />
+                  <Typography variant="body2">{project.businessImpact}</Typography>
+                </Box>
+              </Box>
+                <Typography variant='overline' textAlign='left' gutterBottom sx={{ color: 'PARCHMENT'}}>My Role</Typography>
                 <Typography variant='body1' textAlign='left' sx={{ mb: 4 }}>{project.role}</Typography>
                
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2 }}>
@@ -157,7 +175,12 @@ export default function ProjectDetails() {
                     key={index}
                     label={label}
                     variant='outlined'
-                    sx={{color: '#fff', borderColor: '#18C9CD', backgroundColor: 'transparent', borderWidth: 2}}
+                     sx={{
+                      color: PARCHMENT,
+                      borderColor: 'rgba(191, 155, 122, 0.3)',
+                      fontSize: '0.7rem',
+                      letterSpacing: '0.04em',
+                    }}
                     />
                 ))}
                 </Box>
@@ -193,11 +216,10 @@ export default function ProjectDetails() {
           )}
         </Grid>
       )}
-       <Divider orientation='horizontal' flexItem sx={{ backgroundColor: '#18C9CD', mx: 1 }} />
         {/* ── Screenshot strip (right column, image projects only) ── */}
             {!project.videoUrl && imgs.length > 1 && (
               <Grid item xs={12} sm={6} sx={{ mb: 4 }}>
-                <Typography variant='h6' sx={{ color: '#18C9CD', mb: 2 }}>Preview</Typography>
+                <Typography variant="overline" sx={{ color: PARCHMENT, display: 'block', mb: 2 }}>Preview</Typography>
                 <Grid container spacing={1.5}>
                   {imgs.slice(1).map((src, i) => (
                     <Grid item xs={6} key={i}>
@@ -228,28 +250,17 @@ export default function ProjectDetails() {
         {project.keyFeatures && (
           <Box sx={{ mb: 8 }}>
             <Typography variant='h4' textAlign='left' gutterBottom color='#fff'>
-              Key Features
+              What I Built
             </Typography>
-            {/* <Grid container spacing={2}>
-              {project.keyFeatures.map((feature, index) => (
-                <Grid item xs={12} sm={6} key={index}>
-                  <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
-                    <Box sx={{ width: 8, height: 8, backgroundColor: '#18C9CD', borderRadius: '50%', mr: 2 }} />
-                    <Typography variant='body1' textAlign="left">{feature}</Typography>
-                  </Box>
-                </Grid>
-              ))}
-            </Grid> */}
             <List disablePadding>
                 {project.keyFeatures.map((feature, index) => (
                   <ListItem key={index} disableGutters alignItems="flex-start">
                     <ListItemIcon sx={{ minWidth: 20, mt: '9px' }}>
                       <Box
                         sx={{
-                          width: 8,
-                          height: 8,
-                          backgroundColor: '#18C9CD',
-                          borderRadius: '50%',
+                          width: 5, height: 5,
+                          backgroundColor: GOLD,
+                          borderRadius: '50%'
                         }}
                       />
                     </ListItemIcon>
@@ -260,30 +271,34 @@ export default function ProjectDetails() {
           </Box>
         )}
         <Box>
+          <Typography variant="overline" sx={{ color: PARCHMENT, display: 'block', mb: 4 }}>
+                Design Decisions
+          </Typography>
         {project.designDecisions.map((item, index) => (
             <Box
               key={index}
               sx={{
                 mb: 3,
                 p: 3,
-                border: '1px solid #333',
-                borderRadius: 2
+                background: SURFACE,
+                border: `1px solid ${RULE}`,
+                borderLeft: `2px solid ${PARCHMENT}`,
+                borderRadius: 1,
               }}
             >
-              <Typography variant="h6" color="#18C9CD" gutterBottom>
+              <Typography variant="h6" color="WARM_WHITE" gutterBottom>
                 {item.decision}
               </Typography>
-
               {Array.isArray(item.rationale) ? (
                 <List style={{ marginTop: 8, paddingLeft: 20 }}>
                   {item.rationale.map((point, i) => (
                     <ListItem key={i}>
-                      <Typography variant="body1">{point}</Typography>
+                      <Typography variant="body2">{point}</Typography>
                     </ListItem>
                   ))}
                 </List>
               ) : (
-                <Typography variant="body1">{item.rationale}</Typography>
+                <Typography variant="body2">{item.rationale}</Typography>
               )}
             </Box>
           ))}
@@ -314,14 +329,34 @@ export default function ProjectDetails() {
               {project.results.map((result, index) => (
                 <Grid item xs={12} sm={6} key={index}>
                   <Box sx={{ display: 'flex', mb: 2 }}>
-                    <Typography variant='h6' color='#18C9CD' sx={{ mr: 1 }}>✓</Typography>
-                    <Typography variant='body1' textAlign="left">{result}</Typography>
+                    <Typography variant='h6' color='GOLD' sx={{ mr: 1 }}></Typography>
+                    <Typography variant='body2' textAlign="left">{result}</Typography>
                   </Box>
                 </Grid>
               ))}
             </Grid>
           </Box>
         )}
+         {project.retrospective && (
+            <Box sx={{ mb: 8, maxWidth: 720 }}>
+              <Typography variant="overline" sx={{ color: PARCHMENT, display: 'block', mb: 3 }}>
+                What I'd Do Differently
+              </Typography>
+              {project.retrospective.map((item, i) => (
+                <Box key={i} sx={{ mb: 3 }}>
+                  <Typography
+                    variant="body1"
+                    sx={{ color: WARM_WHITE, fontWeight: 500, mb: 0.75 }}
+                  >
+                    {item.title}
+                  </Typography>
+                  <Typography variant="body2" sx={{ lineHeight: 1.8 }}>
+                    {item.body}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          )}
        {/* Conditionally render the Figma embed */}
        {project.figmaEmbed && (
             <Box sx={{ mt: 4, mb: 4 }}>
@@ -329,7 +364,17 @@ export default function ProjectDetails() {
               <div dangerouslySetInnerHTML={{ __html: project.figmaEmbed }} />
             </Box>
           )}
-      <Button variant='contained'  sx={{backgroundColor: '#18C9CD', mt: 4}} onClick={() => navigate('/')}>
+      <Button
+        variant='outlined'
+        sx={{
+              mt: 2,
+              borderRadius: 0,
+              borderColor: PARCHMENT,
+              color: PARCHMENT,
+              '&:hover': { borderColor: GOLD, color: GOLD, background: 'rgba(205,127,24,0.06)' }
+            }}
+        onClick={() => navigate('/')}
+      >
         Back to Projects
       </Button>
       {accessibility && (

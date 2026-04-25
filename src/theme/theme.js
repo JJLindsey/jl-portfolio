@@ -9,8 +9,9 @@ const theme = createTheme({
         contrastText: '#0C0906',
         },
         secondary:  {main: "#BF9B7A"},
-        warning: { main: "#A84430"},
-        accent: { main: "#CD7F18"},
+        warning: { main: "#89240f"},
+        accent: { main: "#af682a"},
+        cta: {main: '#65970a'},
         background: {
             default: "#0c0906",
             paper: "#1c1510",
@@ -46,25 +47,26 @@ const theme = createTheme({
             fontSize: '1.5rem',
             letterSpacing: '0.02em',
         },
-        h4: {
-            fontFamily: '"Elms Sans", sans-serif',
-            fontWeight: 500,
-            fontSize: '1.15rem',
-            letterSpacing: '0.04em',
-        },
-        h6: {
+         h4: {
             fontFamily: '"Elms Sans", sans-serif',
             fontWeight: 600,
             fontSize: '1.25rem',
             letterSpacing: '0.02em',
         },
+        h6: {
+            fontFamily: '"Elms Sans", sans-serif',
+            fontWeight: 500,
+            fontSize: '1.15rem',
+            letterSpacing: '0.04em',
+        },
         overline: {
             fontFamily: '"Outfit", system-ui, sans-serif',
             fontWeight: 500,
             fontSize: '1.25rem',
-            letterSpacing: '0.14em',
+            letterSpacing: '0.02em',
+            lineHeight: 0.25,
             textTransform: 'uppercase',
-            color: '#A89070',
+            color: '#f2d1a6',
         },
         body1: {
             fontFamily: '"Elms Sans", sans-serif',
@@ -75,9 +77,9 @@ const theme = createTheme({
         },
         body2: {
             fontFamily: '"Outfit", system-ui, sans-serif',
-            fontWeight: 300,
-            fontSize: '0.875rem',
-            lineHeight: 1.65,
+            fontWeight: 400,
+            fontSize: '1.05rem',
+            lineHeight: 1.45,
             color: '#A89070',
         },
     }

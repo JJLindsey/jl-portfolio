@@ -7,7 +7,7 @@ export const projects = [
       id: 'three-sixty-sessions',
       avatar: <img src={reactlogo} alt="react logo" height={48}/>,
       name: 'Three Sixty Sessions',
-      category: ['code', 'design'],
+      category: ['code'],
       image: `${process.env.PUBLIC_URL}/images/360Home.png`,
       project: 'Atlanta-based Music producer\'s site showcasing audio samples',
       url: 'https://threesixtysessions.com/',
@@ -76,7 +76,7 @@ export const projects = [
         id: 'neo-dashboard',
         avatar:<img src={reactlogo} alt="react logo" height={48}/>,
         name: 'Data Visualization Dashboard',
-        category: ['code', 'design'],
+        category: ['code'],
         project: 'Near Earth Objects visualization using NASA open data',
         subtitle: 'Data Visualization Dashboard',
         role: 'Frontend Developer & UI/UX Designer - Led full lifecycle including data fetching, visualization design, state management, and accessibility implementation.',
@@ -136,14 +136,15 @@ export const projects = [
     {
       id: 'interactive-exhibit',
       avatar: <img src={vuelogo} alt="vue logo" height={38}/>,
-      name: 'Curated Interactive Exhibition',
-      category: ['code', 'design'],
-      project: 'Virtual gallery using The Metropolitan Museum of Art open-access API',
-      subtitle: 'End-to-end frontend design & implementation',
-      role: 'Frontend Developer & UI/UX Designer — Led full design and development including API integration, interactive lighting system, zoom/pan implementation, and dual-theme exhibition design.',
+      name: 'A Curated Interactive Exhibition',
+      category: ['code'],
+      productType: 'Interactive Web Application',
+      project: 'A case study in interactive design, design systems, and cultural experience',
+      subtitle: 'The average museum visitor spends 27 seconds looking at a painting...',
+      openingStatement: 'The average museum visitor spends 27 seconds looking at a painting. I built an experience designed to make that impossible. Chiaroscuro: the Baroque technique of extreme light and shadow contrast used by Caravaggio, Rembrandt, and Gentileschi, is not legible at thumbnail scale. The drama lives in the transitions: the millimeter where candlelight meets shadow, the impasto brushwork that only reveals itself up close. I wanted to build an experience that made chiaroscuro visible in a way a standard gallery website cannot.',
+      role: 'Frontend Developer & UI/UX Designer: Led full design and development including API integration, interactive lighting system, zoom/pan implementation, and dual-theme exhibition design.',
       timeline: '2 weeks',
       client: 'Personal Project / The Metropolitan Museum of Art Open Access API',
-      productType: 'Interactive Web Application',
       scope: 'Complete frontend development including exhibition UI design, Met API integration, artwork modal with zoom/pan, chiaroscuro light study mode, and dual-theme system',
       businessImpact: 'Makes fine art accessible and engaging through an interactive gallery experience, allowing users to examine brushwork and compositional detail not visible at normal scale',
       image: `${process.env.PUBLIC_URL}/images/exhibit-dark.png`,
@@ -178,6 +179,20 @@ export const projects = [
           rationale: 'Keeps each component self-contained with its own logic and styles, making the codebase easy to navigate and components straightforward to reuse or extend.'
         }
       ],
+      retrospective: [
+        {
+          title: 'Design token tooling',
+          body: 'The dual-theme system is implemented as scoped CSS custom properties on a data-exhibition-theme attribute, which is the right architectural pattern. For a production design system serving multiple exhibition themes — an Impressionist exhibition would need a completely different token set — I would move the base token definitions into Style Dictionary and generate the scoped CSS from a single source of truth. The current architecture is correct. The tooling is what would need to scale.'
+        },
+        {
+          title: 'Accessibility audit before launch',
+          body: 'The dark Gallery theme achieves the atmospheric quality it was designed for, but I would run a full WCAG contrast audit on both themes against the actual rendered artwork backgrounds before calling either production-ready. Contrast against dynamic image content is genuinely difficult to test at design time.'
+        },
+        {
+          title: 'User research on Light Study Mode',
+          body: 'The interaction was built from my own understanding of what raking light reveals. I would want to test it with someone who has no art history background to understand whether the conceptual leap lands without additional framing.'
+        }
+      ],
       results: [
         'Immersive exhibition atmosphere achieved through careful typographic and color system design',
         'Zoom and pan allows visitors to examine brushwork and detail not visible at thumbnail scale',
@@ -193,7 +208,7 @@ export const projects = [
         `${process.env.PUBLIC_URL}/images/exhibit-light.png`,
         `${process.env.PUBLIC_URL}/images/studyMode.png`
       ],
-      description: 'A virtual museum gallery exploring Baroque chiaroscuro through the Metropolitan Museum of Art collection.',
+      description: 'A case study in interactive design, design systems, and cultural experience',
       label: ['Vue 3', 'Met Museum API', 'CSS Custom Properties', 'UI Design', 'Composition API'],
       figmaEmbed: '',
       badges: [
@@ -209,7 +224,7 @@ export const projects = [
       avatar: <img src={jslogo} alt="react logo" height={48}/>,
       name: 'Current Films',
       subtitle: 'Movie Ratings and Search',
-      category: ['code', 'design'],
+      category: ['code'],
       image: `${process.env.PUBLIC_URL}/images/MovieApp.png`,
       project: 'Get current film info & search films from TMDB API',
       productType: 'Web API Product',
