@@ -52,7 +52,11 @@ export default function Home2() {
               align="left"
               variant="h6"
               sx={{ mb: 6, mt: { xs: 4, sm: 4} }}
-            > My background in visual analysis (MA, Art History) trained me to see composition, color, and spatial hierarchy as technical problems, which turns out to be exactly what building interfaces requires. I build and design. This means fewer handoff gaps, faster iteration, and UIs that match at pixel level.</Typography>
+            > 
+              My background in visual analysis and art history trained me to think deeply about composition, hierarchy, attention, and meaning, the same principles that shape effective digital interfaces.
+
+              I work across the full design-to-development process, building interactive systems that combine thoughtful user experience, scalable frontend architecture, and strong visual execution.
+            </Typography>
             <Box sx={{display: 'flex', gap: 2, mb: 3, }}>
                 {/* <CategoryOutlined />
                 <Typography>Technical</Typography>
