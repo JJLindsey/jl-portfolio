@@ -159,23 +159,11 @@ export default function PortfolioGrid() {
           justifyContent="center"
           sx={{ mt: 4, flexWrap: 'wrap' }}
         >
-          {/* <Box>
-            <Typography variant="h4" color="secondary.main">4</Typography>
-            <Typography variant="body2">End-to-End Projects Built</Typography>
-          </Box>
-          <Box>
-            <Typography variant="h4" color="primary.secondary">9+</Typography>
-            <Typography variant="body2">Custom Interactive Features</Typography>
-          </Box> */}
-          {/* <Box>
-            <Typography variant="h4" color="#FFA500">CPACC</Typography>
-            <Typography variant="body2">Certification (In Progress)</Typography>
-          </Box> */}
         </Stack>
       </Box>
 
       {/* Category Filter */}
-      <Box sx={{ mb: 4, display: 'flex', justifyContent: 'center' }}>
+      <Box sx={{ mb: 4, display: 'flex', justifyContent: 'center'}}>
         <ToggleButtonGroup
           value={selectedCategory}
           exclusive
@@ -189,7 +177,8 @@ export default function PortfolioGrid() {
               //   color: 'categoryColors.selectedCategory',
               //   fontWeight: 'bold'
               // }
-            }
+            },
+            flexDirection: {xs: 'column', sm: 'row '}
           }}
         >
           <ToggleButton value="all" aria-label="all projects">
@@ -255,7 +244,7 @@ export default function PortfolioGrid() {
           Click to filter by skills & tools:
         </Typography>
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, justifyContent: 'center' }}>
-          {['Accessibility', 'Vue.js', 'React', 'Figma', 'Design', 'API Integration'].map(tag => (
+          {['Vue.js', 'React', 'Figma', 'Design', 'API Integration'].map(tag => (
             <Chip
               key={tag}
               label={tag}

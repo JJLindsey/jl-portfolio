@@ -41,7 +41,10 @@ export default function Footer() {
       </Grid> 
       <Grid container sx={{ justifyContent: 'center', flexDirection: 'row', mb: 5, mt: 5 }}>
         <Copyright /> 
-        <Typography>{new Date().getFullYear()} Jennifer Lindsey | All rights reserved. </Typography>
+        <Typography>{new Date().getFullYear()} Jennifer Lindsey
+          <Box component="span" sx={{ display: { xs: 'block', sm: 'inline' } }}></Box>
+            {' '}| All rights reserved.
+        </Typography>
       </Grid>
     </Box>
   )

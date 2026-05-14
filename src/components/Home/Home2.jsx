@@ -58,12 +58,6 @@ export default function Home2() {
               I work across the full design-to-development process, building interactive systems that combine thoughtful user experience, scalable frontend architecture, and strong visual execution.
             </Typography>
             <Box sx={{display: 'flex', gap: 2, mb: 3, }}>
-                {/* <CategoryOutlined />
-                <Typography>Technical</Typography>
-                <DesignServices />
-                <Typography>Design</Typography>
-                <Palette />
-                <Typography>Product & System Thinking</Typography> */}
                 <Button variant='outlined' size='medium' sx={{color: 'accent.main'}} onClick={() => scrollToSection('projects')}>
                   See My Work
                 </Button>
@@ -72,6 +66,7 @@ export default function Home2() {
         <Box
           sx={{
             flexShrink: 0,
+            display: { xs: 'none', sm: 'block'},
             backgroundImage: `url(${HeroImage})`,
             backgroundSize: {xs: 'none', sm: 'cover', md: 'cover'},
             backgroundPosition: 'center top',
