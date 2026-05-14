@@ -85,7 +85,7 @@ export default function DesignProjectDetail() {
         <Grid item xs={12} md={7}>
 
           {/* Details */}
-          <Typography variant='h6' sx={{ color: accent, mb: 1 }}>Details</Typography>
+          <Typography variant='h6' sx={{ color: 'text.accent', mb: 1 }}>Details</Typography>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, mb: 4 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
               <WorkOutlineIcon sx={{ fontSize: 24, color: accent }} />

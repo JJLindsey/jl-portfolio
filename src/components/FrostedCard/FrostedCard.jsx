@@ -24,10 +24,10 @@ export const FrostedCard = styled(Card)(({ theme }) => ({
     padding: "1px", // thin border
     borderRadius: "inherit",
     background: `linear-gradient(to bottom right,
-     rgba(255,255,255,0.9) 0%,
-    rgba(255,255,255,0.1) 40%,
+    rgba(255,255,255,0.9) 0%,
+    rgba(255, 255, 255, 0.43) 40%,
     rgba(0,150,255,0.1) 60%,
-    rgba(0, 225, 255, 0.9) 100%)`,
+    rgba(24, 24, 24, 0.9) 100%)`,
     WebkitMask:
       "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
     WebkitMaskComposite: "xor",

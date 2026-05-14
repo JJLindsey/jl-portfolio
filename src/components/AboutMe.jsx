@@ -16,7 +16,9 @@ import SettingsSuggestIcon from '@mui/icons-material/SettingsSuggest';
 import htmlIcon from '../assets/icons8-html-48.png'
 import cssIcon from '../assets/css-icon.png'
 import reactIcon from '../assets/logo192.png'
+import vueIcon from '../assets/vue-js.png'
 import jsIcon from '../assets/icons8-javascript-48.png'
+import pythonIcon from '../assets/python-logo-only.png'
 import cSharp from '../assets/icons8-c-sharp-logo-48.png'
 import figmaIcon from '../assets/icons8-figma-48.png'
 import photoshopIcon from '../assets/photoshop.png'
@@ -24,7 +26,7 @@ import illustratorIcon from '../assets/illustrator.png'
 import indesignIcon from '../assets/Indesign.png'
 import { Divider, Tooltip } from '@mui/material';
 //import bracketicon from '../assets/bracketPNG.png'
-import jiraIcon from '../assets/jira.png'
+//import jiraIcon from '../assets/jira.png'
 import designThinking from '../assets/design-thinking.png'
 import GradientDivider from './GradientDivider'
 import { QueryStatsOutlined } from '@mui/icons-material';
@@ -39,15 +41,15 @@ const items = [
   // },
   {
     icon: <QueryStatsOutlined sx={{ fontSize: '2rem', color: '#fff'}}/>,
-    title: 'Curatorial Discernment',
+    title: 'Visual Systems Thinking',
     description:
-      'Art history trained me to analyze visual systems with precision and cultural context. That judgment shapes every interface decision, from color token semantics to the hierarchy of information on a screen.',
+      'My background in art history trained me to analyze visual structure, hierarchy, and meaning with precision. That same analytical approach shapes how I design and build interfaces, from information architecture and interaction flow to component systems and visual consistency.',
   },
   {
     icon: <ConstructionRoundedIcon sx={{ fontSize: '2rem', color: '#fff'}}/>,
     title: 'Design Embedded in Engineering',
     description:
-      'Design is not a separate phase in my process. Visual and systems thinking shapes component architecture, interaction patterns, and API contracts from the first decision, not after the fact.',
+      'I approach design and engineering as part of the same system rather than separate phases. Working across both disciplines allows for faster iteration, stronger implementation fidelity, and interfaces that remain cohesive from concept through production.',
   },
   // {
   //   icon: <AutoFixHighRoundedIcon sx={{ fontSize: '2.5rem', color: '#d71920'}}/>,
@@ -57,9 +59,9 @@ const items = [
   // },
   {
     icon: <SettingsSuggestIcon sx={{ fontSize: '2rem', color: '#fff'}}/>,
-    title: 'Systems That Scale',
+    title: 'Scalable Interactive Systems',
     description:
-      'From design tokens and component libraries through state management and backend logic, I build end-to-end systems that stay maintainable because they were designed with the same rigor they were engineered with.',
+      'I build maintainable frontend systems with a focus on component architecture, accessibility, state management, and long-term usability. My work emphasizes clarity, adaptability, and thoughtful interaction design at scale.',
   },
   // {
   //   icon: <QueryStatsRoundedIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
@@ -108,25 +110,29 @@ export default function About() {
                 Design Engineer
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb:2}}>
-              I work across the full creative-to-code pipeline, from brand identity and high-fidelity prototypes through component architecture, state management, and deployment.
+              I am a Design Engineer with experience building interactive web applications in React and Vue, working across the full creative-to-code pipeline, from interface design and prototyping through component architecture, state management, API integration, and deployment.
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
-              My background in art history and visual analysis gives me something AI cannot replicate: curatorial judgment. I read interfaces the way a curator reads an exhibition, composition, hierarchy, color, and spatial logic as problems with real solutions. That same eye follows me outside the editor. I shoot landscape photography because nature is our first canvas, and there is no better study in texture, pattern, and color relationships than the one that has been running for four billion years. While AI can generate code, it cannot navigate color theory, historical context, or the cultural nuance that makes a digital product legally compliant and genuinely resonant. I provide that oversight.
+              My background in art history and visual analysis informs how I approach interface systems: composition, hierarchy, color, and spatial relationships are not just aesthetic decisions, but structural ones. That perspective helps me bridge the gap between design intent and implementation with a high level of visual precision and systems thinking.
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
-              I've spent 13 years developing production-grade visual craft and 4 years building scalable UI in React and Vue. I contribute to interaction decisions, design system architecture, and the gap between design intent and what actually ships, which is usually where the interesting problems live.
+              Over the past several years, I’ve focused on building scalable UI systems, design-aligned frontend architecture, and interaction patterns that support clarity, usability, and meaningful engagement.
+
+              I am currently expanding into AI systems, multimodal interfaces, and computer vision through applied projects and graduate study in AI, with a particular interest in how intelligent systems can support learning, interpretation, and visual understanding.
             </Typography>
           </Grid>
         </Grid>
         <Grid  container spacing={2} sx={{display: 'flex', justifyContent:'center', alignItems: 'center', mb: 4}}>
           {/* <Tooltip title='React' aria-labelledby='React logo'><img src={reactIcon} alt='react icon' width={64}/></Tooltip> */}
+          <Tooltip title='React'><img src={reactIcon} alt='react icon' width={50}/></Tooltip>
+          <Tooltip title='Python'><img src={pythonIcon} alt='python icon' width={50}/></Tooltip>
+          <Tooltip title='Vue'><img src={vueIcon} alt='vue icon' width={50}/></Tooltip>
+          <Tooltip title='Javascript'><img src={jsIcon} alt='javascript icon' width={64}/></Tooltip>
+          <Tooltip title='C#'><img src={cSharp} alt='cSharp icon' width={64}/></Tooltip>
           <Tooltip title='Figma'><img src={figmaIcon} alt='figma icon' width={58}/></Tooltip>
           <Tooltip title='PhotoShop'><img src={photoshopIcon} alt='photoshop icon' width={58}/></Tooltip>
           <Tooltip title='Illustrator'><img src={illustratorIcon} alt='illustrator icon' width={58}/></Tooltip>
-          <Tooltip title='Design Thinking'><img src={designThinking} alt='design thinking icon' width={52}/></Tooltip>
-          <Tooltip title='React'><img src={reactIcon} alt='react icon' width={50}/></Tooltip>
-          <Tooltip title='Javascript'><img src={jsIcon} alt='javascript icon' width={64}/></Tooltip>
-          <Tooltip title='C#'><img src={cSharp} alt='cSharp icon' width={64}/></Tooltip>
+          {/* <Tooltip title='Design Thinking'><img src={designThinking} alt='design thinking icon' width={52}/></Tooltip> */}
           <Tooltip title='HTML'><img src={htmlIcon} alt='html icon' width={64}/></Tooltip> 
           <Tooltip title='CSS'><img src={cssIcon} alt='css icon' width={50}/></Tooltip>
         </Grid>

@@ -147,10 +147,10 @@ export default function PortfolioGrid() {
     <Container maxWidth="lg">
       <Box sx={{ mb: 6, textAlign: 'center' }}>
         <Typography variant="h5" gutterBottom>
-          Development • Design Systems & Interaction • Design
+          Development • Interactive Systems • Design Engineering
         </Typography>
         <Typography variant="body1" color="#ccc" sx={{ mt: 2 }}>
-          Building scalable, design forward systems
+          Building interactive systems that combine thoughtful UX, scalable frontend architecture, and visual precision.
         </Typography>
         {/* Stats Bar */}
         <Stack
@@ -159,14 +159,14 @@ export default function PortfolioGrid() {
           justifyContent="center"
           sx={{ mt: 4, flexWrap: 'wrap' }}
         >
-          <Box>
+          {/* <Box>
             <Typography variant="h4" color="secondary.main">4</Typography>
             <Typography variant="body2">End-to-End Projects Built</Typography>
           </Box>
           <Box>
             <Typography variant="h4" color="primary.secondary">9+</Typography>
             <Typography variant="body2">Custom Interactive Features</Typography>
-          </Box>
+          </Box> */}
           {/* <Box>
             <Typography variant="h4" color="#FFA500">CPACC</Typography>
             <Typography variant="body2">Certification (In Progress)</Typography>
@@ -219,7 +219,7 @@ export default function PortfolioGrid() {
             }}
           >
             {categoryIcons.code}
-            <Box component="span" sx={{ ml: 1 }}>Frontend Projects</Box>
+            <Box component="span" sx={{ ml: 1 }}>Projects</Box>
           </ToggleButton>
           <ToggleButton
             value="design"
