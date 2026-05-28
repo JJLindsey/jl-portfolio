@@ -417,12 +417,18 @@ export default function PortfolioGrid() {
         <Stack direction="row" spacing={2} justifyContent="center">
           <Button
             variant="contained"
+            component='a'
+            href='mailto:jlindsey010@gmail.com'
             sx={{ bgcolor: 'cta.main', '&:hover': { bgcolor: 'primary.light', opacity: 0.9 } }}
           >
             Contact Me
           </Button>
           <Button
             variant="outlined"
+            component='a'
+            href={`${process.env.PUBLIC_URL}/Jennifer_Lindsey_Resume.pdf`}
+            target="_blank"
+            rel="noopener noreferrer"
             sx={{ borderColor: 'cta.main', color: 'cta.main', '&:hover': { bgcolor: 'primary.light', opacity: 0.9 } }}
           >
             Download Resume

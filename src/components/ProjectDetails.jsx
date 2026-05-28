@@ -67,7 +67,7 @@ export default function ProjectDetails() {
                   <Box sx={{ position: 'absolute', inset: 0,
                             background: 'linear-gradient(to top, #011640ee 0%, transparent 55%)' }} />
                   {/* title on image */}
-                  <Box sx={{ position: 'absolute', bottom: 0, left: 0, p: { xs: 3, md: 5 } }}>
+                  <Box sx={{ position: 'absolute', bottom: 0, left: 0, p: { xs: 3, md: 5 }, backgroundColor: '#0000009a'}}>
                       <Typography variant="overline"
                         sx={{ color: PARCHMENT, letterSpacing: '0.14em', display: 'block', mb: 4 }}
                       >
@@ -79,8 +79,8 @@ export default function ProjectDetails() {
                   {/* zoom hint */}
                   {imgs.length > 0 && (
                     <Box sx={{ position: 'absolute', top: 12, right: 16,
-                              bgcolor: '#80808066', borderRadius: 1, px: 1.5, py: 0.5 }}>
-                      <Typography variant='caption' sx={{ color: '#aaa', letterSpacing: '0.1em' }}>
+                              bgcolor: '#1c1c1c', borderRadius: 1, px: 1.5, py: 0.5, border: '1px solid grey'  }}>
+                      <Typography variant='caption' sx={{ color: '#dadada', letterSpacing: '0.1em' }}>
                         click to expand
                       </Typography>
                     </Box>
