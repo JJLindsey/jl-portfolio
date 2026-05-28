@@ -23,7 +23,7 @@ import cSharp from '../assets/icons8-c-sharp-logo-48.png'
 import figmaIcon from '../assets/icons8-figma-48.png'
 import photoshopIcon from '../assets/photoshop.png'
 import illustratorIcon from '../assets/illustrator.png'
-import indesignIcon from '../assets/Indesign.png'
+//import indesignIcon from '../assets/Indesign.png'
 import { Divider, Tooltip } from '@mui/material';
 //import bracketicon from '../assets/bracketPNG.png'
 //import jiraIcon from '../assets/jira.png'
@@ -41,15 +41,15 @@ const items = [
   // },
   {
     icon: <QueryStatsOutlined sx={{ fontSize: '2rem', color: '#fff'}}/>,
-    title: 'Visual Systems Thinking',
+    title: 'Visual & Systems Thinking',
     description:
-      'My background in art history trained me to analyze visual structure, hierarchy, and meaning with precision. That same analytical approach shapes how I design and build interfaces, from information architecture and interaction flow to component systems and visual consistency.',
+      'My background in art history trained me to analyze visual structure, hierarchy, and meaning with precision. That same analytical approach shapes how I design and build interfaces, from information architecture and interaction flow to component systems and visual consistency. Design isn’t decoration. The gap between design intent and production reality is where most interfaces quietly fail, and closing that gap is where I operate most naturally.',
   },
   {
     icon: <ConstructionRoundedIcon sx={{ fontSize: '2rem', color: '#fff'}}/>,
-    title: 'Design Embedded in Engineering',
+    title: 'Engineering with Architectural Judgment',
     description:
-      'I approach design and engineering as part of the same system rather than separate phases. Working across both disciplines allows for faster iteration, stronger implementation fidelity, and interfaces that remain cohesive from concept through production.',
+      'Cross-functional thinking, holding the frontend, the backend contract, and the user experience simultaneously, is what I mean by architectural judgment. I work naturally across both development and design. Thinking about composition, hierarchy, spatial weight, the relationship between what is shown and what is withheld is part of development that should not be ignored. This allows for faster iteration, stronger implementation fidelity, and interfaces that remain cohesive from concept through production.'
   },
   // {
   //   icon: <AutoFixHighRoundedIcon sx={{ fontSize: '2.5rem', color: '#d71920'}}/>,
@@ -59,9 +59,9 @@ const items = [
   // },
   {
     icon: <SettingsSuggestIcon sx={{ fontSize: '2rem', color: '#fff'}}/>,
-    title: 'Scalable Interactive Systems',
+    title: 'Scalable Interactive Systems & Where I am going',
     description:
-      'I build maintainable frontend systems with a focus on component architecture, accessibility, state management, and long-term usability. My work emphasizes clarity, adaptability, and thoughtful interaction design at scale.',
+      'I\'m currently expanding into AI systems, and multimodal interfaces through applied projects and graduate study in AI. My Visual Investigation Lab, built on Visual Thinking Strategies and a phased cognitive model for structured visual reasoning, is an early prototype of where my work is heading: intelligent systems that support interpretation, guided attention, and human-centered learning.',
   },
   // {
   //   icon: <QueryStatsRoundedIcon sx={{ fontSize: '2.5rem', color: '#fff'}}/>,
@@ -101,19 +101,19 @@ export default function About() {
              {/* <Typography align="left" variant="h4" sx={{fontWeight: 'bold', fontFamily: '"Sansation", sans-serif'}}>
               Critical Analysis Meets Product Innovation
             </Typography> */}
-             <Typography
+             {/* <Typography
                 color="inherit"
                 align="left"
                 variant="h5"
                 sx={{ mb: 4, mt: { xs: 4, sm: 4}, fontWeight: 'bold' }}
                 >
                 Design Engineer
-            </Typography>
-            <Typography align='left' variant='h6' component='p' sx={{mb:2}}>
-              I am a Design Engineer with experience building interactive web applications in React and Vue, working across the full creative-to-code pipeline, from interface design and prototyping through component architecture, state management, API integration, and deployment.
+            </Typography> */}
+            <Typography align='left' variant='h6' component='p' sx={{mt: 4, mb:2}}>
+              I am a Developer and Design Engineer with experience building interactive web applications in React and Vue, working across the full creative-to-code pipeline, from interface design and prototyping through component architecture, state management, API integration, and deployment.
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
-              My background in art history and visual analysis informs how I approach interface systems: composition, hierarchy, color, and spatial relationships are not just aesthetic decisions, but structural ones. That perspective helps me bridge the gap between design intent and implementation with a high level of visual precision and systems thinking.
+              Trained in visual analysis, interpretive reasoning, and the discipline of letting evidence compel conclusions: those habits of mind shape every architectural decision I make.  My background in art history and visual analysis informs how I approach interface systems: composition, hierarchy, color, and spatial relationships are not just aesthetic decisions, but structural ones. That perspective helps me bridge the gap between design intent and implementation with a high level of visual precision and systems thinking.
             </Typography>
             <Typography align='left' variant='h6' component='p' sx={{mb: 4}}>
               Over the past several years, I’ve focused on building scalable UI systems, design-aligned frontend architecture, and interaction patterns that support clarity, usability, and meaningful engagement.

@@ -42,10 +42,10 @@ export default function Home2() {
             </Typography>
             <Typography
                 align="left"
-                variant="h2"
+                variant="h3"
                 sx={{ mb: 6, mt: { xs: 4, sm: 4}}}
                 >
-                Design Engineer
+                Software Developer | Design Engineer | Systems Thinker
             </Typography>
             <Typography
               color="inherit"
