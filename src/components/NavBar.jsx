@@ -152,7 +152,7 @@ function NavBar() {
                   color="primary"
                   size="small"
                   variant="contained"
-                  href={`${process.env.PUBLIC_URL}/JenniferLindseyFrontendEngineer.pdf`}
+                  href={`${process.env.PUBLIC_URL}/Jennifer_Lindsey_Resume.pdf`}
                   target="_blank"
                   rel="noopener noreferrer"
                   endIcon={<DownloadForOfflineIcon />}
@@ -200,7 +200,7 @@ function NavBar() {
                 size="small"
                 variant='text'
                 component="a"
-                href={`${process.env.PUBLIC_URL}/JenniferLindseyFrontendEngineer.pdf`}
+                href={`${process.env.PUBLIC_URL}/Jennifer_Lindsey_Resume.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
                 startIcon={<DownloadForOfflineIcon />}
