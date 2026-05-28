@@ -177,6 +177,95 @@ export const projects = [
       ],
     },
     {
+      id: 'vangogh-cultural-impact',
+      avatar: <img src={vuelogo} alt="vue logo" height={38}/>,
+      name: 'Van Gogh Pro: Posthumous Cultural Impact Dashboard',
+      category: ['code', 'data'],
+      productType: 'Fullstack Analytical Dashboard',
+      project: 'Quantifying the "Posthumous Popularity Paradox": How a rejected 19th-century artist became a 21st-century commercial powerhouse',
+      subtitle: 'It started with a LEGO set. While building the Van Gogh Museum Sunflowers collaboration, I started wondering: how does a commercially unsuccessful artist end up on a mass-market toy?',
+      openingStatement: 'It started with a LEGO set. While building the official Van Gogh Museum Sunflowers collaboration, I found myself asking a data question: how does a painter who sold one work in his lifetime become the subject of partnerships with LEGO, Pokémon, and Samsung? That question became this dashboard — a fullstack analytical tool that bridges 150 years of academic art-historical research with modern sentiment analysis to map the mechanics of posthumous cultural canonization. The "Posthumous Popularity Paradox" is the gap between Van Gogh\'s rejection in life and his commercial dominance in death. This project makes that gap visible through data.',
+      role: 'Fullstack Developer & Data Analyst: Led full design and development including ETL pipeline architecture, NLP sentiment engine, Chart.js custom visualizations, Tableau Public dashboard, and Vue 3 component architecture.',
+      timeline: 'MVP',
+      client: 'Personal Project / Van Gogh Museum Official Data (vangoghmuseum.nl)',
+      scope: 'Complete fullstack development including Node.js/Express sentiment API, ETL data service layer, Vue 3 tab-based dashboard architecture, Chart.js dual-axis visualizations, and Tableau Public embedded dashboard',
+      businessImpact: 'Demonstrates the intersection of cultural analytics and engineering — a methodology applicable to any domain where qualitative historical data needs to be transformed into quantitative insight. The decoupled service pattern enables straightforward migration from mock data to a live API.',
+      image: `${process.env.PUBLIC_URL}/images/mainDashboardView.png`,
+      url: 'https://jjlindsey.github.io/vangogh-sentiment/',
+      testimonial: '',
+      goal: 'Build a fullstack analytical dashboard that transforms disparate data, from 1920s exhibition records to 2024 brand partnerships, into a unified visualization of how cultural reputation is built over time.',
+      keyFeatures: [
+        'ETL pipeline normalizing 100+ years of heterogeneous art historical data into chart-ready format',
+        'Node.js/Express NLP sentiment engine processing social media patterns into quantitative Legacy Scores',
+        'Dual-axis Chart.js line chart overlaying academic reception score (1920–2024) against publication volume, visualizing the point where scholarly consensus plateaued while popular culture engagement accelerated',
+        'Brand collaboration bar chart correlating commercialization events with popularity rise, with tooltip-level detail on each partnership',
+        'Tableau Public embedded dashboard covering sentiment over time, brand collaborations timeline, and public vs. academic reception comparison',
+        'Vue 3 component architecture with clean separation of concerns, and tab-level view controllers receiving all data via props from a single data-loading parent',
+        'CSV and JSON data export pipeline for further analysis in Tableau Desktop',
+        'Decoupled service pattern — frontend remains agnostic of data source, enabling future REST or GraphQL migration'
+      ],
+      designDecisions: [
+        {
+          decision: 'Three-tab information architecture: Overview, Visualizations, Exports',
+          rationale: 'Separates narrative context (the "why") from interactive data exploration (the "what") from raw data access (the "how").'
+        },
+        {
+          decision: 'Chart.js for ETL-owned data, Tableau for cross-dataset exploration',
+          rationale: 'Each tool is used where it has leverage. Chart.js renders the dual-axis historical chart and brand collaboration timeline — data the pipeline owns and that needs custom tooltip context like major events. Tableau handles interactive cross-filtering across datasets where its native interactivity adds more value than a custom implementation.'
+        },
+        {
+          decision: 'Decoupled service pattern in artHistoricalData.js',
+          rationale: 'Exporting data through typed functions like calculateCommercializationScore() keeps the frontend completely agnostic of the data source. The same component tree works whether data comes from a static file, a mock API, or a live database. no component-level changes required to migrate.'
+        },
+        {
+          decision: 'Dual-axis chart for academic reception vs. publications',
+          rationale: 'Reception score (0–1) and publication count (15–612) live on incompatible scales. A single axis would flatten the reception curve to near-zero. Dual axes reveal the real story: reception plateaued around 2000 while publications kept climbing, academic consensus was reached but scholarly interest never stopped.'
+        }
+      ],
+      retrospective: [
+        {
+          title: 'Separation of concerns is a product decision, not just a technical one',
+          body: 'The biggest architectural improvement came from asking "what does each tab need to do?" rather than "where should this component go?" Overview tells the story, Visualizations shows the data, Data serves researchers, the component boundaries became obvious.'
+        },
+        {
+          title: 'The ComparisonChart taught me about honest data design',
+          body: 'An early version of the comparison chart filtered historical data to 2020 onwards to match sentiment data availability, which silently destroyed the century of context that made the data meaningful. The fix was splitting them into separate purpose-built charts rather than forcing an artificial comparison this taught me a lesson about letting data tell its natural story rather than the story you want it to tell.'
+        },
+        {
+          title: 'Mock data architecture matters as much as live data architecture',
+          body: 'Designing the service layer as if it were a real API: typed functions, normalized schemas, calculated fields this meant the frontend never had to know the data was simulated. That discipline is what makes the migration path to a live backend straightforward rather than a rewrite.'
+        }
+      ],
+      results: [
+        'ETL pipeline successfully normalizes data spanning 1920–2024 across exhibition records, auction data, publications, and brand partnerships into a unified schema',
+        'NLP sentiment engine quantifies social media patterns across Reddit, Twitter, Instagram, and museum reviews into comparable Legacy Scores',
+        'Dual-axis visualization reveals the academic/popular divergence point (~2000) that is the core argument of the analysis',
+        'Tableau dashboard surfaces cross-dataset patterns not visible in individual Chart.js views',
+        'Decoupled service pattern enables data source migration with zero frontend changes',
+        'Component architecture scales cleanly and each tab view is independently maintainable with clearly defined prop contracts'
+      ],
+      width: '40%',
+      navigation: 'Live Site',
+      videoUrl: '',
+      screenshots: [
+        `${process.env.PUBLIC_URL}/images/overviewTab.png`,
+        `${process.env.PUBLIC_URL}/images/tableauTab.png`,
+        `${process.env.PUBLIC_URL}/images/mainDashboardView.png`,
+        `${process.env.PUBLIC_URL}/images/overviewTab.png`,
+      ],
+      description: 'Quantifying the "Posthumous Popularity Paradox": 150 years of art historical data meets modern sentiment analysis',
+      label: ['Vue 3', 'Node.js', 'Chart.js', 'Tableau', 'NLP', 'Data Visualization'],
+      figmaEmbed: '',
+      badges: [
+        { label: 'Vue.js',            color: 'success' },
+        { label: 'Node.js / Express', color: 'primary' },
+        { label: 'Chart.js',          color: 'info' },
+        { label: 'Tableau',           color: 'warning' },
+        { label: 'Data Analytics',    color: 'secondary' },
+        { label: 'NLP',               color: 'danger' },
+      ],
+    },
+    {
       id: 'three-sixty-sessions',
       avatar: <img src={reactlogo} alt="react logo" height={48}/>,
       name: 'Three Sixty Sessions',

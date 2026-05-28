@@ -221,7 +221,7 @@ export default function PortfolioGrid() {
             }}
           >
             {categoryIcons.product}
-            <Box component="span" sx={{ ml: 1 }}>Design & Interactions</Box>
+            <Box component="span" sx={{ ml: 1 }}>Design & Research</Box>
           </ToggleButton>
           <ToggleButton
             value='writing'
