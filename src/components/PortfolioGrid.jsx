@@ -353,7 +353,6 @@ export default function PortfolioGrid() {
                           : { href: project.url, target: '_blank', rel: 'noopener noreferrer',}
                         )}
                         // href={project.url}
-                        target="_blank"
                         sx={{
                         color: 'primary.light',
                         borderColor: 'cta.main',
