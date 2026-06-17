@@ -350,7 +350,7 @@ export default function PortfolioGrid() {
                         variant="outlined"
                         {...(project.internalRoute
                           ? { component: Link, to: project.internalRoute }
-                          : { href: project.url, target: '_blank' }
+                          : { href: project.url, target: '_blank', rel: 'noopener noreferrer',}
                         )}
                         // href={project.url}
                         target="_blank"
